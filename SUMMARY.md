@@ -11,4 +11,5 @@
   * [Design Maturity](core-principles/design-maturity.md)
   * [Implementation Maturity](core-principles/implementation-maturity.md)
   * [Robustness](core-principles/robustness.md)
+  * [Minimal API Surface](core-principles/minimal-api-surface.md)
 
