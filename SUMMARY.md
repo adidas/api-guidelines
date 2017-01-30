@@ -7,4 +7,5 @@
   * [Apiary](core-principles/apiary.md)
   * [Version Control System](core-principles/version-control-system.md)
   * [Contract](core-principles/contract.md)
+  * [Testing](core-principles/testing.md)
 
