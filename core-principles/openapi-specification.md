@@ -3,3 +3,5 @@ Every API MUST be described using API Description format. The API Description fo
 
 ## Language
 The API description MUST be written in U.S. English.
+
+(TODO: see OpenAPI Appendix)
