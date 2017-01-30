@@ -12,4 +12,7 @@
   * [Implementation Maturity](core-principles/implementation-maturity.md)
   * [Robustness](core-principles/robustness.md)
   * [Minimal API Surface](core-principles/minimal-api-surface.md)
+  * [Loose Coupling](core-principles/loose-coupling.md)
+  * [Versioning](core-principles/versioning.md)
+  * [Rules for Extending](core-principles/rules-for-extending.md)
 
