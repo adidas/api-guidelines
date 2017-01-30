@@ -1,6 +1,6 @@
 # Summary
 
-* [Introduction](README.md)
 * [Core Principles](core-principles.md)
+* [Introduction](README.md)
 * [Guidelines](guidelines.md)
 
