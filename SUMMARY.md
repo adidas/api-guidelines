@@ -16,4 +16,5 @@
   * [Rules for Extending](core-principles/rules-for-extending.md)
   * [Changes and Versioning](core-principles/versioning.md)
   * [Content Negotiation](core-principles/content-negotiation.md)
+* [Miscellaneous](miscellaneous.md)
 
