@@ -21,5 +21,8 @@
   * [TLS](protocol/tls.md)
   * [Content Negotiation  ](protocol/content-negotiation.md)
   * [Separate Concerns](protocol/separate-concerns.md)
+  * [Use Appropriate Methods](protocol/use-appropriate-methods.md)
+  * [Use Appropriate Status Codes](protocol/use-appropriate-status-codes.md)
+  * Caching
 * [Miscellaneous](miscellaneous.md)
 
