@@ -14,17 +14,19 @@ Any change to:
 
 MUST follow the [Rules for Extending](core-principles/rules-for-extending.md).
 
-### No URI Versioning
+## No URI Versioning
 A change SHALL NOT affect **existing** resource identifiers (name / URI).
 
-### Backward-incompatible Change
-A change that can't follow the [Rules for Extending](core-principles/rules-for-extending.md) MUST result into a new resource variant
+#### Example
+Adding a new action to existing resource with identifier `/greeting` doesn't change its identifier to `/v2/greeting`.
 
+## Backward-incompatible Change
+A change to _resource identifier_, _resource metadata_, _resource actions_ and _resource relations_, that can't follow the [Rules for Extending](core-principles/rules-for-extending.md) MUST result into a **new resource variant**. Existing resource variant MUST be preserved.
+
+A change to _representation format_ SHOULD NOT result into a new resource variant.
 
 ### Representation Format Change
 > A representation format is the serialization format (media type) used in request and response bodies and typically it represents a resource or its part, possibly with additional hypermedia controls.
-
-A change to a representation format MUST follow the [Rules for Extending](core-principles/rules-for-extending.md).
 
 If the change can't follow the Rules for Extending the representation format media type MUST be changed. If the media type has been changed the previous media type MUST be available via [Content Negotiation](core-principles/content-negotiation.md). 
 
