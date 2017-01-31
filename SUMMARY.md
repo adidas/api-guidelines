@@ -17,12 +17,12 @@
   * [Changes and Versioning](core-principles/versioning.md)
 * [Protocol](protocol/README.md)
   * [HTTP](protocol/http.md)
-  * [Know your HTTP](protocol/know-your-http.md)
   * [TLS](protocol/tls.md)
-  * [Content Negotiation  ](protocol/content-negotiation.md)
+  * [Know your HTTP](protocol/know-your-http.md)
   * [Separate Concerns](protocol/separate-concerns.md)
-  * [Use Appropriate Methods](protocol/use-appropriate-methods.md)
-  * [Use Appropriate Status Codes](protocol/use-appropriate-status-codes.md)
+  * [Content Negotiation  ](protocol/content-negotiation.md)
+  * [Request Methods](protocol/use-appropriate-methods.md)
+  * [Status Codes](protocol/use-appropriate-status-codes.md)
   * Caching
 * [Miscellaneous](miscellaneous.md)
 
