@@ -15,10 +15,10 @@ Any change to:
 MUST follow the [Rules for Extending](core-principles/rules-for-extending.md).
 
 ## No URI Versioning
-A change SHALL NOT affect **existing** resource identifiers (name / URI).
+A change SHALL NOT affect **existing** resource identifiers (name / URI). Resource identifier MUST NOT contain semantic versioning to convey a version of resource or its representation format.
 
 #### Example
-Adding a new action to existing resource with identifier `/greeting` doesn't change its identifier to `/v2/greeting`.
+Adding a new action to existing resource with identifier `/greeting` doesn't change its identifier to `/v2/greeting` (or `/greeting-with-new-action` etc.).
 
 ## Backward-incompatible Change
 A change to _resource identifier_, _resource metadata_, _resource actions_ and _resource relations_, that can't follow the [Rules for Extending](core-principles/rules-for-extending.md) MUST result into a **new resource variant**. Existing resource variant MUST be preserved.
