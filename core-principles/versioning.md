@@ -1,20 +1,34 @@
-# Versioning
+# Changes and Versioning
 > _The fundamental principle is that you can’t break existing clients, because you don’t know what they implement, and you don’t control them. In doing so, you need to turn a backwards-incompatible change into a compatible one._
 >
 > _– [Mark Nottingham](https://www.mnot.net/blog/2011/10/25/web_api_versioning_smackdown)_
 
 Any change to an API MUST NOT break existing clients.
 
+Any change to:
+- **resource identifier** (resource name / URI) including its query parameters and their semantics
+- **resource metadata** (e.g. HTTP headers)
+- **actions** the resource affords (e.g. available HTTP Methods)
+- **relations** with other resources (e.g Links)
+- **representation format** (e.g. HTTP request and response bodies)
 
-## Representation Format Change
+MUST follow the [Rules for Extending](core-principles/rules-for-extending.md).
+
+### No URI Versioning
+A change SHALL NOT affect **existing** resource identifiers (name / URI).
+
+### Backward-incompatible Change
+A change that can't follow the [Rules for Extending](core-principles/rules-for-extending.md) MUST result into a new resource variant
+
+
+### Representation Format Change
 > A representation format is the serialization format (media type) used in request and response bodies and typically it represents a resource or its part, possibly with additional hypermedia controls.
 
-A change to a representation format MUST follow the [Rules for Extending](core-principles/rules-for-extending.md). 
+A change to a representation format MUST follow the [Rules for Extending](core-principles/rules-for-extending.md).
 
 If the change can't follow the Rules for Extending the representation format media type MUST be changed. If the media type has been changed the previous media type MUST be available via [Content Negotiation](core-principles/content-negotiation.md). 
 
 #### Example
-
 Media type _before_ a breaking change:
 
 ```
@@ -27,4 +41,6 @@ Media type _after_ a breaking change:
 application/vnd.example.resource+json; version=3
 ```
 
-## Resource Change
+
+## API Description Versioning
+TODO
