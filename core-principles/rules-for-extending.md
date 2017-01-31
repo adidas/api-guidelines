@@ -1,5 +1,5 @@
 # Rules for Extending
-Any change to an existing API design MUST avoid breaking changes and MUST maintain backward compatibility.
+Any modification to an existing API design MUST avoid breaking changes and MUST maintain backward compatibility.
 
 In particular any change to an API design MUST follow the following Rules for Extending:
 
