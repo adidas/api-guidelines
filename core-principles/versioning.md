@@ -49,15 +49,26 @@ application/vnd.example.resource+json; version=3
 ```
 
 ## API Description Versioning
-TODO.
+API Description in the OpenAPI specification format MUST have the `version` field. The `version` field MUST follow [Semantic versioning](http://semver.org/):
 
-Adasd
+> Given a version number MAJOR.MINOR.PATCH, increment the:
+> 
+> - MAJOR version when you make **incompatible** API changes,
+> - MINOR version when you add functionality in a **backwards-compatible** manner
+> - PATCH version when you make **backwards-compatible bug fixes**
 
 
-```
+#### Example
+Following API Description
+
+```yaml
 swagger: '2.0'
 info:
   version: '2.1.3'
-  title: '[Demo] Simple API (GitHub)'
-  description:
+  title: '[Demo] Inventory API'
+  description: 'Inventory service API'
 ```
+
+Has MAJOR version 2, MINOR version 1 and PATCH version 3.
+
+
