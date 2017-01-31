@@ -48,4 +48,4 @@ application/vnd.example.resource+json; version=3
 
 
 ## API Description Versioning
-TODO
+TODO.
