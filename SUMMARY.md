@@ -15,7 +15,8 @@
   * [Loose Coupling](core-principles/loose-coupling.md)
   * [Rules for Extending](core-principles/rules-for-extending.md)
   * [Changes and Versioning](core-principles/versioning.md)
-* [Guidelines](guidelines/README.md)
-  * [Content Negotiation](core-principles/content-negotiation.md)
+* [Protocol](protocol/README.md)
+  * [HTTP](protocol/http.md)
+  * [Content Negotiation](protocol/content-negotiation.md)  
 * [Miscellaneous](miscellaneous.md)
 

@@ -1,5 +1,5 @@
 # HTTP
-Every API MUST support [HTTP/1.1](https://tools.ietf.org/html/rfc7230).
+Every API MUST support [HTTP/1.1](https://tools.ietf.org/html/rfc7230) and MUST adhere to its semantic.
 
 > [RFC 7230, HTTP/1.1: Message Syntax and Routing](https://tools.ietf.org/html/rfc7230)
 > [RFC 7231, HTTP/1.1: Semantics and Content](https://tools.ietf.org/html/rfc7231)
