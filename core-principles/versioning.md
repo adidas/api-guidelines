@@ -6,7 +6,7 @@
 Any change to an API MUST NOT break existing clients.
 
 Any change to:
-- **resource identifier** (resource name / URI) including its query parameters and their semantics
+- **resource identifier** (resource name / URI) including any **query parameters** and their semantics
 - **resource metadata** (e.g. HTTP headers)
 - **actions** the resource affords (e.g. available HTTP Methods)
 - **relations** with other resources (e.g Links)
@@ -14,13 +14,13 @@ Any change to:
 
 MUST follow the [Rules for Extending](core-principles/rules-for-extending.md).
 
-## No URI Versioning
-A change MUST NOT affect **existing** resource identifiers (name / URI). Resource identifier MUST NOT contain a semantic version to convey a version of resource or its representation format.
+## Identifier Stability (no URI versioning)
+A change MUST NOT affect **existing** resource identifiers (name / URI). Furthermore, a resource identifier MUST NOT contain a semantic version to convey a version of resource or its representation format.
 
 #### Example
 Adding a new action to existing resource with identifier `/greeting` doesn't change its identifier to `/v2/greeting` (or `/greeting-with-new-action` etc.).
 
-## Backward-incompatible Change
+## Backward-incompatible Changes
 A change to _resource identifier_, _resource metadata_, _resource actions_ and _resource relations_, that can't follow the [Rules for Extending](core-principles/rules-for-extending.md) MUST result into a **new resource variant**. Existing resource variant MUST be preserved.
 
 A change to _representation format_ SHOULD NOT result into a new resource variant.
@@ -28,7 +28,7 @@ A change to _representation format_ SHOULD NOT result into a new resource varian
 #### Example
 Currently optional URI Query parameter `first` on an existing resource `/greeting?first=John&last=Appleseed` needs to be made required. Since this change violates the 3rd rule of extending and could break existing clients a new variant of the resource is created with different URI `/named-greeting?first=John&last=Appleseed`.
 
-### Representation Format Change
+### Representation Format Changes
 > A representation format is the serialization format (media type) used in request and response bodies and typically it represents a resource or its part, possibly with additional hypermedia controls.
 
 If the change can't follow the Rules for Extending the representation format media type MUST be changed. If the media type has been changed the previous media type MUST be available via [Content Negotiation](core-principles/content-negotiation.md). 
@@ -50,3 +50,14 @@ application/vnd.example.resource+json; version=3
 
 ## API Description Versioning
 TODO.
+
+Adasd
+
+
+```
+swagger: '2.0'
+info:
+  version: '2.1.3'
+  title: '[Demo] Simple API (GitHub)'
+  description:
+```
