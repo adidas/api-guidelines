@@ -15,7 +15,7 @@ Any change to:
 MUST follow the [Rules for Extending](core-principles/rules-for-extending.md).
 
 ## No URI Versioning
-A change SHALL NOT affect **existing** resource identifiers (name / URI). Resource identifier MUST NOT contain semantic versioning to convey a version of resource or its representation format.
+A change MUST NOT affect **existing** resource identifiers (name / URI). Resource identifier MUST NOT contain semantic versioning to convey a version of resource or its representation format.
 
 #### Example
 Adding a new action to existing resource with identifier `/greeting` doesn't change its identifier to `/v2/greeting` (or `/greeting-with-new-action` etc.).
