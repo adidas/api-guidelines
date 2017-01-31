@@ -33,6 +33,8 @@ Currently optional URI Query parameter `first` on an existing resource `/greetin
 
 If the change can't follow the Rules for Extending the representation format media type MUST be changed. If the media type has been changed the previous media type MUST be available via [Content Negotiation](core-principles/content-negotiation.md). 
 
+If the media type conveys the version parameter, the version parameter MUST follow [Semantic versioning](http://semver.org/).
+
 #### Example
 Media type _before_ a breaking change:
 

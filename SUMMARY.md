@@ -14,6 +14,6 @@
   * [Minimal API Surface](core-principles/minimal-api-surface.md)
   * [Loose Coupling](core-principles/loose-coupling.md)
   * [Rules for Extending](core-principles/rules-for-extending.md)
-  * [Versioning](core-principles/versioning.md)
+  * [Changes and Versioning](core-principles/versioning.md)
   * [Content Negotiation](core-principles/content-negotiation.md)
 
