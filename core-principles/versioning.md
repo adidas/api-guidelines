@@ -14,7 +14,7 @@ Any change to:
 
 MUST follow the [Rules for Extending](core-principles/rules-for-extending.md).
 
-## Identifier Stability (no URI versioning)
+## Identifier Stability (No URI Versioning)
 A change MUST NOT affect **existing** resource identifiers (name / URI). Furthermore, a resource identifier MUST NOT contain a semantic version to convey a version of resource or its representation format.
 
 #### Example
@@ -57,6 +57,7 @@ API Description in the OpenAPI specification format MUST have the `version` fiel
 > - MINOR version when you add functionality in a **backwards-compatible** manner
 > - PATCH version when you make **backwards-compatible bug fixes**
 
+The API Description version SHOULD be updated accordingly to API design change.
 
 #### Example
 Following API Description
