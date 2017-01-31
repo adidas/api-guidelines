@@ -17,7 +17,9 @@
   * [Changes and Versioning](core-principles/versioning.md)
 * [Protocol](protocol/README.md)
   * [HTTP](protocol/http.md)
+  * [Know your HTTP](protocol/know-your-http.md)
   * [TLS](protocol/tls.md)
   * [Content Negotiation  ](protocol/content-negotiation.md)
+  * [Separate Concerns](protocol/separate-concerns.md)
 * [Miscellaneous](miscellaneous.md)
 
