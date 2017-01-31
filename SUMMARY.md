@@ -15,4 +15,5 @@
   * [Loose Coupling](core-principles/loose-coupling.md)
   * [Rules for Extending](core-principles/rules-for-extending.md)
   * [Versioning](core-principles/versioning.md)
+  * [Content Negotiation](core-principles/content-negotiation.md)
 
