@@ -25,6 +25,9 @@ A change to _resource identifier_, _resource metadata_, _resource actions_ and _
 
 A change to _representation format_ SHOULD NOT result into a new resource variant.
 
+#### Example
+Currently optional URI Query parameter `first` on an existing resource `/greeting?first=John&last=Appleseed` needs to be made required. Since this change violates the 3rd rule of extending and could break existing clients a new variant of the resource is created with different URI `/named-greeting?first=John&last=Appleseed`.
+
 ### Representation Format Change
 > A representation format is the serialization format (media type) used in request and response bodies and typically it represents a resource or its part, possibly with additional hypermedia controls.
 
