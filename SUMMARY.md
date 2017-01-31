@@ -17,6 +17,7 @@
   * [Changes and Versioning](core-principles/versioning.md)
 * [Protocol](protocol/README.md)
   * [HTTP](protocol/http.md)
-  * [Content Negotiation](protocol/content-negotiation.md)  
+  * [TLS](protocol/tls.md)
+  * [Content Negotiation  ](protocol/content-negotiation.md)
 * [Miscellaneous](miscellaneous.md)
 
