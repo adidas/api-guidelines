@@ -1,5 +1,4 @@
 # Content Negotiation
-MOVE TO PROTOCOL SEMANTICS
 
 https://tools.adidas-group.com/confluence/display/EA/API+Versioning+and+Compatibility
 
