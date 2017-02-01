@@ -1,10 +1,22 @@
 # Content Negotiation
+Every API MUST implement and every API Consumer MUST use [HTTP content negotiation](https://tools.ietf.org/html/rfc7231#section-3.4) where a representation of a resource is requested.
+
+#### Example
+A client is programmed to use the `application/vnd.example.resource+json; version=2` media type. The client requests a representation of the `/greeting` resource in desired the media type (including its version) from the server:
+
+```
+GET /greeting HTTP/1.1
+Accept: application/vnd.example.resource+json; version=2
+...
+```
+
+The server is able to provide only a newer version of the requested media type `version=2.1.3`. But since the newer version is backward compatible with the requested `version=2` (related: Changes & Versioning) it is able to satisfy the request and responds:
+
+```
+HTTP/1.1 200 OK
+Content-Type: application/vnd.example.resource+json; version=2.1.3
+...
+```
 
 
-https://tools.ietf.org/html/rfc7231#section-3.4
 
-https://tools.adidas-group.com/confluence/display/EA/API+Versioning+and+Compatibility
-
-https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation
-
-https://en.wikipedia.org/wiki/Content_negotiation
