@@ -18,5 +18,8 @@ Content-Type: application/vnd.example.resource+json; version=2.1.3
 ...
 ```
 
-
-
+> NOTE: A server that doesn't have the requested representation media type available MUST respond with the HTTP Status Code **406 Not Acceptable**. 
+> 
+> NOTE: A server MAY have multiple choices available and MAY respond with the **300 Multiple Choices** response. In which case client SHOULD choose from the presented choices.
+> 
+> You can read more about content negotiation at [MDN Content negotiation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Content_negotiation).
