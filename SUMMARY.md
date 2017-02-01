@@ -14,7 +14,6 @@
   * [Minimal API Surface](core-principles/minimal-api-surface.md)
   * [Loose Coupling](core-principles/loose-coupling.md)
   * [Rules for Extending](core-principles/rules-for-extending.md)
-  * [Changes and Versioning](core-principles/versioning.md)
 * [Protocol](protocol/README.md)
   * [HTTP](protocol/http.md)
   * [TLS](protocol/tls.md)
@@ -24,5 +23,6 @@
   * [Request Methods](protocol/use-appropriate-methods.md)
   * [Status Codes](protocol/use-appropriate-status-codes.md)
   * Caching
+* [Changes and Versioning](versioning.md)  
 * [Miscellaneous](miscellaneous.md)
 
