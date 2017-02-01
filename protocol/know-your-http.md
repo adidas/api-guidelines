@@ -1,5 +1,5 @@
 # Know your HTTP
-Every API using HTTP/S MUST conform to the HTTP/S protocol semantics as defined in the following RFCs:
+Every API using HTTP MUST conform to the HTTP protocol semantics as defined in the following RFCs:
 
 > [RFC 7230, HTTP/1.1: Message Syntax and Routing](https://tools.ietf.org/html/rfc7230)
 > [RFC 7231, HTTP/1.1: Semantics and Content](https://tools.ietf.org/html/rfc7231)
