@@ -20,7 +20,7 @@
   * [TLS](protocol/tls.md)
   * [Know your HTTP](protocol/know-your-http.md)
   * [Separate Concerns](protocol/separate-concerns.md)
-  * [Content Negotiation  ](protocol/content-negotiation.md)
+  * [Content Negotiation](protocol/content-negotiation.md)
   * [Request Methods](protocol/use-appropriate-methods.md)
   * [Status Codes](protocol/use-appropriate-status-codes.md)
   * Caching
