@@ -8,7 +8,7 @@ Every API using HTTP/S API MUST clearly follow the concern separation of a HTTP 
 1. _HTTP message headers_ MUST be used to transfer the **metadata** about the message and its content
 1. _URI query parameter_ SHOULD NOT be used to transfer metadata
 
-> NOTE: Rule No.1 means there MUST be NO information about the media type or version of resource in the URI (e.g. `/greeting.json` or `/v2.1.3/greeting` are illegal).
+> NOTE: Rule No.1 means there MUST be NO information about the media type or version of resource in the URI (e.g. `/greeting.json` or `/v2.1.3/greeting` are **illegal**).
 
 ---
 
