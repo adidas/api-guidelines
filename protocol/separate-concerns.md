@@ -6,7 +6,7 @@ Every API using HTTP/S API MUST clearly follow the concern separation of a HTTP 
 1. _HTTP response status_ code MUST be used to communicate the **information about the result** of the attempt to understand and satisfy the request
 1. _HTTP message body_ MUST be used to transfer the **message content**
 1. _HTTP message headers_ MUST be used to transfer the **metadata** about the message and its content
-1. _URI query parameter_ SHOULD NOT be used to transfer metadata where possible
+1. _URI query parameter_ SHOULD NOT be used to transfer metadata
 
 > NOTE: Rule No.1 means there MUST be NO information about the media type or version of resource in the URI (e.g. `/greeting.json` or `/v2.1.3/greeting` are illegal).
 
