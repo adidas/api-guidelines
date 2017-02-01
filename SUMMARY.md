@@ -22,7 +22,7 @@
   * [Request Methods](protocol/use-appropriate-methods.md)
   * [Status Codes](protocol/use-appropriate-status-codes.md)
   * [Caching](protocol/caching.md)
-  * [Changes and Versioning  ](versioning.md)
+* [Changes and Versioning](versioning.md)  
 * [API Clients](clients/README.md)
   * [Loose Coupling](clients/loose-coupling.md)
 * [Miscellaneous](miscellaneous.md)
