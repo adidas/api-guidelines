@@ -21,7 +21,6 @@ The CAPITALIZED words throughout these guidelines have a special meaning:
 
 Refer to [RFC2119](https://www.ietf.org/rfc/rfc2119) for details.
 
-The CAPITALIZED words throughout the guidelines are taken from . 
 
 ---
 
