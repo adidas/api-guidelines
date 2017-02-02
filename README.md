@@ -11,7 +11,7 @@ The guidelines should lay down the foundation for collaboration, achieving stabi
 ## Guidelines
 The API Guidelines are split into several levels:
 
-![layers](/assets/layers.png)
+![layers](/assets/layersfull.png)
 
 The **Core Principles** define the general rules that MUST be followed at throughout the full API lifecycle at any level. **Protocol guidelines** define the protocols used within the organization. The **Message guidelines** define the structure and semantics of messages used to exchange information. The **Application guidelines** define the definition and use of application-specific semantics. Finally, **Non-functional guidelines** define the rules for achieving the desired architectural qualities of the systems. 
 
