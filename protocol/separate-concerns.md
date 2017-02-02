@@ -36,7 +36,7 @@ Content-Type: application/json
 }
 ```
 
-is **illegal**. To express identity use URI and query parameters instead e.g. `/greeting?filter=string&depth=3`.
+is **illegal** (ignoring the fact that HTTP GET method shouldn't have the body). To express identity use URI and query parameters instead e.g. `/greeting?filter=string&depth=3`.
 
 ---
 
