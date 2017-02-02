@@ -1,10 +1,21 @@
 # Adidas API Guidelines
-_DRAFT Revision_
+**DRAFT** | [**Read online at GitBook**](https://adidas-group.gitbooks.io/api-guidelines/content/)
 
-[**Read online at GitBook**](https://adidas-group.gitbooks.io/api-guidelines/content/)
+This document represents the guidelines for all APIs created the within adidas group. 
 
-![](/assets/layers.png)
+## Motivation
+The ultimate goal of these guidelines is to facilitate the work and minimize the effort of all API users while protecting their investment, thus encouraging API adoption.
 
+The guidelines should lay down the foundation for collaboration, achieving stability without rigidity while maintaining extensibility for the future.
+
+## Guidelines
+The API Guidelines are split into several levels:
+
+![layers](/assets/layers.png)
+
+The **Core Principles** define the general rules that MUST be followed at throughout the full API lifecycle at any level. **Protocol guidelines** define the protocols used within the organization. The **Message guidelines** define the structure and semantics of messages used to exchange information. The **Application guidelines** define the definition and use of application-specific semantics. Finally, **Non-functional guidelines** define the rules for achieving the desired architectural qualities of the systems. 
+
+These guidelines also covers the rules for API consumers-clients. 
 
 ---
 
