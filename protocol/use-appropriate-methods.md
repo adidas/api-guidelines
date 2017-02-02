@@ -1,5 +1,5 @@
 # Use Appropriate Request Methods
-Every API MUST use the appropriate HTTP request methods. 
+Every API MUST use the appropriate [HTTP request methods](https://github.com/for-GET/know-your-http-well/blob/master/methods.md).
 
 Every API designer, implementer and consumer MUST understand the semantic of the HTTP METHOD she is using.
 
