@@ -7,3 +7,4 @@ Every API client SHOULD use [`If-None-Match` HTTP header](https://tools.ietf.org
 ETags are unique identifiers for a specific version of a resource found by a URL. They are used for cache validation, to quickly check for modifications.
 
 A client requests a resource from the serve at a specific URI. The server responds with the specific ETag value in the HTTP ETag header field. This and the resource will be stored locally by the client. Subsequent requests from the client are done with the If-None-Match header, which now contains the ETag value from the previous request. The server now compares the values. If they are the same, it responds with HTTP Status Code 304 Not Modified. If not, the resource is sent.
+
