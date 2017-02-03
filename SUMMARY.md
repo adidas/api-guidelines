@@ -24,6 +24,7 @@
   * [Caching](protocol/caching.md)
 * [Message](message/README.md)
   * [Message Formats](message/message-formats.md)
+  * [Siren](message/siren.md)
 * [Evolution](evolution/README.md)
   * [Changes and Versioning](evolution/versioning.md)
 * [API Clients](clients/README.md)
