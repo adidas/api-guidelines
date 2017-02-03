@@ -1,5 +1,5 @@
 # Acknowledgements
-This work is partly based on the work of many talented individuals and organizations. Namely (but not exclusive to):
+This work is partly based on the work of many talented individuals and exceptional organizations. Namely (but not exclusive to):
 
 * [Mike Amundsen](http://amundsen.com/)
 * [Wesley Beary](http://geemus.com/) & [Heroku API Team](https://www.heroku.com/)
