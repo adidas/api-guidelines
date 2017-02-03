@@ -25,10 +25,12 @@
 * [Message](message/README.md)
   * [Message Formats](message/message-formats.md)
   * [Siren](message/siren.md)
+  * JSON
 * [Evolution](evolution/README.md)
   * [Changes and Versioning](evolution/versioning.md)
 * [API Clients](clients/README.md)
   * [Loose Coupling](clients/loose-coupling.md)
+* Error Reporting
 * [Miscellaneous](miscellaneous.md)
 * [Acknowledgements](acknowledgements.md)
 

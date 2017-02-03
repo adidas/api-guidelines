@@ -6,6 +6,7 @@ All **response** messages MUST support the [`application/vnd.siren+json`](https:
 The Siren format MUST NOT be used **directly**, instead it MUST be used as the **base format** for every application or domain-specific format to convey specific semantics. E.g. `application/vnd.example.siren+json`
 
 ### Error Response Format
+A
 The [`application/problem+json`](https://tools.ietf.org/html/rfc7807) (Problem Detail) MUST be used in conjunction with Siren to communicate details about an error.
 
 ## Request Message Format
