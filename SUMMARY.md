@@ -23,9 +23,11 @@
   * [Status Codes](protocol/use-appropriate-status-codes.md)
   * [Caching](protocol/caching.md)
 * [Message](message/README.md)
+  * [Message Formats](message/message-formats.md)
 * [Evolution](evolution/README.md)
   * [Changes and Versioning](evolution/versioning.md)
 * [API Clients](clients/README.md)
   * [Loose Coupling](clients/loose-coupling.md)
 * [Miscellaneous](miscellaneous.md)
+* [Acknowledgements](acknowledgements.md)
 
