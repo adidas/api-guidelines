@@ -22,6 +22,7 @@
   * [Request Methods](protocol/use-appropriate-methods.md)
   * [Status Codes](protocol/use-appropriate-status-codes.md)
   * [Caching](protocol/caching.md)
+* [Message](message/README.md)
 * [Evolution](evolution/README.md)
   * [Changes and Versioning](evolution/versioning.md)
 * [API Clients](clients/README.md)
