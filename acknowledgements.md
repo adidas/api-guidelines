@@ -7,4 +7,4 @@ This work is partly based on the work of many talented individuals and exception
 * [Stephen Mizell](http://smizell.com)
 * [Mark Foster]()
 * [Apiary.io](https://apiary.io/)
-* [Zalando API team](http://zalando.github.io/restful-api-guidelines/)
+* [Zalando API Team](http://zalando.github.io/restful-api-guidelines/)
