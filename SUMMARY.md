@@ -26,9 +26,9 @@
   * [Message Formats](message/message-formats.md)
   * [Siren](message/siren.md)
   * [Error Reporting](message/error-reporting.md)
+  * JSON
 * [Evolution](evolution/README.md)
   * [Changes and Versioning](evolution/versioning.md)
-* JSON
 * [API Clients](clients/README.md)
   * [Loose Coupling](clients/loose-coupling.md)
 * [Miscellaneous](miscellaneous.md)
