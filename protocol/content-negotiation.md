@@ -4,7 +4,7 @@ Every API MUST implement and every API Consumer MUST use [HTTP content negotiati
 > NOTE: The content negotiation plays the key role in evolving an API, **change management and versioning**.
 
 #### Example
-A client is programmed to use the `application/vnd.example.resource+json; version=2` media type. The client requests a representation of the `/greeting` resource in desired the media type (including its version) from the server:
+A client is programmed to understand the `application/vnd.example.resource+json; version=2` message format semantics. The client requests a representation of the `/greeting` resource in desired the media type (including its version) from the server:
 
 ```
 GET /greeting HTTP/1.1
