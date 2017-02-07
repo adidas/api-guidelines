@@ -31,7 +31,7 @@ In our case the "Greeting" resource isn't related to other resources but itself-
 
 It is **customary** for every resource representation to include the `self` link relation. 
 
-### Relation Example
+## Relation Example
 A more complex document example could be an "Order" resource that has a related resource "Author" (a person who created the order. It might look like:
 
 ```json
