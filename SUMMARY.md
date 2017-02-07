@@ -24,6 +24,7 @@
   * [Message Formats](message/message-formats.md)
   * [Error Reporting  ](message/error-reporting.md)
   * [Content Negotiation](message/content-negotiation.md)
+  * [HAL](message/hal.md)
 * [Evolution](evolution/README.md)
   * [Naming Conventions](evolution/naming-conventions.md)
   * [JSON](evolution/json.md)
