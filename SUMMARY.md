@@ -30,7 +30,7 @@
   * [Naming Conventions](evolution/naming-conventions.md)
   * [JSON](evolution/json.md)
   * [Changes and Versioning](evolution/versioning.md)
-  * URI Structure
+  * [URI Structure](evolution/uri-structure.md)
 * [Execution](execution/README.md)
   * [Caching](execution/caching.md)
   * [Authentication](execution/authentication.md)
