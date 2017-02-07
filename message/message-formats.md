@@ -4,8 +4,7 @@
 All **response** messages MUST support an [`application/hal+json`](http://stateless.co/hal_specification.html) (HAL) **based** format.
 
 ### Error Response Format
-Siren-based format MUST be used to communicate a problem (error). This format SHOULD be application or domain-specific accordingly to non-error response format.  
-
+Siren-based format MUST be used to communicate a problem (error). This format SHOULD be application or domain-specific accordingly to non-error response format.
 
 ## Request Message Format
 Data body **request** messages MUST support a [`application/json`](http://www.json.org) (JSON) **based** format. 
