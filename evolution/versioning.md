@@ -73,3 +73,7 @@ info:
 Has MAJOR version 2, MINOR version 1 and PATCH version 3.
 
 
+#### Recommended Reading
+- [Evolving HTTP APIs](https://www.mnot.net/blog/2012/12/04/api-evolution)
+
+
