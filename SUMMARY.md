@@ -25,6 +25,7 @@
   * [Error Reporting  ](message/error-reporting.md)
   * [Content Negotiation](message/content-negotiation.md)
   * [HAL](message/hal.md)
+* [Application](application/README.md)
 * [Evolution](evolution/README.md)
   * [Naming Conventions](evolution/naming-conventions.md)
   * [JSON](evolution/json.md)
