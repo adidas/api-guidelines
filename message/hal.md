@@ -50,6 +50,46 @@ A more complex document example could be an "Order" resource that has a related 
 }
 ```
 
+## Embedding Example
+Let's assume there is an "Orders" resource which is a collection of all orders from different authors. Clearly there is the relation between the Orders resource and possibly many Order resources. 
+
+We could express this in the `_links` object using the `order` relation but sometimes it is practical to "embed" (fully or partially) related resources representations in the originating resource representation. For a scenario like this HAL offers the `_embedded` field. 
+
+The `_embedded` field's object simply contains the related resources HAL representations:
+
+
+```json
+{
+  "_links": {
+    "self": { "href": "/orders" }
+  },
+  "_embedded": {
+    "order": [
+      {
+        "_links": {
+          "self": { "href": "/orders/1" }
+        },
+        "orderNumber": "1",
+        "status": "pending"
+      },
+      {
+        "_links": {
+          "self": { "href": "/orders/2" }
+        },
+        "orderNumber": "2",
+        "status": "cancelled"
+      }      
+    ]
+  }
+}
+
+```
+
+It is important to understand that embedded resource representation might be only **partial** and might also contain their own embedded resources. 
+
+The embedded resource representation should be used as a **convenience** function (e.g. to reduce the initial number of calls needed at application launch). 
+
+Where a full and up-to-date representation of a resource is needed the link relation should exercised (e.g. `GET /orders/2`).
 
 #### Real-world Examples
 
