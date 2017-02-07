@@ -33,6 +33,8 @@
 * [Execution](execution/README.md)
   * [Caching](execution/caching.md)
   * [Authentication](execution/authentication.md)
+  * [Pagination](execution/pagination.md)
+  * [Rate Limiting](execution/rate-limiting.md)
 * [API Clients](clients/README.md)
   * [Loose Coupling](clients/loose-coupling.md)
 * [Miscellaneous](miscellaneous.md)
