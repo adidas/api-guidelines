@@ -1,9 +1,7 @@
 # Message Formats
 
 ## Response Message Format
-All **response** messages MUST support an [`application/vnd.siren+json`](https://github.com/kevinswiber/siren) (Siren) **based** format. 
-
-The Siren format MUST NOT be used **directly**, instead it MUST be used as the **base format** for every application or domain-specific format to convey specific semantics. E.g. `application/vnd.example.siren+json`
+All **response** messages MUST support an [`application/hal+json`](http://stateless.co/hal_specification.html) (HAL) **based** format.
 
 ### Error Response Format
 Siren-based format MUST be used to communicate a problem (error). This format SHOULD be application or domain-specific accordingly to non-error response format.  
