@@ -32,6 +32,7 @@
   * [Changes and Versioning](evolution/versioning.md)
 * [Execution](execution/README.md)
   * [Caching](execution/caching.md)
+  * [Authentication](execution/authentication.md)
 * [API Clients](clients/README.md)
   * [Loose Coupling](clients/loose-coupling.md)
 * [Miscellaneous](miscellaneous.md)
