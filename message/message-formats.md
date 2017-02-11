@@ -1,7 +1,7 @@
 # Message Formats
 
 ## Response Message Format
-All **response** messages MUST support an [`application/hal+json`](http://stateless.co/hal_specification.html) (HAL) **based** format.
+All **response** messages MUST support an [`application/hal+json`](http://stateless.co/hal_specification.html) (HAL) format.
 
 ### Error Response Format
 The [`application/vnd.error+json`](https://github.com/blongden/vnd.error) (vnd.error) MUST be used to communicate details about an error.
