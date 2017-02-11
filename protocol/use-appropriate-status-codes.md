@@ -11,7 +11,7 @@ At a minimum everyone MUST be familiar with the semantics of ["Common" HTTP Stat
 A request: 
 
 ```
-GET /order/1234 HTTP/1.1
+GET /orders/1234 HTTP/1.1
 ...
 ```
 
