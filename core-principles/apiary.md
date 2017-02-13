@@ -3,7 +3,7 @@
 1. Every API description MUST be stored in [Apiary](https://apiary.io/) under the ADIDAS GROUP team. 
 1. Apiary MUST be the **single source of truth** to learn about existing APIs within the organization.
  
-> NOTE: API first approach is crucial when adopting the Microservice architecture.  
- Describing what API is supposed to do also helps all stakeholders to align and better understand what will be delivered at the end.
- It's not acceptable that API is developed first and later on described in some proprietary format.
+> NOTE: Apiary supports API first approach in multiple ways:
+  a. Validates API description for correctness and automatically generates API documentation to drive the discussion between stakeholders. (No more emails with API description flying between stakeholders)
+  
 
