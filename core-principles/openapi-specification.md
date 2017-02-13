@@ -6,7 +6,7 @@ Every API description **MUST** be:
 * accessible via endpoint through GET operation. _To be discussed_
 
 > NOTE: Synchronization between the version control system and adidas [API description platform](./apiary.md) 
- should be automated using CICD framework.
+ should be automated using CICD framework. 
 
 
 ## Language
