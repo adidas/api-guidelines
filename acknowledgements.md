@@ -9,4 +9,5 @@ This work is partly based on the work of many talented individuals and exception
 * [Mark Foster]()
 * [Apiary.io](https://apiary.io)
 * [Zalando API Team](http://zalando.github.io/restful-api-guidelines)
+* [Facebook Graph API Team](https://developers.facebook.com/docs/graph-api/)
 
