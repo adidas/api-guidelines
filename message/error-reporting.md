@@ -31,7 +31,7 @@ It **SHOULD** have the `type` field with the identifier of the error, in additio
 ## Additional Fields
 If needed, the Problem Detail **MAY** include additional fields, refer to [RFC7807](https://tools.ietf.org/html/rfc7807) for details. 
 
-
+## Problem Detail and Content Negotiation
 #### Example
 A request is made to retrieve a resource representation:
 
