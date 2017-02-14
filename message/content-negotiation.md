@@ -1,5 +1,5 @@
 # Content Negotiation
-Every API MUST implement and every API Consumer MUST use [HTTP content negotiation](https://tools.ietf.org/html/rfc7231#section-3.4) where a representation of a resource is requested.
+Every API **MUST** implement and every API Consumer **MUST** use the [HTTP content negotiation](https://tools.ietf.org/html/rfc7231#section-3.4) where a representation of a resource is requested.
 
 > NOTE: The content negotiation plays the key role in evolving an API, **change management and versioning**.
 
