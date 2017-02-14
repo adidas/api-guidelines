@@ -59,4 +59,8 @@ Content-Language: en
 ```
 
 ## No Stack Traces or Server Logs
+> _Problem details are not a debugging tool for the underlying implementation; rather, they are a way to expose greater detail about the HTTP interface itself._
+>
+> _– [RFC7807](https://tools.ietf.org/html/rfc7807)_
+
 A Problem Detail response **MUST NOT** contain a program stack trace or server log for debugging purposes. Instead provide a `logref` field with a reference to the particular server log.
