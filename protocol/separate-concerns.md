@@ -1,20 +1,20 @@
 # Separate Concerns
-Every API using HTTP/S API MUST clearly follow the concern separation of a HTTP message:
+Every API using HTTP/S API **MUST** clearly follow the concern separation of a HTTP message:
 
-1. A _resource identifier_–URI MUST be used to indicate **identity** only (related: [Content Negotiation](protocol/content-negotiation), [Changes and Versioning](core-principles/versioning.md))
-1. _HTTP request method_ MUST be used to communicate the **action semantics** (intent and safety)
-1. _HTTP response status_ code MUST be used to communicate the **information about the result** of the attempt to understand and satisfy the request
-1. _HTTP message body_ MUST be used to transfer the **message content**
-1. _HTTP message headers_ MUST be used to transfer the **metadata** about the message and its content
-1. _URI query parameter_ SHOULD NOT be used to transfer metadata
+1. A _resource identifier_–URI **MUST** be used to indicate **identity** only (related: [Content Negotiation](protocol/content-negotiation), [Changes and Versioning](core-principles/versioning.md))
+1. _HTTP request method_ **MUST** be used to communicate the **action semantics** (intent and safety)
+1. _HTTP response status_ code **MUST** be used to communicate the **information about the result** of the attempt to understand and satisfy the request
+1. _HTTP message body_ **MUST** be used to transfer the **message content**
+1. _HTTP message headers_ **MUST** be used to transfer the **metadata** about the message and its content
+1. _URI query parameter_ **SHOULD NOT** be used to transfer metadata
 
 
 #### Example 1
 The rule
 
-> A resource identifier–URI MUST be used to indicate identity only
+> A resource identifier–URI **MUST** be used to indicate identity only
 
-implies there MUST be NO information about the media type or version of resource in the URI. For example URIs  `/greeting.json` or `/v2.1.3/greeting` are **illegal** as they are not used for identification of a resource only but they convey the information about representation format and version.
+implies there **MUST NOT** be an information about the media type or version of resource in the URI. For example URIs  `/greeting.json` or `/v2.1.3/greeting` are **illegal** as they are not used for identification of a resource only but they convey the information about representation format and version.
 
 
 #### Example 2
@@ -22,7 +22,7 @@ The rule
 
 > HTTP message body MUST be used to transfer the message content
 
-implies an HTTP GET request MUST NOT use HTTP message body to identify the resource. For example a request:
+implies an HTTP GET request **MUST NOT** use HTTP message body to identify the resource. For example a request:
 
 ```
 GET /greeting HTTP/1.1
@@ -36,7 +36,7 @@ Content-Type: application/json
 }
 ```
 
-is **illegal** (ignoring the fact that HTTP GET method shouldn't have the body). To express identity use URI and query parameters instead e.g. `/greeting?filter=string&depth=3`.
+is **not acceptable** (ignoring the fact that HTTP GET method shouldn't have the body). To express identity use URI and query parameters instead e.g. `/greeting?filter=string&depth=3`.
 
 ---
 
