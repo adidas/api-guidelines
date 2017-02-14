@@ -15,7 +15,7 @@ At minimum, any Problem Detail response **MUST** have the `title` and `detail` f
 ```
 
 ## Optional Fields
-It **SHOULD** have the `type` field with the identifier of the error, in addition it **MAY** have the `instance` field with the URI of the resource in question. If the Problem Details responses has the `status` field it **MUST** have the same value as HTTP Status code from of the response.
+It **SHOULD** have the `type` field with the identifier of the error, in addition it **MAY** have the `instance` field with the URI of the resource in question. If the Problem Detail response has the `status` field it **MUST** have the same value as HTTP Status code from of the response.
 
 
 ```json
