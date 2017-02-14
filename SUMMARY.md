@@ -4,7 +4,7 @@
 * [Core Principles](core-principles/README.md)
   * [API First](core-principles/api-first.md)
   * [OpenAPI Specification](core-principles/openapi-specification.md)
-  * [API design platform](core-principles/apiary.md)
+  * [API Design Platform](core-principles/apiary.md)
   * [Version Control System](core-principles/version-control-system.md)
   * [Contract](core-principles/contract.md)
   * [Testing](core-principles/testing.md)
