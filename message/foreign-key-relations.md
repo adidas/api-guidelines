@@ -64,4 +64,4 @@ instead e.g.:
 }
 ```
 
-> NOTE: As a rule of thumb, in a HTTP message body, there should be no fields with trailing "_id", "_href", "_url" etc.
+> NOTE: As a rule of thumb, in a HTTP message body, there SHOULD NOT be any field with trailing "_id", "_href", "_url" etc. in its name.
