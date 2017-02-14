@@ -71,6 +71,14 @@ Content-Type: application/hal+json
 }
 ```
 
+## Reasonable Defaults
+When `fields` and `embedded` parameters are not provided or not implemented the server **SHOULD** return reasonable default field and/or embedded resources.
+
+## Resource Variants
+The facility of `fields` and `embedded` parameters doesn't impose any restriction of creating new resource variants. 
+
+To save client multiple round trip, it is perfectly OK to create a new resource just as a compound resource to only provide selected fields or blend-embed some existing resources together. 
+
 
 
 
