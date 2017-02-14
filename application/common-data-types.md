@@ -10,7 +10,6 @@ https://geemus.gitbooks.io/http-api-design/content/en/responses/use-utc-times-fo
 
 ## Duration format
 
-
 ## Language format
 
 ## Country format
