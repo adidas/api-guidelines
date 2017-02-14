@@ -28,7 +28,7 @@ It **SHOULD** have the `type` field with the identifier of the error, in additio
 }
 ```
 
-> NOTE: The `type` field is identifier and as such it **** be used to denote additional error codes. Keep in mind that the identifier should be an URI.
+> NOTE: The `type` field is identifier and as such it **MAY** be used to denote additional error codes. Keep in mind that the identifier should be an URI.
 
 ## Additional Fields
 If needed, the Problem Detail **MAY** include additional fields, refer to [RFC7807](https://tools.ietf.org/html/rfc7807) for details. 
