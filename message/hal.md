@@ -99,3 +99,7 @@ Some APIs using HAL:
 - [FoxyCart](https://wiki.foxycart.com/v/2.0/start)
 - [Clarify.io](http://docs.clarify.io/overview/)
 - [University of Oxford / Mobile Oxford](http://api.m.ox.ac.uk/browser/#/)
+
+
+## Working with HAL
+Refer to the [extensive list of libraries that work with HAL](https://github.com/mikekelly/hal_specification/wiki/Libraries).
