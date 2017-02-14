@@ -64,3 +64,6 @@ Content-Language: en
 > _– [RFC7807](https://tools.ietf.org/html/rfc7807)_
 
 A Problem Detail response **MUST NOT** contain a program stack trace or server log for debugging purposes. Instead provide a `logref` field with a reference to the particular server log.
+
+## Libraries
+There is a whole plethora of libraries working with Problem Detail, for example see [Zalando / Problem](https://github.com/zalando/problem) (Java).
