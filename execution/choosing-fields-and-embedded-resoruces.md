@@ -72,7 +72,7 @@ Content-Type: application/hal+json
 ```
 
 ## Reasonable Defaults
-When `fields` and `embedded` parameters are not provided or not implemented the server **SHOULD** return reasonable default field and/or embedded resources.
+When `fields` and `embedded` parameters are not provided or not implemented the server **SHOULD** return reasonable default field and/or embedded resources. The defaults **MUST** always contain the `_links` field, where available.
 
 ## Resource Variants
 The facility of `fields` and `embedded` parameters doesn't impose any restriction of creating new resource variants. 
