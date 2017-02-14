@@ -37,7 +37,7 @@
   * [Authentication](execution/authentication.md)
   * [Pagination](execution/pagination.md)
   * [Rate Limiting](execution/rate-limiting.md)
-  * [API Keys](execution/api-keys.md)
+  * [Client Application Access Control](execution/api-keys.md)
 * [API Clients](clients/README.md)
   * [Loose Coupling](clients/loose-coupling.md)
 * [Miscellaneous](miscellaneous.md)
