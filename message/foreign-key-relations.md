@@ -4,7 +4,7 @@
 When a resource representation includes relation with another (foreign) resource the relation **MUST** be expressed as a link relation or embed the related resource.
 
 #### Example 
-Use e.g.:
+Use:
 
 ```json
 {
@@ -16,7 +16,7 @@ Use e.g.:
 }
 ```
 
-or e.g.:
+or:
 
 ```json
 {
@@ -31,7 +31,7 @@ or e.g.:
 }
 ```
 
-instead e.g.:
+instead:
 
 ```json
 {
@@ -44,7 +44,7 @@ instead e.g.:
 If a foreign object has another identifier but URI or the foreign object isn't a resource the object **MUST** be nested.
 
 #### Example
-Use e.g.:
+Use:
 
 ```json
 {
@@ -56,7 +56,7 @@ Use e.g.:
 }
 ```
 
-instead e.g.:
+instead:
 
 ```json
 {
