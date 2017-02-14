@@ -25,6 +25,7 @@
   * [Content Negotiation](message/content-negotiation.md)
   * [HAL](message/hal.md)
   * [Problem Detail](message/error-reporting.md)
+  * [Foreign Key Relations](message/foreign-key-relations.md)
 * [Application](application/README.md)
 * [Evolution](evolution/README.md)
   * [Naming Conventions](evolution/naming-conventions.md)
