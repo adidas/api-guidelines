@@ -43,5 +43,6 @@
 * [API Clients](clients/README.md)
   * [Loose Coupling](clients/loose-coupling.md)
 * [Miscellaneous](miscellaneous.md)
+* [Guides](guides.md)
 * [Acknowledgements](acknowledgements.md)
 
