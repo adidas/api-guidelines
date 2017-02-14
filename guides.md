@@ -5,5 +5,5 @@ The list of related guides:
 - Migration of Legacy Services (SOAP)
 - API Testing with Dredd
 - Continuous Integration / Deployment / Delivery
-- Using Apiary
+- [Apiary](https://help.apiary.io/api_101/understanding-apiary/)
 - API Management
