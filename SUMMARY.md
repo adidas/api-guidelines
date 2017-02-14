@@ -38,6 +38,7 @@
   * [Pagination](execution/pagination.md)
   * [Rate Limiting](execution/rate-limiting.md)
   * [Client Application Access Control](execution/api-keys.md)
+  * [Testing Enviroments](execution/testing-enviroments.md)
 * [API Clients](clients/README.md)
   * [Loose Coupling](clients/loose-coupling.md)
 * [Miscellaneous](miscellaneous.md)
