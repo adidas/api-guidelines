@@ -1,7 +1,7 @@
 # Rules for Extending
-Any modification to an existing API MUST avoid breaking changes and MUST maintain backward compatibility.
+Any modification to an existing API **MUST** avoid breaking changes and MUST maintain backward compatibility.
 
-In particular, any change to an API MUST follow the following Rules for Extending:
+In particular, any change to an API **MUST** follow the following **Rules for Extending**:
 
 1. **You MUST NOT take anything away** (related: [Minimal Surface Principle](core-principles/minimal-api-surface.md)
 , [Robustness Principle](core-principles/robustness.md))
