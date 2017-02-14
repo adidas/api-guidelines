@@ -33,6 +33,7 @@
   * [URI Structure](evolution/uri-structure.md)
 * [Execution](execution/README.md)
   * [Caching](execution/caching.md)
+  * [Choosing Fields and Embedded Resources](execution/choosing-fields-and-embedded-resoruces.md)
   * [Authentication](execution/authentication.md)
   * [Pagination](execution/pagination.md)
   * [Rate Limiting](execution/rate-limiting.md)
