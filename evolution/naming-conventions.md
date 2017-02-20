@@ -110,7 +110,7 @@ Every resource **MUST** have a name (defined by `x-summary` field). Resource nam
 ```
 
 ### Action Name
-Every action (operation) **MUST** have a name (defined by `x-summary` field). Resource name **MUST** be in `Title Case`. Words **MUST** be separated by a space.
+Every action (operation) **MUST** have a name (defined by `summary` field). Resource name **MUST** be in `Title Case`. Words **MUST** be separated by a space.
 
 ```yaml
 get:
