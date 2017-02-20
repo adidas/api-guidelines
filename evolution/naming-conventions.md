@@ -114,9 +114,7 @@ Every action (operation) **MUST** have a name (defined by `summary` field). Reso
 
 ```yaml
 get:
-  summary: Retrieve list of Orders
-  responses:
-    200:
+  summary: Retrieve List of Orders
 ```
 
 
