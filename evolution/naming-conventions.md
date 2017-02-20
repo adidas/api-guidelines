@@ -64,16 +64,10 @@ A well-formed resource representation with custom relation `fulfillment-provider
 ```json
 {
   "_links": {
-    "self": {
-      "href": "/orders/1234"
-    },
     "fulfillment-provider": {
       "href": "/users/natalie"
     }
-  },
-  "order_number": 1234,
-  "item_count": 42,
-  "status": "pending"
+  }
 }
 ```
 
