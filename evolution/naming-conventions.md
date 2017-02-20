@@ -26,6 +26,8 @@ Every representation format field **MUST** conform to the General Naming Rules.
 Every custom [relation identifier](https://github.com/for-GET/know-your-http-well/blob/master/relations.md) **MUST** conform to the General Naming Rules.
 
 ## HTTP Headers
+Every HTTP Header should use `Hyphenated-Pascal-Case`. A custom HTTP Header **SHOULD NOT** start with `X-` ([RFC6648](https://tools.ietf.org/html/rfc6648)).
+
 
 
 
