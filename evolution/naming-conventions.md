@@ -56,13 +56,36 @@ A well-formed resource representation:
 ```
 
 ## Relation Type Identifier
-Every custom [relation identifier](https://github.com/for-GET/know-your-http-well/blob/master/relations.md) **MUST** conform to the General Naming Rules.
+Every custom [relation identifier](https://github.com/for-GET/know-your-http-well/blob/master/relations.md) **MUST** be in `lowercase` with words separated by hyphen (`-`).
+
+#### Example
+A well-formed resource representation with custom relation `fulfillment-provider`: 
+
+```json
+{
+  "_links": {
+    "self": {
+      "href": "/orders/1234"
+    },
+    "fulfillment-provider": {
+      "href": "/users/natalie"
+    }
+  },
+  "order_number": 1234,
+  "item_count": 42,
+  "status": "pending"
+}
+```
+
 
 ## HTTP Headers
 Every HTTP Header should use `Hyphenated-Pascal-Case`. A custom HTTP Header **SHOULD NOT** start with `X-` ([RFC6648](https://tools.ietf.org/html/rfc6648)).
 
 #### Example
 
+```
+ORDER-METADATA-HEADER: 42
+```
 
 
 
