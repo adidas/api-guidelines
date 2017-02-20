@@ -113,13 +113,10 @@ Every resource **MUST** have a name (defined by `x-summary` field). Resource nam
 Every action (operation) **MUST** have a name (defined by `x-summary` field). Resource name **MUST** be in `Title Case`. Words **MUST** be separated by a space.
 
 ```yaml
-    get:
-      summary: Retrieve list of Orders
-      responses:
-        200:
-          description: The list of Orders
-          schema:
-            $ref: '#/definitions/hal_orders'
+get:
+  summary: Retrieve list of Orders
+  responses:
+    200:
 ```
 
 
