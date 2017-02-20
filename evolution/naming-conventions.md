@@ -2,7 +2,7 @@
 
 ## General Naming Rules
 
-* Use lowercase
+* Use lowercase ("snake_case")
 * Don't use acronyms
 * Use underscore to delimit words
 
@@ -20,8 +20,10 @@ In addition to General Naming Rules, URI Template Variable names **MUST** follow
 > NOTE: Per RFC6570 Hyphen (`-`) is NOT legal URI Template variable name character.
 
 ## Representation Format Fields
+Every representation format field **MUST** conform to the General Naming Rules.
 
 ## Relation Type Identifier
+
 
 ## HTTP Headers
 
