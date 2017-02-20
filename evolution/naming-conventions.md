@@ -6,7 +6,7 @@
 * Don't use acronyms
 * Use underscore to delimit words
 
-Every identifier **MUST** be in `lowercase` except for abbreviations. Abbreviations **MAY** be in `UPPERCASE`. An identifier **SHOULD NOT** contain acronyms. Underscore (`_`) **MUST** be used to delimit combined words.
+Every identifier **MUST** be in `lowercase` except for abbreviations. An identifier **SHOULD NOT** contain acronyms. Underscore (`_`) **MUST** be used to delimit combined words.
 
 ## URI
 Every URI **MUST** follow the General Rules. In addition, an URI **MUST NOT** end with a trailing slash (`/`).
@@ -23,7 +23,7 @@ In addition to General Naming Rules, URI Template Variable names **MUST** follow
 Every representation format field **MUST** conform to the General Naming Rules.
 
 ## Relation Type Identifier
-
+Every custom [relation identifier](https://github.com/for-GET/know-your-http-well/blob/master/relations.md) **MUST** conform to the General Naming Rules.
 
 ## HTTP Headers
 
