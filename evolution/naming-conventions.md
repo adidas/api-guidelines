@@ -11,6 +11,14 @@ Every identifier **MUST** be in `lowercase` except for abbreviations. An identif
 ## URI
 Every URI **MUST** follow the General Rules. In addition, an URI **MUST NOT** end with a trailing slash (`/`).
 
+#### Example
+
+A well-formed URI:
+
+```
+/system_orders/1234/author
+```
+
 ### Query Parameters and Path Fragments
 Every URI query parameter or fragment **MUST** follow the General Rules. In addition, they **MUST NOT** clash with the [reserved query parameter names](https://tools.adidas-group.com/confluence/display/EA/API+Interaction#APIInteraction-Query_Parameters).
 
@@ -18,6 +26,15 @@ Every URI query parameter or fragment **MUST** follow the General Rules. In addi
 In addition to General Naming Rules, URI Template Variable names **MUST** follow the [RFC6570](https://tools.ietf.org/html/rfc6570#section-2.3). That is, the variable names can consist only from `ALPHA / DIGIT / "_" / pct-encoded`.
 
 > NOTE: Per RFC6570 Hyphen (`-`) is NOT legal URI Template variable name character.
+
+#### Example
+
+A well-formed URI Template Variable:
+
+```
+/system_orders/{order_id}/author
+```
+
 
 ## Representation Format Fields
 Every representation format field **MUST** conform to the General Naming Rules.
