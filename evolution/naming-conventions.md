@@ -2,11 +2,12 @@
 
 ## General Naming Rules
 
-* Use lowercase ("snake_case")
-* Don't use acronyms
-* Use underscore to delimit words
+- Use American English
+- Use lowercase ("snake_case")
+- Don't use acronyms
+- Use underscore to delimit words
 
-Every identifier **MUST** be in `lowercase` except for abbreviations. An identifier **SHOULD NOT** contain acronyms. Underscore (`_`) **MUST** be used to delimit combined words.
+Every identifier **MUST** be in American English and written in `lowercase`. An identifier **SHOULD NOT** contain acronyms. Underscore (`_`) **MUST** be used to delimit combined words.
 
 ## URI
 Every URI **MUST** follow the General Rules. In addition, an URI **MUST NOT** end with a trailing slash (`/`).
