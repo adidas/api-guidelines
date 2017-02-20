@@ -36,6 +36,25 @@ A well-formed URI Template Variable:
 ## Representation Format Fields
 Every representation format field **MUST** conform to the General Naming Rules.
 
+#### Example
+A well-formed resource representation: 
+
+```json
+{
+  "_links": {
+    "self": {
+      "href": "/orders/1234"
+    },
+    "author": {
+      "href": "/users/john"
+    }
+  },
+  "order_number": 1234,
+  "item_count": 42,
+  "status": "pending"
+}
+```
+
 ## Relation Type Identifier
 Every custom [relation identifier](https://github.com/for-GET/know-your-http-well/blob/master/relations.md) **MUST** conform to the General Naming Rules.
 
