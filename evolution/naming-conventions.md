@@ -88,4 +88,18 @@ ORDER-METADATA-HEADER: 42
 ```
 
 
+## API Description
+Naming conventions within API Description document.
+
+### API Name
+Every API Description API name **MUST** start with API domain enclosed in square brackets (e.g. `[API Domain] My API`). Words **MUST** be separated by space.
+
+
+### Resource Name
+Resource name **MUST** use (`Title Case`). Words **MUST** be separated by a space.
+
+### Action Name
+Action (operation) name **MUST** use (`Title Case`). Words **MUST** be separated by a space.
+
+
 
