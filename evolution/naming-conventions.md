@@ -12,7 +12,6 @@ Every identifier **MUST** be in `lowercase` except for abbreviations. An identif
 Every URI **MUST** follow the General Rules. In addition, an URI **MUST NOT** end with a trailing slash (`/`).
 
 #### Example
-
 A well-formed URI:
 
 ```
@@ -28,13 +27,11 @@ In addition to General Naming Rules, URI Template Variable names **MUST** follow
 > NOTE: Per RFC6570 Hyphen (`-`) is NOT legal URI Template variable name character.
 
 #### Example
-
 A well-formed URI Template Variable:
 
 ```
 /system_orders/{order_id}/author
 ```
-
 
 ## Representation Format Fields
 Every representation format field **MUST** conform to the General Naming Rules.
@@ -44,6 +41,8 @@ Every custom [relation identifier](https://github.com/for-GET/know-your-http-wel
 
 ## HTTP Headers
 Every HTTP Header should use `Hyphenated-Pascal-Case`. A custom HTTP Header **SHOULD NOT** start with `X-` ([RFC6648](https://tools.ietf.org/html/rfc6648)).
+
+#### Example
 
 
 
