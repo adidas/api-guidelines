@@ -94,6 +94,8 @@ Naming conventions within API Description document.
 ### API Name
 Every API Description API name **MUST** start with API domain enclosed in square brackets (e.g. `[API Domain] My API`). Words **MUST** be separated by space.
 
+#### Example
+
 ```yaml
 swagger: '2.0'
 info:
@@ -104,6 +106,7 @@ info:
 ### Resource Name
 Every resource **MUST** have a name (defined by `x-summary` field). Resource name **MUST** be in `Title Case`. Words **MUST** be separated by a space.
 
+#### Example
 ```yaml
 /orders:
   x-summary: List of Orders
@@ -112,6 +115,7 @@ Every resource **MUST** have a name (defined by `x-summary` field). Resource nam
 ### Action Name
 Every action (operation) **MUST** have a name (defined by `summary` field). Resource name **MUST** be in `Title Case`. Words **MUST** be separated by a space.
 
+#### Example
 ```yaml
 get:
   summary: Retrieve List of Orders
