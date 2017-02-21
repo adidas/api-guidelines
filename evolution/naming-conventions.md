@@ -4,7 +4,7 @@
 
 - Use American English
 - Don't use acronyms
-- Use terms from 
+- Reconcile terms from adidas GDM
 - Use underscore to delimit words unless stated otherwise
 - Use lowercase ("snake_case") unless stated otherwise
 
