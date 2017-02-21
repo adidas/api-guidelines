@@ -3,9 +3,10 @@
 ## General Naming Rules
 
 - Use American English
-- Use lowercase ("snake_case")
 - Don't use acronyms
-- Use underscore to delimit words
+- Use terms from 
+- Use underscore to delimit words unless stated otherwise
+- Use lowercase ("snake_case") unless stated otherwise
 
 Every identifier **MUST** be in American English and written in `lowercase`. An identifier **SHOULD NOT** contain acronyms. Underscore (`_`) **MUST** be used to delimit combined words.
 
