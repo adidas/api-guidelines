@@ -42,6 +42,7 @@
   * [Pagination](execution/pagination.md)
   * [Rate Limiting](execution/rate-limiting.md)
   * [Client Application Access Control](execution/api-keys.md)
+  * [Asynchronous Tasks](execution/asynchronous-tasks.md)
   * [Batch Operations](execution/batch-operations.md)
 * [API Clients](clients/README.md)
   * [Loose Coupling](clients/loose-coupling.md)

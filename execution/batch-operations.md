@@ -48,6 +48,13 @@ Content-Type: application/json
 }
 ```
 
+## Results of Bulk Operation
+Every bulk operation **MUST** be atomic. 
+
+> _The server must implement bulk requests as atomic. If the request is for creating 10 addresses, the server should create all 10 addresses before returning a successful response code. The server should not commit changes partially in the case of failures._
+
+
+
 
 
 
