@@ -14,6 +14,7 @@ Collection of Orders using the collection navigation link and `offset` and `limi
     "first": { "href": "/orders?limit=10" },
     "last": { "href": "/orders?offset=900&limit=10" }
   },
+  "total_count": 910,
   "_embedded": {
     "order": [
       { ... },
