@@ -1,7 +1,12 @@
 # Pagination
-_TODO_
+A collection resource **SHOULD** provide the [`first`, `last`, `next` and `prev` link](https://tools.ietf.org/html/rfc5988#section-6.2.2)s for navigation within the collection.
 
-In the interim see <https://tools.adidas-group.com/confluence/display/EA/Pagination>
+#### Example
+Orders collection
 
 
 
+
+```json
+
+```
