@@ -1,17 +1,40 @@
 # Common Data Types
 
-_TODO_, In the interim see <https://tools.adidas-group.com/confluence/display/EA/API+Message+Schemes+And+Data+Formats>
+## Date and Time Format
+Date and Time **MUST** always conform to the [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) format e.g. `2017-06-21T14:07:17Z` (date time) or `2017-06-21` (date), it **MUST** use the UTC (without time offsets).
+
+## Duration Format
+Duration format **MUST** conform to the [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) standard. 
+
+#### Example
+`P3Y6M4DT12H30M5S` represents a duration of "three years, six months, four days, twelve hours, thirty minutes, and five seconds".
+
+## Time Interval Format
+Time Interval format **MUST** conform to the [ISO8601](https://en.wikipedia.org/wiki/ISO_8601) standard. 
 
 ## Standard Time Stamps
-https://geemus.gitbooks.io/http-api-design/content/en/responses/provide-standard-timestamps.html
+Where applicable, a resource representation **SHOULD** contain the standard timestamps:
 
-## Time format
-https://geemus.gitbooks.io/http-api-design/content/en/responses/use-utc-times-formatted-in-iso8601.html
+- `created_at`
+- `updated_at`
+- `finished_at`
 
-## Duration format
+#### Example
+
+```json
+{
+...
+"created_at": "2017-01-01T12:00:00Z",
+"updated_at": "2017-01-01T13:00:00Z",
+...
+}
+```
+
+
 
 ## Language format
 
 ## Country format
 
 ## Currency format
+
