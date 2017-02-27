@@ -1,4 +1,4 @@
-# Adidas API Guidelines
+# adidas API Guidelines
 **DRAFT** | [**Read online at GitBook**](https://adidas-group.gitbooks.io/api-guidelines/content/)
 
 This document represents the guidelines for all APIs created the within adidas group. 
