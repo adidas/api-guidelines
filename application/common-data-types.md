@@ -34,4 +34,4 @@ Language codes **MUST** conform to the [ISO 639](https://en.wikipedia.org/wiki/L
 Country codes **MUST** conform to the [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) e.g.: `DE` for Germany.
 
 ## Currency Format
-
+Currency codes **MUST** conform to the [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) e.g.: `EUR` for Euro.
