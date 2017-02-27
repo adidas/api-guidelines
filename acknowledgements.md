@@ -10,4 +10,5 @@ This work is partly based on the work of many talented individuals and exception
 * [Apiary.io](https://apiary.io)
 * [Zalando API Team](http://zalando.github.io/restful-api-guidelines)
 * [Facebook Graph API Team](https://developers.facebook.com/docs/graph-api/)
+* [Subbu Allamaraju: RESTFul Web Services Cookbook](http://shop.oreilly.com/product/9780596801694.do)
 
