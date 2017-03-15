@@ -33,6 +33,57 @@ It **SHOULD** have the `type` field with the identifier of the error, in additio
 ## Additional Fields
 If needed, the Problem Detail **MAY** include additional fields, refer to [RFC7807](https://tools.ietf.org/html/rfc7807) for details. 
 
+## Validation Errors
+When necessary a problem detail response might include additional error details about the problems that has occurred. 
+
+These additiona errors **MUST** be under the `errors` and **MUST** follow the Problem Detail structure.
+
+#### Example
+
+Request:
+
+```
+POST /my_resource HTTP/1.1
+Content-Type: application/json
+
+{
+  "age": -32,
+  "color": "cyan"
+}
+```
+
+Response:
+
+```
+HTTP/1.1 400 Bad Request
+Content-Type: application/problem+json
+Content-Language: en
+
+{
+  "type": "https://example.net/validation_error",
+  "title": "Your request parameters didn't validate.",
+  "instance": "/my_resource",
+  "status": 400,
+  
+  "errors": [
+    {
+      "type": "https://example.net/invalid_params",
+      "instance": "/age",
+      "title": "Invalid Parameter",
+      "detail": "age must be a positive integer"
+    },
+    {
+      "type": "https://example.net/invalid_params",
+      "instance": "/color",
+      "title": "Invalid Parameter",
+      "detail": "color must be 'green', 'red' or 'blue'"
+    }
+  ]
+}
+```
+
+
+
 ## Problem Detail and Content Negotiation
 #### Example
 A request is made to retrieve a resource representation:
