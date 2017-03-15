@@ -59,13 +59,15 @@ Every API **MUST** avoid tunneling multiple HTTP Request using one POST request.
 
 
 ## Non-atomic Bulk Operations
-Non-atomic bulk operations are **strongly discouraged** as they bring additional burden and confusion to the client and will are hard to build, debug, maintain and evolve over the time. The suggestion is to **split** a non-atomic operation into several atomic operations. The cost of few more calls will be greatly outweighed but the cleaner design, clarity and easier maintainability. 
+Non-atomic bulk operations are **strongly discouraged** as they bring additional burden and confusion to the client and are difficult to consume, debug, maintain and evolve over the time.
 
-However, in such an operation has to be provided such an non-atomic bulk operation **MUST** conform to the folliwing guidelines.
+The suggestion is to **split** a non-atomic operation into several atomic operations. The cost of few more calls will be greatly outweighed but the cleaner design, clarity and easier maintainability.
+
+However, in such an operation has to be provided such an non-atomic bulk operation **MUST** conform to the following guidelines.
 
 1. Non-atomic bulk operation **MUST** return a success status code (e.g. **200 OK**) only if every and all sub-operation succeded.
 
-1. If any single one sub-operation fails the whole non-atomic bulk operation **MUST** return the respective 4xx or 5xx status code.
+1. If any single one sub-operation fails the whole non-atomic bulk operation **MUST** return the respective **4xx** or **5xx** status code.
 
 1. In the case of a failure the response **MUST** contain the [problem detail](https://adidas-group.gitbooks.io/api-guidelines/content/message/error-reporting.html) information about every sub-operation that has failed.
 
