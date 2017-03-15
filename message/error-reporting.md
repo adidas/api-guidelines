@@ -34,7 +34,7 @@ It **SHOULD** have the `type` field with the identifier of the error, in additio
 If needed, the Problem Detail **MAY** include additional fields, refer to [RFC7807](https://tools.ietf.org/html/rfc7807) for details. 
 
 ## Validation Errors
-When necessary a problem detail response might include additional error details about the problems that has occurred. 
+When necessary, a Problem Detail response **MAY** include additional error details about the problems that has occurred. 
 
 These additiona errors **MUST** be under the `errors` and **MUST** follow the Problem Detail structure.
 
