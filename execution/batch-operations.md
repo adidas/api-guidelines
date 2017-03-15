@@ -76,6 +76,7 @@ However, in such an operation has to be provided such an non-atomic bulk operati
 
 #### Example
 
+Non-atomic request for creating four orders:
 
 ```
 POST /orders
@@ -99,8 +100,10 @@ Content-Type: application/json
 }
 ```
 
+And the error response: 
+
 ```
-400
+HTTP/1.1 400 Bad Request
 Content-Type: application/problem+json
 
 {
@@ -130,6 +133,7 @@ Content-Type: application/problem+json
 
 ```
 
+The `processed` field should contain the result of processed sub-operations as if they were returned in a 200 OK.
 
 
 
