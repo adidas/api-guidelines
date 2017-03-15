@@ -103,3 +103,8 @@ Some APIs using HAL:
 
 ## Working with HAL
 Refer to the [extensive list of libraries that work with HAL](https://github.com/mikekelly/hal_specification/wiki/Libraries).
+
+
+### Spring Framework
+Spring framework supports HAL out of the box. More info can be found in [Spring Documentation](https://spring.io/guides/gs/rest-hateoas/)
+and [examples](https://github.com/spring-guides/gs-rest-hateoas).
