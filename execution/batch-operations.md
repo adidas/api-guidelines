@@ -74,7 +74,61 @@ However, in such an operation has to be provided such an non-atomic bulk operati
 1. **The client MUST be aware that the operation is non-atomic and the even the operation might have failed some sub-operations were processed successfully.**
 
 
+#### Example
 
+
+```
+POST /orders
+Content-Type: application/json
+
+{
+  "order": [
+    {
+      "item_count": 42
+    },
+    {
+      "item_count": -100
+    },        
+    {
+      "item_count": 42
+    },
+    {
+      "item_count": 1.3232
+    }
+  ]
+}
+```
+
+```
+400
+Content-Type: application/problem+json
+
+{
+  "type": "https://example.net/partial_operation_failure",
+  "title": "Partial Failure",
+  "detail": "Some orders couldn't be created, other orders were created.",
+  
+  "errors": [
+    {
+      "type": "https://example.net/invalid_params",
+      "instance": "/orders/1",
+      "title": "Invalid Parameter",
+      "detail": "item_count must be a positive integer",
+      "status": 400
+    },
+    {
+      "type": "https://example.net/invalid_params",
+      "instance": "/orders/3",
+      "title": "Invalid Parameter",
+      "detail": "item_count must be a positive integer",
+      "status": 400
+    }
+  ],
+
+  "processed": ...
+}
+
+```
 
 
 
