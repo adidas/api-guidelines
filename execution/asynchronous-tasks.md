@@ -19,7 +19,7 @@ Retrieval of such a resource using the HTTP GET Request Method **SHOULD** be des
     Return **200 OK** and `application/problem+json` with the problem detail information on the task has failed.
     
 
-## Design Notes
+## Design Note
 
 The asynchronous operation task-tracking resource can be either **polled** by client or the client might initially provide a **callback** to be executed when the operation finishes.
 
