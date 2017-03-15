@@ -15,7 +15,11 @@ Any change to:
 MUST follow the [Rules for Extending](core-principles/rules-for-extending.md).
 
 ## Identifier Stability (No URI Versioning)
-A change MUST NOT affect **existing** resource identifiers (name / URI). Furthermore, a resource identifier MUST NOT contain a semantic version to convey a version of resource or its representation format.
+A change MUST NOT affect **existing** resource identifiers (name / URI). Furthermore, a resource identifier **MUST NOT** contain a semantic version to convey a version of resource or its representation format.
+
+> _The reason to make a real REST API is to get evolvability … a "v1" is a .... to your API customers, indicating RPC/HTTP (not REST)_
+>
+> _– [Roy T. Fielding](https://twitter.com/fielding/status/376835835670167552)_
 
 #### Example
 Adding a new action to existing resource with identifier `/greeting` doesn't change its identifier to `/v2/greeting` (or `/greeting-with-new-action` etc.).
