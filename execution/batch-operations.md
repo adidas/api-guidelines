@@ -49,13 +49,21 @@ Content-Type: application/json
 ```
 
 ## Results of Bulk Operation
-Every bulk operation **MUST** be atomic. 
+Every bulk operation **MUST** be atomic and treated as any other operation.
 
 > _The server must implement bulk requests as atomic. If the request is for creating 10 addresses, the server should create all 10 addresses before returning a successful response code. The server should not commit changes partially in the case of failures._
 
 
 ## DO NOT USE "POST Tunneling"
 Every API **MUST** avoid tunneling multiple HTTP Request using one POST request. Instead provide an application-specific resource to process the batch request.
+
+
+## Non-atomic Bulk Operations
+Non-atomic bulk operations are strongly discouraged as they bring additional burden and confusion to the client and will are hard to build, debug, maintain and evolve over the time. The suggestion is to **split** a non-atomic operation into several atomic operations. The cost of few more calls will be greatly outweighed but the cleaner design, clarity and easier maintainability. 
+
+However, in such an operation has to be provided such an non-atomic bulk operation **MUST** conform to the folliwing guidelines.
+
+
 
 
 
