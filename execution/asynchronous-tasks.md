@@ -17,5 +17,12 @@ Retrieval of such a resource using the HTTP GET Request Method **SHOULD** be des
 3. Task Failed
 
     Return **200 OK** and `application/problem+json` with the problem detail information on the task has failed.
+    
+
+## Design Notes
+
+The asynchronous operation task-tracking resource can be either **polled** by client or the client might initially provide a **callback** to be executed when the operation finishes.
+
+In the case of callback, the API and its client MUST agree on what HTTP method and request format is used for the callback invitation. If built within adidas, the "client" API is also the subject of the adidas API guidelines.
 
 
