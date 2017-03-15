@@ -1,5 +1,5 @@
 # Robustness 
-Every API implementation and API consumer MUST follow Postel's law:
+Every API implementation and API consumer **MUST** follow Postel's law:
 
 > _Be conservative in what you send, be liberal in what you accept._
 >
