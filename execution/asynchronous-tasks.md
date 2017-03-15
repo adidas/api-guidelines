@@ -26,3 +26,4 @@ The asynchronous operation task-tracking resource can be either **polled** by cl
 In the case of callback, the API and its client MUST agree on what HTTP method and request format is used for the callback invitation. If built within adidas, the "client" API is also the subject of the adidas API guidelines.
 
 
+
