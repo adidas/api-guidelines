@@ -38,7 +38,7 @@ Everything you know about [input validation](https://www.owasp.org/index.php/Dat
 * XML input validation: XML-based services MUST ensure that they are protected against common XML based attacks by using secure XML-parsing. This typically means protecting against XML External Entity attacks, XML-signature wrapping etc.
 
 #  Escape Content
-This means removing any executable code that would cause the browser to do something you don’t want it to. Typically this means removing // &lt;![CDATA[ tags and HTML attributes that cause JavaScript to be evaluated. If you use standard data formats like JSON, you can use standard libraries which have been thoroughly checked by many professionals. However, DO NOT TRY TO DO THIS YOURSELF. Use a known library, or the auto-escaping features of your favorite template library. This needs to be done in the browser and on your server, if you allow users to submit data that is saved into a database.
+This means removing any executable code that would cause the browser to do something you don’t want it to. Typically this means removing `// &lt;![CDATA[` tags and HTML attributes that cause JavaScript to be evaluated. If you use standard data formats like JSON, you can use standard libraries which have been thoroughly checked by many professionals. However, DO NOT TRY TO DO THIS YOURSELF. Use a known library, or the auto-escaping features of your favorite template library. This needs to be done in the browser and on your server, if you allow users to submit data that is saved into a database.
 
 # Restrict Testing Environment
 THUMB Rule. No production data or any form of sensitive data to be used while testing the APIs in the testing environment.
@@ -56,19 +56,20 @@ In each case, you have to trust that browsers are implemented correctly, and tha
 - If you use HTML5 Web Storage: You have to write JavaScript that manages exactly when and what authentication information is sent.
 
 # Protect against Cross-Site Request Forgery
-For resources exposed by RESTful web services, it's important to make sure any PUT, POST, and DELETE request is protected from Cross Site Request Forgery. Typically, one would use a token-based approach. See Cross-Site Request Forgery (CSRF) Prevention Cheat Sheet for more information on how to implement CSRF-protection: 
-https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet
-CSRF is easily achieved even using random tokens if any XSS exists within your application, so PLEASE MAKE SURE you understand how to prevent XSS:
-https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet
+For resources exposed by RESTful web services, it's important to make sure any PUT, POST, and DELETE request is protected from Cross Site Request Forgery. Typically, one would use a token-based approach. See [Cross-Site Request Forgery Prevention Cheat Sheet](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet
+) for more information on how to implement CSRF-protection.
+
+CSRF is easily achieved even using random tokens if any XSS exists within your application, so PLEASE MAKE SURE you understand [how to prevent XSS](https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet).
 
 # 12	Insecure direct object references:
 A URL or even a POSTed form should NEVER contain an access control "key" or similar that provides automatic verification. A data contextual check needs to be done, server side, with each request.
 
 # 13	Enable CORS for all APIs:
 When your API's resources receive requests from a domain other than the API's own domain, you MUST enable cross-origin resource sharing (CORS) for selected methods on the resource. This amounts to having your API respond to the OPTIONS preflight request with at least the following CORS-required response headers:
-*	Access-Control-Allow-Methods
-*	Access-Control-Allow-Headers
-*	Access-Control-Allow-Origin
+
+* Access-Control-Allow-Methods
+* Access-Control-Allow-Headers
+* Access-Control-Allow-Origin
 
 # 14	Data in transit:
 Unless the public information is completely read-only, the use of TLS v1.2 should be MANDATED, particularly where credentials, updates, deletions, and any value transactions are performed. The overhead of TLS is negligible on modern hardware, with a minor latency increase that is more than compensated by safety for the end user.
