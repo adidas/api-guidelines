@@ -43,17 +43,19 @@ This means removing any executable code that would cause the browser to do somet
 # Restrict Testing Environment
 THUMB Rule. No production data or any form of sensitive data to be used while testing the APIs in the testing environment.
 
-#  Storing Tokens at Client Side:
+#  Storing Tokens at Client Side
 There are two ways to save authentication information in the browser:
 
 * Cookies
 * HTML5 Web Storage
 
 In each case, you have to trust that browsers are implemented correctly, and that Website A can't somehow access the authentication information for Website B. In that sense, both storage mechanisms are equally secure. Problems can arise in terms of how you use them though.
--	If you use cookies: The browser will automatically send the authentication information with every request to the API. This can be convenient so long as you know it's happening. Prevention against CSRF is a must while using this technique. It is also strongly recommended to use cookies with HTTPOnly and Secure flags set. This will allow the browser to send along the token for authentication purposes, but won’t expose it to the JavaScript environment. 
--	If you use HTML5 Web Storage: You have to write JavaScript that manages exactly when and what authentication information is sent.
 
-# 11	Protect against Cross-Site Request Forgery:
+- If you use cookies: The browser will automatically send the authentication information with every request to the API. This can be convenient so long as you know it's happening. Prevention against CSRF is a must while using this technique. It is also strongly recommended to use cookies with HTTPOnly and Secure flags set. This will allow the browser to send along the token for authentication purposes, but won’t expose it to the JavaScript environment.
+
+- If you use HTML5 Web Storage: You have to write JavaScript that manages exactly when and what authentication information is sent.
+
+# Protect against Cross-Site Request Forgery
 For resources exposed by RESTful web services, it's important to make sure any PUT, POST, and DELETE request is protected from Cross Site Request Forgery. Typically, one would use a token-based approach. See Cross-Site Request Forgery (CSRF) Prevention Cheat Sheet for more information on how to implement CSRF-protection: 
 https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet
 CSRF is easily achieved even using random tokens if any XSS exists within your application, so PLEASE MAKE SURE you understand how to prevent XSS:
