@@ -59,7 +59,10 @@ In each case, you have to trust that browsers are implemented correctly, and tha
 For resources exposed by RESTful web services, it's important to make sure any PUT, POST, and DELETE request is protected from Cross Site Request Forgery. Typically, one would use a token-based approach. See [Cross-Site Request Forgery Prevention Cheat Sheet](https://www.owasp.org/index.php/Cross-Site_Request_Forgery_(CSRF)_Prevention_Cheat_Sheet
 ) for more information on how to implement CSRF-protection.
 
-CSRF is easily achieved even using random tokens if any XSS exists within your application, so PLEASE MAKE SURE you understand [how to prevent XSS](https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet).
+CSRF is easily achieved even using random tokens if any XSS exists within your application, so PLEASE MAKE SURE you understand [how to prevent XSS][preventxss].
+
+
+[preventxss]: https://www.owasp.org/index.php/XSS_(Cross_Site_Scripting)_Prevention_Cheat_Sheet
 
 ## Insecure direct object references
 A URL or even a POSTed form should NEVER contain an access control "key" or similar that provides automatic verification. A data contextual check needs to be done, server side, with each request.
