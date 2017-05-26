@@ -29,7 +29,7 @@
 4. Install Dredd
 
     ```
-    $ npm install -g dredd@stable --no-optional 
+    $ npm install -g dredd --no-optional 
     ```
 
     ```
