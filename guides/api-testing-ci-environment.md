@@ -52,7 +52,15 @@ The following must be available in the CI environment prior to testing:
 ## Testing an API
 To test an API within the CI environment provisioned as mentioned in the environment prerequisites you will need the following: 
 
-1. A `swagger.yaml` file with the description of API being tested.
+1. A `swagger.yaml` file with the description of API being tested
+
+    To fetch the swagger.yaml file from Apiary run the following command before the test:
+
+    ```
+    $apiary fetch --api-name="<API_NAME>" --output="swagger.yaml"
+    ```
+    
+    EXAMPLE: `API_NAME=bomapi3`, `APIARY_API_KEY=122131212121212112`
 
 1. The name (subodmain) of API project at Apiary
 
