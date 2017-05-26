@@ -47,7 +47,7 @@ The following must be available in the CI environment prior to testing:
     $ export APIARY_API_KEY=xyz
     ```
     
-    To obtain an Apiary API key, head to <https://login.apiary.io/tokens>.
+    To obtain an Apiary API key, head to <https://login.apiary.io/tokens> (NOTE: You will need the "ALL" Scope)
 
 ## Testing an API
 To test an API within the CI environment provisioned as mentioned in the environment prerequisites you will need the following: 
@@ -56,7 +56,6 @@ To test an API within the CI environment provisioned as mentioned in the environ
 
     ```
     export APIARY_API_NAME=bomapi3
-
     ```
 
 1. A `swagger.yaml` file with the description of API being tested
