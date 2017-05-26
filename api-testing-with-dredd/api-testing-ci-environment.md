@@ -12,7 +12,6 @@ This guide describes steps necessary for testing an API with Dredd in a CI Envir
 
 2. [Dredd](https://github.com/apiaryio/dredd) MUST be installed globally in the CI environment:
 
-
     ```
     $ npm install -g dredd --no-optional 
     ```
