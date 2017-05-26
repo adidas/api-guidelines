@@ -88,7 +88,7 @@ With all of the above (`APIARY_API_KEY`, `APIARY_API_NAME`, `API_HOST`, set up a
 
 
 ```
-$ dredd swagger.yaml $HOST -r apiary
+$ dredd swagger.yaml $API_HOST -r apiary
 ```
     
 The Dredd will perform the tests and exits normally if the tests has passed. You can check the test result as with any other Unix tools with: 
