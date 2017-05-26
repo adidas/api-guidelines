@@ -57,10 +57,11 @@ To test an API within the CI environment provisioned as mentioned in the environ
     To fetch the swagger.yaml file from Apiary run the following command before the test:
 
     ```
-    $apiary fetch --api-name="<API_NAME>" --output="swagger.yaml"
+    $ apiary fetch --api-name="<API_NAME>" --output="swagger.yaml"
     ```
     
-    EXAMPLE: `API_NAME=bomapi3`, `APIARY_API_KEY=122131212121212112`
+    For example: `$ apiary fetch --api-name=bomapi3 --output="swagger.yaml"
+`
 
 1. The name (subodmain) of API project at Apiary
 
