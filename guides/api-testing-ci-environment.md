@@ -50,12 +50,15 @@ The following must be available in the CI environment prior to testing:
     To obtain an Apiary API key, head to <https://login.apiary.io/tokens> (NOTE: You will need the "ALL" Scope)
 
 ## Testing an API
+
+
+### Test Run Prerequisites
 To test an API within the CI environment provisioned as mentioned in the environment prerequisites you will need the following: 
 
 1. The name (subodmain) of API project at Apiary
 
     ```
-    export APIARY_API_NAME=bomapi3
+    $ export APIARY_API_NAME=bomapi3
     ```
 
 1. A `swagger.yaml` file with the description of API being tested
@@ -66,8 +69,23 @@ To test an API within the CI environment provisioned as mentioned in the environ
     $ apiary fetch --api-name=$APIARY_API_NAME --output="swagger.yaml"
     ```
 
+1. The host (address) of the service being tested
 
-1. The HOST address of the service being tested.
+     ```
+     $ export API_HOST=http://deheremap7336.emea.adsint.biz:8004`
+     ```
+     
+ ### Running the Test
+ 
+With all of the above (`APIARY_API_KEY`, `APIARY_API_NAME`, `API_HOST`, set up and `swagger.yaml` file present in the current directory, run:
+
+
+    ```
+    $ dredd swagger.yaml $HOST -r apiary
+    ```
+    
+    
+
 
 
 
