@@ -75,7 +75,7 @@ To test an API within the CI environment provisioned as mentioned in the environ
      $ export API_HOST=http://deheremap7336.emea.adsint.biz:8004`
      ```
      
- ### Running the Test
+### Running the Test
  
 With all of the above (`APIARY_API_KEY`, `APIARY_API_NAME`, `API_HOST`, set up and `swagger.yaml` file present in the current directory), run:
 
