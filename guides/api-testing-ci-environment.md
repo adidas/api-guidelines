@@ -41,11 +41,13 @@ The following must be available in the CI environment prior to testing:
     0.8.0
     ```
     
-1. Apiary API Key
+1. **Apiary API Key** MUST be set in the CI Environment environment variables:
 
     ```
     $ export APIARY_API_KEY=xyz
     ```
+    
+    To obtain an Apiary API key, head to <https://login.apiary.io/tokens>.
 
 ## Testing an API
 
