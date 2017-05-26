@@ -1,6 +1,6 @@
 # Jenkins CI Environment for Apiary Project
 
-This guide describes steps necessary for testing an API described in a swagger file with Dredd in a CI Environment (Jenkins, TeamCity). 
+This guide describes steps necessary for testing an API described in a swagger file with [Dredd](https://github.com/apiaryio/dredd) in a CI Environment (Jenkins, TeamCity). 
 
 ## Environment Prerequisites
 The following must be available in the CI environment prior to testing:
@@ -55,11 +55,13 @@ The following must be available in the CI environment prior to testing:
 ### Test Run Prerequisites
 To test an API within the CI environment provisioned as mentioned in the environment prerequisites you will need the following: 
 
-1. The name (subodmain) of API project at Apiary
+1. The name (subdomain) of API project at Apiary
 
     ```
     $ export APIARY_API_NAME=bomapi3
     ```
+    
+    See [How to find the Apiary API name](https://help.apiary.io/faq/find-api-name/)
 
 1. A `swagger.yaml` file with the description of API being tested
 
