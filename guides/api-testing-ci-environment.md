@@ -90,7 +90,7 @@ The Dredd will perform the tests and exits normally if the tests has passed. You
 $ echo $?
 ```
     
-    Everything else but `0` should break the build. The test results will be visible in the CLI (log) as well as in Apiary.
+Everything else but `0` should break the build. The test results will be visible in the CLI (log) as well as in Apiary.
     
     
 
