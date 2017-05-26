@@ -1,6 +1,6 @@
 # Jenkins CI Environment for Apiary Project
 
-This guide describes steps necessary for testing an API described in a swagger file with [Dredd](https://github.com/apiaryio/dredd) in a CI Environment (Jenkins, TeamCity). 
+This guide describes steps necessary for testing an API described in a swagger file with the [Dredd API Testing Framework](https://github.com/apiaryio/dredd) in a CI Environment (Jenkins, TeamCity). 
 
 ## Environment Prerequisites
 The following must be available in the CI environment prior to testing:
