@@ -61,6 +61,7 @@ To test an API within the CI environment provisioned as mentioned in the environ
     $ export APIARY_API_NAME=bomapi3
     ```
     
+    
     > See [How to find the Apiary API name](https://help.apiary.io/faq/find-api-name/) for more details.
 
 1. A `swagger.yaml` file with the description of API being tested
