@@ -71,6 +71,9 @@ To test an API within the CI environment provisioned as mentioned in the environ
     $ apiary fetch --api-name=$APIARY_API_NAME --output="swagger.yaml"
     ```
     
+    (The swagger document for Apiary project `bomapi3` was saved as local file `./swagger.yaml`
+
+    
     > See [Fetching Published Documentation](https://help.apiary.io/tools/apiary-cli/#fetching-published-documentation).
 
 1. The host (address) of the service being tested
