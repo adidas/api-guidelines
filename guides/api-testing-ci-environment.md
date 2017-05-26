@@ -50,8 +50,18 @@ The following must be available in the CI environment prior to testing:
     To obtain an Apiary API key, head to <https://login.apiary.io/tokens>.
 
 ## Testing an API
+To test an API within the CI environment provisioned as mentioned in the environment prerequisites you will need the following: 
 
 1. A `swagger.yaml` file with the description of API being tested.
 
-1.
+1. The name (subodmain) of API project at Apiary
+
+1. The HOST address of the service being tested.
+
+
+
+
+
+
+
 
