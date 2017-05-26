@@ -2,14 +2,14 @@
 
 
 
-1. Node.js
+1. The CI Environment MUST have a Node.js runtime:
 
     ```
     $ node -v
     v7.5.0
     ```
 
-2. Install Dredd
+2. For the testing, [Dredd](https://github.com/apiaryio/dredd) MUST be installed globally:
 
     ```
     $ npm install -g dredd --no-optional 
