@@ -80,15 +80,15 @@ To test an API within the CI environment provisioned as mentioned in the environ
 With all of the above (`APIARY_API_KEY`, `APIARY_API_NAME`, `API_HOST`, set up and `swagger.yaml` file present in the current directory), run:
 
 
-    ```
-    $ dredd swagger.yaml $HOST -r apiary
-    ```
+```
+$ dredd swagger.yaml $HOST -r apiary
+```
     
 The Dredd will perform the tests and exits normally if the tests has passed. You can check the test result as with any other Unix tools with: 
 
-    ``` 
-    $ echo $?
-    ```
+``` 
+$ echo $?
+```
     
     Everything else but `0` should break the build. The test results will be visible in the CLI (log) as well as in Apiary.
     
