@@ -77,7 +77,7 @@ To test an API within the CI environment provisioned as mentioned in the environ
      
  ### Running the Test
  
-With all of the above (`APIARY_API_KEY`, `APIARY_API_NAME`, `API_HOST`, set up and `swagger.yaml` file present in the current directory, run:
+With all of the above (`APIARY_API_KEY`, `APIARY_API_NAME`, `API_HOST`, set up and `swagger.yaml` file present in the current directory), run:
 
 
     ```
