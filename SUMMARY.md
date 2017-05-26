@@ -49,5 +49,7 @@
   * [Loose Coupling](clients/loose-coupling.md)
 * [Miscellaneous](miscellaneous.md)
 * [Guides](guides.md)
+* [Guides](api-testing-with-dredd.md)
+  * [API Testing with Dredd](api-testing-with-dredd/a.md)
 * [Acknowledgements](acknowledgements.md)
 
