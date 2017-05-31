@@ -2,7 +2,7 @@
 
 Every API exposed outside of the adidas network **MUST** be available to authenticated clients only. Every unauthenticated HTTP request to exposed API **MUST** result in the **403 – Forbidden** HTTP Status code.
 
-There are two was how to authenticate a call to an API: 
+Based on whether user authorization is required an API call can be authenticated in two ways:
 
 1. OAuth2 token
 1. API key
