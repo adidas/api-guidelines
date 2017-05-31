@@ -8,10 +8,10 @@ There are two was how to authenticate a call to an API:
 1. API key
 
 # OAuth 2 Token
-Every API that requires user authentication or authorization **MUST** use OAuth 2 tokens to authenticate the user.
+Every API that requires user authentication or authorization **MUST** use OAuth 2 tokens to authenticate the client.
 
 ## API Key
-If an API doesn't need to authorize users the API **MAY** use simple API token instead of the OAuth 2 token. The key **MUST** be provided in the `Adidas-API-Key` HTTP header.
+If an API doesn't need to authorize user the API **MAY** use simple the API token instead of the OAuth 2 token. The key **MUST** be provided in the `Adidas-API-Key` HTTP header.
 
 #### Example
 
@@ -24,4 +24,4 @@ Host: adidas.api.mashery.com
 ```
 
 
-
+> NOTE: See more details in the [[Demo] Approval API](http://docs.demoapprovalapi.apiary.io) example.
