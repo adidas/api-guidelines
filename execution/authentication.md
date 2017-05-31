@@ -13,4 +13,12 @@ Every API that requires user authentication or authorization **MUST** use OAuth 
 ## API Key
 If an API doesn't need to authorize users the API **MAY** use simple API token instead of the OAuth 2 token. The key **MUST** be provided in the `Adidas-API-Key` HTTP header.
 
+#### Example
+
+```
+GET /demo-approval-api/ HTTP/1.1
+Adidas-API-Key: 9kfapap6612jkfd3ja9323q
+Host: adidas.api.mashery.com
+```
+
 
