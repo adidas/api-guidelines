@@ -80,7 +80,7 @@ Every HTTP Header should use `Hyphenated-Pascal-Case`. A custom HTTP Header **SH
 #### Example
 
 ```
-ORDER-METADATA-HEADER: 42
+Order-Metadata-Header: 42
 ```
 
 
