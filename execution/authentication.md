@@ -15,10 +15,13 @@ If an API doesn't need to authorize users the API **MAY** use simple API token i
 
 #### Example
 
+Request:
+
 ```
 GET /demo-approval-api/ HTTP/1.1
 Adidas-API-Key: 9kfapap6612jkfd3ja9323q
 Host: adidas.api.mashery.com
 ```
+
 
 
