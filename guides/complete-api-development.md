@@ -136,7 +136,7 @@
   
   1. Create a new project (alternative) in Apiary 
   
-  1. Make sure the CI/CD pipeline is still
+  1. Make sure the CI/CD pipeline is:
   
     1. Set to push the OAS file to Apiary but make sure to modify the Apiary project name
     
