@@ -72,7 +72,7 @@
     
 1. **Expose the API using Mashery**
 
-  1. API
+  1. **API**
   
     1. Create new API Definition in Mashery
     
@@ -93,26 +93,45 @@
     
     1. Revisit the API Plan's access policy / authorization
     
-  - API Documentation
-    - Create new adidas API developer's portal page in the Mashery
-      "Manage > Content > Documentation > APIs"
-    - Embed Apiary documentation on that Page
-    - Revisit the API documentation access policy / authorization
-- Use the API
-  "This can be done at the same time as "Develop the API" thank to Apiary hosted Mock, Inspector and Documentation"
-  - Read API documentation at Apiary
-  - Use API mock service provided by Apiary
-  - Use API call inspector provided by Apiary
-  - When available use API implementation via Apiary proxy
-    "To debug the calls"
-  - Use production deployment
-- Analyze the API
-  - Analyze the use of production API
-    "Using Mashery"
-  - Analyze the technical performance metrics 
-  - Collect users feedback
-- Update API Design
-  "Based on the analysis and changed (new) business requirements"
+  1. **API Documentation**
+  
+    1. Create new adidas API developer's portal page in the Mashery
+    
+      > Manage > Content > Documentation > APIs
+      
+    1. Embed Apiary documentation on that Page
+    
+    1. Revisit the API documentation access policy / authorization
+    
+1. **Use the API**
+
+   > This step can be done at the same time as "Develop the API" thank to Apiary hosted Mock, Inspector and Documentation.
+   
+  1. Read API documentation at Apiary
+  
+  1. Use API mock service provided by Apiary
+  
+  1. Use API call inspector provided by Apiary
+  
+  1. Obtain your API key
+    
+    > The key is part of the API Plan created in Mashery and can be requested from your dashboard in the adidas API developer's portal.
+  
+  1. When available use API implementation via Apiary proxy to debug the API calls
+
+  1. Use production deployment
+  
+1. **Analyze the API**
+  1. Analyze the use of production API Using Mashery
+  
+  1. Analyze the technical performance metrics
+  
+  1. Collect the feedback from users
+  
+1. **Update API Design**
+  
+  > Based on the analysis, new or changing business requirements
+  
   - Create a new branch in the VCS repository with OAS file
   - Create a new project (alternative) in Apiary 
   - Make sure the CI/CD pipeline is still
