@@ -132,14 +132,25 @@
   
   > Based on the analysis, new or changing business requirements
   
-  - Create a new branch in the VCS repository with OAS file
-  - Create a new project (alternative) in Apiary 
-  - Make sure the CI/CD pipeline is still
-    - Set to push the OAS file to Apiary but make sure to modify the Apiary project name
-    - Set to run Dredd test in the CI/CD
-  - Modify the design (OAS file) accordingly, follow the "Design API" phase
-  - Follow the rules for extending and adidas API guidelines versioning policies
-  - Use VCS pull request (PR) to propose the change to review
-  - After the API Design change is verified, reviewed and approved, continue with the "Develop the API" phase
-  - Eventually, when the updated design is ready to be deployed for production, merge the branch to the production branch
-  - Follow the guide from "Expose the API using Mashery" 
+  1. Create a new branch in the VCS repository with OAS file
+  
+  1. Create a new project (alternative) in Apiary 
+  
+  1. Make sure the CI/CD pipeline is still
+  
+    1. Set to push the OAS file to Apiary but make sure to modify the Apiary project name
+    
+    1. Set to run Dredd test in the CI/CD
+    
+  1. Modify the design (OAS file) accordingly, follow the "Design API" phase
+  
+  1. Follow the rules for extending and adidas API guidelines versioning policies
+  
+  1. Use VCS pull request (PR) to propose the change to review
+  
+  1. After the API Design change is verified, reviewed and approved, continue with the "Develop the API" phase
+  
+  1. Eventually, when the updated design is ready to be deployed for production, merge the branch to the production branch
+  
+  1. Follow this guide from "Expose the API using Mashery" 
+  
