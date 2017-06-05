@@ -44,7 +44,7 @@ X-Mashery-Error-Code: ERR_403_DEVELOPER_OVER_QPS
 By default the headers do not contain details about the current usage and quotas. This can be changed in the API management.
 
 #### Example
-Successful response with the details about throttle (X-Plan-QPS) and quota (X-Plan-Quota) rate limits:
+A successful response with the details about throttle (`X-Plan-QPS`) and quota (`X-Plan-Quota`) rate limits:
 
 ```
 HTTP/1.1 200 OK
