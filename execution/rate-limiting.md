@@ -1,26 +1,40 @@
 # Rate Limiting
-A HTTP Response to an HTTP Request API Endpoint that is under a rate limiting policy **MUST** include the following HTTP headers:
+The API rate limiting is provided by the selected adidas API management platform – Mashery. 
 
-- `Rate-Limit-Limit`: The rate limit ceiling for that given endpoint
-- `Rate-Limit-Remaining`: The number of requests left
+Rate limit informations are provided in the for of HTTP headers. There are two types of rate limits: Quota and Throttle
 
-An API **MUST** respond with the **429 Too Many Requests** HTTP Status code when a user agent exceeded the number for available calls. In addition, it **SHOULD** include the [`Retry-After`](https://tools.ietf.org/html/rfc7231#section-7.1.3) in the response. The `Retry-After` **MUST** represent the remaining time before the rate limit resets.
+## Quota Limit
 
+#### Example 
+Example response to a request over the quota limit: 
+
+```
+HTTP/1.1 403 Forbidden
+Content-Type: text/xml
+
+X-Error-Detail-Header: Account Over Rate Limit
+X-Mashery-Error-Code: ERR_403_DEVELOPER_OVER_RATE
+
+<h1>Developer Over Rate</h1>
+```
+
+## Throttle Limit
 
 #### Example
+Example response to a request over the throttle limit:
 
 ```
-HTTP/1.1 429 Too Many Requests
-Content-Type: application/problem+json
-Content-Language: en
-Rate-Limit-Limit: 1000
-Rate-Limit-Remaining: 0
-Retry-After: 3600
+HTTP/1.1 403 Forbidden
+Content-Type: text/xml
 
-{
-    "type": "https://adidas-group.com/problems/rate_limit_exceeded",
-    "title": "Too Many Requests",
-    "detail": "The allowed rate limit has been exceeded, please try again in 3600 seconds",
-    "status": 429
-}
+Retry-After: 1
+X-Error-Detail-Header: Account Over Queries Per Second Limit
+X-Mashery-Error-Code: ERR_403_DEVELOPER_OVER_QPS
+
+<h1>Developer Over Qps</h1>
 ```
+
+> NOTE: The `Retry-After` gives a hint how long before the same request should be repeated (in seconds).
+
+
+By default the headers do not contain details about the current usage and quotas. This can be changed in the API management: 
