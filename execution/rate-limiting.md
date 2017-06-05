@@ -4,7 +4,7 @@ The API rate limiting is provided by the selected adidas API management platform
 Rate limit informations are provided in the for of HTTP headers. There are two types of rate limits: **Quota** and **Throttle**. Quota is a limit enforced per a longer period (typically a day). Throttle is the limit of calls per second. 
 
 ## Quota Limit
-The limit on the number of call per a period (day). The default quota limit is "unlimited". 
+The limit on the number of call per a period (day). The default quota limit is 5000 calls per day. 
 
 #### Example 
 Example response to a request over the quota limit: 
@@ -20,7 +20,7 @@ X-Mashery-Error-Code: ERR_403_DEVELOPER_OVER_RATE
 ```
 
 ## Throttle Limit
-The limit on the number of call per second. The default throttle limit is 1000 calls per second. 
+The limit on the number of call per second. The default throttle limit is 2 calls per second. 
 
 #### Example
 Example response to a request over the throttle limit:
