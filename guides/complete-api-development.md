@@ -78,7 +78,7 @@
     
     1. Create a new API Endpoint the API Definition
     
-      > Set the "Your Endpoint Address" to the internal deployment HOST.
+        > Set the "Your Endpoint Address" to the internal deployment HOST.
       
     1. Create a new API Package in Mashery
     
