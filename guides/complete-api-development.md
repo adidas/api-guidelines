@@ -16,11 +16,11 @@
     
      > e.g.: User has many Orders via order relation, all of the required affordances should be mapped to relations.
      
-  1. Formalize the design in the Open API Specification (OAS, formerly known as "Swagger") format
+  1. Formalize the design in the [Open API Specification](http://swagger.io/specification/) (OAS, formerly known as "Swagger") format
   
-  1. Follow the adidas API guidelines
+  1. Follow the [adidas API guidelines](https://adidas-group.gitbooks.io/api-guidelines/content/)
   
-  1. Put the OAS file into Apiary adidas group
+  1. Put the OAS file into [Apiary adidas group](https://apiary.io)
   
   1. Verify the design using Apiary Documentation and Apiary Mock Service
   
@@ -34,7 +34,7 @@
 
   1. Check out the VCS repository with the OAS file 
   
-  1. Set up the Dredd testing tool locally
+  1. Set up the [Dredd API testing tool](https://github.com/apiaryio/dredd) locally
   
   1. Configure the Dredd for your project
     
@@ -99,7 +99,7 @@
     
       > Manage > Content > Documentation > APIs
       
-    1. Embed Apiary documentation on that Page
+    1. [Embed Apiary documentation](https://help.apiary.io/tools/embed/#apiary-embed-api-reference) on the newly created API Page
     
     1. Revisit the API documentation access policy / authorization
     
@@ -142,9 +142,9 @@
     
     1. Set to run Dredd test in the CI/CD
     
-  1. Modify the design (OAS file) accordingly, follow the "Design API" phase
+  1. Modify the design (OAS file) accordingly, follow the "Design API" step
   
-  1. Follow the rules for extending and adidas API guidelines versioning policies
+  1. Follow the [**rules for extending**](https://adidas-group.gitbooks.io/api-guidelines/content/core-principles/rules-for-extending.html) and [**adidas API guidelines versioning policies**](https://adidas-group.gitbooks.io/api-guidelines/content/evolution/versioning.html)
   
   1. Use VCS pull request (PR) to propose the change to review
   
@@ -152,5 +152,5 @@
   
   1. Eventually, when the updated design is ready to be deployed for production, merge the branch to the production branch
   
-  1. Follow this guide from "Expose the API using Mashery" 
+  1. Follow this guide from "Expose the API using Mashery" step
   
