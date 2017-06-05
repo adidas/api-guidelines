@@ -50,7 +50,9 @@
   
       > Keep running the Dredd locally to see the progress.
       
-  1. Set up a CI/CD pipeline to run the Dredd tests automatically
+  1. Set up a [CI/CD pipeline](https://adidas-group.gitbooks.io/api-guidelines/content/guides/api-testing-ci-environment.html) to run the Dredd tests automatically
+  
+      > NOTE: Both TeamCity and Jenkis enviroments are available, contact adidas API evangelist for details.
   
 1. **Deploy the API**
 
