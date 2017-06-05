@@ -50,5 +50,6 @@
 * [Miscellaneous](miscellaneous.md)
 * [Guides](guides/README.md)
   * [API Testing CI Environment](guides/api-testing-ci-environment.md)
+  * [Complete API Development](guides/complete-api-development.md)
 * [Acknowledgements](acknowledgements.md)
 
