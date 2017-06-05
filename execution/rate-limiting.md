@@ -39,11 +39,23 @@ X-Mashery-Error-Code: ERR_403_DEVELOPER_OVER_QPS
 > NOTE: The `Retry-After` gives a hint how long before the same request should be repeated (in seconds).
 
 
-
-
 ## Detail Information
 
-By default the headers do not contain details about the current usage and quotas. This can be changed in the API management: 
+By default the headers do not contain details about the current usage and quotas. This can be changed in the API management.
+
+#### Example
+Successful response with the details about throttle (X-Plan-QPS) and quota (X-Plan-Quota) rate limits:
+
+```
+HTTP/1.1 200 OK
+
+X-Plan-QPS-Allotted: 10
+X-Plan-QPS-Current: 1
+X-Plan-Quota-Allotted: 1000
+X-Plan-Quota-Current: 2
+X-Plan-Quota-Reset: Tuesday, June 6, 2017 12:00:00 AM GMT
+```
+  
 
 
 
