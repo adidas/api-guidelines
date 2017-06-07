@@ -2,6 +2,7 @@
 
 
 1. **Design the API**
+
   1. Analyze business requirements
   
   1. Identify affordances
@@ -20,10 +21,10 @@
   
   1. Follow the [adidas API guidelines](https://adidas-group.gitbooks.io/api-guidelines/content/)
   
-  1. Make sure the OAS file passes all adidas API Apiary style guide checks
-  
   1. Put the OAS file into [Apiary adidas group](https://apiary.io)
-  
+
+  1. Make sure the OAS file passes all adidas API Apiary style guide checks    
+
   1. Verify the design using Apiary Documentation and Apiary Mock Service
   
   1. Review the API Design
