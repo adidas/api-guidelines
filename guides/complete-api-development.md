@@ -20,6 +20,8 @@
   
   1. Follow the [adidas API guidelines](https://adidas-group.gitbooks.io/api-guidelines/content/)
   
+  1. Make sure the OAS file passes all adidas API Apiary style guide checks
+  
   1. Put the OAS file into [Apiary adidas group](https://apiary.io)
   
   1. Verify the design using Apiary Documentation and Apiary Mock Service
