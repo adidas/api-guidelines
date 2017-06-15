@@ -11,20 +11,20 @@ The guidelines lay down the foundation for collaboration, stability and extensib
 ## Guidelines
 The API Guidelines are split into several levels:
 
-- **Core Principles**
+- **[Core Principles](https://adidas-group.gitbooks.io/api-guidelines/content/core-principles/)**
 
     The Core Principle define the general rules that MUST be followed at throughout the full API lifecycle at any level. 
 
 - **Functionality Guidelines**
-    - **Protocol level**
+    - **[Protocol level](https://adidas-group.gitbooks.io/api-guidelines/content/protocol/)**
     
         Protocol guidelines define the protocols used within the organization. 
         
-    - **Message level **
+    - **[Message level](https://adidas-group.gitbooks.io/api-guidelines/content/message/)**
     
         The Message guidelines define the structure and semantics of messages used to exchange information. 
 
-    - **Application level**
+    - **[Application level](https://adidas-group.gitbooks.io/api-guidelines/content/application/)**
     
         The Application guidelines define the definition and use of application-specific semantics.
     
@@ -32,17 +32,16 @@ The API Guidelines are split into several levels:
    
    Evolution and Execution guidelines define the rules for achieving the desired architectural qualities of systems. 
    
-    - **Evolution**
+    - **[Evolution](https://adidas-group.gitbooks.io/api-guidelines/content/evolution/)**
     
         Evolution qualities governance, such as testability, maintainability, extensibility and scalability.
 
-    - **Execution**
+    - **[Execution](https://adidas-group.gitbooks.io/api-guidelines/content/execution/)**
     
         Execution qualities governance, such as security and usability.
 
 
-## How to read the guidelines 
-
+## How to read the Guidelines 
 These Guidelines are available for online reading at [GitBook](https://apidesigner.gitbooks.io/adidas-api-guidelines/content/) its source can be found on [GitHub](https://github.com/adidas-group/api-guidelines).
 
 
