@@ -1,6 +1,6 @@
 # API First
 
-Everyone **MUST** follow the **API first** principle.
+Everyone **MUST** follow the **API First** principle.
 
 The API first principle is extension of contract-first principle. Therefore, an development of an API **MUST** always start with API design without any upfront coding activities.
 
