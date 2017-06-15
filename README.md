@@ -1,12 +1,14 @@
-# adidas API Guidelines
-**DRAFT** | [**Read online at GitBook**](https://adidas-group.gitbooks.io/api-guidelines/content/)
+![layers](/assets/adidas-group-logo.svg)
 
-This document represents the guidelines for all APIs created the within adidas group. 
+# adidas API Guidelines
+_The guidelines for API design at adidas._
+
+([**Read online at GitBook**](https://adidas-group.gitbooks.io/api-guidelines/content/))
 
 ## Motivation
-The ultimate goal of these guidelines is to facilitate the work and minimize the effort of all API users while protecting their investment, thus encouraging API adoption.
+The goal of this document is to facilitate the work and minimize the effort of all API users while protecting their investment and encouraging API adoption.
 
-The guidelines should lay down the foundation for collaboration, achieving stability without rigidity while maintaining extensibility for the future.
+The guidelines lay down the foundation for collaboration, stability and extensibility.
 
 ## Guidelines
 The API Guidelines are split into several levels:
