@@ -1,9 +1,11 @@
 ![layers](/assets/adidas-group-logo.svg)
 
 # adidas API Guidelines
-_The guidelines for API design at adidas._
+_Guidelines for API design at adidas_ ([Read online at GitBook](https://adidas-group.gitbooks.io/api-guidelines/content/))
 
-([**Read online at GitBook**](https://adidas-group.gitbooks.io/api-guidelines/content/))
+
+
+
 
 ## Motivation
 The goal of this document is to facilitate the work and minimize the effort of all API users while protecting their investment and encouraging API adoption.
