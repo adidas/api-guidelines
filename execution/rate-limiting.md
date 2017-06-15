@@ -11,12 +11,16 @@ Example response to a request over the quota limit:
 
 ```
 HTTP/1.1 403 Forbidden
-Content-Type: text/xml
+Content-Type: application/problem+json
 
 X-Error-Detail-Header: Account Over Rate Limit
 X-Mashery-Error-Code: ERR_403_DEVELOPER_OVER_RATE
 
-<h1>Developer Over Rate</h1>
+{
+  "title": "Rate Limit Exceeded",
+  "detail": "Account Over Rate Limit"
+}
+
 ```
 
 ## Throttle Limit
@@ -27,13 +31,16 @@ Example response to a request over the throttle limit:
 
 ```
 HTTP/1.1 403 Forbidden
-Content-Type: text/xml
+Content-Type: application/problem+json
 
 Retry-After: 1
 X-Error-Detail-Header: Account Over Queries Per Second Limit
 X-Mashery-Error-Code: ERR_403_DEVELOPER_OVER_QPS
 
-<h1>Developer Over Qps</h1>
+{
+  "title": "Quota Limit Exceeded",
+  "detail": "Account Over Queries Per Second Limit"
+}
 ```
 
 > NOTE: The `Retry-After` gives a hint how long before the same request should be repeated (in seconds).
