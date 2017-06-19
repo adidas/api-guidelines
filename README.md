@@ -1,4 +1,5 @@
-![layers](/assets/adidas-group-logo.svg)
+<img href="/assets/adidas-group-logo.svg" alt="adidas group" />
+
 
 # adidas API Guidelines
 _Guidelines for API design at adidas_ ([Read online at GitBook](https://adidas-group.gitbooks.io/api-guidelines/content/))
