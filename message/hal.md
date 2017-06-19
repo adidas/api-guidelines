@@ -26,13 +26,13 @@ A document representing a "Greeting" resource might look like:
   }
 }
 ```
-The field `_links` has a special meaning in HAL. It denotes a list of link relations - a pair if a relation identifier and a link (URI). 
+The field `_links` has a special meaning in HAL. It denotes a list of link relations - a pair of a relation identifier and a link (URI). 
 
 These link relations are used to express the relation of a resource with other resources.
 
-In our case the "Greeting" resource isn't related to other resources but itself-hence the `self` relation pointing to the Greeting resource. 
+In our case the "Greeting" resource isn't related to other resources but itself, hence the `self` relation pointing to the Greeting resource. 
 
-It is **customary** for every resource representation to include the `self` link relation. 
+> NOTE: It is **customary** for every resource representation to include the `self` link relation. 
 
 > NOTE: The href **MUST** always be **relative path to the API root** (e.g. without the host and scheme).
 
