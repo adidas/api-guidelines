@@ -47,9 +47,9 @@
   * [Client Application Access Control](execution/api-keys.md)
 * [API Clients](clients/README.md)
   * [Loose Coupling](clients/loose-coupling.md)
-* [Miscellaneous](miscellaneous.md)
 * [Guides](guides/README.md)
   * [API Testing CI Environment](guides/api-testing-ci-environment.md)
   * [Complete API Development](guides/complete-api-development.md)
 * [Acknowledgements](acknowledgements.md)
+* [Miscellaneous](miscellaneous.md)
 
