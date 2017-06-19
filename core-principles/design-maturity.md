@@ -8,7 +8,7 @@ Every API design **MUST** be **resource-centric** ([Web API Design Maturity Mode
 
 An API design **MAY** be **affordance-centric** ([Web API Design Maturity Model Level 3](http://amundsen.com/talks/2016-11-apistrat-wadm/2016-11-apistrat-wadm.pdf)).
 
-## API Design Implementation
+## API Design Implementation Maturity
 > How to implement the API design
 
 Every API design implementation using the HTTP protocol **MUST** use the appropriate **HTTP Request Method** ([Richardson Maturity Model Level 2](https://martinfowler.com/articles/richardsonMaturityModel.html#level2)) to implement an action afforded by a resource.
