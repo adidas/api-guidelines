@@ -9,20 +9,30 @@ Every API implementation's response **SHOULD** include information about cache-a
 Two, most common scenarios for controling the cache-ability of a response includes (1) Setting expiration and revalidation and (2) disabling the caching of a response. Refer to the [Cache-Control Documentation](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control) for additional controls.
 
 #### 1. Cache Expiration & Revalidation
-Common scenario to set cache expiration and revalidation is to use the `max-age` and `must-revalidate` directives:
+The common scenario to set cache expiration and revalidation policy is to use the `max-age` and `must-revalidate` directives:
 
 ```
 HTTP/1.1 200 OK
-Date: Mon, 19 Aug 2017 00:00:00 GM
+Date: Mon, 19 Aug 2017 00:00:00 CEST
+Last-Modified: Mon, 19 Aug 2017 00:00:00 CEST
 Cache-Control: max-age=3600,must-revalidate
+Content-Type: application/hal+json; charset=UTF-8
 
 ...
 ```
 
-
 #### 2. Disabling Cache
+To disable caching completely API implementation **SHOULD** use the `no-cache` and `no-store` directives:    
 
+```
+HTTP/1.1 200 OK
+Date: Mon, 19 Aug 2017 00:00:00 CEST
+Last-Modified: Mon, 19 Aug 2017 00:00:00 CEST
+Cache-Control: no-cache, no-store, must-revalidate
+Content-Type: application/hal+json; charset=UTF-8
 
+...
+```
 
 ## ETag
 Every API implementation's response to a [cacheable request](https://github.com/for-GET/know-your-http-well/blob/master/methods.md#cacheable) **SHOULD** include the [`ETag` HTTP Header](https://tools.ietf.org/html/rfc7232#section-2.3) to identify the specific version of the returned resource.
