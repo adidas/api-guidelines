@@ -3,19 +3,19 @@
 >
 > _– [Mark Nottingham](https://www.mnot.net/blog/2011/10/25/web_api_versioning_smackdown)_
 
-Any change to an API MUST NOT break existing clients.
+Any change to an API **MUST NOT** break existing clients.
 
 Any change to:
-- **resource identifier** (resource name / URI) including any **query parameters** and their semantics
-- **resource metadata** (e.g. HTTP headers)
-- **actions** the resource affords (e.g. available HTTP Methods)
-- **relations** with other resources (e.g Links)
-- **representation format** (e.g. HTTP request and response bodies)
+1. **Resource identifier** (resource name / URI) including any **query parameters** and their semantics
+1. **Resource metadata** (e.g. HTTP headers)
+1. **Action** the resource affords (e.g. available HTTP Methods)
+1. **Relation** with other resources (e.g Links)
+1. **Representation format** (e.g. HTTP request and response bodies)
 
-MUST follow the [Rules for Extending](core-principles/rules-for-extending.md).
+**MUST** follow the [**Rules for Extending**](core-principles/rules-for-extending.md).
 
 ## Identifier Stability (No URI Versioning)
-A change MUST NOT affect **existing** resource identifiers (name / URI). Furthermore, a resource identifier **MUST NOT** contain a semantic version to convey a version of resource or its representation format.
+A change **MUST NOT** affect **existing** resource identifiers (name / URI). Furthermore, a resource identifier **MUST NOT** contain a semantic version to convey a version of resource or its representation format.
 
 > _The reason to make a real REST API is to get evolvability … a "v1" is a .... to your API customers, indicating RPC/HTTP (not REST)_
 >
@@ -25,9 +25,9 @@ A change MUST NOT affect **existing** resource identifiers (name / URI). Further
 Adding a new action to existing resource with identifier `/greeting` doesn't change its identifier to `/v2/greeting` (or `/greeting-with-new-action` etc.).
 
 ## Backward-incompatible Changes
-A change to _resource identifier_, _resource metadata_, _resource actions_ and _resource relations_, that can't follow the [Rules for Extending](core-principles/rules-for-extending.md) MUST result into a **new resource variant**. Existing resource variant MUST be preserved.
+A change to _resource identifier_, _resource metadata_, _resource actions_ and _resource relations_, that can't follow the [Rules for Extending](core-principles/rules-for-extending.md) **MUST** result into a **new resource variant**. Existing resource variant **MUST** be preserved.
 
-A change to _representation format_ SHOULD NOT result into a new resource variant.
+A change to _representation format_ **SHOULD NOT** result into a new resource variant.
 
 #### Example
 Currently optional URI Query parameter `first` on an existing resource `/greeting?first=John&last=Appleseed` needs to be made required. Since this change violates the 3rd rule of extending and could break existing clients a new variant of the resource is created with different URI `/named-greeting?first=John&last=Appleseed`.
@@ -35,9 +35,9 @@ Currently optional URI Query parameter `first` on an existing resource `/greetin
 ### Representation Format Changes
 > A representation format is the serialization format (media type) used in request and response bodies and typically it represents a resource or its part, possibly with additional hypermedia controls.
 
-If the change can't follow the Rules for Extending the representation format media type MUST be changed. If the media type has been changed the previous media type MUST be available via [Content Negotiation](core-principles/content-negotiation.md). 
+If the change can't follow the Rules for Extending the representation format media type **MUST** be changed. If the media type has been changed the previous media type **MUST** be available via [Content Negotiation](core-principles/content-negotiation.md). 
 
-If the media type conveys the version parameter, the version parameter MUST follow [Semantic versioning](http://semver.org/).
+If the media type conveys the version parameter, the version parameter **MUST** follow [Semantic versioning](http://semver.org/).
 
 #### Example
 Media type _before_ a breaking change:
@@ -53,7 +53,7 @@ application/vnd.example.resource+json; version=3
 ```
 
 ## API Description Versioning
-API Description in the OpenAPI specification format MUST have the `version` field. The `version` field MUST follow [Semantic versioning](http://semver.org/):
+API Description in the OpenAPI specification format **MUST** have the `version` field. The `version` field **MUST** follow [Semantic versioning](http://semver.org/):
 
 > Given a version number MAJOR.MINOR.PATCH, increment the:
 > 
@@ -61,7 +61,7 @@ API Description in the OpenAPI specification format MUST have the `version` fiel
 > - MINOR version when you add functionality in a **backwards-compatible** manner
 > - PATCH version when you make **backwards-compatible bug fixes**
 
-The API Description version SHOULD be updated accordingly to API design change.
+The API Description version **SHOULD** be updated accordingly to API design change.
 
 #### Example
 Following API Description
@@ -75,7 +75,6 @@ info:
 ```
 
 Has MAJOR version 2, MINOR version 1 and PATCH version 3.
-
 
 #### Recommended Reading
 - [Evolving HTTP APIs](https://www.mnot.net/blog/2012/12/04/api-evolution)
