@@ -5,9 +5,9 @@ Every API designer, implementer and consumer **MUST** understand the semantic of
 
 At a minimum everyone **MUST** be familiar with the semantics of ["Common" HTTP Status Codes](https://github.com/for-GET/know-your-http-well/blob/master/status-codes.md#common).
 
----
+#### Example
 
-#### Example: Use Codes 4xx or 5xx to Communicate Errors
+#### Use Codes 4xx or 5xx to Communicate Errors
 A request: 
 
 ```
