@@ -1,7 +1,13 @@
 # Caching
-Every API implementation response to a [cacheable request]((https://github.com/for-GET/know-your-http-well/blob/master/methods.md#cacheable) SHOULD include the [`ETag` HTTP Header](https://tools.ietf.org/html/rfc7232#section-2.3) to identify the specific version of the returned resource.
+Every API implementation **SHOULD** return both the cache expiry information ([`Cache-Control` HTTP header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Cache-Control)) and specific resource version information ([`ETag` HTTP Header](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/ETag)).
 
-Every API client SHOULD use [`If-None-Match` HTTP header](https://tools.ietf.org/html/rfc7232#section-3.2) whenever it's performing a cacheable request. The value of `If-None-Match` should be the value of the `ETag` header stored from a previous request. The client MUST be able to handle the **304 Not Modified** response from the server.
+## Cache-Control
+Every API implementation's response **SHOULD** include information about cache-ability and cache expiration of the response. 
+
+## ETag
+Every API implementation's response to a [cacheable request](https://github.com/for-GET/know-your-http-well/blob/master/methods.md#cacheable) **SHOULD** include the [`ETag` HTTP Header](https://tools.ietf.org/html/rfc7232#section-2.3) to identify the specific version of the returned resource.
+
+Every API client **SHOULD** use [`If-None-Match` HTTP header](https://tools.ietf.org/html/rfc7232#section-3.2) whenever it's performing a cacheable request. The value of `If-None-Match` should be the value of the `ETag` header stored from a previous request. The client **MUST** be ready to handle the **304 Not Modified** response from the server to use the legal copy.
 
 #### How ETag works
 ETags are unique identifiers for a specific version of a resource found by a URL. They are used for cache validation, to quickly check for modifications.
