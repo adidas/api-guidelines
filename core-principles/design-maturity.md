@@ -11,6 +11,6 @@ An API design **MAY** be **affordance-centric** ([Web API Design Maturity Model 
 ## API Design Implementation
 > How to implement the API design
 
-Every API design implementation using the HTTP(S) protocol **MUST** use the appropriate **HTTP Request Method** ([Richardson Maturity Model Level 2](https://martinfowler.com/articles/richardsonMaturityModel.html#level2)) to implement an action afforded by a resource.
+Every API design implementation using the HTTP protocol **MUST** use the appropriate **HTTP Request Method** ([Richardson Maturity Model Level 2](https://martinfowler.com/articles/richardsonMaturityModel.html#level2)) to implement an action afforded by a resource.
 
 An API design implementation **SHOULD** include **hypermedia controls** (HATEOAS) ([Richardson Maturity Model Level 3](https://martinfowler.com/articles/richardsonMaturityModel.html#level3)).
