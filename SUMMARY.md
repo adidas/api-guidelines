@@ -25,6 +25,7 @@
   * [Problem Detail](message/error-reporting.md)
   * [Foreign Key Relations](message/foreign-key-relations.md)
 * [Application](application/README.md)
+  * [Corporate Data Model](application/harmonize-data.md)
   * [Common Data Types](application/common-data-types.md)
 * [Evolution](evolution/README.md)
   * [Naming Conventions](evolution/naming-conventions.md)
