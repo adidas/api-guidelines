@@ -38,3 +38,8 @@ HTTP/1.1 404 Not Found
 ```
 
 should be returned.
+
+#### Recommended Reading
+- [How to Think About HTTP Status Codes](https://www.mnot.net/blog/2017/05/11/status_codes)
+
+
