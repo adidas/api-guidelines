@@ -1,7 +1,10 @@
 # HAL
-> HAL is a simple format that gives a consistent and easy way to hyperlink between resources in your API.
+The [`application/hal+json`](http://stateless.co/hal_specification.html) (HAL) **MUST** be used as the representation format of a resource.
 
-This is an informal introduction for the HAL media type. For details see [HAL - Hypertext Application Language Specification](http://stateless.co/hal_specification.html).
+## Introduction to HAL
+> _HAL is a simple format that gives a consistent and easy way to hyperlink between resources in your API._
+
+This is an informal introduction for the HAL media type. For more details see [HAL - Hypertext Application Language Specification](http://stateless.co/hal_specification.html).
 
 ## Simple Document Example
 The simplest Hal document looks like an empty JSON (it is an empty JSON!):
