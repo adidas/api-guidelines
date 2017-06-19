@@ -4,8 +4,6 @@ While HTTP doesn't impose any limit on the length of an URI some implementation 
 Every endpoint with such an URI **MUST** use the HTTP **POST** Request Method and send the query string in HTTP Request Message body using the `application/x-www-form-urlencoded` media type.
 
 
-_NOTE: Since this operation is safe and idempotent, using the POST method is a misuse of HTTP’s uniform interface. A consequence of this implementation is a loss of cache-ability.
-
 #### Example
 
 ```
