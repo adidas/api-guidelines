@@ -12,7 +12,7 @@ Any change to:
 1. **Relation** with other resources (e.g Links)
 1. **Representation format** (e.g. HTTP request and response bodies)
 
-**MUST** follow the [**Rules for Extending**](core-principles/rules-for-extending.md).
+**MUST** follow the [**Rules for Extending**](https://adidas-group.gitbooks.io/api-guidelines/content/core-principles/rules-for-extending.html).
 
 ## Identifier Stability (No URI Versioning)
 A change **MUST NOT** affect **existing** resource identifiers (name / URI). Furthermore, a resource identifier **MUST NOT** contain a semantic version to convey a version of resource or its representation format.
@@ -25,7 +25,7 @@ A change **MUST NOT** affect **existing** resource identifiers (name / URI). Fur
 Adding a new action to existing resource with identifier `/greeting` doesn't change its identifier to `/v2/greeting` (or `/greeting-with-new-action` etc.).
 
 ## Backward-incompatible Changes
-A change to _resource identifier_, _resource metadata_, _resource actions_ and _resource relations_, that can't follow the [Rules for Extending](core-principles/rules-for-extending.md) **MUST** result into a **new resource variant**. Existing resource variant **MUST** be preserved.
+A change to _resource identifier_, _resource metadata_, _resource actions_ and _resource relations_, that can't follow the [Rules for Extending](https://adidas-group.gitbooks.io/api-guidelines/content/core-principles/rules-for-extending.html) **MUST** result into a **new resource variant**. Existing resource variant **MUST** be preserved.
 
 A change to _representation format_ **SHOULD NOT** result into a new resource variant.
 
@@ -35,7 +35,7 @@ Currently optional URI Query parameter `first` on an existing resource `/greetin
 ### Representation Format Changes
 > A representation format is the serialization format (media type) used in request and response bodies and typically it represents a resource or its part, possibly with additional hypermedia controls.
 
-If the change can't follow the Rules for Extending the representation format media type **MUST** be changed. If the media type has been changed the previous media type **MUST** be available via [Content Negotiation](core-principles/content-negotiation.md). 
+If the change can't follow the Rules for Extending the representation format media type **MUST** be changed. If the media type has been changed the previous media type **MUST** be available via [Content Negotiation](https://adidas-group.gitbooks.io/api-guidelines/content/message/content-negotiation.html). 
 
 If the media type conveys the version parameter, the version parameter **MUST** follow [Semantic versioning](http://semver.org/).
 
