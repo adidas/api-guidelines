@@ -39,6 +39,7 @@ paths:
             Manufacturer Id. Denotes an id of an manufacturer of an article that must be in the order.
 
             **Mutually exclusive** with `article_id`.
+            
           required: false
           type: string
           x-example: manufacturer_id_1     
