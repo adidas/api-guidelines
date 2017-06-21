@@ -45,5 +45,21 @@ paths:
           x-example: manufacturer_id_1     
 ```
 
-  
+## Alternative Design
+When it would be beneficial (e.g. one of the filter queries is more common than another one) a separate resoruce for the particular query **SHOULD** be provided. In such a case, the pivotal search parameter **MAY** be in the form of a path variable.
+
+#### Example
+Building on top of the aforementioned example, we will provide the filtering of orders by article id as a separate resource. 
+
+```yaml
+paths:
+  /articles/{article_id}/orders:
+    x-summary: Collection of Orders for given Article 
+
+    get:
+      summary: Retrieve the collection of Orders that contains given article.
+```
+
+
+
 
