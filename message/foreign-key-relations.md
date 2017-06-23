@@ -60,7 +60,7 @@ instead:
 
 ```json
 {
-  "author_id": "1234"
+  "authorId": "1234"
 }
 ```
 
