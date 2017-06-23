@@ -51,8 +51,8 @@ A well-formed resource representation:
       "href": "/users/john"
     }
   },
-  "order_number": 1234,
-  "item_count": 42,
+  "orderNumber": 1234,
+  "itemCount": 42,
   "status": "pending"
 }
 ```
