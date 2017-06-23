@@ -43,7 +43,7 @@ These additiona errors **MUST** be under the `errors` and **MUST** follow the Pr
 Request:
 
 ```
-POST /my_resource HTTP/1.1
+POST /my-resource HTTP/1.1
 Content-Type: application/json
 
 {
@@ -62,7 +62,7 @@ Content-Language: en
 {
   "type": "https://example.net/validation_error",
   "title": "Your request parameters didn't validate.",
-  "instance": "/my_resource",
+  "instance": "/my-resource",
   "status": 400,
   
   "errors": [
