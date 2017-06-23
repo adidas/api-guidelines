@@ -36,7 +36,7 @@ instead:
 ```json
 {
   ...
-  "author_href": "/users/john"
+  "authorHref": "/users/john"
 }
 ```
 
