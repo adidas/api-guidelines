@@ -46,7 +46,7 @@
   * [Security](execution/security.md)
   * [Rate Limiting](execution/rate-limiting.md)
   * [Caching](execution/caching.md)
-  * Search Requests
+  * [Search Requests](execution/search-requests.md)
 * [API Clients](clients/README.md)
   * [Loose Coupling](clients/loose-coupling.md)
 * [Guides](guides/README.md)
