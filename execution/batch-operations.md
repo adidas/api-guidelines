@@ -13,10 +13,10 @@ Content-Type: application/json
 {
   "order": [
     {
-      "item_count": 42
+      "itemCount": 42
     },
     {
-      "item_count": 2
+      "itemCount": 2
     }
   ]
 }
@@ -36,13 +36,13 @@ Content-Type: application/json
       "_links": {
         "self": { "href": "/order/1"}
       },
-      "item_count": 42
+      "itemCount": 42
     },
     {
       "_links": {
         "self": { "href": "/order/2"}
       },      
-      "item_count": 2
+      "itemCount": 2
     }
   ]
 }
@@ -85,16 +85,16 @@ Content-Type: application/json
 {
   "order": [
     {
-      "item_count": 42
+      "itemCount": 42
     },
     {
-      "item_count": -100
+      "itemCount": -100
     },        
     {
-      "item_count": 42
+      "itemCount": 42
     },
     {
-      "item_count": 1.3232
+      "itemCount": 1.3232
     }
   ]
 }
@@ -113,14 +113,14 @@ Content-Type: application/problem+json
   
   "errors": [
     {
-      "type": "https://example.net/invalid_params",
+      "type": "https://example.net/invalid-params",
       "instance": "/orders/1",
       "title": "Invalid Parameter",
       "detail": "item_count must be a positive integer",
       "status": 400
     },
     {
-      "type": "https://example.net/invalid_params",
+      "type": "https://example.net/invalid-params",
       "instance": "/orders/3",
       "title": "Invalid Parameter",
       "detail": "item_count must be a positive integer",
