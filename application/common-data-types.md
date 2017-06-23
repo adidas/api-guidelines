@@ -12,16 +12,16 @@ Time Interval format **MUST** conform to the [ISO 8601](https://en.wikipedia.org
 ## Standard Time Stamps
 Where applicable, a resource representation **SHOULD** contain the standard timestamps:
 
-- `created_at`
-- `updated_at`
-- `finished_at`
+- `createdAt`
+- `updatedAt`
+- `finishedAt`
 
 #### Example
 
 ```json
 {
-    "created_at": "2017-01-01T12:00:00Z",
-    "updated_at": "2017-01-01T13:00:00Z",
+    "createdAt": "2017-01-01T12:00:00Z",
+    "updatedAt": "2017-01-01T13:00:00Z",
     
     ...
 }
