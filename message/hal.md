@@ -49,8 +49,8 @@ A more complex document example could be an "Order" resource that has a related 
       "href": "/users/john"
     }
   },
-  "order_number": 1234,
-  "item_count": 42,
+  "orderNumber": 1234,
+  "itemCount": 42,
   "status": "pending"
 }
 ```
@@ -74,14 +74,14 @@ The `_embedded` field's object simply contains the related resources HAL represe
         "_links": {
           "self": { "href": "/orders/1" }
         },
-        "order_number": "1",
+        "orderNumber": "1",
         "status": "pending"
       },
       {
         "_links": {
           "self": { "href": "/orders/2" }
         },
-        "order_number": "2",
+        "orderNumber": "2",
         "status": "cancelled"
       }      
     ]
