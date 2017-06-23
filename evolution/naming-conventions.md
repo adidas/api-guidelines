@@ -7,7 +7,7 @@
 - Use `camelCase` unless stated otherwise
 - Reconcile terms with adidas CDM
 
-Every field identifier **MUST** be in American English and written in `lowercase`. An identifier **SHOULD NOT** contain acronyms. CamelCase (`camelCase`) **MUST** be used to delimit combined words.
+Every identifier **MUST** be in American English and written in `lowercase`. An identifier **SHOULD NOT** contain acronyms. CamelCase (`camelCase`) **MUST** be used to delimit combined words.
 
 ## URI
 Every URI **MUST** follow the General Rules except for the `camelCase` rule. Instead, a hyphen (`-`) **SHOULD** be used to delimit combined words (kebab-case). In addition, an URI **MUST NOT** end with a trailing slash (`/`).
