@@ -116,14 +116,14 @@ Content-Type: application/problem+json
       "type": "https://example.net/invalid-params",
       "instance": "/orders/1",
       "title": "Invalid Parameter",
-      "detail": "item_count must be a positive integer",
+      "detail": "itemCount must be a positive integer",
       "status": 400
     },
     {
       "type": "https://example.net/invalid-params",
       "instance": "/orders/3",
       "title": "Invalid Parameter",
-      "detail": "item_count must be a positive integer",
+      "detail": "itemCount must be a positive integer",
       "status": 400
     }
   ],
