@@ -2,7 +2,7 @@
 A collection resource **SHOULD** provide the [`first`, `last`, `next` and `prev` link](https://tools.ietf.org/html/rfc5988#section-6.2.2)s for navigation within the collection.
 
 #### Example
-Collection of Orders using the collection navigation link and `offset` and `limit` query parameters:
+The Collection of Orders using the collection navigation link and `offset` and `limit` query parameters:
 
 
 ```json
