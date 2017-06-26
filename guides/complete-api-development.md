@@ -100,13 +100,13 @@
         
       1. **API Documentation**
       
-        1. Create new adidas API developer's portal page in the Mashery
-        
-          > Manage > Content > Documentation > APIs
+          1. Create new adidas API developer's portal page in the Mashery
           
-        1. [Embed Apiary documentation](https://help.apiary.io/tools/embed/#apiary-embed-api-reference) on the newly created API Page
-        
-        1. Revisit the API documentation access policy/authorization
+            > Manage > Content > Documentation > APIs
+            
+          1. [Embed Apiary documentation](https://help.apiary.io/tools/embed/#apiary-embed-api-reference) on the newly created API Page
+          
+          1. Revisit the API documentation access policy/authorization
     
 1. **Use the API**
 
