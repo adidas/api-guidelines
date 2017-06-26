@@ -60,7 +60,7 @@
 
 7. Run Tests (The preferred alternative connected to Apiary)
 
-    NOTE: You have to have a `dredd.yml` generated before hand: `$ dredd init -r apiary -j apiaryApiKey:<APIARY_API_KEY> -j apiaryApiName:<API_NAME>`. 
+    NOTE: You have to have a `dredd.yml` generated beforehand: `$ dredd init -r apiary -j apiaryApiKey:<APIARY_API_KEY> -j apiaryApiName:<API_NAME>`. 
     
     ```
     $ dredd
