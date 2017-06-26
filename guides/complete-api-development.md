@@ -53,9 +53,9 @@
   
       > Keep running the Dredd locally to see the progress.
       
-  1. Set up a [CI/CD pipeline](https://adidas-group.gitbooks.io/api-guidelines/content/guides/api-testing-ci-environment.html) to run the Dredd tests automatically
+  1. Set up a [CI/CD pipeline](https://adidas-group.gitbooks.io/api-guidelines/content/guides/api-testing-ci-environment.html) to execute the Dredd tests automatically
   
-      > NOTE: Both TeamCity and Jenkis enviroments are available, contact adidas API evangelist for details.
+      > NOTE: Both TeamCity and Jenkins environments are available, contact adidas API evangelist for details.
   
 1. **Deploy the API**
 
@@ -70,10 +70,10 @@
     
   1. Verify the deployment with Dredd
     
-      > Use dredd pointed towards the deployment host, be careful to NOT run it against the production OR using real production credentials.
+      > Use Dredd pointed towards the deployment host, be careful NOT to run it against the production OR using real production credentials.
       
   1. Monitor the API usage
-    "From performance and technical standpoint"
+    "From performance and technical standpoint."
     
 1. **Expose the API using Mashery**
 
@@ -96,7 +96,7 @@
     
     1. Revisit the API Plan's API default rate limits 
     
-    1. Revisit the API Plan's access policy / authorization
+    1. Revisit the API Plan's access policy/authorization
     
   1. **API Documentation**
   
@@ -106,11 +106,11 @@
       
     1. [Embed Apiary documentation](https://help.apiary.io/tools/embed/#apiary-embed-api-reference) on the newly created API Page
     
-    1. Revisit the API documentation access policy / authorization
+    1. Revisit the API documentation access policy/authorization
     
 1. **Use the API**
 
-   > This step can be done at the same time as "Develop the API" thank to Apiary hosted Mock, Inspector and Documentation.
+   > This step can be done at the same time as "Develop the API" thank Apiary hosted Mock, Inspector, and Documentation.
    
   1. Read API documentation at Apiary
   
@@ -128,7 +128,7 @@
   
 1. **Analyze the API**
 
-  1. Analyze the use of production API Using Mashery
+  1. Examine the use of production API Using Mashery
   
   1. Analyze the technical performance metrics
   
@@ -156,7 +156,7 @@
   
   1. After the API Design change is verified, reviewed and approved, continue with the "Develop the API" phase
   
-  1. Eventually, when the updated design is ready to be deployed for production, merge the branch to the production branch
+  1. Eventually, when the updated design is ready to be deployed for production, merge the branch into the production branch
   
   1. Follow this guide from "Expose the API using Mashery" step
   
