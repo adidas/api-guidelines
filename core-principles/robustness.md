@@ -5,5 +5,4 @@ Every API implementation and API consumer **MUST** follow Postel's law:
 >
 > _– [John Postel](https://en.wikipedia.org/wiki/Robustness_principle)_
 
-That is, send the absolutely necessary minimum and be tolerant as possible while consuming another service ([tolerant reader](https://martinfowler.com/bliki/TolerantReader.html)).
-
+That is, send the necessary minimum and be tolerant as possible while consuming another service ([tolerant reader](https://martinfowler.com/bliki/TolerantReader.html)).
