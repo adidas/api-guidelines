@@ -1,3 +1,4 @@
+
 # Content Negotiation
 Every API **MUST** implement and every API Consumer **MUST** use the [HTTP content negotiation](https://tools.ietf.org/html/rfc7231#section-3.4) where a representation of a resource is requested.
 
@@ -12,7 +13,7 @@ Accept: application/vnd.example.resource+json; version=2
 ...
 ```
 
-The server is able to provide only a newer version of the requested media type `version=2.1.3`. But since the newer version is backward compatible with the requested `version=2` (related: Changes & Versioning) it is able to satisfy the request and responds:
+The server can provide only a newer version of the requested media type `version=2.1.3`. But since the newer version is backward compatible with the requested `version=2` (related: Changes & Versioning) it can satisfy the request and responds:
 
 ```
 HTTP/1.1 200 OK
