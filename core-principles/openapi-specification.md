@@ -5,7 +5,7 @@ Every API description **MUST** be:
 * stored in version control system (Bitbucket, GitHub) in the same repository as the API implementation.
 * accessible via endpoint through GET operation. _To be discussed_
 
-> NOTE: Synchronization between the version control system and adidas [API description platform](./apiary.md) 
+> NOTE: Synchronization between the version control system and adidas [API Description platform](./apiary.md) 
  should be automated using CI/CD framework. 
 
 
