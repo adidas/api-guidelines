@@ -2,9 +2,9 @@
 
 
 ## Response Message Fields
-Every request that may result into a response with a non-trivial body **SHOULD** implement the the `fields` query parameter. If provided, the value of this parameter must be a comma-separated list of top-level response message fields. 
+Every request that may result in a response with a non-trivial body **SHOULD** implement the `fields` query parameter. If provided, the value of this parameter must be a comma-separated list of top-level response message fields. 
 
-Upon receiving such a request, in the event of a 2xx response, the service **SHOULD** respond with a message that includes only top-level fields specified in the `fields` parameter. This includes HAL-specific fields (`_links` and `_embedded`).
+Upon receiving such a request, in the event of a 2xx response, the service **SHOULD** respond with a message that includes only top-level fields specified in the `fields` parameter. That includes HAL-specific fields (`_links` and `_embedded`).
 
 #### Example
 Retrieve only some details of an Order resource:
@@ -32,13 +32,13 @@ Content-Type: application/hal+json
 ```
 
 ## Embedded Resources
-Similarly to the the `fields` query parameter, every request that might result into a response containing related embedded resource representations **SHOULD** implement the `embedded` query parameter. If, provided the value of the `embedded` query parameter **MUST** be comma-separated list of relation identifiers.
+Similarly to the `fields` query parameter, every request that might result in a response containing related embedded resource representations **SHOULD** implement the `embedded` query parameter. If, provided the value of the `embedded` query parameter **MUST** be a comma-separated list of relation identifiers.
 
 Upon receiving such a request, in the event of a 2xx response, the service **SHOULD** respond with a message that "embeds" (see HAL `_embedded` field) only the related resources specified in the `embedded` parameter. 
 
 
 #### Example
-Embed only information about the Author of an Order resource, we are not interested in Items that are in this order.
+Embed only information about the Author of an Order resource. We are not interested in Items that are in this order.
 
 HTTP Request
 
@@ -77,10 +77,4 @@ When `fields` and `embedded` parameters are not provided or not implemented the 
 ## Resource Variants
 The facility of `fields` and `embedded` parameters doesn't impose any restriction of creating new resource variants. 
 
-To save client multiple round trip, it is perfectly OK to create a new resource just as a compound resource to only provide selected fields or blend-embed some existing resources together. 
-
-
-
-
-
-
+It is OK to create a new resource just as a compound resource only to provide selected fields or blend-embed some existing resources together. 
