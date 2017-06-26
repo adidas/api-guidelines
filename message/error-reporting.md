@@ -3,7 +3,7 @@ The [`application/problem+json`](https://tools.ietf.org/html/rfc7807) (Problem D
 
 Problem Detail is intended for use with the HTTP status codes 4xx and 5xx. Problem Detail **MUST NOT** be used with 2xx status code responses.
 
-At minimum, any Problem Detail response **MUST** have the `title` and `detail` fields. 
+At the minimum, any Problem Detail response **MUST** have the `title` and `detail` fields. 
 
 #### Example
 
@@ -15,7 +15,7 @@ At minimum, any Problem Detail response **MUST** have the `title` and `detail` f
 ```
 
 ## Optional Fields
-It **SHOULD** have the `type` field with the identifier of the error, in addition it **MAY** have the `instance` field with the URI of the resource in question. If the Problem Detail response has the `status` field it **MUST** have the same value as HTTP Status code from of the response.
+It **SHOULD** has the `type` field with the identifier of the error, besides it **MAY** have the `instance` field with the URI of the resource in question. If the Problem Detail response has the `status` field it **MUST** have the same value as HTTP Status code from of the response.
 
 
 ```json
@@ -28,15 +28,15 @@ It **SHOULD** have the `type` field with the identifier of the error, in additio
 }
 ```
 
-> NOTE: The `type` field is identifier and as such it **MAY** be used to denote additional error codes. Keep in mind that the identifier should be an URI.
+> NOTE: The `type` field is an identifier, and as such it **MAY** be used to denote additional error codes. Keep in mind that the identifier should be a URI.
 
 ## Additional Fields
 If needed, the Problem Detail **MAY** include additional fields, refer to [RFC7807](https://tools.ietf.org/html/rfc7807) for details. 
 
 ## Validation Errors
-When necessary, a Problem Detail response **MAY** include additional error details about the problems that has occurred. 
+When necessary, a Problem Detail response **MAY** include additional error details about the problems that have occurred. 
 
-These additiona errors **MUST** be under the `errors` and **MUST** follow the Problem Detail structure.
+These additional errors **MUST** be under the `errors` and **MUST** follow the Problem Detail structure.
 
 #### Example
 
@@ -93,7 +93,7 @@ GET /greeting HTTP/1.1
 Accept: application/hal+json
 ```
 
-However in order to make this request the client needs to be authorized. Since the request is made without the authorization credentials the **401 Unauthorized** response is returned together with details using the `application/problem+json` media type:
+However, in order to make this request, the client needs to be authorized. Since the request is made without the authorization credentials the **401 Unauthorized** response is returned together with details using the `application/problem+json` media type:
 
 ```
 HTTP/1.1 401 Unauthorized
@@ -114,7 +114,7 @@ Content-Language: en
 >
 > _– [RFC7807](https://tools.ietf.org/html/rfc7807)_
 
-A Problem Detail response **MUST NOT** contain a program stack trace or server log for debugging purposes. Instead provide a `logref` field with a reference to the particular server log.
+A Problem Detail response **MUST NOT** contain a program stack trace or server log for debugging purposes. Instead, provide a `logref` field with reference to the particular server log.
 
 ## Working with Problem Detail
-There is a whole plethora of libraries working with Problem Detail, for example see [Zalando / Problem](https://github.com/zalando/problem) (Java).
+There are a whole plethora of libraries working with Problem Detail, for example, see [Zalando / Problem](https://github.com/zalando/problem) (Java).
