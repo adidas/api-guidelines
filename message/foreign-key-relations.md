@@ -1,7 +1,7 @@
 # Foreign Key Relations
 
 ## Link or Embed Foreign Key Relation
-When a resource representation includes relation with another (foreign) resource the relation **MUST** be expressed as a link relation or embed the related resource.
+When a resource representation includes relation with another (foreign) resource, the relation **MUST** be expressed as a link relation or embed the related resource.
 
 #### Example 
 Use:
@@ -41,7 +41,7 @@ instead:
 ```
 
 ## Nest Foreign Key Relation
-If a foreign object has another identifier but URI or the foreign object isn't a resource the object **MUST** be nested.
+If a foreign object has another identifier, but URI or the foreign object isn't a resource, the object **MUST** be nested.
 
 #### Example
 Use:
@@ -64,4 +64,4 @@ instead:
 }
 ```
 
-> NOTE: As a rule of thumb, in a HTTP message body, there SHOULD NOT be any field with trailing "_id", "_href", "_url" etc. in its name.
+> NOTE: As a rule of thumb, in an HTTP message body, there SHOULD NOT be any field with trailing "_id," "_href," "_url" etc. in its name.
