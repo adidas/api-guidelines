@@ -25,17 +25,17 @@ A change **MUST NOT** affect **existing** resource identifiers (name / URI). Fur
 Adding a new action to existing resource with identifier `/greeting` doesn't change its identifier to `/v2/greeting` (or `/greeting-with-new-action` etc.).
 
 ## Backward-incompatible Changes
-A change to _resource identifier_, _resource metadata_, _resource actions_ and _resource relations_, that can't follow the [Rules for Extending](https://adidas-group.gitbooks.io/api-guidelines/content/core-principles/rules-for-extending.html) **MUST** result into a **new resource variant**. Existing resource variant **MUST** be preserved.
+A change to _resource identifier_, _resource metadata_, _resource actions_ and _resource relations_ that can't follow the [Rules for Extending](https://adidas-group.gitbooks.io/api-guidelines/content/core-principles/rules-for-extending.html) **MUST** result into a **new resource variant**. Existing resource variant **MUST** be preserved.
 
 A change to _representation format_ **SHOULD NOT** result into a new resource variant.
 
 #### Example
-Currently optional URI Query parameter `first` on an existing resource `/greeting?first=John&last=Appleseed` needs to be made required. Since this change violates the 3rd rule of extending and could break existing clients a new variant of the resource is created with different URI `/named-greeting?first=John&last=Appleseed`.
+Currently, optional URI Query Parameter `first` on an existing resource `/greeting?first=John&last=Appleseed` needs to be made required. Since this change violates the 3rd rule of extending and could break existing clients a new variant of the resource is created with different URI `/named-greeting?first=John&last=Appleseed`.
 
 ### Representation Format Changes
-> A representation format is the serialization format (media type) used in request and response bodies and typically it represents a resource or its part, possibly with additional hypermedia controls.
+> A representation format is the serialization format (media type) used in request and response bodies, and typically it represents a resource or its part, possibly with additional hypermedia controls.
 
-If the change can't follow the Rules for Extending the representation format media type **MUST** be changed. If the media type has been changed the previous media type **MUST** be available via [Content Negotiation](https://adidas-group.gitbooks.io/api-guidelines/content/message/content-negotiation.html). 
+If a change can't follow the Rules for Extending the representation format media type **MUST** be changed. If the media type has been changed the previous media type, **MUST** be available via [Content Negotiation](https://adidas-group.gitbooks.io/api-guidelines/content/message/content-negotiation.html). 
 
 If the media type conveys the version parameter, the version parameter **MUST** follow [Semantic versioning](http://semver.org/).
 
@@ -78,5 +78,4 @@ Has MAJOR version 2, MINOR version 1 and PATCH version 3.
 
 #### Recommended Reading
 - [Evolving HTTP APIs](https://www.mnot.net/blog/2012/12/04/api-evolution)
-
 

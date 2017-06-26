@@ -1,5 +1,5 @@
 # Separate Concerns
-Every API using HTTP/S API **MUST** clearly follow the concern separation of a HTTP message:
+Every API using HTTP/S API **MUST** precisely follow the concern separation of an HTTP message:
 
 1. A _resource identifier_–URI **MUST** be used to indicate **identity** only
 1. _HTTP request method_ **MUST** be used to communicate the **action semantics** (intent and safety)
@@ -14,7 +14,7 @@ The rule
 
 > A resource identifier–URI **MUST** be used to indicate identity only
 
-implies there **MUST NOT** be any information about the representation media type, version of resource or anything else in the URI. 
+implies there **MUST NOT** be any information about the representation media type, version of the resource or anything else in the URI. 
 
 For example, URIs  `/greeting.json` or `/v2.1.3/greeting` are **illegal** as they are not used for identification of a resource only but they convey the information about representation format or version. URIs are not meant to carry any other information but the identifier of the resource. 
 
@@ -24,7 +24,7 @@ The rule
 
 > HTTP message body MUST be used to transfer the message content
 
-implies an HTTP GET request **MUST NOT** use HTTP message body to identify the resource. For example a request:
+Implies an HTTP GET request **MUST NOT** use HTTP message body to identify the resource. For example a request:
 
 ```
 GET /greeting HTTP/1.1

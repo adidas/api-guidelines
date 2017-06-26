@@ -15,7 +15,7 @@ GET /orders/1234 HTTP/1.1
 ...
 ```
 
-resulting in the **200 OK** response, when the requested resource (as identified by the request URI) couldn't be found: 
+resulting in the **200 OK** response, when the requested resource (as identified by request URI) couldn't be found: 
 
 ```
 HTTP/1.1 200 OK
@@ -41,5 +41,4 @@ should be returned.
 
 #### Recommended Reading
 - [How to Think About HTTP Status Codes](https://www.mnot.net/blog/2017/05/11/status_codes)
-
 

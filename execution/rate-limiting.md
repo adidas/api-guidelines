@@ -1,10 +1,10 @@
 # Rate Limiting
 The API rate limiting is provided by the selected adidas API management platform – Mashery. 
 
-Rate limit informations are provided in the for of HTTP headers. There are two types of rate limits: **Quota** and **Throttle**. Quota is a limit enforced per a longer period (typically a day). Throttle is the limit of calls per second. 
+Rate limit information is provided in the for of HTTP headers. There are two types of rate limits: **Quota** and **Throttle**. The quota is a limit enforced per a longer period (typically a day). The throttle is the limit of calls per second. 
 
 ## Quota Limit
-The limit on the number of call per a period (day). The default quota limit is 5000 calls per day. 
+The limit on the number of calls per a period (day). The default quota limit is 5000 calls per day. 
 
 #### Example 
 Example response to a request over the quota limit: 
@@ -24,7 +24,7 @@ X-Mashery-Error-Code: ERR_403_DEVELOPER_OVER_RATE
 ```
 
 ## Throttle Limit
-The limit on the number of call per second. The default throttle limit is 2 calls per second. 
+The limit on the number of calls per second. The default throttle limit is two calls per second. 
 
 #### Example
 Example response to a request over the throttle limit:
@@ -47,8 +47,7 @@ X-Mashery-Error-Code: ERR_403_DEVELOPER_OVER_QPS
 
 
 ## Detail Information
-
-By default the headers do not contain details about the current usage and quotas. This can be changed in the API management.
+By default, the headers do not contain details about the current usage and quotas. The default can be changed in the API management.
 
 #### Example
 A successful response with the details about throttle (`X-Plan-QPS`) and quota (`X-Plan-Quota`) rate limits:
@@ -62,7 +61,3 @@ X-Plan-Quota-Allotted: 1000
 X-Plan-Quota-Current: 2
 X-Plan-Quota-Reset: Tuesday, June 6, 2017 12:00:00 AM GMT
 ```
-  
-
-
-

@@ -7,7 +7,7 @@ The understanding of HTTP starts with the understanding of [HTTP message](https:
 
 Once you are familiar with the **HTTP message structure** learn about the **HTTP request methods**, **HTTP response status codes** and **HTTP headers**. 
 
-Each HTTP request method, status code and header has its semantics defined and every API **MUST** strictly adhere to it.
+Each HTTP request method, status code, and header have its semantics defined, and every API **MUST** strictly adhere to it.
 
 Follow the [Robustness Principle](core-principles/robustness.md). Use only the HTTP request methods, response codes and HTTP headers you understand, be liberal in accepting others.
 

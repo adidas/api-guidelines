@@ -10,7 +10,6 @@ In particular, any change to an API **MUST** follow the following **Rules for Ex
 4. **Anything you add MUST be optional** (related [Robustness Principle](core-principles/robustness.md))
 
 
-> NOTE: These rules covers also renaming and changes to identifiers (URIs). Names and identifiers should be stable over the time including their semantics.
-
+> NOTE: These rules cover also renaming and change to identifiers (URIs). Names and identifiers should be stable over the time including their semantics.
 
 

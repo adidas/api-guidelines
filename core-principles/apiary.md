@@ -6,7 +6,6 @@
 
 1. Apiary **MUST** be the **single source of truth** to learn about existing APIs within the organization.
  
-> NOTE: Apiary supports API first approach in multiple ways:
+> NOTE: Apiary supports API-first approach in multiple ways:
   a. Validates API description for correctness and automatically generates API documentation to drive the discussion between stakeholders. (No more emails with API description flying between stakeholders)
   
-

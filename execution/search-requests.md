@@ -1,7 +1,7 @@
 # Search Requests
 A search (filter) operation on a collection resource **SHOULD** be defined as safe, idempotent and cacheable, therefore using the [GET HTTP request method](https://adidas-group.gitbooks.io/api-guidelines/content/protocol/use-appropriate-methods.html). 
 
-Every search parameter **SHOULD** be provided in the form of a query parameter. In the case some of search parameters being mutually exclusive or require the presence of another parameter the explanation **MUST** be part of operation's description.
+Every search parameter **SHOULD** be provided in the form of a query parameter. In the case of search parameters being mutually exclusive or require the presence of another parameter, the explanation **MUST** be part of operation's description.
 
 
 #### Example
@@ -16,7 +16,7 @@ paths:
       summary: Retrieve or Search in the Collection of Orders
       description: | 
         
-        This operation allows to retrieve a filtered list of orders based on mutliple criteria:
+        This operation allows to retrieve a filtered list of orders based on multiple criteria:
         
         1. **Filter Orders by Article Id**
         2. **Filter Orders by Manufacturer Id**
@@ -36,7 +36,7 @@ paths:
         - name: manufacturer_id
           in: query
           description: |
-            Manufacturer Id. Denotes an id of an manufacturer of an article that must be in the order.
+            Manufacturer Id. Denotes an id of a manufacturer of an article that must be in the order.
 
             **Mutually exclusive** with `article_id`.
             
@@ -46,10 +46,10 @@ paths:
 ```
 
 ## Alternative Design
-When it would be beneficial (e.g. one of the filter queries is more common than another one) a separate resoruce for the particular query **SHOULD** be provided. In such a case, the pivotal search parameter **MAY** be in the form of a path variable.
+When it would be beneficial (e.g. one of the filter queries is more common than another one) a separate resource for the particular query **SHOULD** be provided. In such a case, the pivotal search parameter **MAY** be in the form of a path variable.
 
 #### Example
-Building on top of the aforementioned example, we will provide the filtering of orders by article id as a separate resource. 
+Building on top of the example mentioned above, we will provide the filtering of orders by article id as a separate resource. 
 
 ```yaml
 paths:
@@ -57,9 +57,5 @@ paths:
     x-summary: Collection of Orders for given Article 
 
     get:
-      summary: Retrieve the collection of Orders that contains given article.
+      summary: Retrieve the collection of Orders that contain given article.
 ```
-
-
-
-

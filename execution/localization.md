@@ -1,7 +1,7 @@
 # Localization
 
 ## Language Variants
-If a resource has multiple language variants and the difference between variants is only in the language of human readable fields then the [`Accept-Language`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Language) request HTTP header **SHOULD** be used to select the desired language variant.
+If a resource has multiple language variants and the difference between variants is only in the language of human-readable fields, then the [`Accept-Language`](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Accept-Language) request HTTP header **SHOULD** be used to select the desired language variant.
 
 #### Example
 
@@ -20,7 +20,7 @@ Vary: Accept-Language
 ```
 
 ## Language or Country-specific Data Structure
-If the difference between language or country specific variants of a resource is bigger than just in the content of a human readable strings, for example the data structure of the resource representation is different, then a query parameter **SHOULD** be used to communicate the requested variant. 
+If the difference between language or country specific variants of a resource is bigger than just in the content of human readable strings, for example, the data structure of the resource representation is different, then a query parameter **SHOULD** be used to communicate the requested variant. 
 
 #### Example
 
@@ -35,4 +35,3 @@ Vary: Accept-Language
 
 ...
 ```
-
