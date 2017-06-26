@@ -6,14 +6,14 @@ _Guidelines for API design at adidas_ ([Read online at GitBook](https://adidas-g
 ## Motivation
 The goal of this document is to facilitate the work and minimize the effort of all API users while protecting their investment and encouraging API adoption.
 
-The guidelines lay down the foundation for collaboration, stability and extensibility.
+The guidelines lay down the foundation for collaboration, stability, and extensibility.
 
 ## Guidelines
 The API Guidelines are split into several levels:
 
 - **[Core Principles](https://adidas-group.gitbooks.io/api-guidelines/content/core-principles/)**
 
-    The Core Principle define the general rules that MUST be followed at throughout the full API lifecycle at any level. 
+    Core Principles define the general rules that MUST be followed at throughout the full API lifecycle at any level. 
 
 - **Functionality Guidelines**
     - **[Protocol level](https://adidas-group.gitbooks.io/api-guidelines/content/protocol/)**
@@ -34,7 +34,7 @@ The API Guidelines are split into several levels:
    
     - **[Evolution](https://adidas-group.gitbooks.io/api-guidelines/content/evolution/)**
     
-        Evolution qualities governance, such as testability, maintainability, extensibility and scalability.
+        Evolution qualities governance, such as testability, maintainability, extensibility, and scalability.
 
     - **[Execution](https://adidas-group.gitbooks.io/api-guidelines/content/execution/)**
     
