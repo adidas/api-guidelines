@@ -10,7 +10,7 @@
 Every identifier **MUST** be in American English and written in `lowercase`. An identifier **SHOULD NOT** contain acronyms. CamelCase (`camelCase`) **MUST** be used to delimit combined words.
 
 ## URI
-Every URI **MUST** follow the General Rules except for the `camelCase` rule. Instead, a hyphen (`-`) **SHOULD** be used to delimit combined words (kebab-case). In addition, an URI **MUST NOT** end with a trailing slash (`/`).
+Every URI **MUST** follow the General Rules except for the `camelCase` rule. Instead, a hyphen (`-`) **SHOULD** be used to delimit combined words (kebab-case). Besides, a URI **MUST NOT** end with a trailing slash (`/`).
 
 #### Example
 A well-formed URI:
@@ -20,7 +20,7 @@ A well-formed URI:
 ```
 
 ### Query Parameters and Path Fragments
-Every URI query parameter or fragment **MUST** follow the General Rules. In addition, they **MUST NOT** clash with the [reserved query parameter names](https://tools.adidas-group.com/confluence/display/EA/API+Interaction#APIInteraction-Query_Parameters).
+Every URI query parameter or fragment **MUST** follow the General Rules. Also, they **MUST NOT** clash with the [reserved query parameter names](https://tools.adidas-group.com/confluence/display/EA/API+Interaction#APIInteraction-Query_Parameters).
 
 ### URI Template Variables
 In addition to General Naming Rules, URI Template Variable names **MUST** follow the [RFC6570](https://tools.ietf.org/html/rfc6570#section-2.3). That is, the variable names can consist only from `ALPHA / DIGIT / "_" / pct-encoded`.
@@ -57,7 +57,7 @@ A well-formed resource representation:
 ```
 
 ## Relation Type Identifier
-Every custom [relation identifier](https://github.com/for-GET/know-your-http-well/blob/master/relations.md) **MUST** be in `lowercase` with words separated by hyphen (`-`).
+Every custom [relation identifier](https://github.com/for-GET/know-your-http-well/blob/master/relations.md) **MUST** be in `lowercase` with words separated by the hyphen (`-`).
 
 #### Example
 A well-formed resource representation with custom relation `fulfillment-provider`: 
@@ -115,6 +115,3 @@ Every action (operation) **MUST** have a name (defined by `summary` field). Acti
 get:
   summary: Retrieve List of Orders
 ```
-
-
-
