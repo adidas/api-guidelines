@@ -1,4 +1,4 @@
-![adidas group](https://adidas-group.gitbooks.io/api-guidelines/content/assets/adidas-group-logo.svg)
+![adidas logo](https://adidas-group.gitbooks.io/api-guidelines/content/assets/adidas-logo.svg)
 
 # adidas API Guidelines
 _Guidelines for API design at adidas_ ([Read online at GitBook](https://adidas-group.gitbooks.io/api-guidelines/content/))
