@@ -42,7 +42,6 @@
   * [Query Requests with Large Inputs](execution/query-requests-with-large-inputs.md)
   * [Choosing Fields and Embedded Resources](execution/choosing-fields-and-embedded-resoruces.md)
   * [Localization](execution/localization.md)
-  * [Authentication](execution/authentication.md)
   * [Security](execution/security.md)
   * [Rate Limiting](execution/rate-limiting.md)
   * [Caching](execution/caching.md)
