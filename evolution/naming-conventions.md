@@ -31,7 +31,7 @@ In addition to General Naming Rules, URI Template Variable names **MUST** follow
 A well-formed URI Template Variable:
 
 ```
-/system-orders/{order_id}/author
+/system-orders/{orderId}/author
 ```
 
 ## Representation Format Fields
