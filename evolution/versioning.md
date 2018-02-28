@@ -87,6 +87,13 @@ info:
 
 Has MAJOR version 2, MINOR version 1 and PATCH version 3.
 
+#### Demo
+
+API description \(OAS2\) files demonstrating a proposal of an backward-incompatible change turned into a backward compatible change are available at [Bitbucket \(diff\) ](https://bitbucket.org/apidesigner/demo-versioning-api/pull-requests/1/add-name-parameter/diff)and documented in Apiary:
+
+* [Production version](https://demoversioningproduction.docs.apiary.io/#) as being consumed by clients
+* [Development version](https://demoversioningdevelopment.docs.apiary.io/#) proposing a backward incompatible change
+
 #### Recommended Reading
 
 * [Evolving HTTP APIs](https://www.mnot.net/blog/2012/12/04/api-evolution)
