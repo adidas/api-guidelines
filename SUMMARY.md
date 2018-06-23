@@ -6,6 +6,7 @@
 
 ## General Guidelines
 
+* [Introduction](general-guidelines/introduction.md)
 * [API First](general-guidelines/api-first.md)
 * [Contract](general-guidelines/contract.md)
 * [Robustness](general-guidelines/robustness.md)
