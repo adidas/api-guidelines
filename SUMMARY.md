@@ -18,7 +18,7 @@
 
 ## REST API Guidelines
 
-* [Introduction](rest/introduction.md)
+* [Introduction](rest/README.md)
 * [Core Principles](rest/core-principles/README.md)
   * [OpenAPI Specification](rest/core-principles/openapi-specification.md)
   * [API Design Platform](rest/core-principles/apiary.md)
@@ -66,5 +66,5 @@
 
 ## Kafka Guidelines
 
-* [Introduction](kafka/introduction.md)
+* [Introduction](kafka/README.md)
 

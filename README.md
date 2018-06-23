@@ -16,8 +16,8 @@ The API Guidelines are split into two main parts:
 
 * [General Guidelines](/general-guidelines/README.md)
 * API type-specific Guidelines
-  * [REST APIs Guidelines](/rest/introduction.md)
-  * [Kafka Guidelines](/kafka/introduction.md)
+  * [REST APIs Guidelines](/rest/README.md)
+  * [Kafka Guidelines](/kafka/README.md)
 
 The general guidelines section discusses the core principles relevant to any kind of API. The API type-specific section further defines the guidelines specific to a given architectural style or API technique \(such as REST, Kafka or GraphQL API\).
 
