@@ -6,14 +6,14 @@
 
 ## General Guidelines
 
-* [API First](core-principles/api-first.md)
-* [Contract](core-principles/contract.md)
-* [Version Control System](core-principles/version-control-system.md)
-* [Robustness](core-principles/robustness.md)
-* [Minimal API Surface](core-principles/minimal-api-surface.md)
-* [Rules for Extending](core-principles/rules-for-extending.md)
-* [JSON](evolution/json.md)
-* [Security](execution/security.md)
+* [API First](general-guidelines/api-first.md)
+* [Contract](general-guidelines/contract.md)
+* [Robustness](general-guidelines/robustness.md)
+* [Version Control System](general-guidelines/version-control-system.md)
+* [Minimal API Surface](general-guidelines/minimal-api-surface.md)
+* [Rules for Extending](general-guidelines/rules-for-extending.md)
+* [JSON](general-guidelines/json.md)
+* [Security](general-guidelines/security.md)
 
 ## REST API Guidelines
 
