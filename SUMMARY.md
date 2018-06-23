@@ -17,7 +17,7 @@
 
 ## REST API Guidelines
 
-* [Introduction](rest/core-principles/introduction.md)
+* [Introduction](rest/introduction.md)
 * [Core Principles](rest/core-principles/README.md)
   * [OpenAPI Specification](rest/core-principles/openapi-specification.md)
   * [API Design Platform](rest/core-principles/apiary.md)
