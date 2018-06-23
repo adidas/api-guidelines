@@ -14,7 +14,7 @@ The guidelines lay down the foundation for collaboration, stability, and extensi
 
 The API Guidelines are split into two main parts:
 
-* General Guidelines
+* [General Guidelines](/general-guidelines/introduction.md)
 * API type-specific Guidelines
   * [REST APIs Guidelines](/rest/introduction.md)
   * [Kafka Guidelines](/kafka/introduction.md)
