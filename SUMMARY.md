@@ -2,7 +2,7 @@
 
 ## Introduction
 
-* [Introduction](README.md)
+* [Welcome](README.md)
 
 ## General Guidelines
 
