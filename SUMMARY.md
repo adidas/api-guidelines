@@ -2,7 +2,7 @@
 
 ## Introduction
 
-* [Welcome](README.md)
+* [adidas API Guidelines](README.md)
 
 ## General Guidelines
 
@@ -12,7 +12,6 @@
 * [Robustness](core-principles/robustness.md)
 * [Minimal API Surface](core-principles/minimal-api-surface.md)
 * [Rules for Extending](core-principles/rules-for-extending.md)
-* [Foreign Key Relations](message/foreign-key-relations.md)
 * [JSON](evolution/json.md)
 * [Security](execution/security.md)
 
@@ -34,6 +33,7 @@
   * [Content Negotiation](message/content-negotiation.md)
   * [HAL](message/hal.md)
   * [Problem Detail](message/error-reporting.md)
+  * [Foreign Key Relations](message/foreign-key-relations.md)
 * [Application](application/README.md)
   * [Corporate Data Model](application/harmonize-data.md)
   * [Common Data Types](application/common-data-types.md)
@@ -59,7 +59,7 @@
 * [API Clients](clients/README.md)
   * [Loose Coupling](clients/loose-coupling.md)
 * [Examples](examples.md)
-* [Miscellaneous](miscellaneous.md)
+* Core Principles
 
 ## Kafka
 

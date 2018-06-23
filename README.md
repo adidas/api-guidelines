@@ -19,40 +19,6 @@ The API Guidelines are split into two main parts:
 
 The general guidelines section discusses the core principles relevant to any kind of API. The API type-specific section further defines the guidelines specific to a given architectural style or API technique \(such as REST, Kafka or GraphQL API\).
 
-
-
-* The API Guidelines are split into several levels:
-
-* [**Core Principles**](https://adidas-group.gitbooks.io/api-guidelines/content/core-principles/)
-
-  Core Principles define the general rules that MUST be followed at throughout the full API lifecycle at any level.
-
-* **Functionality Guidelines**
-
-  * [**Protocol level**](https://adidas-group.gitbooks.io/api-guidelines/content/protocol/)
-
-    Protocol guidelines define the protocols used within the organization.
-
-  * [**Message level**](https://adidas-group.gitbooks.io/api-guidelines/content/message/)
-
-    The Message guidelines define the structure and semantics of messages used to exchange information.
-
-  * [**Application level**](https://adidas-group.gitbooks.io/api-guidelines/content/application/)
-
-    The Application guidelines define the definition and use of application-specific semantics.
-
-* **Quality Guidelines**
-
-  Evolution and Execution guidelines define the rules for achieving the desired architectural qualities of systems.
-
-  * [**Evolution**](https://adidas-group.gitbooks.io/api-guidelines/content/evolution/)
-
-    Evolution qualities governance, such as testability, maintainability, extensibility, and scalability.
-
-  * [**Execution**](https://adidas-group.gitbooks.io/api-guidelines/content/execution/)
-
-    Execution qualities governance, such as security and usability.
-
 ## How to read the Guidelines
 
 These Guidelines are available for online reading at [GitBook](https://apidesigner.gitbooks.io/adidas-api-guidelines/content/) its source can be found on [GitHub](https://github.com/adidas-group/api-guidelines).
