@@ -61,6 +61,7 @@
   * [Complete API Development](rest/guides/complete-api-development.md)
 * [API Clients](rest/clients/README.md)
   * [Loose Coupling](rest/clients/loose-coupling.md)
+* [Further References](rest/miscellaneous.md)
 
 ## Kafka Guidelines
 
