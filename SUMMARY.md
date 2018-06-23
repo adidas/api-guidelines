@@ -15,7 +15,7 @@
 * [JSON](evolution/json.md)
 * [Security](execution/security.md)
 
-## REST APIs
+## REST API Guidelines
 
 * [Introduction](core-principles/introduction.md)
 * [Core Principles](core-principles/core-principles.md)
@@ -56,13 +56,13 @@
     * [URI Structure](evolution/uri-structure.md)
     * [Changes and Versioning](evolution/versioning.md)
     * [Testing Enviroments](execution/testing-enviroments.md)
-  * [API Clients](clients/README.md)
-    * [Loose Coupling](clients/loose-coupling.md)
 * [Guides](guides/README.md)
   * [API Testing CI Environment](guides/api-testing-ci-environment.md)
   * [Complete API Development](guides/complete-api-development.md)
+* [API Clients](clients/README.md)
+  * [Loose Coupling](clients/loose-coupling.md)
 
-## Kafka
+## Kafka Guidelines
 
 * [Introduction](kafka/introduction.md)
 

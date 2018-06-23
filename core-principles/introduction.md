@@ -34,5 +34,12 @@ The REST API Guidelines are further split into the following parts:
 
     Execution qualities governance, such as security and usability.
 
+* **Guides**  
+  Guides and materials supporting the REST API Guidelines
+
+* **API Clients**
+
+  Section dedicated to consumers of adidas APIs
+
 
 
