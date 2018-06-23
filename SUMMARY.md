@@ -1,17 +1,27 @@
 # Summary
 
+## Introduction
+
 * [Introduction](README.md)
-* [Core Principles](core-principles/README.md)
-  * [API First](core-principles/api-first.md)
-  * [OpenAPI Specification](core-principles/openapi-specification.md)
-  * [API Design Platform](core-principles/apiary.md)
-  * [Version Control System](core-principles/version-control-system.md)
-  * [Contract](core-principles/contract.md)
-  * [Testing](core-principles/testing.md)
-  * [Design Maturity](core-principles/design-maturity.md)
-  * [Robustness](core-principles/robustness.md)
-  * [Minimal API Surface](core-principles/minimal-api-surface.md)
-  * [Rules for Extending](core-principles/rules-for-extending.md)
+
+## General Guidelines
+
+* [API First](core-principles/api-first.md)
+* [Contract](core-principles/contract.md)
+* [Version Control System](core-principles/version-control-system.md)
+* [Robustness](core-principles/robustness.md)
+* [Minimal API Surface](core-principles/minimal-api-surface.md)
+* [Rules for Extending](core-principles/rules-for-extending.md)
+* [Foreign Key Relations](message/foreign-key-relations.md)
+* [JSON](evolution/json.md)
+* [Security](execution/security.md)
+
+## REST APIs
+
+* [OpenAPI Specification](core-principles/openapi-specification.md)
+* [API Design Platform](core-principles/apiary.md)
+* [Design Maturity](core-principles/design-maturity.md)
+* [Testing](core-principles/testing.md)
 * [Protocol](protocol/README.md)
   * [HTTP](protocol/http.md)
   * [TLS](protocol/tls.md)
@@ -23,14 +33,12 @@
   * [Content Negotiation](message/content-negotiation.md)
   * [HAL](message/hal.md)
   * [Problem Detail](message/error-reporting.md)
-  * [Foreign Key Relations](message/foreign-key-relations.md)
 * [Application](application/README.md)
   * [Corporate Data Model](application/harmonize-data.md)
   * [Common Data Types](application/common-data-types.md)
 * [Evolution](evolution/README.md)
-  * [Naming Conventions](evolution/naming-conventions.md)
   * [Reserved Identifiers](evolution/reserved-identifiers.md)
-  * [JSON](evolution/json.md)
+  * [Naming Conventions](evolution/naming-conventions.md)
   * [Changes and Versioning](evolution/versioning.md)
   * [URI Structure](evolution/uri-structure.md)
   * [Testing Enviroments](execution/testing-enviroments.md)
@@ -42,15 +50,15 @@
   * [Query Requests with Large Inputs](execution/query-requests-with-large-inputs.md)
   * [Choosing Fields and Embedded Resources](execution/choosing-fields-and-embedded-resoruces.md)
   * [Localization](execution/localization.md)
-  * [Security](execution/security.md)
   * [Rate Limiting](execution/rate-limiting.md)
   * [Caching](execution/caching.md)
-* [API Clients](clients/README.md)
-  * [Loose Coupling](clients/loose-coupling.md)
 * [Guides](guides/README.md)
   * [API Testing CI Environment](guides/api-testing-ci-environment.md)
   * [Complete API Development](guides/complete-api-development.md)
+* [API Clients](clients/README.md)
+  * [Loose Coupling](clients/loose-coupling.md)
 * [Examples](examples.md)
 * [Miscellaneous](miscellaneous.md)
-* [Acknowledgements](acknowledgements.md)
+
+## Kafka
 
