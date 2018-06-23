@@ -18,6 +18,7 @@
 
 ## REST APIs
 
+* [Introduction](core-principles/introduction.md)
 * [OpenAPI Specification](core-principles/openapi-specification.md)
 * [API Design Platform](core-principles/apiary.md)
 * [Design Maturity](core-principles/design-maturity.md)
@@ -61,4 +62,6 @@
 * [Miscellaneous](miscellaneous.md)
 
 ## Kafka
+
+* [Introduction](kafka/introduction.md)
 
