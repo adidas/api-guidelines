@@ -1,7 +1,5 @@
 # Introduction
 
-## ![](../.gitbook/assets/adidas-logo.svg)
-
 ## adidas REST API Guidelines
 
 The adidas REST API Guidelines defines standards and guidelines for building REST APIs at adidas. **These Guidelines has to be followed in addition to the adidas** [**General API Guidelines.**](../general-guidelines/general-guidelines.md)
