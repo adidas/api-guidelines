@@ -1,4 +1,4 @@
-# Introduction
+# adidas API Guidelines
 
 ![adidas logo](https://adidas-group.gitbooks.io/api-guidelines/content/assets/adidas-logo.svg)
 
@@ -16,10 +16,10 @@ The guidelines lay down the foundation for collaboration, stability, and extensi
 
 The API Guidelines are split into two main parts:
 
-* [General Guidelines](general-guidelines/general-guidelines.md)
+* [General Guidelines](../general-guidelines/general-guidelines.md)
 * API type-specific Guidelines
-  * [REST APIs Guidelines](rest-api-guidelines/rest.md)
-  * [Kafka Guidelines](kafka-guidelines/kafka.md)
+  * [REST APIs Guidelines](../rest-api-guidelines/rest.md)
+  * [Kafka Guidelines](../kafka-guidelines/kafka.md)
 
 The general guidelines section discusses the core principles relevant to any kind of API. The API type-specific section further defines the guidelines specific to a given architectural style or API technique \(such as REST, Kafka or GraphQL API\).
 
