@@ -15,7 +15,7 @@
       > e.g.: User has many Orders via order relation, all of the required affordances should be mapped to relations.
 
    5. Formalize the design in the [Open API Specification](http://swagger.io/specification/) \(OAS, formerly known as "Swagger"\) format
-   6. Follow the [adidas API guidelines](https://adidas-group.gitbooks.io/api-guidelines/content/)
+   6. Follow the [adidas API guidelines](https://adidas.gitbook.io/api-guidelines/introduction/readme)
    7. Put the OAS file into [Apiary adidas group](https://apiary.io)
    8. Make sure the OAS file passes all adidas API Apiary style guide checks
    9. Verify the design using Apiary Documentation and Apiary Mock Service

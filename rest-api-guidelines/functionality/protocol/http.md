@@ -10,7 +10,7 @@ Once you are familiar with the **HTTP message structure** learn about the **HTTP
 
 Each HTTP request method, status code, and header have its semantics defined, and every API **MUST** strictly adhere to it.
 
-Follow the [Robustness Principle](https://github.com/adidas-group/api-guidelines/tree/af88d15fd04ef18d6724fa65943901aab7328e7f/rest/protocol/core-principles/robustness.md). Use only the HTTP request methods, response codes and HTTP headers you understand, be liberal in accepting others.
+Follow the [Robustness Principle](../../../general-guidelines/robustness.md). Use only the HTTP request methods, response codes and HTTP headers you understand, be liberal in accepting others.
 
 ## Know HTTP
 

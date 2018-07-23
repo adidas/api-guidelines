@@ -4,13 +4,13 @@ The list of all reserved identifiers or identifiers with special meaning.
 
 ## Representation Format Fields
 
-* `_links` - [HAL](https://adidas-group.gitbooks.io/api-guidelines/content/message/hal.html)
-* `_embedded` - [HAL](https://adidas-group.gitbooks.io/api-guidelines/content/message/hal.html)
+* `_links` - [HAL](../../functionality/message/hal.md)
+* `_embedded` - [HAL](../../functionality/message/hal.md)
 
 ## Query Parameters
 
-* `fields`- [Choosing Fields & Embedded Resources](https://adidas-group.gitbooks.io/api-guidelines/content/execution/choosing-fields-and-embedded-resoruces.html)
-* `embedded` - [Choosing Fields & Embedded Resources](https://adidas-group.gitbooks.io/api-guidelines/content/execution/choosing-fields-and-embedded-resoruces.html)
-* `offset` - [Pagination](reserved-identifiers.md) 
-* `limit`- [Pagination](reserved-identifiers.md)
+* `fields`- [Choosing Fields & Embedded Resources](../execution/choosing-fields-and-embedded-resoruces.md)
+* `embedded` - [Choosing Fields & Embedded Resources](../execution/choosing-fields-and-embedded-resoruces.md)
+* `offset` - [Pagination](../execution/pagination.md) 
+* `limit`- [Pagination](../execution/pagination.md)
 

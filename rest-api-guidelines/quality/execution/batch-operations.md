@@ -70,7 +70,7 @@ However, in such an operation has to be provided such a non-atomic bulk operatio
 
 1. Non-atomic bulk operation **MUST** return a success status code \(e.g. **200 OK**\) only if every and all sub-operation succeeded.
 2. If any single one sub-operation fails the whole non-atomic bulk operation **MUST** return the respective **4xx** or **5xx** status code.
-3. In the case of a failure the response **MUST** contain the [problem detail](https://adidas-group.gitbooks.io/api-guidelines/content/message/error-reporting.html) information about every sub-operation that has failed.
+3. In the case of a failure the response **MUST** contain the [problem detail](../../functionality/message/message-formats.md#error-response-format) information about every sub-operation that has failed.
 4. **The client MUST be aware that the operation is non-atomic and the even the operation might have failed some sub-operations were processed successfully.**
 
 ### Example

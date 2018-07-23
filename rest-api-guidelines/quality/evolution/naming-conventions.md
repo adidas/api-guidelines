@@ -23,7 +23,7 @@ A well-formed URI:
 
 ### Query Parameters and Path Fragments
 
-Every URI query parameter or fragment **MUST** follow the General Rules. Also, they **MUST NOT** clash with the [reserved query parameter names](https://tools.adidas-group.com/confluence/display/EA/API+Interaction#APIInteraction-Query_Parameters).
+Every URI query parameter or fragment **MUST** follow the General Rules. Also, they **MUST NOT** clash with the [reserved query parameter names](reserved-identifiers.md#query-parameters).
 
 ### URI Template Variables
 

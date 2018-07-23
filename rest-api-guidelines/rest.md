@@ -13,26 +13,26 @@ The REST API Guidelines are further split into the following parts:
   REST API Guidelines Core Principles defines the rules that **MUST** be followed at throughout the full API lifecycle.
 
 * **Functionality Guidelines**
-  * [**Protocol level**](https://adidas-group.gitbooks.io/api-guidelines/content/protocol/)
+  * \*\*\*\*[**Protocol level**](functionality/protocol/)\*\*\*\*
 
     Protocol guidelines define the protocols used within the organization.
 
-  * [**Message level**](https://adidas-group.gitbooks.io/api-guidelines/content/message/)
+  * \*\*\*\*[**Message level**](functionality/message/)\*\*\*\*
 
     The Message guidelines define the structure and semantics of messages used to exchange information.
 
-  * [**Application level**](https://adidas-group.gitbooks.io/api-guidelines/content/application/)
+  * \*\*\*\*[**Application level**](functionality/application/)
 
     The Application guidelines define the definition and use of application-specific semantics.
 * **Quality Guidelines**
 
   Evolution and Execution guidelines define the rules for achieving the desired architectural qualities of systems.
 
-  * [**Evolution**](https://adidas-group.gitbooks.io/api-guidelines/content/evolution/)
+  * \*\*\*\*[**Evolution**](quality/evolution/)\*\*\*\*
 
     Evolution qualities governance, such as testability, maintainability, extensibility, and scalability.
 
-  * [**Execution**](https://adidas-group.gitbooks.io/api-guidelines/content/execution/)
+  * \*\*\*\*[**Execution**](quality/execution/)\*\*\*\*
 
     Execution qualities governance, such as security and usability.
 

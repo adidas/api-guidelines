@@ -1,6 +1,6 @@
 # Search Requests
 
-A search \(filter\) operation on a collection resource **SHOULD** be defined as safe, idempotent and cacheable, therefore using the [GET HTTP request method](https://adidas-group.gitbooks.io/api-guidelines/content/protocol/use-appropriate-methods.html).
+A search \(filter\) operation on a collection resource **SHOULD** be defined as safe, idempotent and cacheable, therefore using the GET HTTP request method.
 
 Every search parameter **SHOULD** be provided in the form of a query parameter. In the case of search parameters being mutually exclusive or require the presence of another parameter, the explanation **MUST** be part of operation's description.
 
