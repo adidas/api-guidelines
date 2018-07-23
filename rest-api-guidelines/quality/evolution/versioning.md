@@ -8,10 +8,10 @@ Any change to an API **MUST NOT** break existing clients.
 
 Any change to:  
 1. **Resource identifier** \(resource name / URI\) including any **query parameters** and their semantics  
-1. **Resource metadata** \(e.g. HTTP headers\)  
-1. **Action** the resource affords \(e.g. available HTTP Methods\)  
-1. **Relation** with other resources \(e.g Links\)  
-1. **Representation format** \(e.g. HTTP request and response bodies\)
+2. **Resource metadata** \(e.g. HTTP headers\)  
+3. **Action** the resource affords \(e.g. available HTTP Methods\)  
+4. **Relation** with other resources \(e.g Links\)  
+5. **Representation format** \(e.g. HTTP request and response bodies\)
 
 **MUST** follow the [**Rules for Extending**](../../../general-guidelines/rules-for-extending.md).
 
