@@ -4,7 +4,7 @@
 
 ## adidas API Guidelines
 
-_Guidelines for API design at adidas_ \([Read online at GitBook](https://adidas-group.gitbooks.io/api-guidelines/content/)\)
+_Guidelines for API design and development at adidas_ \([Read online at GitBook](https://adidas.gitbook.io/api-guidelines/)\)
 
 ### Motivation
 
