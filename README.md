@@ -57,3 +57,7 @@ NOTICE: The software has been designed solely for the purpose of providing API d
 If you want to contact adidas regarding the software, you can mail us at _software.engineering@adidas.com_.
  
 For further information open the [adidas terms and conditions](https://github.com/adidas/adidas-contribution-guidelines/wiki/Terms-and-conditions) page.
+
+### License
+
+[MIT](LICENSE)
