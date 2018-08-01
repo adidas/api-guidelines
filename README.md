@@ -1,8 +1,10 @@
-# Introduction
+# adidas API Guidelines
 
 ![adidas logo](https://adidas-group.gitbooks.io/api-guidelines/content/assets/adidas-logo.svg)
 
-## adidas API Guidelines
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
+## About
 
 _Guidelines for API design and development at adidas_ \([Read online at GitBook](https://adidas.gitbook.io/api-guidelines/)\)
 
