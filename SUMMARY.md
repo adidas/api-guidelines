@@ -1,10 +1,6 @@
 # Table of contents
 
-* [Introduction](README.md)
-
-## Introduction
-
-* [adidas API Guidelines](introduction/readme.md)
+* [adidas API Guidelines](README.md)
 
 ## General Guidelines
 
