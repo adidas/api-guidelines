@@ -12,7 +12,7 @@ description: Guidelines for the API design and development at adidas
 
 The goal of this document is to facilitate the work and minimize the effort of all API users at adidas while protecting their investment and encouraging API adoption.
 
-The guidelines lay down the foundation for collaboration, stability, and extensibility.
+These guidelines lay down the foundation for collaboration, stability, and extensibility.
 
 ### Guidelines
 
@@ -23,7 +23,7 @@ The API Guidelines are split into two main parts:
   * [REST APIs Guidelines](rest-api-guidelines/rest.md)
   * [Kafka Guidelines](kafka-guidelines/kafka.md)
 
-The general guidelines section discusses the core principles relevant to any kind of API. The API type-specific section further defines the guidelines specific to a given architectural style or API technique \(such as REST, Kafka or GraphQL API\).
+The general guidelines section discusses the core principles relevant to any kind of API. The API type-specific section further defines the guidelines specific to a given architectural style or API technique \(such as REST, Kafka or GraphQL APIs\).
 
 ### How to read the Guidelines
 
@@ -64,3 +64,4 @@ For further information open the [adidas terms and conditions](https://github.co
 ### License
 
 [MIT](https://github.com/adidas-group/api-guidelines/tree/657bc6fd49f1499f10c30ab18420f4bdb7cd841b/LICENSE/README.md)
+
