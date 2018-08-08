@@ -10,7 +10,7 @@ description: Guidelines for the API design and development at adidas
 
 ### Motivation
 
-The goal of this document is to facilitate the work and minimize the effort of all API users while protecting their investment and encouraging API adoption.
+The goal of this document is to facilitate the work and minimize the effort of all API users at adidas while protecting their investment and encouraging API adoption.
 
 The guidelines lay down the foundation for collaboration, stability, and extensibility.
 
@@ -64,4 +64,3 @@ For further information open the [adidas terms and conditions](https://github.co
 ### License
 
 [MIT](https://github.com/adidas-group/api-guidelines/tree/657bc6fd49f1499f10c30ab18420f4bdb7cd841b/LICENSE/README.md)
-
