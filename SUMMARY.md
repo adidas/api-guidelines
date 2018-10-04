@@ -55,7 +55,7 @@
     * [Reserved Identifiers](rest-api-guidelines/quality/evolution/reserved-identifiers.md)
     * [URI Structure](rest-api-guidelines/quality/evolution/uri-structure.md)
     * [Changes and Versioning](rest-api-guidelines/quality/evolution/versioning.md)
-* [Phasing out Old Versions](rest-api-guidelines/phasing-out-old-versions.md)
+    * [Phasing out Old Versions](rest-api-guidelines/quality/evolution/phasing-out-old-versions.md)
 * [Guides](rest-api-guidelines/guides/README.md)
   * [API Testing CI Environment](rest-api-guidelines/guides/api-testing-ci-environment.md)
   * [Complete API Development](rest-api-guidelines/guides/complete-api-development.md)
