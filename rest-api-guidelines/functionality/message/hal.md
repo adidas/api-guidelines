@@ -8,6 +8,10 @@ The [`application/hal+json`](http://stateless.co/hal_specification.html) \(HAL\)
 
 This document is an informal introduction to the HAL media type. For more details see [HAL - Hypertext Application Language Specification](http://stateless.co/hal_specification.html).
 
+## HAL Document Object Model
+
+HAL document follow the object model defined in JSON-schema [here](https://supermodel.io/adidas/api/HAL).
+
 ## Simple Document Example
 
 The simplest Hal document looks like an empty JSON \(it is an empty JSON!\):
