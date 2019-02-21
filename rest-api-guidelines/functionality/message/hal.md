@@ -12,6 +12,8 @@ This document is an informal introduction to the HAL media type. For more detail
 
 HAL document follow the object model defined in JSON-schema [here](https://supermodel.io/adidas/api/HAL).
 
+We provide also YAML code snippets for [OpenAPI Specification 2.0/Swagger](./HAL-snippet.yaml) and [OpenAPI Specification 3.x](./HAL-snippet-full-OpenApi3.yaml).
+
 ## Simple Document Example
 
 The simplest Hal document looks like an empty JSON \(it is an empty JSON!\):
@@ -116,6 +118,8 @@ Some APIs using HAL:
 ## Working with HAL
 
 Refer to the [extensive list of libraries that work with HAL](https://github.com/mikekelly/hal_specification/wiki/Libraries).
+
+For working with HAL and Node.js we suggest using [HALson npm package](https://www.npmjs.com/package/halson).
 
 ### Spring Framework
 
