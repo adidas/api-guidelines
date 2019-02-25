@@ -6,6 +6,8 @@ description: Guidelines for the API design and development at adidas
 
 ![adidas logo](https://adidas-group.gitbooks.io/api-guidelines/content/assets/adidas-logo.svg)
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 [Read online at GitBook](https://adidas.gitbook.io/api-guidelines/)
 
 ### Motivation
