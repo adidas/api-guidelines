@@ -1,64 +1,74 @@
-HalLinkObject:
-  title: HAL Link Object
-  type: object
-  properties:
-    href:
-      type: string
-    templated:
-      type: boolean
-    type:
-      type: string
-    deprecation:
-      type: string
-    name:
-      type: string
-    profile:
-      type: string
-    title:
-      type: string
-    hreflang:
-      type: string
-  required:
-    - href
-HalCuriesLink:
-  title: HAL Curies Link
-  allOf:
-    - type: object
-      properties:
-        templated:
-          enum:
-            - true
-      required:
-        - templated
-    - $ref: '#/definitions/HalLinkObject'
-HAL:
+swagger: "2.0"
+info:
   title: HAL
-  description: >-
-    JSON Hypertext Application Language. Definition of [HAL message
-    format](https://tools.ietf.org/html/draft-kelly-json-hal-08)
-  type: object
-  properties:
-    _links:
-      type: object
-      additionalProperties:
-        allOf:
-          - $ref: '#/definitions/HalLinkObject'
-          - type: array
-            items:
-              $ref: '#/definitions/HalLinkObject'
-      properties:
-        curies:
+  description: HAL snippet for OAS2
+  version: 1.0.0
+host: api.example.com
+basePath: /v1
+schemes:
+  - https
+paths: {}
+definitions: 
+  HalLinkObject:
+    title: HAL Link Object
+    type: object
+    properties:
+      href:
+        type: string
+      templated:
+        type: boolean
+      type:
+        type: string
+      deprecation:
+        type: string
+      name:
+        type: string
+      profile:
+        type: string
+      title:
+        type: string
+      hreflang:
+        type: string
+    required:
+      - href
+  HalCuriesLink:
+    title: HAL Curies Link
+    allOf:
+      - type: object
+        properties:
+          templated:
+            enum:
+              - true
+        required:
+          - templated
+      - $ref: '#/definitions/HalLinkObject'
+  HAL:
+    title: HAL
+    description: >-
+      JSON Hypertext Application Language. Definition of [HAL message
+      format](https://tools.ietf.org/html/draft-kelly-json-hal-08)
+    type: object
+    properties:
+      _links:
+        type: object
+        additionalProperties:
           allOf:
-            - $ref: '#/definitions/HalCuriesLink'
+            - $ref: '#/definitions/HalLinkObject'
             - type: array
               items:
-                $ref: >-
-                  '#/definitions/HalCuriesLink'
-    _embedded:
-      type: object
-      additionalProperties:
-        allOf:
-          - $ref: '#/definitions/HAL'
-          - type: array
-            items:
-              $ref: '#/definitions/HAL'
+                $ref: '#/definitions/HalLinkObject'
+        properties:
+          curies:
+            allOf:
+              - $ref: '#/definitions/HalCuriesLink'
+              - type: array
+                items:
+                  $ref: '#/definitions/HalCuriesLink'
+      _embedded:
+        type: object
+        additionalProperties:
+          allOf:
+            - $ref: '#/definitions/HAL'
+            - type: array
+              items:
+                $ref: '#/definitions/HAL'
