@@ -4,8 +4,8 @@ The list of all reserved identifiers or identifiers with special meaning.
 
 ## Representation Format Fields
 
-* `_links` - [HAL](../../functionality/message/hal.md)
-* `_embedded` - [HAL](../../functionality/message/hal.md)
+* `_links` - [HAL](../message/hal.md)
+* `_embedded` - [HAL](../message/hal.md)
 
 ## Query Parameters
 

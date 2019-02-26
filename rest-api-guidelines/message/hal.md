@@ -12,7 +12,7 @@ This document is an informal introduction to the HAL media type. For more detail
 
 HAL document follow the object model defined in JSON-schema [here](https://supermodel.io/adidas/api/HAL).
 
-YAML code snippets are provided for [OpenAPI Specification 2.0/Swagger](./HAL-snippet.yaml) and [OpenAPI Specification 3.x](./HAL-snippet-full-OpenApi3.yaml).
+YAML code snippets are provided for [OpenAPI Specification 2.0/Swagger](https://github.com/adidas/api-guidelines/tree/4a033eb0cf8ec582102c09c1eb5ba1fa8a5597d9/rest-api-guidelines/functionality/message/HAL-snippet.yaml) and [OpenAPI Specification 3.x](https://github.com/adidas/api-guidelines/tree/4a033eb0cf8ec582102c09c1eb5ba1fa8a5597d9/rest-api-guidelines/functionality/message/HAL-snippet-full-OpenApi3.yaml).
 
 ## Simple Document Example
 
@@ -124,3 +124,4 @@ For working with HAL and Node.js using [HALson npm package](https://www.npmjs.co
 ### Spring Framework
 
 Spring framework supports HAL out of the box. More info can be found in [Spring Documentation](https://spring.io/guides/gs/rest-hateoas/) and [examples](https://github.com/spring-guides/gs-rest-hateoas).
+

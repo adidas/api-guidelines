@@ -13,7 +13,7 @@ Any change to:
 4. **Relation** with other resources \(e.g Links\)  
 5. **Representation format** \(e.g. HTTP request and response bodies\)
 
-**MUST** follow the [**Rules for Extending**](../../../general-guidelines/rules-for-extending.md).
+**MUST** follow the [**Rules for Extending**](../../general-guidelines/rules-for-extending.md).
 
 ## Identifier Stability \(No URI Versioning\)
 
@@ -29,7 +29,7 @@ Adding a new action to existing resource with identifier `/greeting` doesn't cha
 
 ## Backward-incompatible Changes
 
-A change to _resource identifier_, _resource metadata_, _resource actions_ and _resource relations_ that can't follow the [Rules for Extending](../../../general-guidelines/rules-for-extending.md) **MUST** result into a **new resource variant**. Existing resource variant **MUST** be preserved.
+A change to _resource identifier_, _resource metadata_, _resource actions_ and _resource relations_ that can't follow the [Rules for Extending](../../general-guidelines/rules-for-extending.md) **MUST** result into a **new resource variant**. Existing resource variant **MUST** be preserved.
 
 A change to _representation format_ **SHOULD NOT** result into a new resource variant.
 
@@ -41,7 +41,7 @@ Currently, optional URI Query Parameter `first` on an existing resource `/greeti
 
 > A representation format is the serialization format \(media type\) used in request and response bodies, and typically it represents a resource or its part, possibly with additional hypermedia controls.
 
-If a change can't follow the Rules for Extending the representation format media type **MUST** be changed. If the media type has been changed the previous media type, **MUST** be available via [Content Negotiation](../../functionality/message/content-negotiation.md).
+If a change can't follow the Rules for Extending the representation format media type **MUST** be changed. If the media type has been changed the previous media type, **MUST** be available via [Content Negotiation](../message/content-negotiation.md).
 
 If the media type conveys the version parameter, the version parameter **SHOULD** follow [Semantic versioning](http://semver.org/).
 
