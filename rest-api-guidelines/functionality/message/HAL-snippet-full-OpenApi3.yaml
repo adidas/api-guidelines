@@ -1,0 +1,81 @@
+openapi: 3.0.0
+info:
+  title: HAL
+  description: 'HAL snippet for OAS3'
+  contact:
+    name: Andrzej Jarzyna
+    url: https://github.com/jerzyn
+    email: andrzej.jarzyna@adidas.com
+  version: '1.0.0'
+servers:
+- url: http://{defaultHost}
+  variables:
+    defaultHost:
+      default: www.example.com
+paths: {}
+components:
+  schemas:
+    HALLinkObject:
+      title: HALLinkObject
+      required:
+      - href
+      type: object
+      properties:
+        href:
+          type: string
+        templated:
+          type: boolean
+        type:
+          type: string
+        deprecation:
+          type: string
+        name:
+          type: string
+        profile:
+          type: string
+        title:
+          type: string
+        hreflang:
+          type: string
+    HALCuriesLink:
+      title: HALCuriesLink
+      required:
+      - templated
+      - href
+      type: object
+      properties:
+        templated:
+          type: string
+          example: True
+        href:
+          type: string
+        type:
+          type: string
+        deprecation:
+          type: string
+        name:
+          type: string
+        profile:
+          type: string
+        title:
+          type: string
+        hreflang:
+          type: string
+    HAL:
+      title: HAL
+      type: object
+      properties:
+        _links:
+          $ref: '#/components/schemas/Links'
+        _embedded:
+          type: object
+          additionalProperties:
+            $ref: '#/components/schemas/HAL'
+      description: JSON Hypertext Application Language. Definition of [HAL message format](https://tools.ietf.org/html/draft-kelly-json-hal-08)
+    Links:
+      title: Links
+      type: object
+      properties:
+        curies:
+          $ref: '#/components/schemas/HALCuriesLink'
+tags: []

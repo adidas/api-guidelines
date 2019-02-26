@@ -8,6 +8,12 @@ The [`application/hal+json`](http://stateless.co/hal_specification.html) \(HAL\)
 
 This document is an informal introduction to the HAL media type. For more details see [HAL - Hypertext Application Language Specification](http://stateless.co/hal_specification.html).
 
+## HAL Document Object Model
+
+HAL document follow the object model defined in JSON-schema [here](https://supermodel.io/adidas/api/HAL).
+
+YAML code snippets are provided for [OpenAPI Specification 2.0/Swagger](./HAL-snippet.yaml) and [OpenAPI Specification 3.x](./HAL-snippet-full-OpenApi3.yaml).
+
 ## Simple Document Example
 
 The simplest Hal document looks like an empty JSON \(it is an empty JSON!\):
@@ -113,7 +119,8 @@ Some APIs using HAL:
 
 Refer to the [extensive list of libraries that work with HAL](https://github.com/mikekelly/hal_specification/wiki/Libraries).
 
+For working with HAL and Node.js using [HALson npm package](https://www.npmjs.com/package/halson) is suggested.
+
 ### Spring Framework
 
 Spring framework supports HAL out of the box. More info can be found in [Spring Documentation](https://spring.io/guides/gs/rest-hateoas/) and [examples](https://github.com/spring-guides/gs-rest-hateoas).
-
