@@ -80,7 +80,7 @@ The `_embedded` field's object just contains the related resources HAL represent
     "self": { "href": "/orders" }
   },
   "_embedded": {
-    "order": [
+    "orders": [
       {
         "_links": {
           "self": { "href": "/orders/1" }
