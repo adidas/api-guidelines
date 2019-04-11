@@ -17,10 +17,6 @@ Plural nouns SHOULD be used in the URI where appropriate to identify collections
 
 An individual resource in a collection of resources MAY exist directly beneath the collection URI.  (e.g. ``/orders/{order_id}``).
 
-Sub-resource collections MAY exist directly beneath an individual resource. This should convey a relationship to another collection of resources (e.g. ``/orders/{order_id}/items``).
-
-Sub-resource individual resources MAY exist, but should be avoided in favor of top-level resources. (e.g. ``/orders/{order_id}/items/{item_id}``).
-
 #### Example
 
 A well-formed URI:
