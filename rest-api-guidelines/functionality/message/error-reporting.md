@@ -124,7 +124,7 @@ A Problem Detail response **MUST NOT** contain a program stack trace or server l
 
 ## Working with Problem Detail
 
-An API description **SHOULD** list all the error codes with which the API responds. The error responses **SHOULD** describre the error object model schema. It is **RECOMMENDED** to include examples of a possible error response. The error description and/or error example **MAY** list all the types of errors returned for a given error code.
+An API description **CAN** list all the error codes with which the API responds. The error responses **SHOULD** describre the error object model schema. It is **RECOMMENDED** to include examples of a possible error response. The error description and/or error example **MAY** list all the types of errors returned for a given error code.
 
 ## External resources
 
