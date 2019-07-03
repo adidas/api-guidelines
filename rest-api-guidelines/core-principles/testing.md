@@ -1,6 +1,6 @@
 # Testing
 
-## DREED
+## DREDD
 
 Every API description \(contract\) using HTTP\(S\) protocol **MUST** be tested against its API implementation. The tests **MUST** be executed using the [Dredd testing framework](https://github.com/apiaryio/dredd). The Dredd **MUST** [report the test results to Apiary](https://help.apiary.io/tools/automated-testing/testing-reporter/).
 
