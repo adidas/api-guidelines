@@ -4,7 +4,7 @@ The [`application/problem+json`](https://tools.ietf.org/html/rfc7807) \(Problem 
 
 Problem Detail is intended for use with the HTTP status codes 4xx and 5xx. Problem Detail **MUST NOT** be used with 2xx status code responses.
 
-At the minimum, any Problem Detail response **MUST** have the `title` and `detail` fields.
+At the minimum, any Problem Detail response **MUST** have the `title` and `detail` fields. `title` value **SHOULD NOT** change from occurrence to occurence of the problem, except for purposes of localization (e.g., using proactive content negotiation) [read more](https://tools.ietf.org/html/rfc7807#section-3.1)
 
 ### Example
 
@@ -14,6 +14,8 @@ At the minimum, any Problem Detail response **MUST** have the `title` and `detai
   "detail": "Missing authentication credentials for the Greeting resource."
 }
 ```
+
+> NOTE: `title` and `detail` fields **SHOULD NOT** be parsed to determine the nature of the error. Instead `type` **MUST** be used.
 
 ## Optional Fields
 
@@ -39,7 +41,7 @@ If needed, the Problem Detail **MAY** include additional fields, refer to [RFC78
 
 When necessary, a Problem Detail response **MAY** include additional error details about the problems that have occurred.
 
-These additional errors **MUST** be under the `errors` and **MUST** follow the Problem Detail structure.
+These additional errors **MUST** be under the `errors` collection and **MUST** follow the Problem Detail structure.
 
 ### Example
 
@@ -122,5 +124,8 @@ A Problem Detail response **MUST NOT** contain a program stack trace or server l
 
 ## Working with Problem Detail
 
-There are a whole plethora of libraries working with Problem Detail, for example, see [Zalando / Problem](https://github.com/zalando/problem) \(Java\).
+An API description **MAY** list all the error codes with which the API responds. The error responses **SHOULD** describre the error object model schema. It is **RECOMMENDED** to include examples of a possible error response. The error description and/or error example **MAY** list all the types of errors returned for a given error code.
 
+## External resources
+
+There are a whole plethora of libraries working with Problem Detail, for example, see [Zalando / Problem](https://github.com/zalando/problem) \(Java\).
