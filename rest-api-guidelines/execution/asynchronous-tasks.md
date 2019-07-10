@@ -95,9 +95,9 @@ In the case of callback, the API and its client MUST agree on what HTTP method a
     Content-Type: application/problem+json
 
     {
-      "title": "Wrong input parameters"
-      "detail: "Missing required input parameter XYZ."
-      "status" 400
+      "title": "Wrong input parameters",
+      "detail: "Missing required input parameter XYZ.",
+      "status": 400
     }
     ```
 
