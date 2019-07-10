@@ -78,7 +78,8 @@ In the case of callback, the API and its client MUST agree on what HTTP method a
 
     {
       "_links": {
-        "self" { "href": "/feeds/tasks/1" }
+        "self" { "href": "/feeds/tasks/1" },
+        "feed" { "href": "/feeds/1" }
       },
       "message": "Your feed is ready."
     }
