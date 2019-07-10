@@ -40,7 +40,7 @@ In the case of callback, the API and its client MUST agree on what HTTP method a
 
     {
       "_links": {
-        "self" { "href": "/feeds/tasks/1" }
+        "self": { "href": "/feeds/tasks/1" }
       },
       "message": "Your task to generate feed has been accepted. Try query for result after 60 seconds.",
       "pingAfter": 60
@@ -58,7 +58,7 @@ In the case of callback, the API and its client MUST agree on what HTTP method a
 
     {
       "_links": {
-        "self" { "href": "/feeds/tasks/1" }
+        "self": { "href": "/feeds/tasks/1" }
       },
       "message": "Your feed is being generated. Try query for result after 30 seconds.",
       "pingAfter": 30
@@ -78,8 +78,8 @@ In the case of callback, the API and its client MUST agree on what HTTP method a
 
     {
       "_links": {
-        "self" { "href": "/feeds/tasks/1" },
-        "feed" { "href": "/feeds/1" }
+        "self": { "href": "/feeds/tasks/1" },
+        "feed": { "href": "/feeds/1" }
       },
       "message": "Your feed is ready."
     }
