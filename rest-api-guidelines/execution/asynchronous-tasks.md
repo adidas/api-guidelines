@@ -26,3 +26,80 @@ The asynchronous operation task-tracking resource can be either **polled** by cl
 
 In the case of callback, the API and its client MUST agree on what HTTP method and request format is used for the callback invitation. If built within adidas, the "client" API is also the subject of the adidas API guidelines.
 
+### Example
+
+1. **Initiate the asynchronous task**
+  
+    ```
+    POST /feeds/tasks/ HTTP/1.1
+    Content-Type: application/json
+    ...
+
+    HTTP/1.1 202 Accepted
+    Content-Type: application/hal+json
+    Retry-After: 60
+
+    {
+      "_links": {
+        "self": { "href": "/feeds/tasks/1" }
+      },
+      "message": "Your task to generate feed has been accepted. Try query for result after 60 seconds.",
+      "retryAfter": 60
+    }
+    ```
+
+1. **Poll the task status: In progress**
+
+    ```
+    GET /feeds/tasks/1 HTTP/1.1
+    ...
+
+    HTTP/1.1 200 Ok
+    Content-Type: application/hal+json
+    Retry-After: 30
+
+    {
+      "_links": {
+        "self": { "href": "/feeds/tasks/1" }
+      },
+      "message": "Your feed is being generated. Try query for result after 30 seconds.",
+      "retryAfter": 30
+    }
+    ```
+
+1. **Poll the task status: Finished**
+
+    ```
+    GET /feeds/tasks/1 HTTP/1.1
+    ...
+
+    HTTP/1.1 303 See Other
+    Location: /feeds/1
+    Content-Location: /feeds/tasks/1
+    Content-Type: application/hal+json
+
+    {
+      "_links": {
+        "self": { "href": "/feeds/tasks/1" },
+        "feed": { "href": "/feeds/1" }
+      },
+      "message": "Your feed is ready."
+    }
+    ```
+
+1. **Poll the task status: Failure**
+
+    ```
+    GET /feeds/tasks/1 HTTP/1.1
+    ...
+
+    HTTP/1.1 200 OK
+    Content-Type: application/problem+json
+
+    {
+      "title": "Wrong input parameters",
+      "detail: "Missing required input parameter XYZ.",
+      "status": 400
+    }
+    ```
+
