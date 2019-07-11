@@ -37,13 +37,14 @@ In the case of callback, the API and its client MUST agree on what HTTP method a
 
     HTTP/1.1 202 Accepted
     Content-Type: application/hal+json
+    Retry-After: 60
 
     {
       "_links": {
         "self": { "href": "/feeds/tasks/1" }
       },
       "message": "Your task to generate feed has been accepted. Try query for result after 60 seconds.",
-      "pingAfter": 60
+      "retryAfter": 60
     }
     ```
 
@@ -55,13 +56,14 @@ In the case of callback, the API and its client MUST agree on what HTTP method a
 
     HTTP/1.1 200 Ok
     Content-Type: application/hal+json
+    Retry-After: 30
 
     {
       "_links": {
         "self": { "href": "/feeds/tasks/1" }
       },
       "message": "Your feed is being generated. Try query for result after 30 seconds.",
-      "pingAfter": 30
+      "retryAfter": 30
     }
     ```
 
