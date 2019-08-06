@@ -1,47 +1,68 @@
 extends: [[spectral:oas2, off]]
 rules:
   fields-camelCase:
-    description: All YAML and JSON fields must follow fields-camelCase
+    description: All YAML and JSON fields MUST follow fields-camelCase
+    severity: error
     given: $.paths[*]
     then:
       function: 
   fields-alphanumeric:
     description: Field names MUST be ASCII alphanumeric characters or `_` or `$`
+    severity: error
   fields-collections-plural:
     description: Collection/array fields MUST have names in plural
+    severity: error
   protocol-https:
-    description: All requests go through `https` protocol
+    description: All requests MUST go through `https` protocol
+    severity: error
   response-2xx-obligatory:
     description: Every API operation MUST have at least one `2xx` response
+    severity: error
   request-GET-no-body:
     description: A `GET` request MUST NOT accept a `body` parameter
+    severity: error
   response-success-hal:
     description: All success responses MUST be of media type `application/hal+json`
+    severity: error
   response-error-problem:
     description: All error responses MUST be of media type `application/problem+json`
+    severity: error
   request-support-json:
     description: Every request SHOULD support `application/json` media type
+    severity: warning
   mediatype-hal-correctness:
     description: Mediatype `application/hal+json` follows https://supermodel.io/adidas/api/HAL `JSON-Schema`
+    severity: hint
   mediatype-problem-title:
     description: All `application/problem+json` messages MUST include `title` field
+    severity: error
   mediatype-problem-detail:
     description: All `application/problem+json` messages MUST include `detail` field
+    severity: error
   mediatype-problem-type:
     description: All `application/problem+json` messages SHOULD include `type` field
+    severity: warning
   fields-date-iso8601:
     description: Date and time MUST follow [`ISO 8601` standard](https://www.iso.org/iso-8601-date-and-time-format.html)
+    severity: error
   fields-language-iso639:
     description: Language codes MUST follow [`ISO 639` standard](https://www.iso.org/iso-639-language-codes.html)
+    severity: error
   fields-country-iso3166:
     description: Country codes MUST follow [`ISO 3166 alpha-2` standard](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2)
+    severity: error
   fields-currency-iso4217:
     description: Currency codes MUST follow [`ISO 4217` standard](https://en.wikipedia.org/wiki/ISO_4217)
+    severity: error
   response-303-async-link-header:
     description: A successful and finished async api request returns `303` response code and sends the target resource location in the `Link` header
+    severity: hint
   uri-template-cannot-dash:
     description: The `URI` template ([RFC 6570](https://tools.ietf.org/html/rfc6570)) cannot contain a `-` character
+    severity: error
   headers-hyphenated-pascal-case:
     description: All `HTTP` headers MUST use `Hyphenated-Pascal-Case` notation
+    severity: error
   heders-no-x-headers:
     description: All `HTTP` headers SHOULD NOT include `X-` headers (https://tools.ietf.org/html/rfc6648). All non-standard headers are named without the `X-` prefix.
+    severity: warning
