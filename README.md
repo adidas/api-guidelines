@@ -43,7 +43,7 @@ Refer to [RFC2119](https://www.ietf.org/rfc/rfc2119) for details.
 
 ### Questions & Comments
 
-_Please contact_ [_Zdenek.Nemec@externals.adidas-group.com_](mailto:Zdenek.Nemec@externals.adidas-group.com) _in the case of questions._
+_Please contact_ [_Zdenek.Nemec@externals.adidas-group.com_](mailto:Zdenek.Nemec@externals.adidas-group.com) or [_andrzej.jarzyna@adidas.com_](mailto:andrzej.jarzyna@adidas.com) _in the case of questions._
 
 ## Intended Use Cases
 
