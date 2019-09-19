@@ -20,4 +20,4 @@
 - a successful and finished async api request returns `303` response code and sends the target resource location in the `Link` header
 - `URI` template ([RFC 6570](https://tools.ietf.org/html/rfc6570)) cannot contain a `-` character
 - `HTTP` headers MUST use `Hyphenated-Pascal-Case` notation
-- `HTTP` headers SHOULD NOT include `X-` headers (https://tools.ietf.org/html/rfc6648). All non-standard headers are named without the `X-` prefix.
+- `HTTP` headers SHOULD NOT include [`X-` headers](2). All non-standard headers are named without the `X-` prefix.
