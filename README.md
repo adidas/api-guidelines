@@ -61,7 +61,7 @@ For further documentation on Spectral refer to their [documentation](https://sto
 
 ### Questions & Comments
 
-_Please contact_ [_Zdenek.Nemec@externals.adidas-group.com_](mailto:Zdenek.Nemec@externals.adidas-group.com) or [_andrzej.jarzyna@adidas.com_](mailto:andrzej.jarzyna@adidas.com) _in the case of questions._
+_Please contact_ [_Zdenek.Nemec@externals.adidas-group.com_](mailto:Zdenek.Nemec@externals.adidas-group.com), [_andrzej.jarzyna@adidas.com_](mailto:andrzej.jarzyna@adidas.com) or [_samir.amzani@adidas.com_](mailto:samir.amzani@adidas.com) _in case of questions._
 
 ## Intended Use Cases
 
