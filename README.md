@@ -41,9 +41,9 @@ The CAPITALIZED words throughout these guidelines have a special meaning:
 
 Refer to [RFC2119](https://www.ietf.org/rfc/rfc2119) for details.
 
-### Enforcing API Guidelines over your OpenAPI Specification
+### Validating your API Guidelines against OpenAPI Specification
 
-In the `ruleset.md` file you can find a digest of enforceable rules over your API description documents. If you are using OpenAPI Specification as the API description format you can also leverage the `spectral.yaml` ruleset to automatically verify your specification compliance using [Spectral](github.com/stoplightio/spectral).
+In the `ruleset.md` file you can find a digest of API Guidelines rules which you can validating your API description documents with. If you are using OpenAPI Specification as the API description format you can also leverage the `spectral.yaml` ruleset to automatically verify your specification compliance using [Spectral](github.com/stoplightio/spectral).
 
 To install Spectral you will need Node.js and a package manager (npm or yarn).
 
