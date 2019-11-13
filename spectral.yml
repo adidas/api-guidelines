@@ -72,7 +72,7 @@ rules:
       function: schema
       functionOptions:
         schema:
-          $ref: ./hal.yaml
+          $ref: ./supermodel/adidas/api/HAL.yaml
   response-error-problem: # schemes and/or produces
     description: All error responses MUST be of media type `application/problem+json`
     severity: error
@@ -86,7 +86,7 @@ rules:
       function: schema
       functionOptions:
         schema:
-          $ref: ./problem.yaml
+          $ref: ./supermodel/adidas/api/ProblemDetail.yaml
   request-support-json: # This will have to take into account the schemes as well as consumes parameter
     description: Every request SHOULD support `application/json` media type
     severity: warn
