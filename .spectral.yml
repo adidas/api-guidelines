@@ -80,7 +80,7 @@ rules:
     type: "style"
     message: "Error response document MUST follow application/problem+json: {{error}}"
     then:
-      field: schema
+      field: schema.example
       function: schema
       functionOptions:
         schema:
