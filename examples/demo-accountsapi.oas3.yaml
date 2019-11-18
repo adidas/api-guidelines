@@ -62,8 +62,8 @@ paths:
         - in: header
           name: Application-Country
           required: true
-          schema:
-            $ref: '#/components/headers/Application-Country'
+          schema: 
+            $ref: '#/components/headers/Application-Country'            
         - in: header
           name: Accept-Language
           schema:
