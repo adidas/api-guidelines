@@ -85,6 +85,8 @@ rules:
   # ---------------------------------------------------------------------------
   protocol-https-only:
     description: "ALL requests MUST go through `https` protocol only"
+    formats:
+      - oas2
     recommended: true
     severity: error
     type: "style"
@@ -102,6 +104,8 @@ rules:
           maxItems: 1
   request-support-json: # This will have to take into account the schemes as well as consumes parameter
     description: Every request SHOULD support `application/json` media type
+    formats:
+      - oas2
     severity: warn
     message: "{{description}}: {{error}}"
     recommended: true
