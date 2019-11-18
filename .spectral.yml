@@ -102,7 +102,7 @@ rules:
             type: string
             enum: ["https"]
           maxItems: 1
-  request-support-json: # This will have to take into account the schemes as well as consumes parameter
+  request-support-json: # This will have to take into account the schemas as well as consumes parameter
     description: Every request SHOULD support `application/json` media type
     formats:
       - oas2
@@ -119,11 +119,39 @@ rules:
             type: string
             enum:
               - application/json
+    # valid-example-in-definitions: has to be turned off for oas2 but not for oas3
 
   # ---------------------------------------------------------------------------
   # Only OAS3 rules
   # ---------------------------------------------------------------------------
+  #request-support-json-oas3: # this needs check the body parameter for content property and its value
+    # description: Every request SHOULD support `application/json` media type
+    # formats:
+    #   - oas3
+    # recommended: truex
+    # severity: error
+    # message: 
+    # given: $.
+    # then:
+    #   function: pattern
+    #   functionOptions:
+    #     match: "/^https:[a-zA-Z0-9./_@-~]+/"
+  protocol-https-only-oas3: # checks how does the servers array values start
+    description: "ALL requests MUST go through `https` protocol only"
+    formats:
+      - oas3
+    recommended: true
+    severity: error
+    message: "Servers MUST be https and no other protocol is allowed."
+    given: $.servers..url
+    then:
+      function: pattern
+      functionOptions:
+        match: "/^https:[a-zA-Z0-9./_@-~]+/"
 
+  # ---------------------------------------------------------------------------
+  # Not implemented
+  # ---------------------------------------------------------------------------
 
   # Needs update of JSON Schema in spectral to draft-07 or newer to implement if-then statements
   # headers-hyphenated-pascal-case:
