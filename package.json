@@ -1,0 +1,17 @@
+{
+  "name": "api-guidelines",
+  "version": "1.0.0",
+  "description": "adidas API guidelines",
+  "repository": "git@github.com:adidas/api-guidelines.git",
+  "author": "software.engineering@adidas.com",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "@supermodel/cli": "^0.46.29",
+    "spectral": "^0.0.0"
+  },
+  "scripts":{
+    "build-examples": " supermodel schema oas2 supermodel/adidas/examples/order/api/ -o examples/demo-orderapi-v3.oas2.yaml",
+    "test": "spectral lint examples/demo-orderapi-v3.oas2.yaml"
+  }
+}

@@ -1,0 +1,9 @@
+$id: http://supermodel.io/adidas/examples/order/api/ProblemDetail
+$schema: http://json-schema.org/draft-07/schema#
+
+title: Problem Detail
+type: object
+
+allOf:
+  - $ref: http://supermodel.io/adidas/api/ProblemDetail
+

@@ -1,0 +1,22 @@
+$id: http://supermodel.io/adidas/examples/order/Order
+$schema: http://json-schema.org/draft-07/schema#
+
+title: Order
+type: object
+description: Order model description
+
+properties:
+  orderNumber:
+    type: number
+  itemCount:
+    type: number
+  status:
+    type: string
+required:
+  - orderNumber
+  - itemCount
+examples:
+- orderNumber: 42
+  itemCount: 3
+  status: pending
+ 
