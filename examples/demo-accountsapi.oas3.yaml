@@ -1,0 +1,2359 @@
+openapi: 3.0.2
+info:
+  version: 1.0.0
+  title: "[AIC] Accounts API"
+  description: Accounts API 
+  termsOfService: http://www.adidas.de/help-topics-privacy_policy.html
+  contact:
+    name: CE - Consumer acquisition
+    email: UND_EM_scv_webservices@webmail.adsint.biz
+    url: https://tools.adidas-group.com/confluence/display/CRMWiki/
+
+#___                                    
+#(  _`\                                  
+#| (_(_)  __  _ __ _   _   __  _ __  ___ 
+#`\__ \ /'__`( '__( ) ( )/'__`( '__/',__)
+#( )_) (  ___| |  | \_/ (  ___| |  \__, \
+#`\____`\____(_)  `\___/`\____(_)  (____/
+                                        
+                                        
+servers:
+  - url: https://stg.accounts.adidas.com/api
+    description: Staging environment
+  - url: https://accounts.adidas.com/api
+    description: Production environment
+    
+#
+# ___        _   _          
+#(  _`\     ( )_( )         
+#| |_) ) _ _| ,_| |__   ___ 
+#| ,__//'_` | | |  _ `/',__)
+#| |  ( (_| | |_| | | \__, \
+#(_)  `\__,_`\__(_) (_(____/
+#                           
+                           
+paths:
+  
+
+
+#
+# _____       _   _         _____       _                      
+#(  _  )     ( )_( )       (  _  )     ( )_ _                  
+#| (_) |_   _| ,_| |__     | ( ) |_ _  | ,_(_)  _    ___   ___ 
+#|  _  ( ) ( | | |  _ `\   | | | ( '_`\| | | |/'_`\/' _ `/',__)
+#| | | | (_) | |_| | | |   | (_) | (_) | |_| ( (_) | ( ) \__, \
+#(_) (_`\___/`\__(_) (_)   (_____| ,__/`\__(_`\___/(_) (_(____/
+#                                | |                           
+#
+
+
+  /auth/auth-options:
+    post:
+      summary: List of Available Authentication Options.
+      security:
+        - basicAuth: []
+        - ApiKeyAuth: []
+      description: >
+        **Live** Account details to get the authentication options available. This service accepts and requires ONE identifier, that is, phone OR email to perform this operation.  
+      operationId: authOptionsPost
+      tags:
+        - Authentication Options
+      parameters:
+        - in: header
+          name: Application-Country
+          required: true
+          schema:
+            $ref: '#/components/headers/Application-Country'
+        - in: header
+          name: Accept-Language
+          schema:
+            $ref: '#/components/headers/Accept-Language'
+        - in: header
+          name: Touchpoint-Source-Id
+          required: true
+          schema:
+            $ref: '#/components/headers/Touchpoint-Source-Id'
+      # parameters:
+      requestBody:
+        $ref: '#/components/requestBodies/authOptionsRequestBody'
+      
+      responses:
+        200:
+          description: Auth Options retrieved
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/halAuthOptions'
+          
+          links:
+            self:
+              $ref: '#/components/links/authOptions'
+            passwordless:
+              $ref: '#/components/links/passwordless'
+              
+            passwordAuth:
+              $ref: '#/components/links/passwordAuth'
+              
+            resetPassword:
+              $ref: '#/components/links/resetPassword'
+              
+            createAccount:
+              $ref: '#/components/links/createAccount'
+        400:
+          description: Bad request
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/problemDetail'
+  
+
+                                
+                                                             
+  
+#  
+# _____                               _                         
+#(  _  )                             ( )_    /'\_/`\            
+#| (_) |  ___   ___   _   _   _  ___ | ,_)   |     | ___    __  
+#|  _  |/'___)/'___)/'_`\( ) ( /' _ `| |     | (_) /' _ `\/'_ `\
+#| | | ( (___( (___( (_) | (_) | ( ) | |_  _ | | | | ( ) ( (_) |
+#(_) (_`\____`\____`\___/`\___/(_) (_`\__)(_)(_) (_(_) (_`\__  |
+#                                                        ( )_) |
+#                                                         \___/'
+#
+
+  /accounts/registration:
+    post:
+      summary: Registers a New Adidas consumer.
+      security:
+        - basicAuth: []
+        - ApiKeyAuth: []
+      description: >
+        Creates a consumer account in adidas. If successful, an account is
+        created. Additionally if auth parameters are passed an auth token is
+        returned based on the configuration provided by the client. 
+      operationId: AccountPost
+      tags:
+        - Account Management
+      parameters:        
+        - in: header
+          name: Application-Country
+          required: true
+          schema:
+            $ref: '#/components/headers/Application-Country'
+        - in: header
+          name: Touchpoint-Source-Id
+          required: true
+          schema:
+            $ref: '#/components/headers/Touchpoint-Source-Id'
+        - in: header
+          name: Accept-Language
+          schema:
+            $ref: '#/components/headers/Accept-Language'
+        - $ref: "#/components/parameters/tokenManagerParam"
+        - $ref: "#/components/parameters/scopeParam"
+      requestBody:
+        $ref: '#/components/requestBodies/accountRegistrationBody'
+      responses:
+        "201":
+          description: Account creation successful, SSO initiated.
+          content:
+            application/hal+json:
+              schema:
+                $ref: "#/components/schemas/accountCreated"
+          links:
+            self:
+              $ref: '#/components/links/createAccount'
+            getAccount:
+              $ref: '#/components/links/getAccount'
+      
+            updateAccount:
+              $ref: '#/components/links/updateAccount'
+  
+            deleteAccount:
+              $ref: '#/components/links/deleteAccount'
+  
+              
+        "400":
+          description: Bad request
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/problemDetail"
+        "422":
+          description: Unprocessable Entity
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/problemDetail"
+      
+  
+  
+  /accounts/{acid}:
+    parameters:
+      - $ref: '#/components/parameters/acidParam'
+    patch:
+      summary: Updates an Adidas Account
+      security:
+        - OAuth2: [accounts]
+        - ApiKeyAuth: []
+      description: >
+        Updates a consumer account in adidas.
+      operationId: AccountPatch
+      tags:
+        - Account Management
+      parameters:
+        - in: header
+          name: Application-Country
+          required: true
+          schema:
+            $ref: '#/components/headers/Application-Country'
+        - in: header
+          name: Accept-Language
+          schema:
+            $ref: '#/components/headers/Accept-Language'
+        - in: header
+          name: Touchpoint-Source-Id
+          required: true
+          schema:
+            $ref: '#/components/headers/Touchpoint-Source-Id'
+        - in: query
+          name: fields
+          required: false
+          description: The value of this parameter must be a comma-separated list of top-level response message fields. If empty, it will return all the details
+          allowEmptyValue: true
+          schema:
+            type: 'string'
+            example:
+              "acid,email,source,country"
+        - $ref: '#/components/parameters/acidParam'
+      requestBody:
+        $ref: '#/components/requestBodies/accountPatchBody'
+      responses:
+        "200":
+          description: Account updated successfully
+          content:
+            application/hal+json:
+              schema:
+                $ref: "#/components/schemas/account"
+          links:
+            self:
+              $ref: '#/components/links/updateAccount'
+
+            getAccount:
+              $ref: '#/components/links/getAccount'
+  
+            deleteAccount:
+              $ref: '#/components/links/deleteAccount'
+
+            
+        "422":
+          description: Unprocessable Entity
+          content:
+            application/problem+json:
+               schema:
+                $ref: "#/components/schemas/problemDetail"   
+                
+                
+    get:
+      summary: Retrieves an Adidas Account
+      security:
+        - OAuth2: [accounts, pii]
+        - ApiKeyAuth: []
+      description: >
+        Retrieve a consumer adidas account.
+      
+      operationId: AccountGet
+      tags:
+        - Account Management
+      parameters:
+        - in: header
+          name: Application-Country
+          required: true
+          schema:
+            $ref: '#/components/headers/Application-Country'
+        - in: header
+          name: Touchpoint-Source-Id
+          required: true
+          schema:
+            $ref: '#/components/headers/Touchpoint-Source-Id'
+        - in: header
+          name: Accept-Language
+          schema:
+            $ref: '#/components/headers/Accept-Language'
+        - $ref: '#/components/parameters/acidParam'
+      responses:
+        "200":
+          description: Account retrieved successfully
+          content:
+            application/hal+json:
+              schema:
+                $ref: "#/components/schemas/account"
+                
+          links:
+            self:
+              $ref: '#/components/links/getAccount'
+
+            updateAccount:
+              $ref: '#/components/links/updateAccount'
+  
+            deleteAccount:
+              $ref: '#/components/links/deleteAccount'
+  
+            
+        "422":
+          description: Unprocessable Entity
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/problemDetail"
+
+    delete:
+      summary: Deletes an Adidas Account
+      security:
+        - OAuth2: [accounts]
+        - ApiKeyAuth: []
+      description: >
+        Delete a consumer adidas account.
+      
+      operationId: AccountDelete
+      tags:
+        - Account Management
+      parameters:
+        - $ref: '#/components/parameters/acidParam'
+        - in: header
+          name: Application-Country
+          required: true
+          schema:
+            $ref: '#/components/headers/Application-Country'
+        - in: header
+          name: Touchpoint-Source-Id
+          required: true
+          schema:
+            $ref: '#/components/headers/Touchpoint-Source-Id'
+        - in: header
+          name: Accept-Language
+          schema:
+            $ref: '#/components/headers/Accept-Language'
+      responses:
+        "200":
+          description: Account deleted successfully
+          content:
+            application/hal+json:
+              schema:
+                $ref: "#/components/schemas/baseResponse"
+              example:
+                title: "Deletion Successful"
+                status: 200
+                
+            
+        "400":
+          description: Bad Request
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/problemDetail"
+
+
+  /accounts/{acid}/password/:
+    parameters:
+      - $ref: '#/components/parameters/acidParam'
+    post:
+      summary: Changes and adidas account password
+      security:
+        - OAuth2: [accounts]
+        - ApiKeyAuth: []
+      description: >
+        Changes and adidas account password. It is required for the user to know the current password and a valid access token in order to be able to chan
+      operationId: AccountUpdatePassword
+      tags:
+        - Account Management
+      parameters:
+        - in: header
+          name: Application-Country
+          required: true
+          schema:
+            $ref: '#/components/headers/Application-Country'
+        - in: header
+          name: Accept-Language
+          schema:
+            $ref: '#/components/headers/Accept-Language'
+        - in: header
+          name: Touchpoint-Source-Id
+          required: true
+          schema:
+            $ref: '#/components/headers/Touchpoint-Source-Id'
+        - $ref: '#/components/parameters/acidParam'
+      requestBody:
+        $ref: '#/components/requestBodies/accountChangePasswordBody'
+      responses:
+        "200":
+          description: Password updated successfully
+          content:
+            application/hal+json:
+              schema:
+                $ref: "#/components/schemas/baseResponse"
+              example:
+                title: "Password change Successful"
+                status: 200
+        "400":
+          description: Bad request
+          content:
+            application/problem+json:
+               schema:
+                $ref: "#/components/schemas/problemDetail"   
+                
+                
+#
+# _             _               _     _     _             _     _                
+#( )    _      ( )             ( )   (_)   ( )           ( )_ _( )_ _            
+#| |   (_) ___ | |/')   __    _| |   | |  _| |  __   ___ | ,_(_| ,_(_)  __   ___ 
+#| |  _| /' _ `| , <  /'__`\/'_` |   | |/'_` |/'__`/' _ `| | | | | | |/'__`/',__)
+#| |_( | | ( ) | |\`\(  ___( (_| |   | ( (_| (  ___| ( ) | |_| | |_| (  ___\__, \
+#(____/(_(_) (_(_) (_`\____`\__,_)   (_`\__,_`\____(_) (_`\__(_`\__(_`\____(____/
+#                                                                                
+#
+
+  /accounts/{acid}/linked-identities:
+    parameters:
+      - $ref: '#/components/parameters/acidParam'
+    get:
+      summary: Retrieves identities linked to an Adidas account
+      security:
+        - OAuth2: [accounts]
+        - ApiKeyAuth: []
+      description: >
+        Retrieve linked Identities a consumer adidas account. 
+        
+        Accounts from external providers like Facebook or Google are listed in this endpoint. 
+        
+        In order to link an external account please check account linking functionality. 
+      
+      operationId: AccountLinkedIdentitiesGet
+      tags:
+        - Linked Identities
+      parameters:
+        - $ref: '#/components/parameters/acidParam'
+        - in: header
+          name: Application-Country
+          required: true
+          schema:
+            $ref: '#/components/headers/Application-Country'
+        - in: header
+          name: Touchpoint-Source-Id
+          required: true
+          schema:
+            $ref: '#/components/headers/Touchpoint-Source-Id'
+        - in: header
+          name: Accept-Language
+          schema:
+            $ref: '#/components/headers/Accept-Language'
+      responses:
+        "200":
+          description: Linked Identities successfully retrieved
+          content:
+            application/hal+json:
+              schema:
+                $ref: "#/components/schemas/linkedIdentitiesList"
+          links:
+            self:
+              $ref: '#/components/links/getLinkedIdentities'
+            getLinkedIdentity:
+              $ref: '#/components/links/getLinkedIdentity'
+
+                
+                
+  /accounts/{acid}/linked-identities/{identityProvider}:
+    
+    parameters:
+      - in: header
+        name: Application-Country
+        required: true
+        schema:
+          $ref: '#/components/headers/Application-Country'
+      - in: header
+        name: Touchpoint-Source-Id
+        required: true
+        schema:
+          $ref: '#/components/headers/Touchpoint-Source-Id'
+      - in: header
+        name: Accept-Language
+        required: true
+        schema:
+          $ref: '#/components/headers/Accept-Language'
+      - $ref: '#/components/parameters/acidParam'
+      - $ref: '#/components/parameters/identityProviderParam'
+      
+    get:
+      summary: Retrieves a Linked Identity of an Adidas Account
+      security:
+        - OAuth2: [accounts]
+        - ApiKeyAuth: []
+      description: >
+        Retrieve a linked identity of an adidas account.
+    
+      operationId: AccountLinkedIdentityGet
+      tags:
+        - Linked Identities
+      responses:
+        "200":
+          description: Linked Identity retrieved successfully
+          content:
+            application/hal+json:
+              schema:
+                $ref: "#/components/schemas/linkedIdentity"
+          links:
+            self:
+              $ref: '#/components/links/getLinkedIdentity'
+            getLinkedIdentity:
+              $ref: '#/components/links/getLinkedIdentity'
+
+                
+    delete:
+      summary: Deletes a Linked Identity of an Adidas Account
+      parameters:
+        - in: header
+          name: Application-Country
+          required: true
+          schema:
+            $ref: '#/components/headers/Application-Country'
+        - in: header
+          name: Accept-Language
+          schema:
+            $ref: '#/components/headers/Accept-Language'
+        - in: header
+          name: Touchpoint-Source-Id
+          required: true
+          schema:
+            $ref: '#/components/headers/Touchpoint-Source-Id'
+      security:
+        - OAuth2: [accounts]
+        - ApiKeyAuth: []
+      description: >
+        Delete a linked identity of an adidas account.
+      
+      operationId: AccountLinkedIdentitiesDelete
+      tags:
+        - Linked Identities
+
+      responses:
+        "200":
+          description: Linked Identity deleted successfully
+          content:
+            application/hal+json:
+              schema:
+                $ref: "#/components/schemas/baseResponse"
+          links:
+            self:
+              $ref: '#/components/links/getLinkedIdentity'
+            getLinkedIdentity:
+              $ref: '#/components/links/getLinkedIdentities'
+
+            
+#
+# ___                                          _ _                   
+#(  _`\                                       ( (_ )                 
+#| |_) ) _ _  ___  ___ _   _   _   _   _ __  _| || |   __   ___  ___ 
+#| ,__//'_` /',__/',__( ) ( ) ( )/'_`\( '__/'_` || | /'__`/',__/',__)
+#| |  ( (_| \__, \__, | \_/ \_/ ( (_) | | ( (_| || |(  ___\__, \__, \
+#(_)  `\__,_(____(____`\___x___/`\___/(_) `\__,_(___`\____(____(____/
+#
+#
+
+
+                                                                                
+                                                                                                       
+                       
+  /password/passwordless/start:
+
+    post:
+      summary: Triggers a Passwordless Authentication Flow
+      description: >
+        Triggers a passwordless flow with the channel specificed for the user identifier included in the request. It is important to notice that for security reasons even in case the user does not exist the service will return a successful response. 
+      operationId: passwordlessStartPost
+      security:
+        - basicAuth: []
+        - ApiKeyAuth: []
+      tags:
+        - Passwordless [RPC Flow]
+      parameters:
+        - in: header
+          name: Application-Country
+          required: true
+          schema:
+            $ref: '#/components/headers/Application-Country'
+        - in: header
+          name: Accept-Language
+          required: true
+          schema:
+            $ref: '#/components/headers/Accept-Language'
+        - in: header
+          name: Touchpoint-Source-Id
+          required: true
+          schema:
+            $ref: '#/components/headers/Touchpoint-Source-Id'
+      requestBody:
+        $ref: '#/components/requestBodies/passwordlessStartBody'
+      responses:
+        "200":
+          description:  >
+            Passwordless flow triggered successfully. 
+          content: 
+            application/hal+json:
+              schema:
+                $ref: "#/components/schemas/baseResponse"
+          links:
+            self:
+              $ref: '#/components/links/passwordless'
+            authPasswordless:
+              $ref: '#/components/links/passwordlessAuth'
+
+  /password/passwordless/:     
+    post:
+      summary: Performs a Passwordless Authentication
+      description: >
+        Performs a passwordless authentication by validating the code issued in password/passwordless/start endpoint.
+      operationId: passwordlessAuthPost
+      security:
+        - basicAuth: []
+        - ApiKeyAuth: []
+      tags:
+        - Passwordless [RPC Flow]
+      parameters:
+        - in: header
+          name: Application-Country
+          required: true
+          schema:
+            $ref: '#/components/headers/Application-Country'
+        - in: header
+          name: Accept-Language
+          schema:
+            $ref: '#/components/headers/Accept-Language'
+        - in: header
+          name: Touchpoint-Source-Id
+          required: true
+          schema:
+            $ref: '#/components/headers/Touchpoint-Source-Id'
+      requestBody:
+        $ref: '#/components/requestBodies/passwordlessAuthBody'
+      responses:
+        "200":
+          description:  >
+            Passwordless authentication successful
+          content: 
+            application/hal+json:
+              schema:
+                $ref: "#/components/schemas/auth2Response"
+
+                                                                                
+                                                                                
+#
+# ___                                      _                             _   
+#(  _`\                                   ( )                           ( )_ 
+#| |_) ) _ _  ___  ___ _   _   _   _     _| |______ _ __  __   ___   __ | ,_)
+#| ,__//'_` /',__/',__( ) ( ) ( )/'_`\ /'_` (______( '__/'__`/',__)/'__`| |  
+#| |  ( (_| \__, \__, | \_/ \_/ ( (_) ( (_| |      | | (  ___\__, (  ___| |_ 
+#(_)  `\__,_(____(____`\___x___/`\___/`\__,_)      (_) `\____(____`\____`\__)
+#                                                                            
+#                                                                            
+
+  /password/password-reset/start:
+    post:
+      summary: Triggers a reset password Flow
+      security:
+        - basicAuth: []
+        - ApiKeyAuth: []
+      description: >
+        Triggers a reset password flow for the user identifier included in the request. It is important to notice that for security reasons even in case the user does not exist the service will return a successful response. 
+      operationId: passwordResetStartPost
+      tags:
+        - Reset Password [RPC Flow]
+      parameters:
+        - in: header
+          name: Application-Country
+          required: true
+          schema:
+            $ref: '#/components/headers/Application-Country'
+        - in: header
+          name: Accept-Language
+          required: true
+          schema:
+            $ref: '#/components/headers/Accept-Language'
+        - in: header
+          name: Touchpoint-Source-Id
+          required: true
+          schema:
+            $ref: '#/components/headers/Touchpoint-Source-Id'
+      requestBody:
+        $ref: '#/components/requestBodies/passwordResetStartBody'
+      responses:
+        "200":
+          description:  >
+            Passwordless flow triggered successfully. 
+          links:
+            self:
+              $ref: '#/components/links/resetPassword'
+            resetPassword:
+              $ref: '#/components/links/processResetPassword'
+                                                                                
+  /password/password-reset/:
+    post:
+      summary: Performs a reset password operation
+      security:
+        - basicAuth: []
+        - ApiKeyAuth: []
+      description: >
+        Performs a reset password operation accepting the resetPasswordToken plus the new password to be stored for the account. The response of this service could be the access token for the user or a no content response attending to the authentication options associated to the user
+      operationId: passwordResetPost
+      tags:
+        - Reset Password [RPC Flow]
+      parameters:
+        - in: header
+          name: Application-Country
+          required: true
+          schema:
+            $ref: '#/components/headers/Application-Country'
+        - in: header
+          name: Touchpoint-Source-Id
+          required: true
+          schema:
+            $ref: '#/components/headers/Touchpoint-Source-Id'
+        - in: header
+          name: Accept-Language
+          schema:
+            $ref: '#/components/headers/Accept-Language'
+      requestBody:
+        $ref: '#/components/requestBodies/passwordResetBody'
+      responses:
+        "400":
+          description: Bad request
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/problemDetail"
+        "409":
+          description: Reset password token expired
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/problemDetail"
+        "204":
+          description:  >
+            Password changed successfully 
+        "200":
+          description:  >
+            Password changed successfully 
+          content: 
+            application/hal+json:
+              schema:
+                $ref: "#/components/schemas/auth2Response"
+          links:
+            self:
+              $ref: '#/components/links/processResetPassword'  
+            startResetPassword:
+              $ref: '#/components/links/resetPassword'
+        
+                                               
+#                                                                                
+# _   _                ___              _                 
+#( ) ( )           _ /'____            ( )_ _             
+#| | | |  __  _ __(_| (__(_)  ___   _ _| ,_(_)  _    ___  
+#| | | |/'__`( '__| | ,__| |/'___)/'_` | | | |/'_`\/' _ `\
+#| \_/ (  ___| |  | | |  | ( (___( (_| | |_| ( (_) | ( ) |
+#`\___/`\____(_)  (_(_)  (_`\____`\__,_`\__(_`\___/(_) (_)
+#                                                         
+#
+
+
+
+  /account-verification/start:
+    post:
+      summary: Triggers a account verification Flow
+      parameters:
+        - in: header
+          name: Application-Country
+          required: true
+          schema:
+            $ref: '#/components/headers/Application-Country'
+        - in: header
+          name: Accept-Language
+          required: true
+          schema:
+            $ref: '#/components/headers/Accept-Language'
+        - in: header
+          name: Touchpoint-Source-Id
+          required: true
+          schema:
+            $ref: '#/components/headers/Touchpoint-Source-Id'
+      security:
+        - basicAuth: []
+        - ApiKeyAuth: []
+      description: >
+        Triggers a verification flow for the resource specified in the path. 
+      operationId: verificationStartPost
+      tags:
+        - Verification [RPC Flow]
+      requestBody:
+        $ref: '#/components/requestBodies/verificationStartBody'
+      responses:
+        "200":
+          description:  >
+            Verification process flow triggered successfully. 
+          content: 
+            application/hal+json:
+              schema:
+                $ref: "#/components/schemas/baseResponse"
+          links:
+            self: 
+              $ref: '#/components/links/verificationStart'
+            verifyAccount:
+              $ref: '#/components/links/processVerification'
+            
+
+
+  /account-verification/:
+    post:
+      summary: Verifies an account via verification code
+      parameters:
+        - in: header
+          name: Application-Country
+          required: true
+          schema:
+            $ref: '#/components/headers/Application-Country'
+        - in: header
+          name: Accept-Language
+          schema:
+            $ref: '#/components/headers/Accept-Language'
+        - in: header
+          name: Touchpoint-Source-Id
+          required: true
+          schema:
+            $ref: '#/components/headers/Touchpoint-Source-Id'
+      security:
+        - basicAuth: []
+        - ApiKeyAuth: []
+      description: >
+        Verifies an account via verification code.
+      operationId: processVerificationPost
+      tags:
+        - Verification [RPC Flow]
+      requestBody:
+        $ref: '#/components/requestBodies/processVerificationBody'
+      responses:
+        "200":
+          description:  >
+            Verification processed successfully. 
+          links:
+            self:
+              $ref: '#/components/links/processVerification'
+            startAccountVerification:
+              $ref: '#/components/links/verificationStart'
+        "409":
+          description: >
+            Verification code status is not valid
+          content: 
+            application/hal+json:
+              schema:
+                $ref: "#/components/schemas/problemDetail" 
+          links:
+            self:
+              $ref: '#/components/links/processVerification'
+            startAccountVerification:
+              $ref: '#/components/links/verificationStart'
+        "400":
+          description: >
+            Verification code not valid
+          content: 
+            application/hal+json:
+              schema:
+                $ref: "#/components/schemas/problemDetail"  
+          links:
+            self:
+              $ref: '#/components/links/processVerification'
+            startAccountVerification:
+              $ref: '#/components/links/verificationStart'
+              
+              
+              
+#              
+# ___                                _        
+#(  _`\                             ( )_      
+#| ( (_)  _    ___   ___   __   ___ | ,_) ___ 
+#| |  _ /'_`\/' _ `/',__)/'__`/' _ `| | /',__)
+#| (_( ( (_) | ( ) \__, (  ___| ( ) | |_\__, \
+#(____/`\___/(_) (_(____`\____(_) (_`\__(____/
+#                                             
+#
+  /consents/definitions/:
+    get:
+      summary: Get consent definitions based on the filters applied to the search operation
+      parameters:
+        - $ref: '#/components/parameters/consentTypeParam'
+        - in: query
+          name: country
+          required: true
+          description: "Country to filter consent definitions. The ISO 3166-A2 code of the country"
+          schema:
+            $ref: '#/components/parameters/countryParam'
+        - in: query
+          name: locale
+          required: true
+          description: Language version of the consent 
+          schema:
+            $ref: '#/components/parameters/localeParam'
+        - in: header
+          name: Application-Country
+          required: true
+          schema:
+            $ref: '#/components/headers/Application-Country'
+        - in: header
+          name: Accept-Language
+          schema:
+            $ref: '#/components/headers/Accept-Language'
+        - in: header
+          name: Touchpoint-Source-Id
+          required: true
+          schema:
+            $ref: '#/components/headers/Touchpoint-Source-Id'
+      security:
+        - basicAuth: []
+        - ApiKeyAuth: []  
+      description: >
+        Retrieves a consent version in a specific locale
+      operationId: getConsentDefinition
+      tags:
+        - Consent Management
+      responses:
+        "404":   
+          description:  Consent definition not found.  
+        "400":
+          description: Bad request
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/problemDetail'    
+        "200":
+          description: Bad request
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/halconsentDefinitions'
+                
+  /accounts/{acid}/consents/{country}:
+    get:
+      summary: Get consents of a user
+      parameters:
+        - $ref: '#/components/parameters/acidParam'
+        - in: path
+          name: country
+          required: true
+          description: "Country to filter user's consents. The ISO 3166-A2 code of the country"
+          schema:
+            $ref: '#/components/parameters/countryPathParam'
+        - in: query
+          name: consentTypes
+          description: "Consent types to be retrieved. if not passed all adidas consents that apply to the country informeed in the path will be returned"
+          schema:
+            $ref: '#/components/parameters/consentTypeParam'
+        - in: header
+          name: Application-Country
+          required: true
+          schema:
+            $ref: '#/components/headers/Application-Country'
+        - in: header
+          name: Accept-Language
+          schema:
+            $ref: '#/components/headers/Accept-Language'
+        - in: header
+          name: Touchpoint-Source-Id
+          required: true
+          schema:
+            $ref: '#/components/headers/Touchpoint-Source-Id'
+      security:
+        - OAuth2: [accounts]
+        - ApiKeyAuth: []  
+      description: >
+        Retrieves a consent version in a specific locale
+      operationId: getUserConsents
+      tags:
+        - Consent Management
+      responses:
+        "404":   
+          description:  Consent definition not found.  
+        "200":
+          description: List of consent records of a user
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/halConsentList'   
+          links:
+            self:
+              $ref: '#/components/links/getUserConsents'
+            updateUserConsents:
+              $ref: '#/components/links/patchUserConsents'
+              
+                
+            
+    patch:
+      summary: Updates provided consents for a user
+      parameters:
+        - $ref: '#/components/parameters/acidParam'
+        - in: path
+          name: country
+          required: true
+          description: "Country to filter updated user's consent. The ISO 3166-A2 code of the country"
+          schema:
+            $ref: '#/components/parameters/countryPathParam'
+        - in: header
+          name: Application-Country
+          required: true
+          schema:
+            $ref: '#/components/headers/Application-Country'
+        - in: header
+          name: Accept-Language
+          schema:
+            $ref: '#/components/headers/Accept-Language'
+        - in: header
+          name: Touchpoint-Source-Id
+          required: true
+          schema:
+            $ref: '#/components/headers/Touchpoint-Source-Id'
+      security:
+        - OAuth2: [accounts]
+        - ApiKeyAuth: []  
+      description: >
+        Retrieves a consent version in a specific locale
+      operationId: patchUserConsents
+      tags:
+        - Consent Management
+      requestBody:
+        $ref: '#/components/requestBodies/patchConsentsBody'
+      responses:
+        "200":
+          description: List of consent records of a user
+          content:
+            application/hal+json:
+              schema:
+                $ref: '#/components/schemas/halConsentList'   
+          links:
+            self:
+              $ref: '#/components/links/patchUserConsents'
+            getUserConsents:
+              $ref: '#/components/links/getUserConsents'
+        "404":   
+          description:  Consent definition not found.             
+            
+            
+            
+#            
+# _____     _                                       _                     _        
+#(  _  )   ( )          _                          ( )            _      ( )_      
+#| (_) |  _| | ___ ___ (_) ___        __   ___    _| |_ _     _  (_) ___ | ,_) ___ 
+#|  _  |/'_` /' _ ` _ `| /' _ `\    /'__`/' _ `\/'_` ( '_`\ /'_`\| /' _ `| | /',__)
+#| | | ( (_| | ( ) ( ) | | ( ) |   (  ___| ( ) ( (_| | (_) ( (_) | | ( ) | |_\__, \
+#(_) (_`\__,_(_) (_) (_(_(_) (_)   `\____(_) (_`\__,_| ,__/`\___/(_(_) (_`\__(____/
+#                                                    | |                           
+#                                                    (_)                           
+
+  /admin/accounts/{acid}:
+    delete:
+      summary: Deletes an Adidas Account
+      security:
+        - OAuth2: [accounts.admin]
+        - ApiKeyAuth: []
+      description: >
+        Deletes a consumer adidas account. Usage of admin interfaces is restricted to specific clients with very special user cases. This endpoint is not usable by regular applications. Access needs to be granted by the product team. 
+      
+      operationId: AdminAccountDelete
+      tags:
+        - Admin Account Management
+      parameters:
+        - $ref: '#/components/parameters/acidParam'
+        - in: header
+          name: Application-Country
+          required: true
+          schema:
+            $ref: '#/components/headers/Application-Country'
+        - in: header
+          name: Accept-Language
+          schema:
+            $ref: '#/components/headers/Accept-Language'
+        - in: query
+          name: deletionProcess
+          description: Specifies the deletion process to be triggered
+          required: true
+          schema:
+            type: string
+            enum: [ccpa]
+      responses:
+        "200":
+          description: Account deleted successfully
+          content:
+            application/hal+json:
+              schema:
+                $ref: "#/components/schemas/baseResponse"
+              example:
+                title: "Deletion Successful"
+                status: 200
+                
+            
+        "400":
+          description: Bad Request
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/problemDetail"
+        "404":
+          description: User does not exist
+          content:
+            application/problem+json:
+              schema:
+                $ref: "#/components/schemas/problemDetail"
+
+
+                                                                    
+                                                                    
+#                                                     _        
+#                                                    ( )_      
+#   ___   _    ___ ___  _ _     _    ___    __   ___ | ,_) ___ 
+# /'___)/'_`\/' _ ` _ `( '_`\ /'_`\/' _ `\/'__`/' _ `| | /',__)
+#( (___( (_) | ( ) ( ) | (_) ( (_) | ( ) (  ___| ( ) | |_\__, \
+#`\____`\___/(_) (_) (_| ,__/`\___/(_) (_`\____(_) (_`\__(____/
+#                      | |                                     
+#                      (_)                                     
+
+components:
+
+#                                  _       _               _              
+#                                 ( )_    ( )             ( )_            
+# _ __  __    _ _ _   _   __   ___| ,_)   | |_     _     _| (_)  __   ___ 
+#( '__/'__`\/'_` ( ) ( )/'__`/',__| |     | '_`\ /'_`\ /'_` | |/'__`/',__)
+#| | (  ___( (_) | (_) (  ___\__, | |_    | |_) ( (_) ( (_| | (  ___\__, \
+#(_) `\____`\__, `\___/`\____(____`\__)   (_,__/`\___/`\__,_(_`\____(____/
+#              | |                                                        
+#              (_)                                                        
+
+  requestBodies: 
+ 
+    accountRegistrationBody:
+      description: Account Registration request body
+      required: true
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/accountRegistration"
+              - $ref: '#/components/schemas/baseRequest'
+              
+    accountCreationBody:
+      description: Account creation request body
+      required: true
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/accountCreation"
+              - $ref: '#/components/schemas/baseRequest'
+              
+    
+    accountPatchBody:
+      description: Update account request body
+      required: true
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/accountPatch"
+              - $ref: '#/components/schemas/baseRequest'
+    
+    accountChangePasswordBody:
+      description: Update account request body
+      required: true
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/accountChangePassword"
+              - $ref: '#/components/schemas/baseRequest'
+              
+    passwordlessStartBody:
+      description: Payload to trigger a passwordless flow
+      required: true
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/passwordlessStart"
+              - $ref: '#/components/schemas/baseRequest'
+              
+    
+    passwordlessAuthBody:
+      description: Payload to perform a passwordless authentication
+      required: true
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/passwordlessAuth"
+              - $ref: '#/components/schemas/baseRequest'
+              
+    passwordResetStartBody:
+      description: Payload to trigger a reset password flow
+      required: true
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/passwordResetStart"
+              - $ref: '#/components/schemas/baseRequest'
+        
+    passwordResetBody:
+      description: Payload to peform a reset password + authentication
+      required: true
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/passwordReset"
+              - $ref: '#/components/schemas/baseRequest'
+              
+              
+    authOptionsRequestBody:
+      description: Payload to perform an authentication options operation
+      required: true
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/authOptionsRequest"
+              - $ref: '#/components/schemas/baseRequest'
+    
+    verificationStartBody:
+      description: Payload to trigger a verification flow
+      required: true
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/verificationStart"
+              - $ref: '#/components/schemas/baseRequest'
+
+    processVerificationBody:
+      description: Payload to verify an account
+      required: true
+      content:
+        application/json:
+          schema:
+            allOf:
+              - $ref: "#/components/schemas/processVerification"
+              - $ref: '#/components/schemas/baseRequest'
+              
+    patchConsentsBody:
+      description: List of consents that needs to be updated
+      required: true
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/consentList"
+#             _                                
+#           ( )                               
+#  ___   ___| |__    __   ___ ___    _ _  ___ 
+#/',__)/'___|  _ `\/'__`/' _ ` _ `\/'_` /',__)
+#\__, ( (___| | | (  ___| ( ) ( ) ( (_| \__, \
+#(____`\____(_) (_`\____(_) (_) (_`\__,_(____/
+#                                             
+#                                             
+                                                    
+  schemas:
+  
+  
+#  
+#   ___              _                   _      
+#(  _`\           (_ )                ( )     
+#| |_) ) _ _ _   _ | |   _     _ _   _| | ___ 
+#| ,__//'_` ( ) ( )| | /'_`\ /'_` )/'_` /',__)
+#| |  ( (_| | (_) || |( (_) ( (_| ( (_| \__, \
+#(_)  `\__,_`\__, (___`\___/`\__,_`\__,_(____/
+#           ( )_| |                           
+#           `\___/'                           
+#
+    #Auxiliar baseRequest (not-in-use)      
+    baseRequest:
+      type: object
+
+    
+    baseResponse:
+      type: object
+      properties:
+        title: 
+          type: string
+        status:
+          type: integer
+      required:
+        - title
+        - status
+      example:
+        title: Success
+        status: 200
+      
+     # passwordless-auth-success payload
+    auth2Response:
+      type: object
+      properties:
+        token_type:
+          type: string
+        access_token:
+          type: string
+        expires_in:
+          type: integer
+        refresh_token:
+          type: string
+      required:
+        - token_type
+        - access_token
+        - expires_in
+      example:
+        token_type: Bearer
+        access_token: eyJhbGciOiJSUzUxMiIsImtpZCI6Imp3dHNpZ25pbmciLCJ4NXQiOiJJQ2pnVl9CRnRFaXVlXzNxX0FEMzl5RVVxQlkifQ.eyJzY29wZSI6WyJwcm9maWxlIl0sImNsaWVudF9pZCI6IjF1NXZhenRubmNiamUwbTM1a3F3cHF1bm01ZjE4YnVwIiwiZ3VpZCI6ImJib2EySjlSZlVWNG5VTWdCaElkNU5iTGE0SVBKT3NIIiwiaXNzIjoiaHR0cHM6Ly9pZHAuc3RnLmFkaWRhcy5jb20vIiwiYXVkIjoiT0F1dGgiLCJqdGkiOiJ5b3E1SnNIanJKYmVyNGVLIiwiYWNpZCI6IkQ0NUpPQzdPWUg3WkVPMU8iLCJhdXRoX3RpbWUiOjE1MzA2MDQ5MDgsImxhc3RfbmFtZSI6IkRhc3NsZXIiLCJtaW5fYWdlIjoxNCwiZmlyc3RfbmFtZSI6IkFkaSIsImVtYWlsIjoianVhbi5hZ3VhZG9AYWRpZGFzLWdyb3VwLmNvbSIsImV4cCI6MTUzMDYwNjcxMX0.JuRuuu8nr50POtSR_d88E-U6T692jgrYkCX-wYR0o-27e_nqe_c1-tiMXQWK-RZ4EFUwNAC8zVm_b2kgNKfr9fKsklMogtSCx7CINQEXcNE10xP-K0QDNVizpXRTxRZm8AJECWZq2UD3kPiIpTKAzd2cf7Ivx7nZc-r1Voxv_qnogukHHlHOIiCmqp1X8T5HsmGb7BhmPWnmz8n9T3Tz7gzDSWwPgUnih4_ELV-kOyTWGGkwaxmiBLAZfzlQCswtCbUlkVKtQROJ1g2OTuatg9fe2T9CN6YlMgwqAtBwa7u9-QzZYpDTdNavAy2EfDOHT-jqvmTIryhGb9q0rVpaVg
+        expires_in: 1799
+        refresh_token: 3h4xYvrgtCRJ56apMaxwmscrsLohHsZeMmiVg50zT3  
+        
+    accountRegistration:
+      type: object
+      required:
+        - account
+      properties:
+        account:
+          $ref: "#/components/schemas/account"
+        subscription:
+          type: object
+          properties:
+            serviceId:
+              type: array
+              items:
+                type: string
+              title: ServiceId schema.
+              minItems: 1
+              description: NewsletterId of the subsciption selected by the user.
+          required:
+          - serviceId
+        consents:
+          title: Consents schema.
+          description: List of consents the user accepted.
+          type: array
+          minItems: 1
+          items:
+            $ref: "#/components/schemas/consent"
+          uniqueItems: true
+          
+            
+    accountCreation:
+      type: object
+      required:
+        - account
+      properties:
+        account:
+          $ref: "#/components/schemas/account"
+        subscription:
+          type: object
+          properties:
+            serviceId:
+              type: array
+              items:
+                type: string
+              title: ServiceId schema.
+              minItems: 1
+              description: NewsletterId of the subsciption selected by the user.
+            consents:
+              title: Consents schema.
+              description: List of consents the user accepted.
+              type: array
+              minItems: 1
+              items:
+                $ref: "#/components/schemas/consent-v1"
+              uniqueItems: true
+          required:
+            - serviceId
+            - consents
+ 
+    accountCreated:
+      type: object
+      properties:
+        title:
+          type: string
+        status:
+          type: string
+        account:
+          $ref: "#/components/schemas/account"
+        auth:
+          $ref: "#/components/schemas/authData"
+    
+    linkedIdentitiesList:
+      type: object
+      properties:
+        linkedIdentities:
+          type: array
+          items:
+            $ref: "#/components/schemas/linkedIdentity"
+            
+    passwordlessStart:
+      type: object
+      properties:
+        strategy:
+          type: string
+          enum: [link]
+          description: Specifies the strategy for the passwodless token.
+        channel:
+          type: string
+          enum: [email]
+          description: Defines the channel used to deliver the one time password
+        email:
+          type: string
+          format: email
+          description: Email of the consumer interested on a passwordless flow
+        auth:
+          type: object
+          description: Authentication details and extra information
+          properties:
+            redirectUri:
+              type: string
+              format: uri
+              description: Uri to be used as the root for the user redirection, domains must be whitelisted upfront. 
+          required:
+            - redirectUri
+      required:
+        - strategy
+        - channel
+        - auth
+
+    # passwordless-auth payload
+    passwordlessAuth:
+      type: object
+      properties:
+        username:
+          type: string
+          description: username used for passwordless start. Additionally "passwordless" username is also accepted as default.
+        password:
+          type: string
+          format: password
+          description: Passwordless token generated on /password/passwordless/start
+        scope:
+          type: string
+          description: list of scopes to be added to the authentication token generated by /password/passwordless
+      required:
+        - username
+        - password
+
+  # password-reset-start payload
+    passwordResetStart:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+          description: Email of the consumer interested on a password-reset flow
+        meta:
+          type: object
+          description: Authentication details and extra information
+          properties:
+            redirectUri:
+              type: string
+              format: uri
+              description: Uri to be used for user redirection, domains must be whitelisted upfront. Reset password token is added as query parameter "rpt"
+          required:
+            - redirectUri
+      required:
+        - email
+        - auth
+      example:
+        email: adi.dassler@adidas.com
+        meta:
+          redirectUri: https://adidas.com/reset-password
+    
+    # process-password-reset payload
+    passwordReset:
+      type: object
+      properties:
+        resetPasswordToken:
+          type: string
+          format: password
+          description: Reset password token generated for the user. 
+        newPassword:
+          type: string
+          format: password
+          description: New password associated to the user
+        scope:
+          type: string
+          description: list of scopes to be added to the authentication token if token can be generated for the user
+      required:
+        - resetPasswordToken
+        - newPassword
+        
+      # password-reset-start payload
+    verificationStart:
+      type: object
+      properties:
+        email:
+          type: string
+          format: email
+          description: Email of the consumer interested on a validation process en email resource is selected
+        phone:
+          type: string
+          format: phone
+          description: phone number of the consumer interested on a validation process.
+        meta:
+          type: object
+          description: Metadata details and extra information
+          properties:
+            redirectUri:
+              type: string
+              format: uri
+              description: Uri to be used as the root for the user redirection when link strategy is selected, domains must be whitelisted upfront. 
+            verificationCodeValidity: 
+              type: integer
+              description: Number in minutes for verification code validity
+              minimum: 2 #2 minutes
+              maximum: 1440 #1 day
+              default: 20
+            verificationCodeLength: 
+              type: integer
+              description: Number of characters of the verification code when code is selected.
+              enum: [6,36]
+              default: 6
+          required:
+            - redirectUri
+          # password-reset-start payload
+          
+          
+          
+    processVerification:
+      type: object
+      properties:
+        verificationCode:
+          type: string
+          description: Verification code generated and shared with the client by the /start endpoint
+          
+    
+    
+          
+    halAuthOptions:
+        type: object
+        allOf:
+        
+          - $ref: '#/components/schemas/authOptions'
+        example:
+          _links:
+            self:
+              href: https://accounts.adidas.com/api/auth/auth-options
+            usernamePassword:
+              href: https://idp.adidas.com/as/token.auth2
+            passwordless:
+              href: https://accounts.adidas.com/api/password/passwordless/start
+            resetPassword:
+              href: https://accounts.adidas.com/api/password/password-reset/start
+            accountCreation:
+              href: https://accounts.adidas.com/api/accounts/registration
+          status: locked-cci
+          accountType: light
+          available: false
+    
+      
+    authOptions:
+      type: object
+      properties:
+        accountType:
+          type: string
+          enum: [light, full]
+          description: Account type registered in Adidas. Not present when identifier is available for registration
+        available:
+          type: boolean
+          description: Determines if passed identifier is available for registration. If true, the client can proceed with the account creation process
+        status:
+          type: string
+          enum: [locked-cci]
+          description: >
+            Information of the account in case it has a special status, like blocked due to a specific reason. 
+            Values:
+             * `locked-cci` - Blocked due to account migration from Runtastic
+      required:
+        - available
+      example:
+        accountType: light
+        available: false
+        status: locked-cci
+  
+    authOptionsRequest:
+      type: object
+      properties:
+        email:
+          type: string
+          description: Email identifier of the account that needs to be checked.
+          format: email
+          
+    
+    ### CONSENTS
+    
+    consentType:
+      type: string
+      enum: [amf, asf, abf,adf]
+      example: amf
+    
+    consent:
+      type: object
+      properties:
+        consentType:
+          $ref: "#/components/schemas/consentType"
+        version:
+          type: string
+          example: "4.0"
+        accepted:
+          type: boolean
+          example: true
+          default: false
+        statusDetails:
+          type: string
+          enum: [pending, accepted, declined, revoked]
+          example: accepted
+          readOnly: true
+        userIpAddress:
+          type: string
+          format: ipv4, ipv6
+          example: 0.0.0.0
+          writeOnly: true
+        updatedAt:
+          type: string
+          format: date-time
+          readOnly: true
+      required:
+        - consentType
+        - version
+        - accepted
+        - userIpAddress
+      example:
+        consentType: "amf"
+        version: "4.0"
+        accepted: true
+        useripAddress: "0.0.0.0"
+    
+    
+    halConsentList:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/halResource'
+      properties:
+        _embedded:
+          type: object
+          properties:
+            consentList:
+              type: array
+              items:
+                $ref: "#/components/schemas/halconsent"
+                
+        
+    halconsent:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/halResource'
+        - $ref: '#/components/schemas/consent'
+      example:
+        _links:
+          self:
+            href: /consents/
+    
+    consentList:
+      type: array
+      items:
+        $ref: "#/components/schemas/consentListEntry"
+        
+    
+    consentListEntry:
+      type: object
+      properties:
+        consentType:
+          $ref: "#/components/schemas/consentType"
+        version:
+          type: string
+          example: "4.0"
+        accepted:
+          type: boolean
+          example: true
+        statusDetails:
+          type: string
+          enum: [pending, accepted, declined, revoked]
+          example: accepted
+          readOnly: true
+        updatedAt:
+          type: string
+          format: date-time
+          readOnly: true
+        userIpAddress:
+          type: string
+          format: ipv4, ipv6
+          example: 0.0.0.0
+          writeOnly: true
+        #contentUrl:
+        #  type: string
+        #  format: URL
+        #  example: "https://api.adidas.com/enGB/privacy-policy/index.html"
+        #  writeOnly: true
+      required:
+        - consentType
+        - version
+        - accepted
+        - userIpAddress
+    
+      
+        
+    consentDefinition:
+      type: object
+      properties:
+        country: 
+          type: string
+          description: Country where the consent is applicable.
+          example: de
+        locale:
+          type: string
+          description: locale of the consent definition
+        version:
+          type: string
+          description: version of the consent
+          example: "4.0"
+        firstLevel:
+          type: string
+          description: First level of consent content
+          example: "I would like to stay up to date with adidas <u>(?)</u>"
+        secondLevel:
+          type: string  
+          description: Second level of consent content
+          example: "I consent to <u>adidas International Trading B.V.</u> using my personal data for marketing and opinion research purposes...."
+        thirdLevel:
+          type: string
+          description: Third level of consent content
+          example: "We, adidas International Trading B.V., may contact you about adidas products...."
+      required:
+        - country
+        - version
+        - type
+        - firstLevel
+        - secondLevel
+        - thirdLevel
+  
+    
+    
+    
+    halconsentDefinitions:
+      type: object
+      allOf:
+        - $ref: '#/components/schemas/halResource'
+      properties:
+        _embedded:
+          type: object
+          properties:
+            consentDefinitions: 
+              type: array
+              items:
+                $ref: "#/components/schemas/consentDefinition"
+
+
+    accountChangePassword:
+      type: object
+      properties:
+        currentPassword: 
+          type: string
+          format: password
+          description: Current Password of the account
+          example: urr3nt#ssw#rd1
+        newPassword:
+          type: string
+          format: password
+          description: New Password for the account
+          example: N3wp#ssw#rd2
+      required:
+        - currentPassword
+        - newPassword
+       
+### BASE PAYLOADS
+      
+    
+    errorDetail:
+      required:
+        - title
+        - detail
+      properties:
+        type:
+          type: string
+        title:
+          type: string
+        status:
+          type: string
+        code:
+          type: string
+        detail:
+          type: string
+        field:
+          type: string
+    problemDetail:
+      type: object
+      properties:
+        type:
+          type: string
+        title:
+          type: string
+        status:
+          type: number
+        detail:
+          type: string
+        instance:
+          type: string
+        errors:
+          type: array
+          items:
+            $ref: "#/components/schemas/errorDetail"
+      required:
+        - title
+        - detail
+        
+        
+    halLinkObject:
+      type: object
+      required:
+        - href
+      properties:
+        href:
+          type: string
+        templated:
+          type: boolean
+        type:
+          type: string
+        deprecation:
+          type: string
+        name:
+          type: string
+        profile:
+          type: string
+        title:
+          type: string
+        hreflang:
+          type: string
+          
+          
+    halCuriesLink:
+      title: HAL Curies Link
+      allOf:
+        - type: object
+          properties:
+            templated:
+              enum:
+                - true
+          required:
+            - templated
+        - $ref: "#/components/schemas/halLinkObject"
+
+
+    halResource:
+      title: HAL Resource Object
+      type: object
+      properties:
+        _links:
+          type: object
+          additionalProperties: 
+            allOf:
+              - $ref: "#/components/schemas/halLinkObject"
+              - type: array
+                items:
+                  $ref: "#/components/schemas/halLinkObject"
+          properties:
+            curies:
+              allOf:
+                - $ref: "#/components/schemas/halCuriesLink"
+                - type: array
+                  items:
+                    $ref: "#/components/schemas/halCuriesLink"
+        _embedded:
+          type: object
+          additionalProperties: false
+
+#        
+# ___         _     _                
+#(  _`\      ( )_ _( )_ _            
+#| (_(_) ___ | ,_(_| ,_(_)  __   ___ 
+#|  _)_/' _ `| | | | | | |/'__`/',__)
+#| (_( | ( ) | |_| | |_| (  ___\__, \
+#(____/(_) (_`\__(_`\__(_`\____(____/
+#                                    
+
+    consent-v1:
+      type: object
+      title: Consent schema.
+      description: Consent of the user for accepting mails
+      properties:
+        consentType:
+          type: string
+          title: ConsentType schema.
+          description: Type of the Consent the user accepted
+        consentValue:
+          type: boolean
+          title: ConsentValue schema.
+          description: Value of the Consent the user accepted/declined
+        consentVersion:
+          type: string
+          title: ConsentVersion schema.
+          description: Version of the Consent the user accepted
+      required:
+        - consentType
+        - consentValue
+        - consentVersion
+    
+    account:
+      type: object
+      title: Account schema
+      properties:
+        acid:
+          type: string
+          format: UUID
+          readOnly: true
+          title: Adidas Consumer Identifier
+          description: Unique consumer identifier for a consumer.
+          example: "123e4567-e89b-12d3-a456-426655440000"
+        email:
+          type: string
+          format: email
+          title: Email schema.
+          description: Email associated to a consumer.
+        country:
+          type: string
+          title: Registration country schema.
+          readOnly: true
+          description: Country from which the user registered.
+        emailVerified:
+          type: boolean
+          title: Email verified schema.
+          readOnly: true
+          description: Emaail verification flag status
+        firstName:
+          type: string
+          title: FirstName schema.
+          description: FirstName associated to a consumer.
+        lastName:
+          type: string
+          title: LastName schema.
+          description: LastName associated to a consumer.
+        nickName:
+          type: string
+          title: NickName schema.
+          description: NickName associated to a consumer.
+        password:
+          type: string
+          minLength: 8
+          writeOnly: true
+          format: password
+          title: Password schema.
+          description: Password associated to a consumer. Required if type is not social
+        gender:
+          type: string
+          enum:
+            - male
+            - female
+            - pns
+          title: Gender schema.
+          description: Gender associated to a consumer.
+        dateOfBirth:
+          type: string
+          format: date
+          title: DateOfBirth schema.
+          description: DateOfBirth associated to a consumer.
+        minAgeConfirmation:
+          type: boolean
+          title: Minimum Age Confirmation flag.
+          description: Flag confirming whether the customer meets the minimum age requirements of the country specified by header Application-Country.
+        phoneNumber:
+          type: string
+          title: Phone number schema.
+          description: Phone number associated to a consumer.
+          example: "003343655333223"
+        phoneNumberVerified:
+          type: boolean
+          title: Phone Number verified schema.
+          readOnly: true
+          description: Phone number verification flag status
+      required:
+        - email
+        - acid
+        - country
+        
+        
+    accountPatch:
+      type: object
+      title: Account schema for patch (Not including password field)
+      properties:
+        acid:
+          type: string
+          format: UUID
+          readOnly: true
+          title: Adidas Consumer Identifier
+          description: Unique connsumer identifier for a consumer.
+        email:
+          type: string
+          format: email
+          title: Email schema.
+          description: Email associated to a consumer.
+        firstName:
+          type: string
+          title: FirstName schema.
+          description: FirstName associated to a consumer.
+        lastName:
+          type: string
+          title: LastName schema.
+          description: LastName associated to a consumer.
+        nickName:
+          type: string
+          title: NickName schema.
+          description: NickName associated to a consumer.
+        gender:
+          type: string
+          enum:
+            - male
+            - female
+            - pns
+          title: Gender schema.
+          description: Gender associated to a consumer.
+        dateOfBirth:
+          type: string
+          format: date
+          title: DateOfBirth schema.
+          description: DateOfBirth associated to a consumer.
+        minAgeConfirmation:
+          type: boolean
+          title: Minimum Age Confirmation flag.
+          description: Flag confirming whether the customer meets the minimum age requirements of the country specified by header Application-Country.
+        phoneNumber:
+          type: string
+          title: Phone number schema.
+          description: Phone number associated to a consumer.
+          example: "003343655333223"
+      required:
+        - email
+        
+    authData:
+      type: object
+      properties:
+        token_type:
+          type: string
+          description: Type of token returned 
+        access_token:
+          type: string
+          description: Token used to access different APIs on behalf of the user 
+        expires_in:
+          type: integer
+          description: The lifetime in seconds of the access token.
+        refresh_token:
+          type: string
+          description:  Refresh token, which can be used to obtain new access tokens using the same authorization grant
+          
+    
+    linkedIdentity:
+      type: object
+      description: Represents an external Identity
+      required:
+        - userId
+        - provider
+      properties:
+        userId: 
+          type: string
+          description: User identifier from the provider
+        provider: 
+          type: string
+          description: Name of the identity provider
+          enum:
+            - facebook
+            - google
+        accessToken:
+          type: string
+          description: Access token generated by the external identity provider
+        email:
+          type: string
+          format: email
+          description: Email address of the user from the identity provider
+        picture: 
+          type: string
+          format: uri
+          description: URI of the profile picture from the provider
+        linkedAt:
+          type: string
+          format: datetime
+          description: Datetime when they linked identity was generated
+    
+
+
+#                               _         
+#                             _( )_       
+#  ___   __    ___ _   _ _ __(_| ,_)_   _ 
+#/',__)/'__`\/'___( ) ( ( '__| | | ( ) ( )
+#\__, (  ___( (___| (_) | |  | | |_| (_) |
+#(____`\____`\____`\___/(_)  (_`\__`\__, |
+#                                  ( )_| |
+#                                  `\___/'          
+  securitySchemes:
+    OAuth2:
+        type: oauth2
+        flows:
+          authorizationCode:
+            authorizationUrl: https://idp.adidas.com/as/authorization.oauth2
+            tokenUrl: https://idp.adidas.com/as/token.oauth2
+            scopes:
+              pii: Grants access to personal information 
+              accounts: Grants access to all profile information
+          password:
+            tokenUrl: https://idp.adidas.com/as/token.oauth2
+            scopes:
+              pii: Grants access to personal information 
+              accounts: Grants access to all profile information
+          implicit:
+            authorizationUrl: https://idp.adidas.com/as/authorization.oauth2
+            scopes:
+              pii: Grants access to personal information 
+              accounts: Grants access to all profile information 
+    ApiKeyAuth:
+      type: apiKey
+      in: header
+      description: API key generated for the application
+      name: X-API-Key
+    
+    basicAuth:     # <-- arbitrary name for the security scheme
+      type: http
+      scheme: basic
+      
+      
+# _                     _                 
+#( )                   ( )                
+#| |__    __    _ _   _| |  __  _ __  ___ 
+#|  _ `\/'__`\/'_` )/'_` |/'__`( '__/',__)
+#| | | (  ___( (_| ( (_| (  ___| |  \__, \
+#(_) (_`\____`\__,_`\__,_`\____(_)  (____/
+#                                         
+                                               
+      
+  headers:
+    # Accept:
+    #   description: Schema pointing to the API version
+    #   required: true
+    #   schema:
+    #     type: string
+    #     enum:
+    #       - application/vnd.com.adidas.accounts.v1+json;
+    Accept-Language:
+      description: Language preferred by the user to trigger communications. Language should be described in ISO_639 format. Examples, english=en, german=de, spanish=es. If not passed default language is EN
+      schema:
+        type: string
+        default: en
+    Application-Country:
+      required: true
+      description: Country where the application is operating. This information is used to apply different rules based on specific policies and data management. The ISO 3166-A2 code of the country of the site
+      schema:
+        type: string
+    Touchpoint-Source-Id:
+      required: true
+      description: Source identifier for the touchpoint from where the user is accessing the API. Source identifier is mandatory 
+      schema:
+        type: string
+        
+        
+
+
+#                                       _                   
+#                                      ( )_                 
+# _ _     _ _ _ __  _ _  ___ ___    __ | ,_)  __  _ __  ___ 
+#( '_`\ /'_` ( '__/'_` /' _ ` _ `\/'__`| |  /'__`( '__/',__)
+#| (_) ( (_| | | ( (_| | ( ) ( ) (  ___| |_(  ___| |  \__, \
+#| ,__/`\__,_(_) `\__,_(_) (_) (_`\____`\__`\____(_)  (____/
+#| |                                                        
+#(_)                                                        
+
+
+  parameters:  
+    acidParam:
+      in: path
+      name: acid
+      description: User identifier
+      required: true
+      schema:
+        type: string
+        format: UUID
+    tokenManagerParam:
+      in: query
+      name: tokenManager
+      description: Token manager identifier
+      required: false
+      schema:
+        type: string
+        default: jwt
+    scopeParam:
+      name: scope
+      in: query
+      description: Scopes to be included in the access token
+      required: false
+      schema:
+        type: string
+    accountCreationTypeParam:  
+      name: type
+      in: query
+      description: Type of creation. Internal usage only
+      required: false
+      schema:
+        type: string
+        enum:
+          - checkout
+    identityProviderParam:
+      in: path
+      name: identityProvider
+      description: Identity Provider
+      required: true
+      schema:
+        type: string
+        enum: [facebook, google]
+    requestIdParameter:
+      in: path
+      name: requestId
+      description: Identifier of the request triggering the proceess
+      required: true
+      schema:
+        type: string
+    countryParam:
+      name: country
+      in: query
+      description: Country is used to locate the corresponding resource. The ISO 3166-A2 code of the country of the site
+      required: true
+      schema:
+        type: string
+    countryPathParam:
+      name: country
+      in: query
+      description: Country is used to locate the corresponding resource. The ISO 3166-A2 code of the country of the site
+      required: true
+      schema:
+        type: string
+    localeParam:
+      name: locale
+      in: query
+      description: Locale is used to locate the corresponding version of the resource.
+      required: true
+      schema:
+        type: string
+    consentTypeParam:
+      in: query
+      name: consentTypes
+      description: Consent type
+      required: true
+      style: form
+      explode: false
+      schema:
+        $ref: "#/components/schemas/consentType"
+        
+
+#
+#_             _          
+#( )    _      ( )         
+#| |   (_) ___ | |/')  ___ 
+#| |  _| /' _ `| , < /',__)
+#| |_( | | ( ) | |\`\\__, \
+#(____/(_(_) (_(_) (_(____/
+#                          
+                                  
+        
+  links:
+  
+    authOptions:   # <----- The $ref's above point here
+      description: >
+        AuthOptions service call.
+      operationId: authOptionsPost
+  
+    passwordless:   # <----- The $ref's above point here
+      description: >
+        Trigger a passwordless flow.
+      operationId: passwordlessStartPost
+      
+    passwordlessAuth:   # <----- The $ref's above point here
+      description: >
+        Authenticate a user with a passwordless code.
+      operationId: passwordlessAuthPost
+    
+    passwordAuth:   # <----- The $ref's above point here
+      description: >
+        Trigger an authentication flow (ROPC).
+      operationId: authenticationPassword
+    
+    resetPassword:
+      description: >
+        Trigger a reset password flow
+      operationId: passwordResetStartPost
+      
+    processResetPassword:
+      description: >
+        Process reset password code
+      operationId: passwordResetPost
+    
+    createAccount:
+      description: >
+        Create an Account
+      operationId: AccountPost
+    
+    getAccount:
+      description: >
+        Get an Account
+      operationId: AccountGet
+      parameters:
+        acid: '$response.body#/acid'
+        
+    updateAccount:
+      description: >
+        Update an Account
+      operationId: AccountPatch
+      parameters:
+        acid: '$response.body#/acid'
+    
+    deleteAccount:
+      description: >
+        Delete an Account
+      operationId: AccountDelete
+      parameters:
+        acid: '$response.body#/acid'  
+    
+    getLinkedIdentities:
+      description: >
+        Get linked Identities of an Account
+      operationId: AccountLinkedIdentitiesGet
+      parameters:
+        acid: '$response.body#/acid'   
+
+    getLinkedIdentity:
+      description: >
+        Get one Identity of an Account
+      operationId: AccountLinkedIdentityGet
+      parameters:
+        acid: '$response.body#/acid' 
+        provider: '$response.body.linkedIdentities#provider'
+        
+    verificationStart:
+      description: >
+        Trigger a verification process
+      operationId: verificationStartPost
+        
+    processVerification:
+      description: >
+        Process a verification code
+      operationId: processVerificationPost
+      
+    getUserConsents:
+      description: >
+        Retrieve consents for a user and country
+      operationId: getUserConsents
+      parameters:
+        acid: 'request.path#/acid' 
+        country: 'request.path#country'
+        
+    patchUserConsents:
+      description: >
+        Update consents for a user and country
+      operationId: patchtUserConsents
+      parameters:
+        acid: 'request.path#/acid' 
+        country: 'request.path#country'
