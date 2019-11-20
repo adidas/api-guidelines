@@ -81,7 +81,7 @@ rules:
             type: string
             enum: ["https"]
           maxItems: 1
-  request-support-json: # This will have to take into account the schemas as well as consumes parameter
+  request-support-json:
     description: Every request SHOULD support `application/json` media type
     formats:
       - oas2
@@ -105,8 +105,8 @@ rules:
   #   formats:
   #     - oas2
   #   message: "{{ property }} MUST have a valid example."
-  #   given: "$..parameters..[?(@.in == 'body' && ( !@.example || !@..$ref))]"
-  #   then:
+  #   given: "$..parameters..[?(@.in == 'body')]..[?( !@.example || !@.schema.$ref)]"
+  #   then: 
   #     function: falsy
   # example-exists-in-definitions:
   #   description: All models MUST have a valid example.
@@ -154,18 +154,18 @@ rules:
   # Only OAS3 rules
   # ---------------------------------------------------------------------------
 
-  #request-support-json-oas3: # this needs check the body parameter for content property and its value
-    # description: Every request SHOULD support `application/json` media type
-    # formats:
-    #   - oas3
-    # recommended: true
-    # severity: error
-    # message: 
-    # given: $.requestBody..content
-    # then:
-    #   function: pattern
-    #   functionOptions:
-    #     match: "/^https:[a-zA-Z0-9./_@-~]+/"
+  request-support-json-oas3:
+    description: Every request SHOULD support `application/json` media type
+    formats:
+      - oas3
+    recommended: true
+    severity: error
+    message: "{{description}}: {{error}}"
+    given: $.paths.[*].requestBody.content[?(@property.indexOf('json') === -1)]^
+    then:
+      function: pattern
+      functionOptions:
+        match: falsy
   valid-example-in-parameters:
     description: Examples must be valid against their defined schema.
     message: "{{error}}"
