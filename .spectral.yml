@@ -65,7 +65,7 @@ rules:
 
   headers-no-x-headers:
     description: "All 'HTTP' headers SHOULD NOT include 'X-' headers (https://tools.ietf.org/html/rfc6648)."
-    severity: warning
+    severity: warn
     given: "$..parameters[?(@.in == 'header')].name"
     message: "HTTP headers SHOULD NOT include 'X-' prefix."
     recommended: true
