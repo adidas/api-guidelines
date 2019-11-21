@@ -208,7 +208,35 @@ rules:
       function: pattern
       functionOptions:
         match: "/^https:[a-zA-Z0-9./_@-~]+/"
-    # response-success-hal-oas3:
+  response-success-hal-oas3:
+    description: "All success responses MUST be of media type `application/hal+json`"
+    severity: error
+    given: $.paths..responses[?( @property >= 200 && @property < 300 && @property != 204)].content[*]~
+    recommended: true
+    # type: "style"
+    formats:
+      - oas3
+    message: "Response documents MUST be of application/hal+json media type: {{error}}"
+    then:
+      function: enumeration
+      functionOptions:
+        values:
+          - application/hal+json
+  response-success-hal-body-oas3: # schemes and/or produces
+    description: "All success responses MUST follow `application/hal+json` schema"
+    severity: error
+    given: $.paths..responses[?( @property >= 200 && @property < 300 && @property != 204)].content[?(@property === "application/hal+json")]
+    recommended: true
+    type: "style"
+    formats:
+      - oas3
+    message: "Response documents MUST follow application/hal+json schema: {{error}}"
+    then:
+      field: schema
+      function: schema
+      functionOptions:
+        schema:
+          $ref: "./supermodel/adidas/api/HAL.yaml"
     
 
   # ---------------------------------------------------------------------------
