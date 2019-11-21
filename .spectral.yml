@@ -75,6 +75,18 @@ rules:
       functionOptions:
         notMatch: "/^X-([A-Z][a-z0-9]-)*([A-Z][a-z0-9])+/"
 
+  headers-hyphenated-pascal-case:
+    description: All `HTTP` headers MUST use `Hyphenated-Pascal-Case` notation
+    severity: error
+    given: "$..parameters[?(@.in == 'header')].name"
+    message: "'HTTP' headers MUST follow 'Hyphenated-Pascal-Case' notation"
+    recommended: true
+    type: style
+    then: 
+      function: pattern
+      functionOptions:
+        match: "/^([A-Z][a-z0-9]-)*([A-Z][a-z0-9])+/"
+
   # ---------------------------------------------------------------------------
   # Only OAS2 rules
   # ---------------------------------------------------------------------------
@@ -270,19 +282,9 @@ rules:
   # Not implemented
   # ---------------------------------------------------------------------------
 
-  # Waiting for implementation of casing for hyphenated pascal case in spectral
-  # headers-hyphenated-pascal-case:
-  #   description: All `HTTP` headers MUST use `Hyphenated-Pascal-Case` notation
-  #   severity: error
-  #   given: $..parameters[*].in
-  # heders-no-x-headers:
-  #   description: All `HTTP` headers SHOULD NOT include `X-` headers (https://tools.ietf.org/html/rfc6648). All non-standard headers are named without the `X-` prefix.
-  #   severity: warning
-  #   given: $..parameters[*].in
-
-# ---------------------------------------------------------------------------
-## Other rules which are redundant or not feasible
-# ---------------------------------------------------------------------------
+  # ---------------------------------------------------------------------------
+  # Other rules which are redundant or not feasible
+  # ---------------------------------------------------------------------------
 
   # fields-date-iso8601:
   #   description: Date and time MUST follow [`ISO 8601` standard](https://www.iso.org/iso-8601-date-and-time-format.html)
