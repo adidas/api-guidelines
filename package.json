@@ -7,11 +7,11 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@supermodel/cli": "^0.46.29",
-    "spectral": "^0.0.0"
+    "@stoplight/spectral": "^4.2.0",
+    "@supermodel/cli": "^0.46.29"
   },
-  "scripts":{
-    "build-examples": " supermodel schema oas2 supermodel/adidas/examples/order/api/ -o examples/demo-orderapi-v3.oas2.yaml",
-    "test": "spectral lint examples/demo-orderapi-v3.oas2.yaml"
+  "scripts": {
+    "build-examples": "supermodel schema oas2 supermodel/adidas/examples/order/api/ -o examples/demo-orderapi-v3.oas2.yaml",
+    "test": "spectral lint examples/*"
   }
 }
