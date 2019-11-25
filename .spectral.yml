@@ -73,7 +73,7 @@ rules:
     then: 
       function: pattern
       functionOptions:
-        notMatch: "/^X-([A-Z][a-z0-9]-)*([A-Z][a-z0-9])+/"
+        notMatch: "/^(x|X)-/"
 
   headers-hyphenated-pascal-case:
     description: All `HTTP` headers MUST use `Hyphenated-Pascal-Case` notation
@@ -189,7 +189,7 @@ rules:
   # ---------------------------------------------------------------------------
 
   request-support-json-oas3:
-    description: Every request SHOULD support `application/json` media type
+    description: Every request MUST support `application/json` media type
     formats:
       - oas3
     recommended: true
@@ -244,7 +244,7 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: "/^https:[a-zA-Z0-9./_@-~]+/"
+        match: "/^https:/"
 
   response-success-hal-oas3:
     description: "All success responses MUST be of media type `application/hal+json`"
