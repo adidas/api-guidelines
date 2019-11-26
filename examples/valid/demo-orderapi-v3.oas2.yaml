@@ -16,6 +16,8 @@ produces:
 schemes:
   - https
 
+host: "example.com"
+
 securityDefinitions:
    'API Key':
      type: apiKey
