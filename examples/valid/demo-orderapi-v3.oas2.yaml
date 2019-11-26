@@ -2,6 +2,7 @@ swagger: '2.0'
 info:
   version: '3.0.0'
   title: '[Demo] Orders API'
+  contact: "z@goodapi.co"
   description: |
     Sample API conforming to [adidas API Guidelines](https://adidas.gitbook.io/api-guidelines/).
     
