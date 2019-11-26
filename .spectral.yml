@@ -6,7 +6,7 @@ rules:
   # ---------------------------------------------------------------------------
 
   operation-operationId: false
-  operation-tags: info
+  operation-tags: false
   operation-2xx-response: error
 
   paths-camelCase:
