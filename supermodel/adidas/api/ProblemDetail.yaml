@@ -1,0 +1,19 @@
+$id: http://supermodel.io/adidas/api/ProblemDetail
+$schema: http://json-schema.org/draft-07/schema#
+title: Problem Details for HTTP APIs
+description: Definition of [RFC7807](https://tools.ietf.org/html/rfc7807) problem detail
+type: object
+properties:
+  type:
+    type: string
+  title:
+    type: string
+  status:
+    type: number
+  detail:
+    type: string
+  instance:
+    type: string
+required:
+  - title
+  - detail

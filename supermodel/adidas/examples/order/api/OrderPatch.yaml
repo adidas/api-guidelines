@@ -1,0 +1,14 @@
+$id: http://supermodel.io/adidas/examples/order/api/OrderPatch
+$schema: http://json-schema.org/draft-07/schema#
+
+title: OrderPatch
+description: OrderPatch model description
+type: object
+
+allOf:
+  - $ref: 'http://supermodel.io/adidas/examples/order/Order'
+
+examples:
+- status: cancelled
+  orderNumber: 1
+  itemCount: 2
