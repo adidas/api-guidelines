@@ -12,6 +12,6 @@
   },
   "scripts": {
     "build-examples": "supermodel schema oas2 supermodel/adidas/examples/order/api/ -o examples/demo-orderapi-v3.oas2.yaml",
-    "test": "spectral lint examples/*"
+    "test": "spectral lint examples/valid/*"
   }
 }
