@@ -197,9 +197,7 @@ rules:
     message: "{{description}}: {{error}}"
     given: $.paths.[*].requestBody.content[?(@property.indexOf('json') === -1)]^
     then:
-      function: pattern
-      functionOptions:
-        match: falsy
+      function: falsy
 
   valid-example-in-parameters:
     description: Examples must be valid against their defined schema.
