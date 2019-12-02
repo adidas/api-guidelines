@@ -75,6 +75,10 @@ spectral lint my-api-spec.yaml --skip-rule=protocol-https-only-oas3
 
 ## Spectral rules list
 
+The documentation on Spectral general OAS and specific rules for OAS2 and OAS3 can be found here: https://github.com/stoplightio/spectral/blob/develop/docs/reference/openapi-rules.md. 
+
+Adidas specific rules are listed below:
+
 ### Adidas general rules
 
 * `paths-camelCase` - All YAML/JSON paths MUST follow camelCase.
