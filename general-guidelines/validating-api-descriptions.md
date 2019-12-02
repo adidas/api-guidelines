@@ -72,3 +72,32 @@ Currently any problem of severity of error or warning will cause a failure statu
 ```
 spectral lint my-api-spec.yaml --skip-rule=protocol-https-only-oas3
 ```
+
+## Spectral rules list
+
+### Adidas general rules
+
+* `paths-camelCase` - All YAML/JSON paths MUST follow camelCase.
+* `definitions-camelCase-alphanumeric` - All YAML/JSON definitions MUST follow fields-camelCase and be ASCII alphanumeric characters or `_` or `$`.
+* `properties-camelCase-alphanumeric` - All JSON Schema properties MUST follow fields-camelCase and be ASCII alphanumeric characters or `_` or `$`.
+* `request-GET-no-body` - A 'GET' request MUST NOT accept a 'body` parameter.
+* `uri-template-cannot-dash` - The 'URI' template (RFC 6570 - https://tools.ietf.org/html/rfc6570) cannot contain a '-' character.
+* `headers-no-x-headers` - All 'HTTP' headers SHOULD NOT include 'X-' headers (https://tools.ietf.org/html/rfc6648).
+* `headers-hyphenated-pascal-case` - All `HTTP` headers MUST use `Hyphenated-Pascal-Case` notation.
+
+### Adidas OAS2/Swagger rules
+
+* `protocol-https-only` - ALL requests MUST go through `https` protocol only.
+* `request-support-json` - Every request SHOULD support `application/json` media type.
+* `example-exists-in-parameters` - All models MUST have a valid example.
+* `response-success-hal` - All success responses MUST be of media type `application/hal+json`.
+* `response-error-problem` - All error responses MUST be of media type `application/problem+json`.
+
+### Adidas OAS3 rules
+
+* `request-support-json-oas3` - Every request MUST support `application/json` media type.
+* `valid-example-in-parameters` - Examples must be valid against their defined schema.
+* `valid-example-in-definitions` - Examples must be valid against their defined schema.
+* `protocol-https-only-oas3` - ALL requests MUST go through `https` protocol only.
+* `response-success-hal-oas3` - All success responses MUST be of media type `application/hal+json`.
+* `response-success-hal-body-oas3` - All success responses MUST follow `application/hal+json` schema.
