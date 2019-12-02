@@ -1,6 +1,6 @@
 # Validating API Description
 
-API description files (e.g. OpenAPI specification for REST APIs) SHOULD be validated to verify whether they comply with this guidelines. In order to do that you can utilize [Spectral](https://github.com/stoplightio/spectral) ruleset implementing them.
+If you want to follow adidas API design guidelines for REST APIs you MAY validate your OAS file using [Spectral](https://github.com/stoplightio/spectral) and the adidas ruleset file.
 
 ## Installing Spectral
 
@@ -30,12 +30,12 @@ docker run --rm -it -v $(pwd):/tmp stoplight/spectral lint "/tmp/file.yaml"
 
 ## Using Spectral
 
-Once installed Spectral you can validate any `YAML` or `JSON` file according to a given set of rules. Spectral has a predefined set of rules validating OpenAPI 2.x (Swagger) and OpenAPI 3.x files.
+Once installed Spectral, you can validate an OAS file (in YAML or JSON format) according to a given set of rules. Spectral has a predefined set of rules validating OpenAPI 2.x (Swagger) and OpenAPI 3.x files.
 
 Spectral comes with a CLI and can be run from your command line:
 
 ```
-spectral lint MY_SPEC_FILE.yaml
+spectral lint <oas-file>
 ```
 
 For more details about how to utilize Spectral CLI you can check the CLI built-in help:
@@ -46,7 +46,7 @@ spectral lint -h
 
 or go to the official [Spectral documentation](https://stoplight.io/p/docs/gh/stoplightio/spectral/docs/guides/cli.md).
 
-Spectral can also be used from within Javascript. For details on how to accomplish this, please refer to the [documentation](https://stoplight.io/p/docs/gh/stoplightio/spectral/docs/guides/javascript.md).
+Spectral can also be used from within JavaScript. For details on how to accomplish this, please refer to the [documentation](https://stoplight.io/p/docs/gh/stoplightio/spectral/docs/guides/javascript.md).
 
 ## Validating with Adidas API Guidelines
 
@@ -55,7 +55,7 @@ To check whether your API Specification complies with Adidas API Guidelines copy
 Once it is in the same directory as the one from which you are calling spectral it will be used automatically.
 
 ``` 
-spectral lint my-api-spec.yaml
+spectral lint <oas-file>
 ```
 
 ### Validation problems
