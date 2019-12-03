@@ -55,7 +55,7 @@ npm install -g @stoplight/spectral
 yarn global add @stoplight/spectral
 ```
 
-Once installed, to verify your OAS file with spectral execute `spectral lint <oas-file>` having the `.spectral.yaml` file inside the directory from which you are calling the command.
+Once installed, to verify your OAS file with spectral execute `spectral lint <oas-file> -r path/.spectral.yaml` where `path/.spectral.yaml` indicated the location `.spectral.yaml` file.
 
 For further documentation on Spectral refer to their [documentation](https://stoplight.io/p/docs/gh/stoplightio/spectral/README.md).
 
