@@ -68,7 +68,7 @@ Spectral defines 4 levels of problem severity:
 Currently any problem of severity of error or warning will cause a failure status code of `1`. This means that any `error` or `warning` in your specification will prevent your CI/CD pipeline from succeeding. During design process you may want to ignore certain warnings, such as the runtime information (e.g. `hosts` or `servers`). In order to do that you can add a `--skip-rule` flag:
 
 ```
-spectral lint my-api-spec.yaml --skip-rule=protocol-https-only-oas3
+spectral lint my-api-spec.yaml --skip-rule=adidas-oas3-protocol-https-only
 ```
 
 ## Spectral rules list
