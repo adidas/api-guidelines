@@ -9,7 +9,7 @@ rules:
   operation-tags: false
   operation-2xx-response: error
 
-  paths-camelCase:
+  adidas-paths-camelCase:
     description: All YAML/JSON paths MUST follow camelCase
     severity: warn
     recommended: true
@@ -21,7 +21,7 @@ rules:
         # match: "/^(\/{1}(([{]?[a-z])[A-Za-z0-9]*[}]?)*)+$/" # - more generic one, allows /asasd{asdas}sadas pattern but also not closed braces
         match: "^\/([a-z][a-zA-Z0-9]+)?(\/[a-z][a-zA-Z0-9]+|\/{[a-z][a-zA-Z0-9]+})*$" # doesn't allow /asasd{asdas}sadas pattern or not closed braces
 
-  definitions-camelCase-alphanumeric:
+  adidas-definitions-camelCase-alphanumeric:
     description: All YAML/JSON definitions MUST follow fields-camelCase and be ASCII alphanumeric characters or `_` or `$`.
     severity: error
     recommended: true
@@ -32,7 +32,7 @@ rules:
       functionOptions:
         match: "/^[a-z$_]{1}[A-Z09$_]*/"
 
-  properties-camelCase-alphanumeric:
+  adidas-properties-camelCase-alphanumeric:
     description: All JSON Schema properties MUST follow fields-camelCase and be ASCII alphanumeric characters or `_` or `$`.
     severity: error
     recommended: true
@@ -43,7 +43,7 @@ rules:
       functionOptions:
         match: "/^[a-z$_]{1}[A-Z09$_]*/"
 
-  request-GET-no-body:
+  adidas-request-GET-no-body:
     description: "A 'GET' request MUST NOT accept a 'body` parameter"
     severity: error
     given: $.paths..get.parameters..in
@@ -52,7 +52,7 @@ rules:
       functionOptions:
         notMatch: "/^body$/"
 
-  uri-template-cannot-dash:
+  adidas-uri-template-cannot-dash:
     description: "The 'URI' template (RFC 6570 - https://tools.ietf.org/html/rfc6570) cannot contain a '-' character"
     severity: error
     recommended: true
@@ -63,7 +63,7 @@ rules:
       functionOptions:
         notMatch: "/-/"
 
-  headers-no-x-headers:
+  adidas-headers-no-x-headers:
     description: "All 'HTTP' headers SHOULD NOT include 'X-' headers (https://tools.ietf.org/html/rfc6648)."
     severity: warn
     given: "$..parameters[?(@.in == 'header')].name"
@@ -75,7 +75,7 @@ rules:
       functionOptions:
         notMatch: "/^(x|X)-/"
 
-  headers-hyphenated-pascal-case:
+  adidas-headers-hyphenated-pascal-case:
     description: All `HTTP` headers MUST use `Hyphenated-Pascal-Case` notation
     severity: error
     given: "$..parameters[?(@.in == 'header')].name"
@@ -91,7 +91,7 @@ rules:
   # Only OAS2 rules
   # ---------------------------------------------------------------------------
 
-  protocol-https-only:
+  adidas-oas2-protocol-https-only:
     description: "ALL requests MUST go through `https` protocol only"
     formats:
       - oas2
@@ -111,7 +111,7 @@ rules:
             enum: ["https"]
           maxItems: 1
 
-  request-support-json:
+  adidas-oas2-request-support-json:
     description: Every request SHOULD support `application/json` media type
     formats:
       - oas2
@@ -129,7 +129,7 @@ rules:
             enum:
               - application/json
 
-  example-exists-in-parameters:
+  adidas-oas2-example-exists-in-parameters:
     description: All models MUST have a valid example.
     severity: error
     recommended: true
@@ -152,7 +152,7 @@ rules:
   #     function: falsy
   # "$..parameters..[?(@.in == 'body')]..[?(@property !== 'properties' && @.example && ( @.type || @.format || @.$ref ))]"
 
-  response-success-hal: # schemes and/or produces
+  adidas-oas2-response-success-hal: # schemes and/or produces
     description: "All success responses MUST be of media type `application/hal+json`"
     severity: error
     given: $.paths..responses[?( @property >= 200 && @property < 300 && @property != 204)]
@@ -168,7 +168,7 @@ rules:
         schema:
           $ref: "./supermodel/adidas/api/HAL.yaml"
 
-  response-error-problem: # schemas and/or produces
+  adidas-oas2-response-error-problem: # schemas and/or produces
     description: All error responses MUST be of media type `application/problem+json`
     severity: error
     formats:
@@ -188,7 +188,7 @@ rules:
   # Only OAS3 rules
   # ---------------------------------------------------------------------------
 
-  request-support-json-oas3:
+  adidas-oas3-request-support-json:
     description: Every request MUST support `application/json` media type
     formats:
       - oas3
@@ -199,7 +199,7 @@ rules:
     then:
       function: falsy
 
-  valid-example-in-parameters:
+  adidas-oas3-valid-example-in-parameters:
     description: Examples must be valid against their defined schema.
     message: "{{error}}"
     recommended: true
@@ -215,7 +215,7 @@ rules:
         field: example
         schemaPath: "$"
 
-  valid-example-in-definitions:
+  adidas-oas3-valid-example-in-definitions:
     description: Examples must be valid against their defined schema.
     message: "{{error}}"
     recommended: true
@@ -231,7 +231,7 @@ rules:
         field: example
         schemaPath: "$"
 
-  protocol-https-only-oas3: # checks how does the servers array values start
+  adidas-oas3-protocol-https-only: # checks how does the servers array values start
     description: "ALL requests MUST go through `https` protocol only"
     formats:
       - oas3
@@ -244,7 +244,7 @@ rules:
       functionOptions:
         match: "/^https:/"
 
-  response-success-hal-oas3:
+  adidas-oas3-response-success-hal:
     description: "All success responses MUST be of media type `application/hal+json`"
     severity: error
     given: $.paths..responses[?( @property >= 200 && @property < 300 && @property != 204)].content[*]~
@@ -259,7 +259,7 @@ rules:
         values:
           - application/hal+json
           
-  response-success-hal-body-oas3: # schemes and/or produces
+  adidas-oas3-response-success-hal-body: # schemes and/or produces
     description: "All success responses MUST follow `application/hal+json` schema"
     severity: error
     given: $.paths..responses[?( @property >= 200 && @property < 300 && @property != 204)].content[?(@property === "application/hal+json")]
