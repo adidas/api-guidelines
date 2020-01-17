@@ -1,5 +1,7 @@
 # Complete API Development
 
+> NOTE: The content of this file is outdated, refering to previous technologies used at adidas. It is kept for reference until its refresh
+
 1. **Design the API**
    1. Analyze business requirements
    2. Identify affordances

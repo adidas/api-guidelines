@@ -22,4 +22,3 @@ Adidas-API-Key: 9kfapap6612jkfd3ja9323q
 Host: adidas.api.mashery.com
 ```
 
-> NOTE: See more details in the [[Demo] Approval API](http://docs.demoapprovalapi.apiary.io) example.
