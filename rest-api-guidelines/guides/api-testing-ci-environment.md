@@ -34,6 +34,8 @@ To test an API within the CI environment provisioned as mentioned in the environ
 
    The OpenAPI Specifciation file should be fetched from [API Design Platform](design-plaform.md). In the case of SwaggerHub API Design Platform, the file can be fetched manually or via their API. Refer to [Integrating with the SwaggerHub API](https://swagger.io/blog/api-development/integrating-with-the-swaggerhub-api/), for details how to use SwaggerHub API.
 
+   Alternativelly this can also be a remote file e.g. SwaggerHub URL, if the API is public its OAS file and reachable from the testing host.
+
 2. The host \(address\) of the service being tested
 
    ```text
