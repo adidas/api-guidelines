@@ -32,7 +32,7 @@ To test an API within the CI environment provisioned as mentioned in the environ
 
 1. A `swagger.yaml` file with the description of API being tested
 
-   The file should be fetched from [API Design Platform](design-plaform.md)
+   The OpenAPI Specifciation file should be fetched from [API Design Platform](design-plaform.md). In the case of SwaggerHub API Design Platform, the file can be fetched manually or via their API. Refer to [Integrating with the SwaggerHub API](https://swagger.io/blog/api-development/integrating-with-the-swaggerhub-api/), for details how to use SwaggerHub API.
 
 2. The host \(address\) of the service being tested
 
