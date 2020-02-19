@@ -7,9 +7,6 @@ info:
     email: "z@goodapi.co"
   description: |
     Sample API conforming to [adidas API Guidelines](https://adidas.gitbook.io/api-guidelines/).
-    
-    This API is [documented at Apiary](http://docs.demotemplate.apiary.io)
-    and stored on GitHub.
 
 produces:
   - application/hal+json      # Representation message format

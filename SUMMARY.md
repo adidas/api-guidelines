@@ -19,7 +19,7 @@
 * [Introduction](rest-api-guidelines/rest.md)
 * [Core Principles](rest-api-guidelines/core-principles/README.md)
   * [OpenAPI Specification](rest-api-guidelines/core-principles/openapi-specification.md)
-  * [API Design Platform](rest-api-guidelines/core-principles/apiary.md)
+  * [API Design Platform](rest-api-guidelines/core-principles/design-platform.md)
   * [Design Maturity](rest-api-guidelines/core-principles/design-maturity.md)
   * [Testing](rest-api-guidelines/core-principles/testing.md)
 * [Protocol](rest-api-guidelines/protocol/README.md)
