@@ -2,7 +2,7 @@
 
 ## adidas REST API Guidelines
 
-The adidas REST API Guidelines defines standards and guidelines for building REST APIs at adidas. **These Guidelines has to be followed in addition to the adidas** [**General API Guidelines.**](../general-guidelines/general-guidelines.md)
+The adidas REST API Guidelines defines standards and guidelines for building REST APIs at adidas. **These Guidelines have to be followed in addition to the Adidas** [**General API Guidelines.**](../general-guidelines/general-guidelines.md)
 
 The REST API Guidelines are further split into the following parts:
 
