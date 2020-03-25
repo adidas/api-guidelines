@@ -10,7 +10,7 @@ rules:
   operation-2xx-response: error
 
   adidas-paths-kebab-case:
-    description: All YAML/JSON paths MUST follow kebab-case with template variables in camelCase
+    description: All YAML/JSON paths MUST follow kebab-case
     severity: warn
     recommended: true
     message: "{{property}} is not kebab-case: {{error}}"
@@ -18,7 +18,18 @@ rules:
     then:
       function: pattern
       functionOptions:
-        match: "^\/([a-z0-9]+(-[a-z0-9]+)*)?(\/[a-z0-9]+(-[a-z0-9]+)*|\/{[a-z][a-zA-Z0-9]+})*$" # doesn't allow /asasd{asdas}sadas pattern or not closed braces
+        match: "^\/([a-z0-9]+(-[a-z0-9]+)*)?(\/[a-z0-9]+(-[a-z0-9]+)*|\/{.+})*$" # doesn't allow /asasd{asdas}sadas pattern or not closed braces
+
+  adidas-path-parameters-camelCase-alphanumeric:
+    description: Path parameters MUST follow camelCase
+    severity: warn
+    recommended: true
+    message: "{{property}} path parameter is not camelCase: {{error}}"
+    given: $..parameters[?(@.in == 'path')].name
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[a-z][a-zA-Z0-9]+$"
 
   adidas-definitions-camelCase-alphanumeric:
     description: All YAML/JSON definitions MUST follow fields-camelCase and be ASCII alphanumeric characters or `_` or `$`.
