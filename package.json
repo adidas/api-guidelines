@@ -7,7 +7,7 @@
   "license": "MIT",
   "private": true,
   "dependencies": {
-    "@stoplight/spectral": "^4.2.0",
+    "@stoplight/spectral": "^5.3.0",
     "@supermodel/cli": "^0.46.29"
   },
   "scripts": {
