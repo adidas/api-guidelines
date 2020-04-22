@@ -1,4 +1,4 @@
-extends: [spectral:oas2, spectral:oas3]
+extends: ["spectral:oas"]
 rules:
 
   # ---------------------------------------------------------------------------
