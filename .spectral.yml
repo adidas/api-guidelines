@@ -243,7 +243,7 @@ rules:
       functionOptions:
         match: "/^https:/"
 
-  adidas-oas3-response-success-hals:
+  adidas-oas3-response-success-hal:
     description: "All success responses MUST be of media type `application/hal+json` "
     severity: error
     given: $.paths..responses[?( @property >= 201 && @property < 300 && @property != 204)].content[*]~
