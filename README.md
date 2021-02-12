@@ -4,7 +4,7 @@ description: Guidelines for the API design and development at adidas
 
 # adidas API Guidelines
 
-![adidas logo](https://adidas-group.gitbooks.io/api-guidelines/content/assets/adidas-logo.svg)
+![adidas logo](adidaslogo.jpg)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -23,7 +23,7 @@ The API Guidelines are split into two main parts:
 * [General Guidelines](general-guidelines/general-guidelines.md)
 * API type-specific Guidelines
   * [REST APIs Guidelines](rest-api-guidelines/rest.md)
-  * [Kafka Guidelines](kafka-guidelines/kafka.md)
+  * [Asynchronous APIs Guidelines](asynchronous-api-guidelines/asyncapi.md)
 
 The general guidelines section discusses the core principles relevant to any kind of API. The API type-specific section further defines the guidelines specific to a given architectural style or API technique \(such as REST, Kafka or GraphQL APIs\).
 
@@ -83,5 +83,5 @@ For further information open the [adidas terms and conditions](https://github.co
 
 ### License
 
-[MIT](https://github.com/adidas-group/api-guidelines/tree/657bc6fd49f1499f10c30ab18420f4bdb7cd841b/LICENSE/README.md)
+[MIT](https://github.com/adidas/api-guidelines/blob/master/LICENSE)
 

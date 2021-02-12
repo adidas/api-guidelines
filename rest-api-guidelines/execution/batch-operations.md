@@ -2,7 +2,7 @@
 
 ## Processing Similar Resources
 
-An operation that needs to process several related resources in bulk **SHOULD** use a collection resource with the appropriate HTTP Request Method. When processing existing resource the request message body **MUST** contain the URLs of the respective resources being processed.
+An operation that needs to process several related resources in bulk **SHOULD** uses a collection resource with the appropriate HTTP Request Method. When processing existing resource the request message body **MUST** contain the URLs of the respective resources being processed.
 
 ### Example
 

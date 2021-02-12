@@ -1,6 +1,6 @@
 # Complete API Development
 
-> NOTE: The content of this file is outdated, refering to previous technologies used at adidas. It is kept for reference until its refresh
+1-Design --> 2-Develop --> 3-Deploy --> 4-API Gateway --> 5-Use --> 6-Analyze --> 7-Update
 
 1. **Design the API**
    1. Analyze business requirements
@@ -16,23 +16,25 @@
 
       > e.g.: User has many Orders via order relation, all of the required affordances should be mapped to relations.
 
-   5. Formalize the design in the [Open API Specification](http://swagger.io/specification/) \(OAS, formerly known as "Swagger"\) format
+   5. Formalize the design in the [Open API Specification](http://swagger.io/specification/) \(OAS, formerly known as "Swagger"\) version 2.x or 3.0.x format.
+
+      > Use **[SwaggerHub](https://design.api.3stripes.io/)** for the whole design process to the publication of the API specification.
+
    6. Follow the [adidas API guidelines](https://adidas.gitbook.io/api-guidelines/introduction/readme)
-   7. Put the OAS file into [Apiary adidas group](https://apiary.io)
-   8. Make sure the OAS file passes all adidas API Apiary style guide checks
-   9. Verify the design using Apiary Documentation and Apiary Mock Service
+   7. Publish the OAS file in SwaggerHub [under a specific project](https://design.api.3stripes.io/help/organizations/index) in the adidas organization. 
+   8. Verify the OAS file you have written passes the Spectral test.
+   9. Make sure the OAS file passes all adidas SwaggerHub style guide checks. A red banned will be showed at the bottom of the editor if something is wrong with the OAS content.
    10. Review the API Design
    11. Put the OAS file in a version control system \(VCS\) repository
-   12. Set up a CD pipeline to push OAS file from VCS to Apiary, whenever the file is changed
+   12. Set up a CD pipeline to push OAS file from VCS to SwaggerHub, whenever the file is changed
+
 2. **Develop the API**
    1. Check out the VCS repository with the OAS file
    2. Set up the [Dredd API testing tool](https://github.com/apiaryio/dredd) locally
    3. Configure the Dredd for your project
-
       ```text
        $ dredd init
       ```
-
    4. Run the Dredd test locally
 
       > Against locally running API implementation, Every test should fail.
@@ -41,74 +43,88 @@
 
       > Keep running the Dredd locally to see the progress.
 
-   6. Set up a [CI/CD pipeline](https://adidas-group.gitbooks.io/api-guidelines/content/guides/api-testing-ci-environment.html) to execute the Dredd tests automatically
+   6. Set up a [CI/CD pipeline](https://adidas.gitbook.io/api-guidelines/rest-api-guidelines/guides/api-testing-ci-environment) to execute the Dredd tests automatically.
 
-      > NOTE: Both TeamCity and Jenkins environments are available, contact adidas API evangelist for details.
+      > NOTE: Both TeamCity and Jenkins environments are available, contact adidas API Evangelist for details.
+
 3. **Deploy the API**
    1. Deploy the service
-   2. Update the OAS file to add the deployment HOST
+   2. Update the OAS file to add the deployment host (OAS v2.x) or the deployment servers (OAS v3.0.x). For instance:
 
-      > ```text
-      > host: adidas.api.mashery.com
-      > basePath: /demo-approval-api
-      > ```
+      OAS Version 2.x
+      ```text
+      host: adidas.api.myapp.com
+      basePath: /demo-approval-api
+      ```
+
+      OAS Version 3.0.x
+      ```yaml
+      servers:
+         - url: https://adidas.api.myapp.com/
+           description: Production cluster
+         - url: http://stg.adidas.api.myapp.com/
+           description: Staging cluster
+         - url: http://dev.adidas.api.myapp.com/
+           description: Development cluster
+      ```
 
    3. Verify the deployment with Dredd
 
       > Use Dredd pointed towards the deployment host, be careful NOT to run it against the production OR using real production credentials.
 
    4. Monitor the API usage "From performance and technical standpoint."
-4. **Expose the API using Mashery**
-   1. **API**
-      1. Create new API Definition in Mashery
-      2. Create a new API Endpoint the API Definition
+4. **Expose the API using Kong**
+   > Ensure you have all the operational context information:
+      - Type of application
+      - Servers
+      - Detailed ownership information (Organiational unit, API Owner, Support contact, etc)
 
-         > Set the "Your Endpoint Address" to the internal deployment HOST.
+   > Ensure you have all the Non-Functional Requirements for your API like:
+      - Caching strategy detailed for each endpoint
+      - Rate Limits information
+      - Scope (internal to adidas or public)
+      - List of consumers and ACLs
+      - Authentication & Authorization
 
-      3. Create a new API Package in Mashery
-      4. Create a new API Plan within the API Package
-      5. Use Mashery API Designer to add the newly created API Definitions' API Endpoint to the API Plan
-      6. Revisit the API Plan's API key default settings
-      7. Revisit the API Plan's API default rate limits
-      8. Revisit the API Plan's access policy/authorization
-      9. **API Documentation**
-         1. Create new adidas API developer's portal page in the Mashery
+   Please read the [API On-Boarding Kong](https://tools.adidas-group.com/confluence/pages/viewpage.action?spaceKey=API2&title=Demand+-+API+Onboarding+in+Kong) to include your API in the adidas API Gateway if it is not done yet.
+   
+   Once all the information is ready create an [on-boarding request in JIRA](https://tools.adidas-group.com/jira/Secure/CreateIssueDetails!Init.jspa?issuetype=3&pid=28605&issueTemplateId=3701&summary=null&priority=2&labels=Kong-Onboarding).
 
-            > Manage &gt; Content &gt; Documentation &gt; APIs
+   > Read the [API Team Service Catalog](https://tools.adidas-group.com/confluence/pages/viewpage.action?spaceKey=API2&title=Service+catalog) to get more information.
 
-         2. [Embed Apiary documentation](https://help.apiary.io/tools/embed/#apiary-embed-api-reference) on the newly created API Page
-         3. Revisit the API documentation access policy/authorization
 5. **Use the API**
 
-   > This step can be done at the same time as "Develop the API" thank Apiary hosted Mock, Inspector, and Documentation.
+   > This step can be done at the same time as "Develop the API" using [SwaggerHub auto-mock service](https://design.api.3stripes.io/help/integrations/api-auto-mocking) and the continuous inspection of the OAS file.
 
-   1. Read API documentation at Apiary
-   2. Use API mock service provided by Apiary
-   3. Use API call inspector provided by Apiary
-   4. Obtain your API key
+   1. Read API documentation at SwaggerHub
+   2. Use an API implementation stub provided by SwaggerHub. 
 
-      > The key is part of the API Plan created in Mashery and can be requested from your dashboard in the adidas API developer's portal.
+      > This is a good starting point for implementing the API, you can run and test it locally, implement the business logic for the API, and then deploy it to your server.
+   
+   3. Obtain your API key and other information to apply the authentication/authorization mode in your API
 
-   5. When available use API implementation via Apiary proxy to debug the API calls
-   6. Use production deployment
+      > The key is part of the adidas API Gateway on-boarding process and can be requested from your dashboard in the adidas API developer's portal.
+
+   4. Use production deployment
 
 6. **Analyze the API**
-   1. Examine the use of production API Using Mashery
+   1. Examine the use of production API Using Kong
    2. Analyze the technical performance metrics
    3. Collect the feedback from users
+
 7. **Update API Design**
 
    > Based on the analysis, new or changing business requirements
 
    1. Create a new branch in the VCS repository with OAS file
-   2. Create a new project \(alternative\) in Apiary
+   2. Create a new project \(alternative\) in SwaggerHub
    3. Make sure the CI/CD pipeline is:
-      1. Set to push the OAS file to Apiary but make sure to modify the Apiary project name
+      1. Set to push the OAS file to SwaggerHub but make sure to modify the SwaggerHub project name under the adidas organization
       2. Set to run Dredd test in the CI/CD
    4. Modify the design \(OAS file\) accordingly, follow the "Design API" step
-   5. Follow the [**rules for extending**](https://adidas-group.gitbooks.io/api-guidelines/content/core-principles/rules-for-extending.html) and [**adidas API guidelines versioning policies**](https://adidas-group.gitbooks.io/api-guidelines/content/evolution/versioning.html)
+   5. Follow the adidas API Guidelines for [**changes and versioning**](https://adidas.gitbook.io/api-guidelines/rest-api-guidelines/evolution/versioning)
    6. Use VCS pull request \(PR\) to propose the change to review
    7. After the API Design change is verified, reviewed and approved, continue with the "Develop the API" phase
    8. Eventually, when the updated design is ready to be deployed for production, merge the branch into the production branch
-   9. Follow this guide from "Expose the API using Mashery" step
+   9. Follow this guide from "Expose the API using Kong" step
 
