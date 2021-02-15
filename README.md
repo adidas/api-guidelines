@@ -61,13 +61,17 @@ For further documentation on Spectral refer to their [documentation](https://sto
 
 ### Questions & Comments
 
-_Please contact_ [_Zdenek.Nemec@externals.adidas-group.com_](mailto:Zdenek.Nemec@externals.adidas-group.com), [_andrzej.jarzyna@adidas.com_](mailto:andrzej.jarzyna@adidas.com) or [_samir.amzani@adidas.com_](mailto:samir.amzani@adidas.com) _in case of questions._
+_Please contact_ [_samir.amzani@adidas.com_](mailto:samir.amzani@adidas.com) or [_jesusjavier.dediego@adidas.com_](mailto:jesusjavier.dediego@adidas.com) _in case of questions._
 
 ## Intended Use Cases
 
 This project is intended to provide the guidelines for design & development of APIs at adidas.
 
 adidas is not responsible for the usage of this software for different purposes that the ones described in the use cases.
+
+## Last Review
+
+February 2021
 
 ## License and Software Information
 

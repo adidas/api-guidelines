@@ -47,7 +47,7 @@ It is also recommended to compress the file to be uploaded, then using these MIM
 
 > You can find a complete reference about the MIME types [here](https://developer.mozilla.org/en-US/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types).
 
-### Set Maximum Size Limit
+### Set Maximum Size Limit in the API Producer Side
 
 The maximum size of the whole file **MUST** be set for the given endpoint/s in the APi upstream/backend service side.
 
@@ -72,7 +72,7 @@ spring.http.multipart.max-request-size=128KB # the total request size for a mult
 Load tests should give you metrics about the average latency of the operations. Use these metrics to calcuate the best value for the timeout settings in the upstream/backend service.
 
 The API Gateway timeout settings have to be considered for the expected timeout values, aligned with the values in the upstream/backend service. Al other components in the infrastructure **MUST** be considered for the calculation of the final metrics.
-
+git commit 
 ```
 |API Consumer/Client Timeout| --->  |External Load Balancer|  ---> |API Gateway Timeout|  --->  |Internal Load Balancer|   ---> |Upstream/Backend Service Tiemout|
 ```

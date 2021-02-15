@@ -21,7 +21,6 @@
   * [OpenAPI Specification](rest-api-guidelines/core-principles/openapi-specification.md)
   * [API Design Platform](rest-api-guidelines/core-principles/design-platform.md)
   * [Design Maturity](rest-api-guidelines/core-principles/design-maturity.md)
-  * [HATEOAS](rest-api-guidelines/core-principles/HATEOAS.md)
   * [Testing](rest-api-guidelines/core-principles/testing.md)
 * [Protocol](rest-api-guidelines/protocol/README.md)
   * [HTTP](rest-api-guidelines/protocol/http.md)
@@ -68,7 +67,4 @@
 ## Asynchronous API Guidelines
 
 * [Introduction](asynchronous-api-guidelines/asyncapi.md)
-* [Core Principles](asynchronous-api-guidelines/core-principles/README.md)
-* [Platforms](asynchronous-api-guidelines/platforms/README.md)
-* [Types](asynchronous-api-guidelines/types/README.md)
 
