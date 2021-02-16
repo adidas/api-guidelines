@@ -1,6 +1,6 @@
 # Long Running Tasks
 
-This section includes the recommended approaches to handling long runnint tasks (LRTs) in REST APIs. 
+This section includes the recommended approaches to handling long running tasks (LRTs) in REST APIs. 
 
 You can identify a LRT quite easily. The main factor to consider are the metrics from latency of the endpoint. If it requiress tens of seconds even minutes we are facing a problem related to LRTs.
 
