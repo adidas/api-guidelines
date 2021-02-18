@@ -4,7 +4,7 @@ description: Guidelines for the API design and development at adidas
 
 # adidas API Guidelines
 
-![adidas logo](https://adidas-group.gitbooks.io/api-guidelines/content/assets/adidas-logo.svg)
+![adidas logo](adidaslogo.jpg)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
@@ -23,7 +23,7 @@ The API Guidelines are split into two main parts:
 * [General Guidelines](general-guidelines/general-guidelines.md)
 * API type-specific Guidelines
   * [REST APIs Guidelines](rest-api-guidelines/rest.md)
-  * [Kafka Guidelines](kafka-guidelines/kafka.md)
+  * [Asynchronous APIs Guidelines](asynchronous-api-guidelines/asyncapi.md)
 
 The general guidelines section discusses the core principles relevant to any kind of API. The API type-specific section further defines the guidelines specific to a given architectural style or API technique \(such as REST, Kafka or GraphQL APIs\).
 
@@ -61,13 +61,17 @@ For further documentation on Spectral refer to their [documentation](https://sto
 
 ### Questions & Comments
 
-_Please contact_ [_Zdenek.Nemec@externals.adidas-group.com_](mailto:Zdenek.Nemec@externals.adidas-group.com), [_andrzej.jarzyna@adidas.com_](mailto:andrzej.jarzyna@adidas.com) or [_samir.amzani@adidas.com_](mailto:samir.amzani@adidas.com) _in case of questions._
+_Please contact_ [_samir.amzani@adidas.com_](mailto:samir.amzani@adidas.com) or [_jesusjavier.dediego@adidas.com_](mailto:jesusjavier.dediego@adidas.com) _in case of questions._
 
 ## Intended Use Cases
 
 This project is intended to provide the guidelines for design & development of APIs at adidas.
 
 adidas is not responsible for the usage of this software for different purposes that the ones described in the use cases.
+
+## Last Review
+
+February 2021
 
 ## License and Software Information
 
@@ -83,5 +87,5 @@ For further information open the [adidas terms and conditions](https://github.co
 
 ### License
 
-[MIT](https://github.com/adidas-group/api-guidelines/tree/657bc6fd49f1499f10c30ab18420f4bdb7cd841b/LICENSE/README.md)
+[MIT](https://github.com/adidas/api-guidelines/blob/master/LICENSE)
 

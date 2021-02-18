@@ -8,3 +8,10 @@
 ## Tools documentation
 
 * [SwaggerHub Documentation](https://app.swaggerhub.com/help/index)
+
+
+## Learning Path (adidas-Udemy)
+
+* [Basic](https://adidas-itlearning.udemy.com/course/onboarding-16-api-development-management/)
+* [Deep Dive](https://adidas-itlearning.udemy.com/course/onboarding-21-api-development-management/)
+* [OpenAPI](https://adidas-itlearning.udemy.com/course/openapi-beginner-to-guru/learn/)

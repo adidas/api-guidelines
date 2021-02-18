@@ -1,69 +1,43 @@
 # Rate Limiting
 
-The API rate limiting is provided by the selected adidas API management platform – Mashery.
+Rate limit means how many HTTP requests can be made in a given period of time.
 
-Rate limit information is provided in the for of HTTP headers. There are two types of rate limits: **Quota** and **Throttle**. The quota is a limit enforced per a longer period \(typically a day\). The throttle is the limit of calls per second.
+The API rate limiting is provided by the selected adidas API Gateway – [Kong](https://konghq.com/kong/). It can be applied to 1 or more endpoints or to the whole API.
 
-## Quota Limit
+Rate limit information is provided in the for of HTTP headers.
 
-The limit on the number of calls per a period \(day\). The default quota limit is 5000 calls per day.
+## Settings (adidas API Gateway)
 
-### Example
+The limit on the number of calls per a time period \(second, minute, hour, day, month, year\). The configuration settings have to be obtained from the Non-Functional Requirements of the API to be included as part of the settings of the API Gateway.
 
-Example response to a request over the quota limit:
+A complete reference for configuration can be seen [here](https://adidas.gitbook.io/api-guidelines/rest-api-guidelines/execution/rate-limiting).
+
+
+## Rate Limit
+
+When this feature is enabled, the API Gateway will send some additional headers back to the client telling what are the limits allowed, how many requests are available and how long it will take until the quota will be restored. For instance (successful response):
 
 ```text
-HTTP/1.1 403 Forbidden
-Content-Type: application/problem+json
-
-X-Error-Detail-Header: Account Over Rate Limit
-X-Mashery-Error-Code: ERR_403_DEVELOPER_OVER_RATE
-
-{
-  "title": "Rate Limit Exceeded",
-  "detail": "Account Over Rate Limit"
-}
+RateLimit-Limit: 6
+RateLimit-Remaining: 4
+RateLimit-Reset: 47
+X-RateLimit-Limit-Minute: 10
+X-RateLimit-Remaining-Minute: 9
 ```
 
-## Throttle Limit
+## Rate Limit Exceeded
 
-The limit on the number of calls per second. The default throttle limit is two calls per second.
-
-### Example
-
-Example response to a request over the throttle limit:
+If any of the limits configured in the API Gateway is being reached, it will return a HTTP/1.1 429 status code to the client:
 
 ```text
-HTTP/1.1 403 Forbidden
-Content-Type: application/problem+json
+HTTP/1.1 429 Too Many Requests
+Content-Type: application/json
 
 Retry-After: 1
-X-Error-Detail-Header: Account Over Queries Per Second Limit
-X-Mashery-Error-Code: ERR_403_DEVELOPER_OVER_QPS
 
-{
-  "title": "Quota Limit Exceeded",
-  "detail": "Account Over Queries Per Second Limit"
-}
+
+{ "message": "API rate limit exceeded" }
 ```
 
-> NOTE: The `Retry-After` gives a hint how long before the same request should be repeated \(in seconds\).
-
-## Detail Information
-
-By default, the headers do not contain details about the current usage and quotas. The default can be changed in the API management.
-
-### Example
-
-A successful response with the details about throttle \(`X-Plan-QPS`\) and quota \(`X-Plan-Quota`\) rate limits:
-
-```text
-HTTP/1.1 200 OK
-
-X-Plan-QPS-Allotted: 10
-X-Plan-QPS-Current: 1
-X-Plan-Quota-Allotted: 1000
-X-Plan-Quota-Current: 2
-X-Plan-Quota-Reset: Tuesday, June 6, 2017 12:00:00 AM GMT
-```
+> NOTE: The response header `Retry-After` gives a hint how long before the same request should be repeated \(in seconds\).
 

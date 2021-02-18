@@ -39,7 +39,10 @@
   * [Common Data Types](rest-api-guidelines/application/common-data-types.md)
 * [Execution](rest-api-guidelines/execution/README.md)
   * [Pagination](rest-api-guidelines/execution/pagination.md)
-  * [Asynchronous Tasks](rest-api-guidelines/execution/asynchronous-tasks.md)
+  * [Long Running Tasks](rest-api-guidelines/execution/long-running-tasks/README.md)
+    * [Polling](rest-api-guidelines/execution/long-running-tasks/polling.md)
+    * [Callback](rest-api-guidelines/execution/long-running-tasks/callback.md)
+    * [Files Upload](rest-api-guidelines/execution/long-running-tasks/files-upload.md)
   * [Batch Operations](rest-api-guidelines/execution/batch-operations.md)
   * [Search Requests](rest-api-guidelines/execution/search-requests.md)
   * [Query Requests with Large Inputs](rest-api-guidelines/execution/query-requests-with-large-inputs.md)
@@ -61,7 +64,7 @@
   * [Loose Coupling](rest-api-guidelines/clients/loose-coupling.md)
 * [Further References](rest-api-guidelines/miscellaneous.md)
 
-## Kafka Guidelines
+## Asynchronous API Guidelines
 
-* [Introduction](kafka-guidelines/kafka.md)
+* [Introduction](asynchronous-api-guidelines/asyncapi.md)
 

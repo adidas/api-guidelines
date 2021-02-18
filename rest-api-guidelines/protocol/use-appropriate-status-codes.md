@@ -10,6 +10,8 @@ At a minimum everyone **MUST** be familiar with the semantics of ["Common" HTTP 
 
 ## Use Codes 4xx or 5xx to Communicate Errors
 
+Remember the 4xx range concern to errors in the API Consumer/Client side while 5xx range concerns to the upstream/backend service, the API implementation.
+
 A request:
 
 ```text

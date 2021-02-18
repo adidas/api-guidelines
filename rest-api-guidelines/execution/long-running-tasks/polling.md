@@ -1,6 +1,6 @@
-# Asynchronous Tasks
+# Polling
 
-If an API operation is asynchronous, but a client could track its progress, the response to such an asynchronous operation **MUST** return, in the case of success, the **202 Accepted** status code together with an `application/hal+json` representation of a new **task-tracking resource**.
+If an API operation can be considered as a long running task and the API Consumer can track its progress, the response to the LRT **MUST** return, in the case of success, the **202 Accepted** status code together with an `application/hal+json` representation of a new **task-tracking resource**.
 
 ## Task Tracking Resource
 
@@ -22,13 +22,16 @@ Retrieval of such a resource using the HTTP GET Request Method **SHOULD** be des
 
 ## Design Note
 
-The asynchronous operation task-tracking resource can be either **polled** by client or the client might initially provide a **callback** to be executed when the operation finishes.
+The polling (task-tracking) operation requires a clear adaptation on the API Consumer side:
 
-In the case of callback, the API and its client MUST agree on what HTTP method and request format is used for the callback invitation. If built within adidas, the "client" API is also the subject of the adidas API guidelines.
+- Polling requests frequency depend on the type of operation and specific latency of thre resource.
+- The identification of the resource has to be correlated along the series of polling requests. The API Consumer has to be able to save this ID and the API Producer has to be able to identify the progress of the operation with that ID. 
+- A security problem can be raised if a non-authorized client retrieves the response for a different resource ID. The authorization data and tasks in progress have to be strongly correlated and controlled to avoid consistency issues.
+
 
 ### Example
 
-1. **Initiate the asynchronous task**
+1. **Initiate the polling task**
   
     ```
     POST /feeds/tasks/ HTTP/1.1
