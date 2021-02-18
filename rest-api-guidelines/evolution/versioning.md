@@ -13,7 +13,7 @@ Any change to:
 4. **Relation** with other resources \(e.g Links\)  
 5. **Representation format** \(e.g. HTTP request and response bodies\)
 
-**MUST** follow the [**Rules for Extending**](../../../general-guidelines/rules-for-extending.md).
+**MUST** follow the [**Rules for Extending**](../../general-guidelines/rules-for-extending.md).
 
 ## Identifier Stability \(No URI Versioning\)
 
@@ -29,7 +29,7 @@ Adding a new action to existing resource with identifier `/greeting` doesn't cha
 
 ## Backward-incompatible Changes
 
-A change to _resource identifier_, _resource metadata_, _resource actions_ and _resource relations_ that can't follow the [Rules for Extending](../../../general-guidelines/rules-for-extending.md) **MUST** result into a **new resource variant**. Existing resource variant **MUST** be preserved.
+A change to _resource identifier_, _resource metadata_, _resource actions_ and _resource relations_ that can't follow the [Rules for Extending](../../general-guidelines/rules-for-extending.md) **MUST** result into a **new resource variant**. Existing resource variant **MUST** be preserved.
 
 A change to _representation format_ **SHOULD NOT** result into a new resource variant.
 
@@ -41,7 +41,7 @@ Currently, optional URI Query Parameter `first` on an existing resource `/greeti
 
 > A representation format is the serialization format \(media type\) used in request and response bodies, and typically it represents a resource or its part, possibly with additional hypermedia controls.
 
-If a change can't follow the Rules for Extending the representation format media type **MUST** be changed. If the media type has been changed the previous media type, **MUST** be available via [Content Negotiation](../../functionality/message/content-negotiation.md).
+If a change can't follow the Rules for Extending the representation format media type **MUST** be changed. If the media type has been changed the previous media type, **MUST** be available via [Content Negotiation](../message/content-negotiation.md).
 
 If the media type conveys the version parameter, the version parameter **SHOULD** follow [Semantic versioning](http://semver.org/).
 
@@ -86,13 +86,6 @@ info:
 ```
 
 Has MAJOR version 2, MINOR version 1 and PATCH version 3.
-
-#### Demo
-
-API description \(OAS2\) files demonstrating a proposal of an backward-incompatible change turned into a backward compatible change are available at [Bitbucket \(diff\) ](https://bitbucket.org/apidesigner/demo-versioning-api/pull-requests/1/add-name-parameter/diff)and documented in Apiary:
-
-* [Production version](https://demoversioningproduction.docs.apiary.io/#) as being consumed by clients
-* [Development version](https://demoversioningdevelopment.docs.apiary.io/#) proposing a backward incompatible change
 
 #### Recommended Reading
 

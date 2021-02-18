@@ -13,5 +13,5 @@ This work is partly based on the work of many talented individuals and exception
 * [Facebook Graph API Team](https://developers.facebook.com/docs/graph-api/)
 * [Subbu Allamaraju: RESTFul Web Services Cookbook](http://shop.oreilly.com/product/9780596801694.do)
 * [Paolo De Lucia](https://www.linkedin.com/in/paolodelucia/)
-
-
+* [Jakub Rożek](https://github.com/P0lip)
+* [Phil Sturgeon](https://github.com/philsturgeon)

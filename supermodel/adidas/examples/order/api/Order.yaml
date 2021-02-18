@@ -1,0 +1,23 @@
+$id: http://supermodel.io/adidas/examples/order/api/Order
+$schema: http://json-schema.org/draft-07/schema#
+
+title: Order HAL Representation
+type: object
+
+allOf:
+  - $ref: http://supermodel.io/adidas/api/HAL
+  - $ref: http://supermodel.io/adidas/examples/order/Order
+  
+examples:
+- _links:
+    self:
+      href: /orders/1234
+    edit:
+      href: /orders/1234
+    delete:
+      href: /orders/1234
+    profile:
+      href: https://adidas-group.com/gdm/OMS
+  orderNumber: 1234
+  itemCount: 42
+  status: pending

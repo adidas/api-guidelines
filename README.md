@@ -6,6 +6,8 @@ description: Guidelines for the API design and development at adidas
 
 ![adidas logo](https://adidas-group.gitbooks.io/api-guidelines/content/assets/adidas-logo.svg)
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+
 [Read online at GitBook](https://adidas.gitbook.io/api-guidelines/)
 
 ### Motivation
@@ -39,9 +41,27 @@ The CAPITALIZED words throughout these guidelines have a special meaning:
 
 Refer to [RFC2119](https://www.ietf.org/rfc/rfc2119) for details.
 
+### Validating your API Guidelines against OpenAPI Specification
+
+In the `ruleset.md` file you can find a digest of API Guidelines rules which you can validating your API description documents with. If you are using OpenAPI Specification as the API description format you can also leverage the `.spectral.yaml` ruleset to automatically verify your specification compliance using [Spectral](github.com/stoplightio/spectral).
+
+To install Spectral you will need Node.js and a package manager (npm or yarn).
+
+```
+npm install -g @stoplight/spectral
+
+# OR
+
+yarn global add @stoplight/spectral
+```
+
+Once installed, to verify your OAS file with spectral execute `spectral lint <oas-file> -r <adidas-api-guidelines-folder>/.spectral.yaml` where `<adidas-api-guidelines-folder>/.spectral.yaml` indicated the location `.spectral.yaml` file.
+
+For further documentation on Spectral refer to their [documentation](https://stoplight.io/p/docs/gh/stoplightio/spectral/README.md).
+
 ### Questions & Comments
 
-_Please contact_ [_Zdenek.Nemec@externals.adidas-group.com_](mailto:Zdenek.Nemec@externals.adidas-group.com) _in the case of questions._
+_Please contact_ [_Zdenek.Nemec@externals.adidas-group.com_](mailto:Zdenek.Nemec@externals.adidas-group.com), [_andrzej.jarzyna@adidas.com_](mailto:andrzej.jarzyna@adidas.com) or [_samir.amzani@adidas.com_](mailto:samir.amzani@adidas.com) _in case of questions._
 
 ## Intended Use Cases
 
