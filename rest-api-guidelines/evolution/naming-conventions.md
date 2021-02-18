@@ -13,6 +13,10 @@ Every identifier **MUST** be in American English and written in `lowercase`. An 
 
 Every URI **MUST** follow the General Rules except for the `camelCase` rule. Instead, a hyphen \(`-`\) **SHOULD** be used to delimit combined words \(kebab-case\). Besides, a URI **MUST NOT** end with a trailing slash \(`/`\).
 
+Plural nouns SHOULD be used in the URI where appropriate to identify collections of data resources (e.g. ``/orders``, ``/products``).
+
+An individual resource in a collection of resources MAY exist directly beneath the collection URI.  (e.g. ``/orders/{order_id}``).
+
 #### Example
 
 A well-formed URI:
