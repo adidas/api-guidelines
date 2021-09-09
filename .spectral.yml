@@ -244,24 +244,40 @@ rules:
         match: "/^https:/"
 
   adidas-oas3-response-success-hal:
-    description: "All success responses MUST be of media type `application/hal+json`"
+    description: "All success responses MUST be of media type `application/hal+json` "
     severity: error
-    given: $.paths..responses[?( @property >= 200 && @property < 300 && @property != 204)].content[*]~
+    given: $.paths..responses[?( @property >= 201 && @property < 300 && @property != 204)].content[*]~
     recommended: true
     # type: "style"
     formats:
       - oas3
-    message: "Response documents MUST be of application/hal+json media type: {{error}}"
+    message: "Response documents MUST be of application/hal+json media types: {{error}}"
     then:
       function: enumeration
       functionOptions:
         values:
           - application/hal+json
+  
+  # sync and async patterns that can return hal OR problem+json
+  adidas-oas3-response-success-OK:
+    description: "All success responses MUST be of media type `application/hal+json` or `application/problem+json`"
+    severity: error
+    given: $.paths..responses[?( @property == 200 )].content[*]~
+    recommended: true
+    formats:
+      - oas3
+    message: "Response documents MUST be of application/hal+json or application/problem+json media types: {{error}}"
+    then:
+      function: enumeration
+      functionOptions:
+        values:
+          - application/hal+json
+          - application/problem+json
           
   adidas-oas3-response-success-hal-body: # schemes and/or produces
     description: "All success responses MUST follow `application/hal+json` schema"
     severity: error
-    given: $.paths..responses[?( @property >= 200 && @property < 300 && @property != 204)].content[?(@property === "application/hal+json")]
+    given: $.paths..responses[?( @property == 200 && @property < 300 && @property != 204)].content[?(@property === "application/hal+json")]
     recommended: true
     type: "style"
     formats:

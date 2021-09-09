@@ -10,7 +10,7 @@ The following must be available in the CI environment before testing:
 
    ```text
     $ node -v
-    v12.16.0
+    v14.15.5
    ```
 
 3. [**Dredd**](https://github.com/apiaryio/dredd) MUST be installed globally in the CI environment:
@@ -21,7 +21,7 @@ The following must be available in the CI environment before testing:
 
    ```text
     $ dredd --version
-    dredd v13.0.1
+    dredd v14.0.0
    ```
 
 ## Testing an API

@@ -106,6 +106,5 @@ dist
 # SSHFS
 ._*
 
-_book/
 
-**/.DS_Store
+.DS_Store
