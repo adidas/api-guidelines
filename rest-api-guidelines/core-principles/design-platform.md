@@ -6,7 +6,4 @@
 
 > NOTE: SwaggerHub supports API-first approach in multiple ways:  
 > For example, it validates API description for correctness and automatically generates API documentation to drive the discussion between stakeholders. \(No more emails with API description flying between stakeholders\)
->
-> NOTE: The synchronization between the version control system and adidas API Design platform 
-> should be automated (e.g. using CI/CD framework or the Design Platform capabilities).
 
