@@ -10,6 +10,24 @@ Not every user has a right to every web service. This is vital, as you don't wan
 
 Server versioning information or any other sensitive information from the HTTP headers SHOULD BE removed/masked according to industry best practices. This prevents any form of targeted attacks since the vulnerabilities are mostly specific to the vendors.
 
+## Use Security HTTP Headers
+Modern browsers support many HTTP headers that can improve web application security to protect against clickjacking, cross-site scripting, and other common attacks.
+Your API SHOULD use security HTTP headers to improve the level of protection.
+See the [list of OWASP Secure Headers](https://owasp.org/www-project-secure-headers/) to form the combination of headers
+Ideally you SHOULD inlcude HTTP Security Headers at least in these areas unless there is an incompatibility with some functional requirement:
+
+- HTTP Strict Transport Security
+- Content-Security-Policy
+- X-Frame-Options
+- X-Content-Type-Options
+- X-Permitted-Cross-Domain-Policies
+- Referrer-Policy
+- Clear-Site-Data
+- Cross-Origin-Embedder-Policy
+- Cross-Origin-Opener-Policy
+- Cross-Origin-Resource-Policy
+
+
 ## Session Management
 
 RESTful web services SHOULD use session-based authentication, either by establishing a session token via a POST or by using an API key \(Client ID and a Client Secret\) as a POST body argument or as a cookie. Usernames, passwords, session tokens, API keys, and sensitive information MUST NOT appear in the URL, as this can be captured in web server logs, which makes them intrinsically valuable.
