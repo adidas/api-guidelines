@@ -21,20 +21,20 @@
       > Use **[SwaggerHub](https://design.api.3stripes.io/)** for the whole design process to the publication of the API specification.
 
    6. Follow the [adidas API guidelines](https://adidas.gitbook.io/api-guidelines/introduction/readme)
-   7. Publish the OAS file in SwaggerHub [under a specific project](https://design.api.3stripes.io/help/organizations/index) in the adidas organization. 
-   8. Verify the OAS file you have written passes the Spectral test.
-   9. Make sure the OAS file passes all adidas SwaggerHub style guide checks. A red banned will be showed at the bottom of the editor if something is wrong with the OAS content.
-   10. Review the API Design
-   11. Put the OAS file in a version control system \(VCS\) repository
-   12. Set up a CD pipeline to push OAS file from VCS to SwaggerHub, whenever the file is changed
+   7. Verify the OAS file you have written passes the Spectral test.
+   8. Make sure the OAS file passes all adidas SwaggerHub style guide checks. A red banned will be showed at the bottom of the editor if something is wrong with the OAS content.
+   9. Review the API Design
+   10. Publish the version in Swagger Hub doing that inmmutable.
 
 2. **Develop the API**
-   1. Check out the VCS repository with the OAS file
+   1. Check out OAS file from Swagger Hub
    2. Set up the [Dredd API testing tool](https://github.com/apiaryio/dredd) locally
    3. Configure the Dredd for your project
-      ```text
-       $ dredd init
+
+      ```bash
+       dredd init
       ```
+
    4. Run the Dredd test locally
 
       > Against locally running API implementation, Every test should fail.
@@ -52,12 +52,14 @@
    2. Update the OAS file to add the deployment host (OAS v2.x) or the deployment servers (OAS v3.0.x). For instance:
 
       OAS Version 2.x
+
       ```text
       host: adidas.api.myapp.com
       basePath: /demo-approval-api
       ```
 
       OAS Version 3.0.x
+
       ```yaml
       servers:
          - url: https://adidas.api.myapp.com/
@@ -87,7 +89,7 @@
       - Authentication & Authorization
 
    Please read the [API On-Boarding Kong](https://tools.adidas-group.com/confluence/pages/viewpage.action?spaceKey=API2&title=Demand+-+API+Onboarding+in+Kong) to include your API in the adidas API Gateway if it is not done yet.
-   
+
    Once all the information is ready create an [on-boarding request in JIRA](https://tools.adidas-group.com/jira/Secure/CreateIssueDetails!Init.jspa?issuetype=3&pid=28605&issueTemplateId=3701&summary=null&priority=2&labels=Kong-Onboarding).
 
    > Read the [API Team Service Catalog](https://tools.adidas-group.com/confluence/pages/viewpage.action?spaceKey=API2&title=Service+catalog) to get more information.
@@ -100,10 +102,10 @@
    2. Use an API implementation stub provided by SwaggerHub. 
 
       > This is a good starting point for implementing the API, you can run and test it locally, implement the business logic for the API, and then deploy it to your server.
-   
-   3. Obtain your API key and other information to apply the authentication/authorization mode in your API
 
-      > The key is part of the adidas API Gateway on-boarding process and can be requested from your dashboard in the adidas API developer's portal.
+   3. Obtain your credentials(OIDC) and other information to apply the authentication/authorization mode in your API
+
+      > The credentials is part of the adidas API Gateway on-boarding process and can be requested from your dashboard in the adidas API developer's portal.
 
    4. Use production deployment
 
@@ -116,15 +118,11 @@
 
    > Based on the analysis, new or changing business requirements
 
-   1. Create a new branch in the VCS repository with OAS file
-   2. Create a new project \(alternative\) in SwaggerHub
-   3. Make sure the CI/CD pipeline is:
-      1. Set to push the OAS file to SwaggerHub but make sure to modify the SwaggerHub project name under the adidas organization
-      2. Set to run Dredd test in the CI/CD
-   4. Modify the design \(OAS file\) accordingly, follow the "Design API" step
-   5. Follow the adidas API Guidelines for [**changes and versioning**](https://adidas.gitbook.io/api-guidelines/rest-api-guidelines/evolution/versioning)
-   6. Use VCS pull request \(PR\) to propose the change to review
-   7. After the API Design change is verified, reviewed and approved, continue with the "Develop the API" phase
-   8. Eventually, when the updated design is ready to be deployed for production, merge the branch into the production branch
-   9. Follow this guide from "Expose the API using Kong" step
-
+   1. Create a new version in Swagger Hub
+   2. Follow the adidas API Guidelines for [**changes and versioning**](../../rest-api-guidelines/evolution/versioning)
+   3. Share with your skateholders the new version allow them write comments to reach a new agrenment
+   4. Avoid break current version follow the [rules](../../general-guidelines/rules-for-extending)
+   5. After the API Design change is verified, reviewed and approved, continue with the "Develop the API" phase
+   6. Make sure the CI/CD pipeline is set to run Dredd test in the CI/CD with the new version
+   7. Eventually, when the updated design is ready to be deployed for production, merge the branch into the production branch
+   8. Follow this guide from "Expose the API using Kong" step
