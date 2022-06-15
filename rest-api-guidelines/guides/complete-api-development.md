@@ -88,18 +88,18 @@
       - List of consumers and ACLs
       - Authentication & Authorization
 
-   Please read the [API On-Boarding Kong](https://tools.adidas-group.com/confluence/pages/viewpage.action?spaceKey=API2&title=Demand+-+API+Onboarding+in+Kong) to include your API in the adidas API Gateway if it is not done yet.
+   Please read the [API On-Boarding Kong](https://confluence.tools.3stripes.net/display/API2/HowTo-Request+API+Onboarding+in+Kong) to include your API in the adidas API Gateway if it is not done yet.
 
    Once all the information is ready create an [on-boarding request in JIRA](https://tools.adidas-group.com/jira/Secure/CreateIssueDetails!Init.jspa?issuetype=3&pid=28605&issueTemplateId=3701&summary=null&priority=2&labels=Kong-Onboarding).
 
-   > Read the [API Team Service Catalog](https://tools.adidas-group.com/confluence/pages/viewpage.action?spaceKey=API2&title=Service+catalog) to get more information.
+   > Read the [API Team Service Catalog](https://confluence.tools.3stripes.net/display/API2/Service+Catalogue) to get more information.
 
 5. **Use the API**
 
    > This step can be done at the same time as "Develop the API" using [SwaggerHub auto-mock service](https://design.api.3stripes.io/help/integrations/api-auto-mocking) and the continuous inspection of the OAS file.
 
    1. Read API documentation at SwaggerHub
-   2. Use an API implementation stub provided by SwaggerHub. 
+   2. Use an API implementation stub provided by SwaggerHub.
 
       > This is a good starting point for implementing the API, you can run and test it locally, implement the business logic for the API, and then deploy it to your server.
 
@@ -119,9 +119,9 @@
    > Based on the analysis, new or changing business requirements
 
    1. Create a new version in Swagger Hub
-   2. Follow the adidas API Guidelines for [**changes and versioning**](../../rest-api-guidelines/evolution/versioning)
+   2. Follow the adidas API Guidelines for [**changes and versioning**](https://adidas.gitbook.io/api-guidelines/rest-api-guidelines/evolution/versioning)
    3. Share with your skateholders the new version allow them write comments to reach a new agrenment
-   4. Avoid break current version follow the [rules](../../general-guidelines/rules-for-extending)
+   4. Avoid break current version follow the [**rules**](https://adidas.gitbook.io/api-guidelines/general-guidelines/rules-for-extending)
    5. After the API Design change is verified, reviewed and approved, continue with the "Develop the API" phase
    6. Make sure the CI/CD pipeline is set to run Dredd test in the CI/CD with the new version
    7. Eventually, when the updated design is ready to be deployed for production, merge the branch into the production branch
