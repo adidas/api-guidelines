@@ -47,12 +47,14 @@ In the `ruleset.md` file you can find a digest of API Guidelines rules which you
 
 To install Spectral you will need Node.js and a package manager (npm or yarn).
 
+Note: The version used with the spectal specifictions was 5.3.0
+
 ```
-npm install -g @stoplight/spectral
+npm install -g @stoplight/spectral@5.3.0
 
 # OR
 
-yarn global add @stoplight/spectral
+yarn global add @stoplight/spectral@5.3.0
 ```
 
 Once installed, to verify your OAS file with spectral execute `spectral lint <oas-file> -r <adidas-api-guidelines-folder>/.spectral.yaml` where `<adidas-api-guidelines-folder>/.spectral.yaml` indicated the location `.spectral.yaml` file.
