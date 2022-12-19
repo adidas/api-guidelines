@@ -63,7 +63,7 @@ For further documentation on Spectral refer to their [documentation](https://sto
 
 ### Questions & Comments
 
-_Please contact_ [_samir.amzani@adidas.com_](mailto:samir.amzani@adidas.com) or [_jesusjavier.dediego@adidas.com_](mailto:jesusjavier.dediego@adidas.com) _in case of questions._
+_Please contact_ [_jesusjavier.dediego@adidas.com_](mailto:jesusjavier.dediego@adidas.com) _in case of questions._
 
 ## Intended Use Cases
 
