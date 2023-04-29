@@ -1,6 +1,5 @@
 extends: ["spectral:oas"]
 rules:
-
   # ---------------------------------------------------------------------------
   # General OAS rules
   # ---------------------------------------------------------------------------
@@ -69,7 +68,7 @@ rules:
     message: "HTTP headers SHOULD NOT include 'X-' prefix."
     recommended: true
     type: style
-    then: 
+    then:
       function: pattern
       functionOptions:
         notMatch: "/^(x|X)-/"
@@ -81,10 +80,10 @@ rules:
     message: "'HTTP' headers MUST follow 'Hyphenated-Pascal-Case' notation"
     recommended: true
     type: style
-    then: 
+    then:
       function: pattern
       functionOptions:
-        match: "/^([A-Z][a-z0-9]-)*([A-Z][a-z0-9])+/"
+        match: "^[A-Z][a-z0-9]*(?:-[A-Z][a-z0-9]*)*$"
 
   # ---------------------------------------------------------------------------
   # Only OAS2 rules
@@ -136,7 +135,7 @@ rules:
       - oas2
     message: "{{ property }} MUST have a valid example."
     given: "$..parameters..[?(@.in == 'body' && (@.example || @.schema.$ref))]"
-    then: 
+    then:
       function: truthy
 
   # example-exists-in-definitions:
@@ -206,7 +205,8 @@ rules:
       - oas3
     severity: 0
     type: validation
-    given: "$..parameters..[?(@.in == 'body')]..[?(@property !== 'properties' && @.example
+    given:
+      "$..parameters..[?(@.in == 'body')]..[?(@property !== 'properties' && @.example
       && ( @.type || @.format || @.$ref ))]"
     then:
       function: schemaPath
@@ -222,7 +222,8 @@ rules:
       - oas3
     severity: 0
     type: validation
-    given: "$..definitions..[?(@property !== 'properties' && @.example && (@.type ||
+    given:
+      "$..definitions..[?(@property !== 'properties' && @.example && (@.type ||
       @.format || @.$ref))]"
     then:
       function: schemaPath
@@ -257,7 +258,7 @@ rules:
       functionOptions:
         values:
           - application/hal+json
-  
+
   # sync and async patterns that can return hal OR problem+json
   adidas-oas3-response-success-OK:
     description: "All success responses MUST be of media type `application/hal+json` or `application/problem+json`"
@@ -273,7 +274,7 @@ rules:
         values:
           - application/hal+json
           - application/problem+json
-          
+
   adidas-oas3-response-success-hal-body: # schemes and/or produces
     description: "All success responses MUST follow `application/hal+json` schema"
     severity: error
@@ -289,7 +290,6 @@ rules:
       functionOptions:
         schema:
           $ref: "./supermodel/adidas/api/HAL.yaml"
-    
 
   # ---------------------------------------------------------------------------
   # Not implemented
