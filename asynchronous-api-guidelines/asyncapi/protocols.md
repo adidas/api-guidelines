@@ -6,4 +6,4 @@
 
 ### Kafka&#x20;
 
-**SHOULD** use Kafka protocols as preference to improve the&#x20;
+**SHOULD** use Kafka protocols as preference to improve the efficiency and compatibility of asynchronous communication.&#x20;
