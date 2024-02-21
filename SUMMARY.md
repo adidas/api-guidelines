@@ -66,5 +66,15 @@
 
 ## Asynchronous API Guidelines
 
-* [Introduction](asynchronous-api-guidelines/asyncapi.md)
-
+* [Summary](asynchronous-api-guidelines/asyncapi.md)
+  * [API First](asynchronous-api-guidelines/asyncapi/api-first.md)
+  * [AsyncAPI Specification](asynchronous-api-guidelines/asyncapi/asyncapi-specification.md)
+  * [User information](asynchronous-api-guidelines/asyncapi/user-information.md)
+  * [Naming conventions](asynchronous-api-guidelines/asyncapi/naming-conventions.md)
+  * [Event Driven Architecture (EDA)](asynchronous-api-guidelines/asyncapi/event-driven-architecture-eda.md)
+  * [Protocols](asynchronous-api-guidelines/asyncapi/protocols.md)
+  * [Common Data Types](asynchronous-api-guidelines/asyncapi/common-data-types.md)
+  * [Schemas](asynchronous-api-guidelines/asyncapi/schemas.md)
+  * [Key/Value message](asynchronous-api-guidelines/asyncapi/key-value-message.md)
+  * [Security](asynchronous-api-guidelines/asyncapi/security.md)
+  * [Compatibility](asynchronous-api-guidelines/asyncapi/compatibility.md)
