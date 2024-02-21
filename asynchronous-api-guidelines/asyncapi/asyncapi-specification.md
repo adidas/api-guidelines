@@ -2,7 +2,7 @@
 
 ## AsyncAPI specification
 
-A async api **MUST** use the [AsyncAPI specification](https://www.asyncapi.com/docs/reference/specification)
+A async api **MUST** use the [AsyncAPI specification](https://v2.asyncapi.com/docs/reference/specification/v2.6.0)
 
 ### API Design Platform
 
