@@ -26,13 +26,13 @@ This access control is handled through Role-Based Access Control (RBAC) implemen
 
 ### Spec granularity
 
-In FDP all resources are grouped by namespace. 
+In Fast Data Platform (FDP) all resources are grouped by namespace. 
 
 For that reason specs **SHOULD** be created with a relation 1:1 with namespaces. In other words, every namespace will have an AsyncAPI spec including all the assets belonging to that namespace.
 
 Different granularities **MAY** be chosen depending on the needs. 
 
-### Meaningful descriptions
+### Meaningful descriptions
 
 All fields included in the specs **MUST** include a proper description. 
 
@@ -129,7 +129,7 @@ channels:
     description: A description of the purpose of the topic and the contained information
     servers: ["pivotalDev", "pivotalSit", "pivotalPro"]
     x-metadata:
-	  myField1: myValue1
+      myField1: myValue1
       myField2: myValue2
     x-configurations:
       pivotal.dev:

@@ -10,7 +10,7 @@ That contract **MUST** contain enough information to use the API (servers, URIs,
 
 ### API First
 
-Asyncrhonous APIs **SHOULD** use the API First principle :
+Asynchronous APIs **SHOULD** use the API First principle :
 
 - The API designs **SHOULD** involve all relevant stakeholders (developers, consumers, ...) to ensure that final design fulfil requirements from different perspectives
 - The resulting API specification will be the source of truth rather than the API implementation
