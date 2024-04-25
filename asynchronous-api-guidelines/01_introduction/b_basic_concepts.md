@@ -30,11 +30,11 @@ In most cases, EDAs are broker-centric, as seen in the diagram below.
 
 Typically, the architectural landscape of a big company grows in complexity and as a result of that it is possible to end up with a bunch of direct connections between a myriad of different components or modules.
 
-![EDA overview](../../assets/eda_problem_statement_1.png)
+![Typical architecture diagram](../../assets/eda_problem_statement_1.png)
 
 By using streaming patterns, it is possible to get a much cleaner architecture
 
-![EDA overview](../../assets/eda_problem_statement_2.png)
+![EDA architecture diagram](../../assets/eda_problem_statement_2.png)
 
 
 It is important to take into account that EDAs are not a silver bullet, and there are situations in which this kind of architectures might not fit very well. 
