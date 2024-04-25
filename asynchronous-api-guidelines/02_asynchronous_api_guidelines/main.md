@@ -68,8 +68,6 @@ As a summary, the available compatibility types are listed below:
 |FULL_TRANSITIVE|both backward and forward compatibility with all schema versions|
 |NONE|schema compatibility checks are disabled|
 
-(info) To help visualizing these concepts, consider the flow of compatibility from the perspective of the consumer
-
 #### Backward compatibility
 
 There are two variants here:
@@ -84,7 +82,7 @@ The operations that preserve backward compatibility are:
 - Add optional fields (with default values)
     - Consumers will set the default value for the missing fields in their schema version
 
-![sr_backward](../../assets/sr_backward_compatibility.png)
+![Backward compatibility](../../assets/sr_backward_compatibility.png)
 
 #### Forward compatibility
 
@@ -100,7 +98,7 @@ The operations that preserve forward compatibility are:
 - Delete optional fields (with default values)
     - Consumers will use the default value for the missing fields defined in their schema version
 
-![sr_forward](../../assets/sr_forward_compat.png)
+![Forward compatibility](../../assets/sr_forward_compat.png)
  
 #### Full compatibility
  
@@ -116,6 +114,8 @@ This mode is preserved only if using the following operations
 
 - Adding optional fields (with default values)
 - Delete optional fields (with default values)
+
+![Full compatibility](../../assets/sr_full_compat.png)
 
 #### Upgrading process of clients based on compatibility 
 
