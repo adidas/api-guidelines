@@ -46,7 +46,7 @@ Also, it is important to note that it is possible to mix request-driven and even
 - Online services that interact directly with a user fits better into the synchronous communication but they also can generate events into Kafka.
 - On the other hand, offline services (billing, fulfillment, etc) are typically built purely with events.
 
-#### Kafka as the heard of EDAs
+#### Kafka as the heart of EDAs
 
 There are several technologies to implement event-driven architectures, but this section is going to focus on the predominant technology on this subject : Apache Kafka.
 
