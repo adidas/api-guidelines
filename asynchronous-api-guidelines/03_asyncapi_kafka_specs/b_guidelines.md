@@ -211,13 +211,13 @@ components:
     topic1SchemaValue:
         schemaFormat: 'application/vnd.apache.avro;version=1.9.0'
         payload:
-          $ref: https://pro-fdp-pivotal-schema-registry.api.3stripes.io/subjects/sap_retail_pricing.sap_retail.master.prices-value/versions/latest/schema    
+          $ref: https://sit-fdp-pivotal-schema-registry.api.3stripes.io/subjects/pea_fd_fdp.sample.test-value/versions/latest/schema 
   messages:
     topic1Payload:
         $ref: '#/components/schemas/topic1SchemaValue'
 ```
 
-**Important note** To have a reference to a real schema, a schema from sap_retail_pricing in pivotal.pro schema registry was used in the spec reference as an example
+**Important note** The used schema is a very simple one, it is only used to illustrate how to refer to it.
 
 ### Security Schemes
 
