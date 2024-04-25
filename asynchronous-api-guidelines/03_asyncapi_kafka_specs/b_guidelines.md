@@ -44,7 +44,9 @@ All AsyncAPI specs **SHOULD** include as much information as needed in order to
 
 AsyncAPI specs **MUST** include at least one main contact under the info.contact section. 
 
-The spec only allows to include one contact there, but it **MAY** also include additional contacts using extension fields. For example:
+The spec only allows to include one contact there, but it **MAY** also include additional contacts using extension fields. In case this is done, it **MUST** use the extension field *x-additional-responsibles*.
+
+For example:
 
 ```yaml
 ...
