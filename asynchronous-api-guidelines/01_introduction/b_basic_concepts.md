@@ -26,7 +26,7 @@ In most cases, EDAs are broker-centric, as seen in the diagram below.
 
 ![EDA overview](../../assets/eda_overview.png)
 
-#### Problem statement
+#### Problem statement
 
 Typically, the architectural landscape of a big company grows in complexity and as a result of that it is possible to end up with a bunch of direct connections between a myriad of different components or modules.
 
