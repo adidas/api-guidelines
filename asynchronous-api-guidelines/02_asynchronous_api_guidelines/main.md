@@ -149,7 +149,7 @@ The message key and the payload (often called value) can be serialized independe
 
 Message keys **SHOULD** be kept as simple as possible and use a primitive type when possible.
 
-### Message headers
+### Message headers
 
 In addition to the key and value, a Kafka message **MAY** include ***headers***, which allow to extend the information sent with some metadata as needed (for example, source of the data, routing or tracing information or any relevant information that could be useful without having to parse the message).
 
