@@ -140,37 +140,3 @@ However, different bounded contexts don't share the same model and if they need 
 #### Stream processing
 
 It can be understood as the capability of processing data directly as it is produced or received (hence, in real-time or near to real-time).
-
-[Review]
-
-A message carries information from one application to another, while an event is a message that provides details of something that has already occurred. One important aspect to note is that depending on the type of information a message contains, it can fall under an event, query, or command.
-
-Overall, events are messages but not all messages are events.
-
-### Using events in an EDA
-
-There are several ways to use events in a EDA:
-
-- Events as notifications
-- Events to replicate data
-
-
-#### Events as notifications
-
-When a system uses events as notifications it becomes a pluggable system. The producers have no knowledge about the consumers and they don't really care about them, instead every consumer can decide if it is interested in the information included in the event. 
-
-This way, the number of consumers can be increased (or reduced) without changing anything on the producer side.
-
-This pluggability becomes increasily important as systems get more complex.
-
-#### Events to replicate data
-
-When events are used to replicate data across services, they include all the necessary information for the target system to keep it locally so that it can be queried with no external interactions. 
-
-This is usually called event-carried state transfer which in the end is a form of data integration. 
-
-The benefits are similar to the ones implied by the usage of a cache system
-
-- Better isolation and autonomy, as the data stays under service's control
-- Faster data access, as the data is local (particularly important when combining data from different services in different geographies)
-- Offline data availability
