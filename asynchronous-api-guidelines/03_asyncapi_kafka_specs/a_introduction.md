@@ -12,7 +12,7 @@ Also, take into account that across the section there will be multiple reference
 
 Event-driven architectures are becoming increasingly popular for building scalable, responsive, and efficient applications. AsyncAPI plays a crucial role in this landscape by offering a standardized way to describe asynchronous APIs, similar to how OpenAPI does for REST APIs. AsyncAPI seeks to make the development, maintenance, and testing of asynchronous APIs easier by providing a machine-readable specification.
 
-It supports various messaging protocols, including MQTT, WebSocket, Kafka, AMQP, and more, making it versatile for different use cases. In adidas, we will use it mainly to document Kafka resources created in FDP but nothing prevents you from using it for a different purpose.
+It supports various messaging protocols, including MQTT, WebSocket, Kafka, AMQP, and more, making it versatile for different use cases. In adidas, ASyncAPI is used mainly to document Kafka resources created across the company in the scope of the Streaming Platform, but nothing prevents you from using it for a different purpose.
 
 The benefits of using AsyncAPI are, amongst others:
 

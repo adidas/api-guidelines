@@ -4,7 +4,7 @@
 
 ### Servers
 
-All AsyncAPI specs **MUST** include a servers section including references to the right Kafka clusters, defined and maintained by FDP team and made available through domains in Swaggerhub.
+All AsyncAPI specs **MUST** include a servers section including references to the right Kafka clusters, defined and maintained globally and made available through domains in Swaggerhub.
 
 Those definitions are handled in Swaggerhub as reusable domains publicly available: 
 

@@ -4,4 +4,4 @@
 
 ### Automatic schema registration
 
-Applications **MUST NOT** enable automatic registration of schemas because FDP's operational model for the Schema Registry relies on GitOps (every operation is done through GIT PRs + automated pipelines)
+Applications **MUST NOT** enable automatic registration of schemas because in adidas schemas have a separate lifecycle, intended to be independent from API contract and API implementing code.

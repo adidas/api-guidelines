@@ -8,9 +8,7 @@ The current platform available in adidas to design, host, and render AsyncAPI sp
 
 Every AsyncAPI spec **MUST** be hosted in Swaggerhub under the *adidas* organization.
 
-In the future, Fast Data Platform team will provide mechanisms to auto generate your specs as part of the self-service initiative that is ongoing.
-
-But until then, the specs will be created manually in the platform following the API-first approach if possible.
+In the future, some mechanisms will be provided to auto generate AsyncAPI specs automatically from the assets created in the Streaming Platform. Until then, those specs will be created manually in the platform following the API-first approach if possible.
 
 **Important note** Swaggerhub has limited capabilities with regards to discoverability, search and filtering of APIs. Other alternatives are being evaluated. Any upcoming decision impacting this will be reflected in this document in the future.
 

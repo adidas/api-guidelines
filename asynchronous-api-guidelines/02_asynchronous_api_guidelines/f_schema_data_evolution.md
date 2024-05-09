@@ -6,7 +6,7 @@
 
 All asynchronous APIs **SHOULD** leverage Schema Registry to ensure consistency across consumers/producers with regards to message structure and ensuring compatibility across different versions. 
 
-The default compatibility mode in Schema Registry is FULL_TRANSITIVE. This is the more restrictive compatibility mode, but others are also available. More on this on the subsection below.
+The default compatibility mode **SHOULD** be FULL_TRANSITIVE, which is the default compatibility mode in adidas for Schema Registry. Check the sections below to know more about compatibility modes.
 
  #### Compatibility modes
 
@@ -67,8 +67,7 @@ This is a combination of both compatibility types (backward and forward). It als
 - FULL - Backward and forward compatible between schemas X and X - 1.
 - FULL_TRANSITIVE - Backward and forward compatible between schemas X and all previous ones (X - 1, X - 2, ...)
 
-
-**Important** FULL_TRANSITIVE is the default compatibility mode in FDP, it is set at cluster level and all new schemas will inherit it
+**Important** Once more, FULL_TRANSITIVE is the default compatibility mode in adidas, it is set at cluster level and all new schemas will inherit it
 
 This mode is preserved only if using the following operations
 

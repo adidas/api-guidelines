@@ -26,6 +26,8 @@ In most cases, EDAs are broker-centric, as seen in the diagram below.
 
 ![EDA overview](../../assets/eda_overview.png)
 
+*The figure above was taken from AsyncAPI official documentation*
+
 #### Problem statement
 
 Typically, the architectural landscape of a big company grows in complexity and as a result of that it is possible to end up with a bunch of direct connections between a myriad of different components or modules.
@@ -61,12 +63,12 @@ There are several technologies to implement event-driven architectures, but this
     - Performance
         - Partitioned, replayable log (collection of messages appended sequentially to a file)
         - Data copied directly from disk buffer to network buffer (zero copy) without even being imported to the JVM
-        - Extreme throughput by using the concept of consumer group and
+        - Extreme throughput by using the concept of consumer group
     - Security
         - Secure encrypted connections using TLS client certificates
         - Multi-tenant management through quotas/acls
     - Client APIs on different programming languages : Go, Scala, Python, REST, JAVA, ...
-    - Stream processing APIs (currently Kafka Streams and ksqlDB)
+    - Stream processing APIs like Kafka Streams
     - Ecosystem of connectors to pull/push data from/to Kafka
     - Clean-up processes for storage optimization
         - Retention periods
