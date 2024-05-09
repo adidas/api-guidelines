@@ -66,5 +66,35 @@
 
 ## Asynchronous API Guidelines
 
-* [Introduction](asynchronous-api-guidelines/asyncapi.md)
-
+* [Introduction to guidelines](asynchronous-api-guidelines/01_introduction/a_introduction.md)
+* Basic Concepts
+  * [Event Driven Architectures](asynchronous-api-guidelines/01_introduction/b_basic_concepts_edas.md)
+  * [Basic terminology](asynchronous-api-guidelines/01_introduction/c_basic_concepts_terminology.md)
+  * [Events](asynchronous-api-guidelines/01_introduction/d_basic_concepts_events.md)
+* Asynchronous API Guidelines
+  * [Contract](asynchronous-api-guidelines/02_asynchronous_api_guidelines/a_contract.md)
+  * [API First](asynchronous-api-guidelines/02_asynchronous_api_guidelines/b_api_first.md)
+  * [Immutability](asynchronous-api-guidelines/02_asynchronous_api_guidelines/c_immutability.md)
+  * [Common Data Types](asynchronous-api-guidelines/02_asynchronous_api_guidelines/d_data_types.md)
+  * [Automatic Schema Registration](asynchronous-api-guidelines/02_asynchronous_api_guidelines/e_schema_registration.md)
+  * [Schema Data Evolution](asynchronous-api-guidelines/02_asynchronous_api_guidelines/f_schema_data_evolution.md)
+  * [Key/Value format](asynchronous-api-guidelines/02_asynchronous_api_guidelines/g_key_value_format.md)
+  * [Message Headers](asynchronous-api-guidelines/02_asynchronous_api_guidelines/h_message_headers.md)
+  * [Naming Conventions](asynchronous-api-guidelines/02_asynchronous_api_guidelines/i_naming_conventions.md)
+  * [Protocols](asynchronous-api-guidelines/02_asynchronous_api_guidelines/j_protocols.md)
+  * [Security](asynchronous-api-guidelines/02_asynchronous_api_guidelines/k_security.md)
+* AsyncAPI specs for Kafka
+  * [Introduction](asynchronous-api-guidelines/03_asyncapi_kafka_specs/a_introduction.md)
+  * [AsyncAPI version](asynchronous-api-guidelines/03_asyncapi_kafka_specs/b_asyncapi_version.md)
+  * [Internal vs Public specs](asynchronous-api-guidelines/03_asyncapi_kafka_specs/c_internal_public_specs.md)
+  * [Spec granularity](asynchronous-api-guidelines/03_asyncapi_kafka_specs/d_spec_granularity.md)
+  * [Meaningful descriptions](asynchronous-api-guidelines/03_asyncapi_kafka_specs/e_meaningful_descriptions.md)
+  * [Self-contained specs](asynchronous-api-guidelines/03_asyncapi_kafka_specs/f_self_contained_specs.md)
+  * [Contact Information](asynchronous-api-guidelines/03_asyncapi_kafka_specs/g_contact_information.md)
+  * [AsyncAPI ID](asynchronous-api-guidelines/03_asyncapi_kafka_specs/h_asyncapi_id.md)
+  * [Servers](asynchronous-api-guidelines/03_asyncapi_kafka_specs/i_servers.md)
+  * [Channels](asynchronous-api-guidelines/03_asyncapi_kafka_specs/j_channels.md)
+  * [Schemas](asynchronous-api-guidelines/03_asyncapi_kafka_specs/k_schemas.md)
+  * [Security Schemes](asynchronous-api-guidelines/03_asyncapi_kafka_specs/l_security_schemes.md)
+  * [External Docs](asynchronous-api-guidelines/03_asyncapi_kafka_specs/m_external_docs.md)
+  * [Tooling](asynchronous-api-guidelines/03_asyncapi_kafka_specs/n_tooling.md)
