@@ -23,7 +23,7 @@ The API Guidelines are split into two main parts:
 * [General Guidelines](general-guidelines/general-guidelines.md)
 * API type-specific Guidelines
   * [REST APIs Guidelines](rest-api-guidelines/rest.md)
-  * [Asynchronous APIs Guidelines](asynchronous-api-guidelines/index.md)
+  * [Asynchronous APIs Guidelines](asynchronous-api-guidelines/asyncapi.md)
 
 The general guidelines section discusses the core principles relevant to any kind of API. The API type-specific section further defines the guidelines specific to a given architectural style or API technique \(such as REST, Kafka or GraphQL APIs\).
 
