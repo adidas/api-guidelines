@@ -1,12 +1,12 @@
 # Servers
 
-All AsyncAPI specs **MUST** include a servers section including references to the right Kafka clusters, defined and maintained globally and made available through domains in Swaggerhub.
+All AsyncAPI specs **MUST** include a _servers_ section including references to the right Kafka clusters, defined and maintained globally.
 
-Those definitions are handled in Swaggerhub as reusable domains publicly available:
+For example, in Swaggerhub it is possible to refer to those reusable definitions through:
 
 [https://design.api.3stripes.io/domains/adidas/asyncapi\_adoption\_commons/1.0.0](https://design.api.3stripes.io/domains/adidas/asyncapi\_adoption\_commons/1.0.0)
 
-that can be referred from any spec, picking the right Kafka servers as required (see example below).
+more specifically, it is possible to add the right Kafka servers like this:
 
 ```yaml
 ...
