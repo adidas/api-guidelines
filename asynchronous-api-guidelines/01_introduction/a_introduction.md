@@ -1,22 +1,10 @@
-# adidas Asynchronous API guidelines
+# Introduction
 
-## Introduction
+## adidas Asynchronous API Guidelines
 
-### About guidelines
+Adidas Asynchronous API Guidelines define standards and guidelines for building Asynchronous APIs at adidas. **These Guidelines have to be followed in addition to the Adidas** [**General API Guidelines.**](../../general-guidelines/general-guidelines.md)
 
-In the scope of a company, organization or team, the document known as guidelines is a set of best practices or hints provided by a group of subject matter experts in that particular technology. The most important aspects of it:
+The Asynchronous API Guidelines are further split into the following parts:
 
-- Help to create a standardized way of completing specific tasks, making outcome more predictable and alike
-- Help to identify do's and dont's with regards to a specific technology or tool
-- Help to avoid gotchas or problems related with company specifics
-- Gather the knowledge of several Subject Matter Experts and prevent others for falling in frequent caveats or mistakes
-
-**Note** In any case, the content in the guidelines should be taken as recommendations, not something that needs to be done in a mandatory way.
-
-
-
-
-
-
-
-
+* **Core Asynchronous Principles**
+* **Kafka Asynchronous Guidelines**

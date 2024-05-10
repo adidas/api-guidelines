@@ -9,9 +9,6 @@
 
 * [SwaggerHub Documentation](https://app.swaggerhub.com/help/index)
 
-
 ## Learning Path (adidas-Udemy)
 
-* [Basic](https://adidas-itlearning.udemy.com/course/onboarding-16-api-development-management/)
-* [Deep Dive](https://adidas-itlearning.udemy.com/course/onboarding-21-api-development-management/)
-* [OpenAPI](https://adidas-itlearning.udemy.com/course/openapi-beginner-to-guru/learn/)
+* [Get Started with Kong Multi-Cluster](https://adidas-itlearning.udemy.com/course/get-started-kong/learn/lecture/43319098#search)
