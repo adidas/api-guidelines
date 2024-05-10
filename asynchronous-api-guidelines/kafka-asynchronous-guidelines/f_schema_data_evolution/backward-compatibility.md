@@ -7,9 +7,9 @@ There are two variants here:
 
 The operations that preserve backward compatibility are:
 
-* Delete fields
+* Deleting fields
   * Consumers with the newer version will just ignore the non-existing fields
-* Add optional fields (with default values)
+* Adding optional fields (with default values)
   * Consumers will set the default value for the missing fields in their schema version
 
 <figure><img src="../../../.gitbook/assets/spaces_PQHX3w20BF4lnkckLJzC_uploads_git-blob-17547da367c50d28e6996ea1d3fab4d10625765b_sr_backward_compatibility.png" alt=""><figcaption></figcaption></figure>

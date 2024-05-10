@@ -2,7 +2,7 @@
 
 The term coupling can be understood as the impact that a change in one component will have on other components. In the end, it is related to the amount of things that a given component shares with others. The more is shared, the more tight is the coupling.
 
-**Note:** A tighter coupling is not necessarily a bad thing, it depends on the situation. It will be necessary to assess the tradeoff between provide as much information as possible and to avoid having to change several components as a result of something changing in other component.
+**Note:** A tighter coupling is not necessarily a bad thing, it depends on the situation. It will be necessary to assess the trade-off between providing as much information as possible and to avoid having to change several components as a result of something changing in other component.
 
 The coupling of a single component is actually a function of these factors:
 
