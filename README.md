@@ -1,7 +1,3 @@
----
-description: Guidelines for the API design and development at adidas
----
-
 # adidas API Guidelines
 
 ![adidas logo](adidaslogo.jpg)
