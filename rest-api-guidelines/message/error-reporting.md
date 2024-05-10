@@ -19,7 +19,7 @@ At the minimum, any Problem Detail response **MUST** have the `title` and `detai
 
 ## Optional Fields
 
-It **SHOULD** has the `type` field with the identifier of the error, besides it **MAY** have the `instance` field with the URI of the resource in question. If the Problem Detail response has the `status` field it **MUST** have the same value as HTTP Status code from of the response.
+It **SHOULD** have the `type` field with the identifier of the error, besides it **MAY** have the `instance` field with the URI of the resource in question. If the Problem Detail response has the `status` field it **MUST** have the same value as HTTP Status code from of the response.
 
 ```javascript
 {
