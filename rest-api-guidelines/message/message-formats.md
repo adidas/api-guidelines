@@ -10,7 +10,7 @@ The [`application/problem+json`](https://tools.ietf.org/html/rfc7807) \(Problem 
 
 ## Request Message Format
 
-**Request** messages with body **SHOULD** support a [`application/json`](http://www.json.org) \(JSON\) format. Where applicable, request message **SHOULD** also support the [`application/hal+json`](http://stateless.co/hal_specification.html) format.
+**Request** messages with body **SHOULD** support an [`application/json`](http://www.json.org) \(JSON\) format. Where applicable, the request message **SHOULD** also support the [`application/hal+json`](http://stateless.co/hal_specification.html) format.
 
 **Request** messages **MAY** also support the [`application/x-www-form-urlencoded`](https://tools.ietf.org/html/rfc1866#section-8.2.1) \(URL Encoded\) format.
 
