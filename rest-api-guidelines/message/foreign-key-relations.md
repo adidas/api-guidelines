@@ -2,7 +2,7 @@
 
 ## Link or Embed Foreign Key Relation
 
-When a resource representation includes relation with another \(foreign\) resource, the relation **MUST** be expressed as a link relation or embed the related resource.
+When a resource representation includes a relation with another \(foreign\) resource, the relation **MUST** be expressed as a link relation or embed the related resource.
 
 ### Example
 
@@ -33,7 +33,7 @@ or:
 }
 ```
 
-instead:
+instead of:
 
 ```javascript
 {
@@ -60,7 +60,7 @@ Use:
 }
 ```
 
-instead:
+instead of:
 
 ```javascript
 {
@@ -68,5 +68,5 @@ instead:
 }
 ```
 
-> NOTE: As a rule of thumb, in an HTTP message body, there SHOULD NOT be any field with trailing "\_id," "\_href," "\_url" etc. in its name.
+> NOTE: As a rule of thumb, in an HTTP message body, there **SHOULD NOT** be any field with trailing "\_id," "\_href," "\_url" etc. in its name.
 
