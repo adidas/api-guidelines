@@ -12,7 +12,7 @@ This document is an informal introduction to the HAL media type. For more detail
 
 ## HAL Document Object Model
 
-HAL document follow the object model defined in JSON-schema [here](https://supermodel.io/adidas/api/HAL). 
+HAL documents follow the object model defined in JSON-schema [here](https://supermodel.io/adidas/api/HAL). 
 
 IANA created a list explaining the standard relationships for REST. Do not forget to have a look [here](http://www.iana.org/assignments/link-relations/link-relations.xhtml) to find the role of each type of relation. 
 
@@ -48,7 +48,7 @@ In our case the "Greeting" resource isn't related to other resources but itself,
 
 > NOTE: It is **customary** for every resource representation to include the `self` link relation.
 >
-> NOTE: The href **MUST** always be **relative path to the API root** \(e.g. without the host and scheme\).
+> NOTE: The href **MUST** always be the **relative path to the API root** \(e.g. without the host and scheme\).
 
 ## Relation Example
 
@@ -72,7 +72,7 @@ A more complex document example could be an "Order" resource that has a related 
 
 ## Embedding Example
 
-Let's assume there is an "Orders" resource which is a collection of all orders from different authors. There is the relation between the Orders resource and possibly many Order resources.
+Let's assume there is an "Orders" resource which is a collection of all orders from different authors. There is a relation between this Orders resource and possibly many other Orders resources.
 
 We could express this in the `_links` object using the `order` relation, but sometimes it is practical to "embed" \(entirely or partially\) related resources representations in the originating resource representation. For a scenario like this HAL offers the `_embedded` field.
 
