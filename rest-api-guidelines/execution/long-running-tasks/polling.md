@@ -1,6 +1,6 @@
 # Polling
 
-If an API operation can be considered as a long running task and the API Consumer can track its progress, the response to the LRT **MUST** return, in the case of success, the **202 Accepted** status code together with an `application/hal+json` representation of a new **task-tracking resource**.
+If an API operation can be considered as a long running task (LRT) and the API Consumer can track its progress, the response to the LRT **MUST** return, in the case of success, the **202 Accepted** status code together with an `application/hal+json` representation of a new **task-tracking resource**.
 
 ## Task Tracking Resource
 
