@@ -6,4 +6,4 @@ The API first principle is an extension of design-first principle. Therefore, a 
 
 **API design** (e.g., description, schema) **is the master of truth, not the API implementation.**
 
-API implementation **MUST** always be compliant to particular API design which represents the [contract](contract.md) between API, and it's consumer.
+API implementation **MUST** always be compliant to a particular API design which represents the [contract](contract.md) between API, and it's consumer.
