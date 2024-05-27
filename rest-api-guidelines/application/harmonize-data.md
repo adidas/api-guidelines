@@ -1,6 +1,6 @@
 # Corporate Data Model
 
-The design of application data model **MUST** consider the application use cases, as well as the upstream and downstream systems, use cases.
+The design of application data model **MUST** consider the application use cases, as well as the upstream and downstream systems use cases.
 
 The design of the data model of an application **MUST** consider the [adidas Corporate Data Model](https://collaboration.adidas-group.com/sites/CS-GDM/Corporate%20Data%20Dictionary/Data%20Dictionary.htm) \(internal link\).
 
