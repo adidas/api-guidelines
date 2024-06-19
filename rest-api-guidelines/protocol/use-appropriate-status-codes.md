@@ -10,7 +10,7 @@ At a minimum everyone **MUST** be familiar with the semantics of ["Common" HTTP 
 
 ## Use Codes 4xx or 5xx to Communicate Errors
 
-Remember the 4xx range concern to errors in the API Consumer/Client side while 5xx range concerns to the upstream/backend service, the API implementation.
+The 4xx range concerns errors in the API Consumer/Client side, while 5xx range concerns errors in the upstream/backend service or the API implementation.
 
 A request:
 
@@ -19,7 +19,7 @@ GET /orders/1234 HTTP/1.1
 ...
 ```
 
-resulting in the **200 OK** response, when the requested resource \(as identified by request URI\) couldn't be found:
+resulting in the **200 OK** response when the requested resource \(as identified by request URI\) couldn't be found:
 
 ```text
 HTTP/1.1 200 OK
@@ -35,7 +35,7 @@ Content-Type: application/json
 
 is **not acceptable**.
 
-Instead the
+Instead
 
 ```text
 HTTP/1.1 404 Not Found

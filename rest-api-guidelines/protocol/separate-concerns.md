@@ -1,6 +1,6 @@
 # Separate Concerns
 
-Every API using HTTP/S API **MUST** precisely follow the concern separation of an HTTP message:
+Every API using HTTP/S **MUST** precisely follow the concern separation of an HTTP message:
 
 1. A _resource identifier_–URI **MUST** be used to indicate **identity** only
 2. _HTTP request method_ **MUST** be used to communicate the **action semantics** \(intent and safety\)
