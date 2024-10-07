@@ -43,7 +43,7 @@ In the `ruleset.md` file you can find a digest of API Guidelines rules which you
 
 To install Spectral you will need Node.js and a package manager (npm or yarn).
 
-Note: The version used with the spectal specifictions was 5.3.0
+Note: The version used with the spectral specifications was 5.3.0
 
 ```
 npm install -g @stoplight/spectral@5.3.0
