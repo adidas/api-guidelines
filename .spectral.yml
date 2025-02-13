@@ -1,13 +1,13 @@
-extends: ["spectral:oas"]
+extends: [[spectral:oas, all], [spectral:asyncapi, all]]
+documentationUrl: https://github.com/adidas/api-guidelines/blob/master/ruleset.md
 rules:
+  operation-tags: off
+  operation-operationId: off
+  operation-success-response: error
 
-  # ---------------------------------------------------------------------------
-  # General OAS rules
-  # ---------------------------------------------------------------------------
-
-  operation-operationId: false
-  operation-tags: false
-  operation-2xx-response: error
+  # ----------------------------#
+  # Adidas OAS v2.0, v3.0 rules #
+  # ----------------------------#
 
   adidas-paths-kebab-case:
     description: All YAML/JSON paths MUST follow kebab-case
@@ -86,9 +86,9 @@ rules:
       functionOptions:
         match: "/^([A-Z][a-z0-9]-)*([A-Z][a-z0-9])+/"
 
-  # ---------------------------------------------------------------------------
-  # Only OAS2 rules
-  # ---------------------------------------------------------------------------
+  # ----------------------#
+  # Adidas OAS v2.0 rules #
+  # ----------------------#
 
   adidas-oas2-protocol-https-only:
     description: "ALL requests MUST go through `https` protocol only"
@@ -138,18 +138,8 @@ rules:
     given: "$..parameters..[?(@.in == 'body' && (@.example || @.schema.$ref))]"
     then: 
       function: truthy
-
-  # example-exists-in-definitions:
-  #   description: All models MUST have a valid example.
-  #   severity: error
-  #   recommended: true
-  #   formats:
-  #     - oas2
-  #   message: "{{ property }} MUST have a valid example."
-  #   given: "$..definitions..[?(!@.example || !@..$ref)]"
-  #   then:
-  #     function: falsy
-  # "$..parameters..[?(@.in == 'body')]..[?(@property !== 'properties' && @.example && ( @.type || @.format || @.$ref ))]"
+  
+  # example-exists-in-definitions covery by oas2-valid-media-example
 
   adidas-oas2-response-success-hal: # schemes and/or produces
     description: "All success responses MUST be of media type `application/hal+json`"
@@ -183,9 +173,9 @@ rules:
         schema:
           $ref: "./supermodel/adidas/api/ProblemDetail.yaml"
 
-  # ---------------------------------------------------------------------------
-  # Only OAS3 rules
-  # ---------------------------------------------------------------------------
+  # ----------------------#
+  # Adidas OAS v3.0 rules #
+  # ----------------------#
 
   adidas-oas3-request-support-json:
     description: Every request MUST support `application/json` media type
@@ -198,39 +188,9 @@ rules:
     then:
       function: falsy
 
-  adidas-oas3-valid-example-in-parameters:
-    description: Examples must be valid against their defined schema.
-    message: "{{error}}"
-    recommended: true
-    formats:
-      - oas3
-    severity: 0
-    type: validation
-    given: "$..parameters..[?(@.in == 'body')]..[?(@property !== 'properties' && @.example
-      && ( @.type || @.format || @.$ref ))]"
-    then:
-      function: schemaPath
-      functionOptions:
-        field: example
-        schemaPath: "$"
+  # adidas-oas3-valid-example-in-parameters && adidas-oas3-valid-example-in-definitions covered by oas3-valid-media-example
 
-  adidas-oas3-valid-example-in-definitions:
-    description: Examples must be valid against their defined schema.
-    message: "{{error}}"
-    recommended: true
-    formats:
-      - oas3
-    severity: 0
-    type: validation
-    given: "$..definitions..[?(@property !== 'properties' && @.example && (@.type ||
-      @.format || @.$ref))]"
-    then:
-      function: schemaPath
-      functionOptions:
-        field: example
-        schemaPath: "$"
-
-  adidas-oas3-protocol-https-only: # checks how does the servers array values start
+  adidas-oas3-protocol-https-only: 
     description: "ALL requests MUST go through `https` protocol only"
     formats:
       - oas3
@@ -248,7 +208,6 @@ rules:
     severity: error
     given: $.paths..responses[?( @property >= 201 && @property < 300 && @property != 204)].content[*]~
     recommended: true
-    # type: "style"
     formats:
       - oas3
     message: "Response documents MUST be of application/hal+json media types: {{error}}"
