@@ -1,4 +1,5 @@
 extends: [[spectral:oas, all], [spectral:asyncapi, all]]
+documentationUrl: https://www.example.com/docs/api-style-guide.md
 rules:
   operation-tags: off
   operation-operationId: off
