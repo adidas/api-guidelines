@@ -50,10 +50,9 @@ Spectral can also be used from within JavaScript. For details on how to accompli
 
 ## Validating with Adidas API Guidelines
 
-To check whether your API Specification complies with Adidas API Guidelines you will need the `.spectral.yaml` file from this repository ([here](https://github.com/adidas/api-guidelines/blob/master/.spectral.yml)).
-
+To check whether your API Specification complies with Adidas API Guidelines you will need the `adidas-spectral.yaml` file from this repository ([here](https://github.com/adidas/api-guidelines/blob/master/adidas-spectral.yaml)).
 ``` 
-spectral lint <oas-file> -r <adidas-api-guidelines-folder>/.spectral.yaml
+spectral lint <oas-file> --ruleset adidas-spectral.yaml
 ```
 
 ### Validation problems
