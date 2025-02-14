@@ -41,7 +41,7 @@ The CAPITALIZED words throughout these guidelines have a special meaning:
 
 Refer to [RFC2119](https://www.rfc-editor.org/rfc/rfc2119) for details.
 
-### Validating your API Guidelines against OpenAPI Specification
+### Validating your API specification against OpenAPI & Async rules
 
 In the `ruleset.md` file you can find a digest of API Guidelines rules which you can use to validate your API description documents.
 
