@@ -1,6 +1,6 @@
 # Kafka Asynchronous Guidelines
 
-There are several technologies to implement event-driven architectures, but this section is going to focus on the predominant technology on this subject : Apache Kafka.
+There are several technologies to implement event-driven architectures, but this section is going to focus on the predominant technology on this subject: Apache Kafka.
 
 **Apache Kafka** can be considered as a Streaming Platform which relies on the several concepts:
 

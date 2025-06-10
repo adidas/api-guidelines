@@ -1,6 +1,6 @@
 # Internal vs Public Specifications
 
-AsyncAPI specs **MAY** be created both for public APIs or for internal APIs.&#x20;
+AsyncAPI specs **MAY** be created both for public APIs or for internal APIs:
 
 * Public APIs are those who are created to be consumed by others
 * Internal APIs are only for development teams for a particular project
