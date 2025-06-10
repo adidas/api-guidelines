@@ -12,11 +12,11 @@ more specifically, it is possible to add the right Kafka servers like this:
 ...
 servers:
   playground-dev:
-    $ref: https://design.api.3stripes.io/v1/domains/adidas/cluster-landscape/1.0.0#/components/servers/playground-dev
+    $ref: 'https://design.api.3stripes.io/v1/domains/adidas/cluster-landscape/1.0.0#/components/servers/playground-dev'
   playground-sit:
-    $ref: https://design.api.3stripes.io/v1/domains/adidas/cluster-landscape/1.0.0#/components/servers/playground-sit
+    $ref: 'https://design.api.3stripes.io/v1/domains/adidas/cluster-landscape/1.0.0#/components/servers/playground-sit'
   playground-pro:
-    $ref: https://design.api.3stripes.io/v1/domains/adidas/cluster-landscape/1.0.0#/components/servers/playground-pro
+    $ref: 'https://design.api.3stripes.io/v1/domains/adidas/cluster-landscape/1.0.0#/components/servers/playground-pro'
 ...
 ```
 
