@@ -1,8 +1,8 @@
 # Security Schemes
 
-Specs **MAY** use security schemas to reflect the fact that the Kafka servers use mTLS or SASL. It is something quite static at the moment so the recommendation is refer to reusable definitions
+Specs **MAY** use security schemas to reflect the fact that the Kafka servers use mTLS or SASL. It is something quite static at the moment so the recommendation is refer to reusable definitions.
 
-Below example includes references to other security schemas used by the Kafka servers
+Below example includes references to other security schemas used by the Kafka servers.
 
 ```yaml
 channels:

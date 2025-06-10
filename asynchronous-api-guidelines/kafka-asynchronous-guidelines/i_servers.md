@@ -20,4 +20,4 @@ servers:
 ...
 ```
 
-**Important note** Don't forget to include '_/v1/_' in the URL of the domain
+**Important note** Don't forget to include '_/v1/_' in the URL of the domain.

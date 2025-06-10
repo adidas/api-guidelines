@@ -2,7 +2,7 @@
 
 This section is specific to the definition of API specs with [AsyncAPI](https://www.asyncapi.com/) for Kafka protocol.
 
-Also, take into account that across the section there will be multiple references to this [AsyncAPI reference specification](https://design.api.3stripes.io/apis/adidas/asyncapi-adoption-initiative/1.0.0) which is publicly available for reference.&#x20;
+Also, take into account that across the section there will be multiple references to this [AsyncAPI reference specification](https://design.api.3stripes.io/apis/adidas/asyncapi-adoption-initiative/1.0.0) which is publicly available for reference.
 
 #### Kafka to AsyncAPI concept mapping
 

@@ -2,9 +2,9 @@
 
 Kafka messages **SHOULD** use schemas (AVRO, JSON, Protobuf) registered in the Schema Registry to ensure compatibility between producers/consumers.
 
-If so, always refer to the schema definitions directly in the schema registry instead of duplicating the schema definitions inline. This is to avoid double maintenance.&#x20;
+If so, always refer to the schema definitions directly in the schema registry instead of duplicating the schema definitions inline. This is to avoid double maintenance.
 
-An example directly taken from reference spec is shown below
+An example directly taken from reference spec is shown below.
 
 ```yaml
 ...

@@ -17,9 +17,9 @@ As a summary, the available compatibility types are listed below:
 | Mode                 | Description                                                                 |
 | -------------------- | --------------------------------------------------------------------------- |
 | BACKWARD             | new schema versions are backward compatible with older versions             |
-| BACKWARD\_TRANSITIVE | backward compatibility across all schema versions, not just the latest one. |
+| BACKWARD\_TRANSITIVE | backward compatibility across all schema versions, not just the latest one  |
 | FORWARD              | new schema versions are compatible with older consumer versions             |
-| FORWARD\_TRANSITIVE  | forward compatibility across all schema versions.                           |
+| FORWARD\_TRANSITIVE  | forward compatibility across all schema versions                            |
 | FULL                 | both backward and forward compatibility with the latest schema version      |
 | FULL\_TRANSITIVE     | both backward and forward compatibility with all schema versions            |
 | NONE                 | schema compatibility checks are disabled                                    |
@@ -28,7 +28,7 @@ As a summary, the available compatibility types are listed below:
 
 #### Upgrading process of clients based on compatibility
 
-Depending on the compatibility mode, the process of upgrading producers/consumers will be different based on the compatibility mode enabled.
+Depending on the compatibility mode, the process of upgrading producers/consumers will be different based on the compatibility mode enabled:
 
 * NONE
   * As there are no compatibility checks, no order will grant a smooth transition
