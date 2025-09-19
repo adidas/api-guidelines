@@ -18,10 +18,10 @@ These guidelines lay down the foundation for collaboration, stability, and exten
 
 The API Guidelines are split into two main parts:
 
-* [General Guidelines](general-guidelines/general-guidelines.md)
+* [General Guidelines](https://adidas.gitbook.io/api-guidelines/general-guidelines/general-guidelines)
 * API type-specific Guidelines
-  * [REST APIs Guidelines](rest-api-guidelines/rest.md)
-  * [Asynchronous APIs Guidelines](https://github.com/cesareomacias/api-guidelines/blob/master/asynchronous-api-guidelines/index.md)
+  * [REST APIs Guidelines](https://adidas.gitbook.io/api-guidelines/rest-api-guidelines/rest)
+  * [Asynchronous APIs Guidelines](https://adidas.gitbook.io/api-guidelines/asynchronous-api-guidelines/a_introduction)
 
 The general guidelines section discusses the core principles relevant to any kind of API.&#x20;
 
