@@ -1,9 +1,14 @@
+
 extends: [[spectral:oas, all], [spectral:asyncapi, all]]
+# https://docs.stoplight.io/docs/spectral/4dec24461f3af-open-api-rules
+# https://docs.stoplight.io/docs/spectral/1e63ffd0220f3-async-api-rules
 documentationUrl: https://github.com/adidas/api-guidelines/blob/master/ruleset.md
 rules:
   operation-tags: off
   operation-operationId: off
   operation-success-response: error
+
+
 
   # ----------------------------#
   # Adidas OAS v2.0, v3.0 rules #
@@ -52,27 +57,6 @@ rules:
       function: pattern
       functionOptions:
         match: "/^[a-z$_]{1}[A-Z09$_]*/"
-
-  adidas-request-GET-no-body:
-    description: "A 'GET' request MUST NOT accept a 'body` parameter"
-    severity: error
-    given: $.paths..get.parameters..in
-    then:
-      function: pattern
-      functionOptions:
-        notMatch: "/^body$/"
-
-  adidas-headers-no-x-headers:
-    description: "All 'HTTP' headers SHOULD NOT include 'X-' headers (https://tools.ietf.org/html/rfc6648)."
-    severity: warn
-    given: "$..parameters[?(@.in == 'header')].name"
-    message: "HTTP headers SHOULD NOT include 'X-' prefix."
-    recommended: true
-    type: style
-    then: 
-      function: pattern
-      functionOptions:
-        notMatch: "/^(x|X)-/"
 
   adidas-headers-hyphenated-pascal-case:
     description: All `HTTP` headers MUST use `Hyphenated-Pascal-Case` notation
@@ -249,6 +233,238 @@ rules:
         schema:
           $ref: "./supermodel/adidas/api/HAL.yaml"
     
+
+# API Maturity Matrix Rule 
+  # 1/1-1/01
+  adidas-oas3-no-get-request-body:
+    description: "GET requests MUST NOT have a request body."
+    severity: error
+    recommended: true
+    formats:
+      - oas2
+      - oas3
+    given: "$.paths[*].get.requestBody"
+    then:
+      function: falsy
+      message: "{{description}}: {{error}}"
+
+  # 1/1-1/02
+  adidas-oas3-not-post-to-get-info:
+    description: "POST requests SHOULD NOT be used for retrieving information. Use GET instead."
+    severity: error
+    recommended: true
+    formats:
+      - oas2
+      - oas3
+    given: "$.paths[*].post"
+    then:
+      field: "summary"
+      function: pattern
+      functionOptions:
+        notMatch: "(retrieve|fetch|get|read)"
+      message: "{{description}}: {{error}}"
+
+  # 1/1-1/03
+  adidas-oas3-put-with-request-body:
+    description: "PUT requests MUST have a request body."
+    severity: error
+    recommended: true
+    formats:
+      - oas2
+      - oas3
+    given: "$.paths[*].put"
+    then:
+      field: "requestBody"
+      function: truthy
+      message: "{{description}}: {{error}}"
+
+  # 1/1-1/04
+  adidas-oas3-delete-with-request-body:
+    description: "DELETE requests MUST NOT have a request body."
+    severity: error
+    recommended: true
+    formats:
+      - oas2
+      - oas3
+    given: "$.paths[*].delete.requestBody"
+    then:
+      function: falsy
+      message: "{{description}}: {{error}}"
+
+ # 1/1-1/05
+  adidas-oas3-no-verbs-in-paths:
+    description: "API paths MUST be resource-focused and MUST NOT include verbs like 'get', 'update', 'create', or 'delete'."
+    severity: warn
+    recommended: true
+    formats:
+      - oas2
+      - oas3
+    message: "Path '{{path}}' includes a verb (e.g., 'get', 'update', 'create', 'delete'). API paths SHOULD be resource-focused."
+    given: $.paths[*]~
+    then:
+      function: pattern
+      functionOptions:
+        notMatch: "/\\b(get|update|create|delete|fetch|retrieve)\\b/"
+
+  # 1/1-1/06
+  adidas-oas3-real-like-examples:
+    description: "API design SHOULD include real-like examples for request and response definitions."
+    severity: warn
+    recommended: true
+    formats:
+      - oas2
+      - oas3
+    message: "The {{property}} SHOULD include a real-like example. Add realistic examples to improve API usability."
+    given: "$..[?(@.example || @.examples)]"
+    then:
+      field: "example"
+      function: truthy
+
+  # 1/1-1/07
+  adidas-oas3-stable-semantic-version:
+    description: "The API contract MUST have a stable version and MUST follow semantic versioning (e.g., '1.0.0'). Words like 'SNAPSHOT' or 'RELEASE' are not allowed."
+    severity: error
+    recommended: true
+    formats:
+      - oas2
+      - oas3
+    message: "{{description}}: {{error}}"
+    given: "$.info.version"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^(?!.*\\b(SNAPSHOT|RELEASE)\\b)(0|[1-9]\\d*)\\.(0|[1-9]\\d*)\\.(0|[1-9]\\d*)$"
+  
+  # 1/1-1/08
+  adidas-oas3-security-section-required:
+    description: "The API contract MUST include a 'security' section at the root level."
+    severity: error
+    recommended: true
+    formats:
+      - oas2
+      - oas3
+    message: "{{description}}: {{error}}"
+    given: "$"
+    then:
+      field: "security"
+      function: truthy
+
+  adidas-oas3-components-required:
+    description: "The API contract MUST include a 'components' section."
+    severity: error
+    recommended: true
+    formats:
+      - oas2
+      - oas3
+    message: "{{description}}: {{error}}"
+    given: "$"
+    then:
+      field: "components"
+      function: truthy
+
+  adidas-oas3-security-schemes-required:
+    description: "The API contract MUST include a 'securitySchemes' subsection under the 'components' section."
+    severity: error
+    recommended: true
+    formats:
+      - oas2
+      - oas3
+    message: "{{description}}: {{error}}"
+    given: "$.components"
+    then:
+      field: "securitySchemes"
+      function: truthy
+
+  # 1/1-1/09
+  adidas-oas3-x-leanixid-required:
+    description: "The API contract SHOULD include a custom field 'x-leanixid' in the 'info' section."
+    severity: warn
+    recommended: true
+    formats:
+      - oas2
+      - oas3
+    message: "{{description}}: {{error}}"
+    given: "$.info"
+    then:
+      field: "x-leanixid"
+      function: truthy
+
+  # 1/1-1/10
+  adidas-oas3-x-leanixid-uuid:
+    description: "The API contract SHOULD include a custom field 'x-leanixid' containing a valid UUID."
+    severity: warn
+    recommended: true
+    formats:
+      - oas2
+      - oas3
+    message: "{{description}}: {{error}}"
+    given: "$.info.x-leanixid"
+    then:
+      function: pattern
+      functionOptions:
+        match: "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$"
+
+  # 1/1-1/10B
+  # adidas-oas3-x-leanixid-real:
+  #   description: "The leanxid must be real in the adidas Leanix inventory."
+  #   severity: error
+  #   recommended: true
+  #   formats:
+  #     - oas2
+  #     - oas3
+  #   message: "{{description}}: {{error}}"
+  #   given: "$.info.x-leanixid"
+  #   then:
+  #     function: customFunction
+
+  # 1/1-1/11
+  adidas-oas3-x-gateway-required:
+    description: "The API contract SHOULD include a custom field 'x-gateway' in the 'info' section."
+    severity: warn
+    recommended: true
+    formats:
+      - oas2
+      - oas3
+    message: "{{description}}: {{error}}"
+    given: "$.info"
+    then:
+      field: "x-gateway"
+      function: truthy
+
+  # 1/1-1/11B
+  adidas-oas3-x-gateway-required-enumeration:
+    description: "The 'x-gateway' property, if present, MUST have a value in the enumeration: kong, nginx, aws, akamai, sap, other."
+    severity: warn
+    recommended: true
+    formats:
+      - oas2
+      - oas3
+    given: "$"
+    then:
+      field: "x-gateway"
+      function: enumeration
+      functionOptions:
+        values:
+          - kong
+          - nginx
+          - aws
+          - akamai
+          - sap
+          - other
+
+  # 1/1-1/12
+  adidas-oas3-hypermedia-links-required:
+    description: "The API contract MAY include hypermedia links to represent the state of resources and be navigable."
+    severity: hint
+    recommended: true
+    formats:
+      - oas2
+      - oas3
+    message: "{{description}}: {{error}}"
+    given: "$.paths[*][*].responses[*]"
+    then:
+      field: "links"
+      function: truthy
 
   # ---------------------------------------------------------------------------
   # Not implemented
